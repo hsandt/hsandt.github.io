@@ -1,0 +1,24 @@
+.portfolio-item-top {
+    display: flex;
+
+    .embedded-video {
+        padding: 0 20px 0 0;
+    }
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+
+    img {
+        // include padding in the width so we can really fit
+        // 2 entries at 50%
+        box-sizing: border-box;
+        padding: 5px 5px;
+        max-width: 50%;
+
+        @media screen and (max-width: 800px) {
+            max-width: 100%;
+        }
+    }
+}
