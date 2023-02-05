@@ -1,0 +1,64 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: Long Nguyen Huu
+description: >- # this means to ignore newlines until "baseurl:"
+  I'm Long Nguyen Huu, a game developer from France, and this is my portfolio.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-remote-theme
+
+# set up remote_theme for specific commit, so we don't use old stable release
+# (commit from 2023-01-09)
+remote_theme: jekyll/minima@32468f51758b0b37c2b1f423265d4f29db461b27
+
+# Theme config
+author:
+  name: Long Nguyen Huu
+  email: n.huu.long@gmail.com
+minima:
+  social_links:
+    - { platform: github,  user_url: "https://github.com/hsandt" }
+    - { platform: twitter, user_url: "https://twitter.com/n_huulong" }
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

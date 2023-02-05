@@ -1,0 +1,35 @@
+---
+layout: default
+---
+<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+    <h2 class="post-subtitle">{{ page.subtitle | escape }}</h2>
+  </header>
+
+  <div class="portfolio-item-top">
+    <div class="embedded-video">
+      <iframe width="470" height="264" src="https://www.youtube.com/embed/{{ page.youtube.id }}"
+        title="{{ page.youtube.title }}" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <table class="metadata">
+        {% for field in page.meta %}
+            <tr>
+                <!-- Convert to readable string, e.g. "production-time" -> "Production time"
+                     with a few filters until we get proper localization -->
+                <td>{{ field[0] | capitalize | replace: "-", " " }}</td>
+                <td>{{ field[1] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+  </div>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+</article>
