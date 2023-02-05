@@ -22,4 +22,4 @@ jobs:
       - name: Build & Deploy Jekyll Site to GitHub Pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: deploy.sh
+        run: ./.github/scripts/deploy.sh
