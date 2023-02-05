@@ -1,25 +1,29 @@
-name: Jekyll Deploy
+# Mix of:
+# - https://gist.github.com/joshlarsen/4e7851e91ef4a7db8dfa89c2f993bb23
+# - https://github.com/sujaykundu777/jekyll-deploy-action
+
+name: Jekyll Build & Deploy
 
 on:
   push:
-    branches:
-      - master
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - name: GitHub Checkout
-        uses: actions/checkout@v1
-      - name: Bundler Cache
-        uses: actions/cache@v1
+        uses: actions/checkout@v3
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
-      - name: Build & Deploy to GitHub Pages
-        uses: joshlarsen/jekyll4-deploy-gh-pages@master
+          ruby-version: 3.2
+          bundler-cache: true
+	bundler-cache: true
+      - name: Build & Deploy Jekyll Site to GitHub Pages
+        uses: sujaykundu777/jekyll-deploy-action@1.0.3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
