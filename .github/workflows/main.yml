@@ -21,7 +21,6 @@ jobs:
         with:
           ruby-version: 3.2
           bundler-cache: true
-	bundler-cache: true
       - name: Build & Deploy Jekyll Site to GitHub Pages
         uses: sujaykundu777/jekyll-deploy-action@1.0.3
         env:
