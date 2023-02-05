@@ -1,6 +1,4 @@
-# Mix of:
-# - https://gist.github.com/joshlarsen/4e7851e91ef4a7db8dfa89c2f993bb23
-# - https://github.com/sujaykundu777/jekyll-deploy-action
+# Adapted from: https://gist.github.com/joshlarsen/4e7851e91ef4a7db8dfa89c2f993bb23
 
 name: Jekyll Build & Deploy
 
@@ -22,8 +20,6 @@ jobs:
           ruby-version: 3.2
           bundler-cache: true
       - name: Build & Deploy Jekyll Site to GitHub Pages
-        uses: sujaykundu777/jekyll-deploy-action@1.0.3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
-          GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
+        run: deploy.sh
