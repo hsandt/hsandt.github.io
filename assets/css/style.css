@@ -750,6 +750,23 @@ table td {
   padding: 0 20px 0 0;
 }
 
+table.metadata {
+  border: 0;
+}
+table.metadata tr th {
+  background-color: #fdfdfd;
+}
+table.metadata tr:nth-child(even) {
+  background-color: #fdfdfd;
+}
+table.metadata tr th, table.metadata tr td {
+  border-width: 0 0 1px 0;
+  border-bottom-color: #cccccc;
+}
+table.metadata tr:last-child th, table.metadata tr:last-child td {
+  border-bottom-width: 0;
+}
+
 .grid {
   display: flex;
   flex-wrap: wrap;
