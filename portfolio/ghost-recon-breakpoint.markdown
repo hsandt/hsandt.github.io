@@ -7,20 +7,22 @@ youtube:
   id: 5dcI6CZJI7Y
   title: "Ghost Recon Breakpoint: What is Breakpoint? Gameplay Trailer"
 meta:
-  platform: "Windows, PS4, Xbox One, Stadia"
+  developer: "Ubisoft Paris + sister studios"
+  release: "Oct 2019"
+  platform: "Windows, PS4, Xbox One"
   genre: "Shooter, Stealth, RPG"
   mode: "1-4 players co-op and 4v4"
-  year: "2018 (release 2019)"
-  technology: "Anvil (proprietary engine)"
+  play-time: "25h-100h"
+  working-period: "Aug 2017 - Aug 2018"
   team: "~200"
-  production-time: "~3 years"
-  role: "Gameplay Programming (3C)"
+  role: "Gameplay programming (3C)"
+  technology: "Anvil (proprietary engine)"
 ---
 ![Ghost Recon Breakpoint Banner](/assets/pictures/Ghost-Recon-Breakpoint-Title-1024x576.jpg)
 
 ## DESCRIPTION
 
-[Tom Clancy’s Ghost Recon Breakpoint](https://www.ubisoft.com/en-gb/game/ghost-recon/breakpoint/game-info) is an open-world military shooter that was released in October 2019 by Ubisoft as a sequel to Ghost Recon Wildlands. Like its predecessor, it features a open-world campaign that can be played cooperatively by up to 4 players online and a TvT mode *Ghost War* taking place in closed areas. Compared to Wildlands, this installment features more RPG and survival elements (injuries, crafting, gear enhancement).
+[Tom Clancy’s Ghost Recon Breakpoint](https://www.ubisoft.com/en-gb/game/ghost-recon/breakpoint/game-info){:target="_blank"} is an open-world military shooter that was released in October 2019 by Ubisoft as a sequel to Ghost Recon Wildlands. Like its predecessor, it features a open-world campaign that can be played cooperatively by up to 4 players online and a TvT mode *Ghost War* taking place in closed areas. Compared to Wildlands, this installment features more RPG and survival elements (injuries, crafting, gear enhancement).
 
 ## SCREENSHOTS
 
