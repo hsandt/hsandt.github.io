@@ -1,3 +1,4 @@
+// video and metadata at the top of a portfolio item
 .portfolio-item-top {
     display: flex;
 
@@ -6,6 +7,39 @@
     }
 }
 
+// metadata table
+table.metadata {
+    // no outside borders
+    border: 0;
+
+    tr {
+        // remove zebra on header cells
+        th {
+            background-color: $lm-background-color;
+        }
+
+        // remove zebra on even cells
+        &:nth-child(even) {
+            background-color: $lm-background-color;
+        }
+        
+        th, td {
+            // only keep horizontal borders, darker than default
+            border-width: 0 0 1px 0;
+            border-bottom-color: #cccccc;
+        }
+
+        &:last-child {
+            th, td {
+                // remove the last bottom border so we only see lines
+                // separating rows
+                border-bottom-width: 0;
+            }
+        }
+    }
+}
+
+// wrapped grid
 .grid {
     display: flex;
     flex-wrap: wrap;
