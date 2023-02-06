@@ -27,6 +27,13 @@
     @include relative-font-size(1.2);
 }
 
+.home {
+    // home page has no full header with dual separator lines,
+    // just draw top separator instead, with some padding below
+    border-top: 4px solid $lm-brand-color-dark;
+    padding-top: 25px;
+}
+
 .standard-page {
     // standard pages have no full header with dual separator lines,
     // just draw top separator instead, with some padding below
