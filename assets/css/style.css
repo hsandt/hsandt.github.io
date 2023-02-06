@@ -743,6 +743,48 @@ table td {
     width: calc(50% - (30px / 2));
   }
 }
+.site-header {
+  border-top: 0;
+  border-bottom: 0;
+  line-height: 36px;
+}
+
+.site-title {
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 500;
+  padding-top: 20px;
+}
+
+.site-subtitle {
+  clear: left;
+  font-size: 1.2rem;
+}
+
+.home {
+  border-top: 4px solid #424242;
+  padding-top: 25px;
+}
+
+.standard-page {
+  border-top: 4px solid #424242;
+  padding-top: 15px;
+}
+
+.portfolio-item-header {
+  border-top: 4px solid #424242;
+  padding-top: 15px;
+  text-align: center;
+  padding-bottom: 5px;
+  border-bottom: 4px solid #424242;
+}
+.portfolio-item-header .post-title {
+  font-size: 2.4rem;
+}
+.portfolio-item-header .post-subtitle {
+  line-height: 1;
+}
+
 .portfolio-item-top {
   display: flex;
 }
@@ -761,7 +803,7 @@ table.metadata tr:nth-child(even) {
 }
 table.metadata tr th, table.metadata tr td {
   border-width: 0 0 1px 0;
-  border-bottom-color: #cccccc;
+  border-bottom-color: #828282;
 }
 table.metadata tr:last-child th, table.metadata tr:last-child td {
   border-bottom-width: 0;
