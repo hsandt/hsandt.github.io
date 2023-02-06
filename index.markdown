@@ -4,3 +4,7 @@
 
 layout: home
 ---
+
+Hello! I am a game developer with 3 years of experience in game studios, and working on my own projects the rest of the time.
+
+My main focus is gameplay, UI and tool programming. I also work on game design and some pixel art on my personal projects.

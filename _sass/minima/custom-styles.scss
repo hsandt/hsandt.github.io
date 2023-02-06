@@ -1,3 +1,64 @@
+// _layout.scss override
+.site-header {
+    // remove top border (not aesthetic)
+    border-top: 0;
+    // remove bottom border (redundant with new top border on standard page
+    // and portfolio item header)
+    border-bottom: 0;
+    // reduce line height to avoid gap between title and subtitle
+    line-height: $base-line-height * $base-font-size * 1.5;
+}
+
+// _layout.scss override
+.site-title {
+    // uppercase title
+    text-transform: uppercase;
+    // bigger title
+    @include relative-font-size(2);
+    // bolder title
+    font-weight: 500;
+    // since we removed top border in .site-header, add more padding on top
+    padding-top: 20px;
+}
+
+.site-subtitle {
+    // make sure subtitle appears below title (we can also set float: none on .site-title)
+    clear: left;
+    @include relative-font-size(1.2);
+}
+
+.home {
+    // home page has no full header with dual separator lines,
+    // just draw top separator instead, with some padding below
+    border-top: 4px solid $lm-brand-color-dark;
+    padding-top: 25px;
+}
+
+.standard-page {
+    // standard pages have no full header with dual separator lines,
+    // just draw top separator instead, with some padding below
+    border-top: 4px solid $lm-brand-color-dark;
+    padding-top: 15px;
+}
+
+// center header text between two thick horizontal lines with padding
+.portfolio-item-header {
+    border-top: 4px solid $lm-brand-color-dark;
+    padding-top: 15px;
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: 4px solid $lm-brand-color-dark;
+    
+    // _layout.scss override
+    .post-title {
+        @include relative-font-size(2.4);
+    }
+
+    .post-subtitle {
+        line-height: 1;
+    }
+}
+
 // video and metadata at the top of a portfolio item
 .portfolio-item-top {
     display: flex;
@@ -26,7 +87,7 @@ table.metadata {
         th, td {
             // only keep horizontal borders, darker than default
             border-width: 0 0 1px 0;
-            border-bottom-color: #cccccc;
+            border-bottom-color: $lm-brand-color;
         }
 
         &:last-child {
