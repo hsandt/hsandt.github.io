@@ -42,78 +42,88 @@
 }
 
 // center header text between two thick horizontal lines with padding
-.portfolio-item-header {
-    border-top: 4px solid $lm-brand-color-dark;
-    padding-top: 15px;
-    text-align: center;
-    padding-bottom: 5px;
-    border-bottom: 4px solid $lm-brand-color-dark;
-    
-    // _layout.scss override
-    .post-title {
-        @include relative-font-size(2.4);
-    }
-
-    .post-subtitle {
-        line-height: 1;
-    }
-}
-
-// video and metadata at the top of a portfolio item
-.portfolio-item-top {
-    display: flex;
-
-    .embedded-video {
-        padding: 0 20px 0 0;
-    }
-}
-
-// metadata table
-table.metadata {
-    // no outside borders
-    border: 0;
-
-    tr {
-        // remove zebra on header cells
-        th {
-            background-color: $lm-background-color;
-        }
-
-        // remove zebra on even cells
-        &:nth-child(even) {
-            background-color: $lm-background-color;
-        }
+.portfolio-item {
+    .post-header {
+        border-top: 4px solid $lm-brand-color-dark;
+        padding-top: 15px;
+        text-align: center;
+        padding-bottom: 5px;
+        border-bottom: 4px solid $lm-brand-color-dark;
         
-        th, td {
-            // only keep horizontal borders, darker than default
-            border-width: 0 0 1px 0;
-            border-bottom-color: $lm-brand-color;
+        // _layout.scss override
+        .post-title {
+            @include relative-font-size(2.4);
         }
+    
+        .post-subtitle {
+            line-height: 1;
+        }
+    }
 
-        &:last-child {
+    // video and metadata at the top of a portfolio item
+    .post-top {
+        display: flex;
+    
+        .embedded-video {
+            padding: 0 20px 0 0;
+        }
+    }
+
+    // metadata table
+    table.metadata {
+        // no outside borders
+        border: 0;
+    
+        @include relative-font-size(0.9);
+    
+        tr {
+            // remove zebra on header cells
+            th {
+                background-color: $lm-background-color;
+            }
+    
+            // remove zebra on even cells
+            &:nth-child(even) {
+                background-color: $lm-background-color;
+            }
+            
             th, td {
-                // remove the last bottom border so we only see lines
-                // separating rows
-                border-bottom-width: 0;
+                // only keep horizontal borders, darker than default
+                border-width: 0 0 1px 0;
+                border-bottom-color: $lm-brand-color;
+            }
+    
+            &:last-child {
+                th, td {
+                    // remove the last bottom border so we only see lines
+                    // separating rows
+                    border-bottom-width: 0;
+                }
             }
         }
     }
-}
 
-// wrapped grid
-.grid {
-    display: flex;
-    flex-wrap: wrap;
+    .post-content {
+        h2 {
+            text-transform: uppercase;
+        }
+    }
 
-    img {
-        // include padding in the width so we can really fit
-        // 2 entries at 50%
-        box-sizing: border-box;
-        padding: 5px 5px;
-        max-width: 50%;
+    // wrapped grid
+    .grid {
+        display: flex;
+        flex-wrap: wrap;
 
-        @media screen and (max-width: 800px) {
-            max-width: 100%;
+        img {
+            // include padding in the width so we can really fit
+            // 2 entries at 50%
+            box-sizing: border-box;
+            padding: 5px 5px;
+            max-width: 50%;
+
+            @media screen and (max-width: 800px) {
+                max-width: 100%;
+            }
         }
     }
 }
