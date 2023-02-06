@@ -12,7 +12,7 @@ meta:
   platform: "Windows, PS4, Xbox One"
   genre: "Shooter, Stealth, RPG"
   mode: "1-4 players co-op and 4v4"
-  play-time: "25h-100h"
+  play-time: "25h - 100h"
   working-period: "Aug 2017 - Aug 2018"
   team: "~200"
   role: "Gameplay programming (3C)"
@@ -20,11 +20,11 @@ meta:
 ---
 ![Ghost Recon Breakpoint Banner](/assets/pictures/Ghost-Recon-Breakpoint-Title-1024x576.jpg)
 
-## DESCRIPTION
+## Description
 
 [Tom Clancy’s Ghost Recon Breakpoint](https://www.ubisoft.com/en-gb/game/ghost-recon/breakpoint/game-info){:target="_blank"} is an open-world military shooter that was released in October 2019 by Ubisoft as a sequel to Ghost Recon Wildlands. Like its predecessor, it features a open-world campaign that can be played cooperatively by up to 4 players online and a TvT mode *Ghost War* taking place in closed areas. Compared to Wildlands, this installment features more RPG and survival elements (injuries, crafting, gear enhancement).
 
-## SCREENSHOTS
+## Screenshots
 
 <div class="grid">
   <img src="/assets/pictures/Ghost-Recon-Breakpoint-Drone-768x432.png" alt="Teamwork">
@@ -33,11 +33,11 @@ meta:
   <img src="/assets/pictures/Ghost-Recon-Breakpoint-No-HUD-Teamwork-768x432.jpg" alt="Enemy grounded drone">
 </div>
 
-## CONTEXT
+## Context
 
 As part of the Gameplay Programmer Graduate Program at Ubisoft, I worked 1 year on Breakpoint in the 3C team, implementing main character features. I coded in C++ using in-house engine *Scimitar/Anvil*.
 
-## ROLE
+## Role
 
 ### Injury system
 
