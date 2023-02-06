@@ -46,21 +46,26 @@ To stress the survival aspect of the game, the main character can now suffer lon
 - Update injury level based on damage received
 - Implement status maluses related to injuries
 - Implement healing items to remove injuries
+- Plug camera effects
+- Plug character animations and voices
+- Support network replication
 
 ### Suppressive fire
 
 When the main character is continuously hit by enemy fire for some time, strong visual feedback is shown to the player to emphasize the threat and make it harder to retaliate:
 
 - Plug camera effects (change of blur, FoV…)
-- Plug character animations
+- Plug character animations and voices
+- Support network replication
 
 ### Sync Shot drone
 
 The Sync Shot item allows a single player to target up to 3 targets using drones, to mimic the behavior of AI teammates in Wildlands. By shooting a 4th target, the player can effectively kill a group of 4 targets at once, which in some situations can avoid triggering the alarm.
 
 - Implement Sync Shot drone item usage, recall, and shooting behavior
+- Plug character animations
+- Support network replication
 
-### Voices
+### Misc
 
-- Plug voices when character is falling, injured, suppressed
-- Plug voices when character marks or kills target
+- Plug additional voices (character falls, marks or kills target)

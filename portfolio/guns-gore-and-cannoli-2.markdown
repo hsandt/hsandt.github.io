@@ -47,16 +47,35 @@ I assisted Crazy Monkey Studios on gameplay and AI programming during my end-of-
 ## Role
 
 ### Level design
-- Design and building of a few buildings
 
-### UI design
-- Gamepad mapping suggestions
+I prototyped a level section made of a series of houses with leaking gas and fire:
+
+- Whiteboxing
+- Enemy spawn and destructible placement
+- Event trigger and interactive switch placement
 
 ### Gameplay programming
-- Flying enemy vehicle design and programming
 
-### AI programming
-- Navmesh generation improvements and fixes
+I programmed the bomber enemy:
 
-### Optimization
+- Airplane movement
+- Randomized bombing pattern
+
+### UI programming
+
+I worked on the input hint system for the tutorial sections:
+
+- Display keyboard, mouse or gamepad button icons based on current input device
+
+![Tutorial input hint message: Press LT to jump](/assets/pictures/GCC2-Tutorial-input-hint.png)
+
+### Tool programming
+
+I improved existing tools:
+
+- More robust AI navmesh generation
+- More readable debug text
+
+### Misc
+
 - Minor physics optimization
