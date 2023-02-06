@@ -41,6 +41,15 @@
     text-align: center;
     padding-bottom: 5px;
     border-bottom: 4px solid $lm-brand-color-dark;
+    
+    // _layout.scss override
+    .post-title {
+        @include relative-font-size(2.4);
+    }
+
+    .post-subtitle {
+        line-height: 1;
+    }
 }
 
 // video and metadata at the top of a portfolio item
