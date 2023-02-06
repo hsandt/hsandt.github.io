@@ -1,8 +1,8 @@
-# Mix of:
+# Adapted from:
 # - https://gist.github.com/joshlarsen/4e7851e91ef4a7db8dfa89c2f993bb23
-# - https://github.com/sujaykundu777/jekyll-deploy-action
+# - https://github.com/pranabdas/deploy-jekyll-github-action
 
-name: Jekyll Build & Deploy
+name: Jekyll Build & Deploy to gh-pages
 
 on:
   push:
@@ -13,17 +13,36 @@ on:
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
+
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+
     steps:
       - name: GitHub Checkout
         uses: actions/checkout@v3
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.2
           bundler-cache: true
-      - name: Build & Deploy Jekyll Site to GitHub Pages
-        uses: sujaykundu777/jekyll-deploy-action@1.0.3
+
+      - name: Install ruby dependencies
+        run: |
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
+
+      - name: Build website
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
-          GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
+          JEKYLL_ENV: production
+          NODE_ENV: production
+        run: bundle exec jekyll build
+
+      - name: Deploy on gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/master' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'

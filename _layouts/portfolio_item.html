@@ -21,7 +21,7 @@ layout: default
             <tr>
                 <!-- Convert to readable string, e.g. "production-time" -> "Production time"
                      with a few filters until we get proper localization -->
-                <td>{{ field[0] | capitalize | replace: "-", " " }}</td>
+                <th>{{ field[0] | capitalize | replace: "-", " " }}</td>
                 <td>{{ field[1] }}</td>
             </tr>
         {% endfor %}
