@@ -1,7 +1,8 @@
 ---
 layout: default
 ---
-
+<!-- Customized from https://github.com/jekyll/minima/blob/f3de471bf38a14c5025319fdd541c30fe9f6916f/_layouts/home.html
+     (2020-02-17) under MIT license -->
 <div class="home">
   {%- if page.title -%}
     <h1 class="page-heading">{{ page.title }}</h1>
@@ -9,6 +10,20 @@ layout: default
 
   {{ content }}
 
+  <h2>Portfolio</h2>
+
+  {%- assign portfolio_page_relative_paths = site.portfolio_pages -%}
+  {%- if portfolio_page_relative_paths.size > 0 -%}
+  <div class="portfolio-grid">
+    {%- for relative_path in portfolio_page_relative_paths -%}
+      {%- assign path = relative_path | prepend: "portfolio/" -%}
+      {%- assign portfolio_page = site.pages | where: "path", path | first -%}
+      {%- if portfolio_page.title -%}
+      <a class="page-link" href="{{ portfolio_page.url | relative_url }}">{{ portfolio_page.title | escape }}</a>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+  {% endif %}
 
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
