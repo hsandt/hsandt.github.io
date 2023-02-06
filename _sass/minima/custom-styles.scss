@@ -1,3 +1,12 @@
+// center header text between two thick horizontal lines with padding
+.portfolio-item-header {
+    border-top: 5px solid $lm-brand-color-dark;
+    padding-top: 15px;
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: 5px solid $lm-brand-color-dark;
+}
+
 // video and metadata at the top of a portfolio item
 .portfolio-item-top {
     display: flex;
@@ -26,7 +35,7 @@ table.metadata {
         th, td {
             // only keep horizontal borders, darker than default
             border-width: 0 0 1px 0;
-            border-bottom-color: #cccccc;
+            border-bottom-color: $lm-brand-color;
         }
 
         &:last-child {
