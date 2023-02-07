@@ -1,7 +1,7 @@
 ---
 layout: portfolio_item
-title:  "Guns, Gore & Cannoli 2"
-subtitle:  "Over-the-top run ‘n gun"
+title: "Guns, Gore & Cannoli 2"
+subtitle: "Over-the-top run ‘n gun"
 categories: video-game
 youtube:
   id: aoXyO38tR5A

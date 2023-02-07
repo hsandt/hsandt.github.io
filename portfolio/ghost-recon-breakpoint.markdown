@@ -1,7 +1,7 @@
 ---
 layout: portfolio_item
-title:  "Ghost Recon: Breakpoint"
-subtitle:  "Open-world RPG military shooter"
+title: "Ghost Recon: Breakpoint"
+subtitle: "Open-world RPG military shooter"
 categories: video-game
 youtube:
   id: 5dcI6CZJI7Y
@@ -14,7 +14,7 @@ meta:
   mode: "1-4 players co-op and 4v4"
   play-time: "25h - 100h"
   working-period: "Aug 2017 - Aug 2018"
-  team: "~200"
+  team: "~200 people"
   role: "Gameplay programming (3C)"
   technology: "Anvil (proprietary engine)"
 ---
