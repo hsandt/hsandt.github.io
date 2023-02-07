@@ -15,7 +15,7 @@ meta:
   play-time: "3h30 - 5h30"
   working-period: "Aug 2016 - Dec 2016"
   team: "5 people"
-  role: "Level design, Programming"
+  role: "Programming, Level design"
   technology: "Unity"
 ---
 ![Guns, Gore & Cannoli 2 Banner](/assets/pictures/GGC2-Banner-1024x576.png)
@@ -35,7 +35,7 @@ Guns, Gore & Cannoli 2 is the sequel of [Guns, Gore & Cannoli](https://www.rogue
 
 ## Context
 
-I assisted Crazy Monkey Studios on gameplay and AI programming during my end-of-year internship as part of graduating requirements at Gobelins.
+I assisted Crazy Monkey Studios on gameplay and AI programming during my end-of-year internship as part of graduating requirements at Gobelins. I coded in C# using Unity.
 
 ## Team
 
