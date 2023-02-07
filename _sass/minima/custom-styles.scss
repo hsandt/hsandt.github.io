@@ -7,6 +7,62 @@
     border-bottom: 0;
     // reduce line height to avoid gap between title and subtitle
     line-height: $base-line-height * $base-font-size * 1.5;
+
+    .social-media-list {
+        // reduce line height to standard, so the surrounding space is closer to
+        // a square than a vertical rectangle, and looks more like the social icons
+        // in the footer (comment out `border: none;` to see the square easily)
+        line-height: $base-line-height;
+        // move back to left instead of center
+        margin: 0;
+
+        a {
+            // remove border and padding for a more compact presentation in the header than in the
+            // footer
+            border: none;
+            padding: 0;
+            
+            .icon-github {
+                color: #1d1b1c;
+
+                &:hover {
+                    color: #551a8b;
+                }
+            }
+
+            .icon-twitter {
+                color: #1da1f2;
+
+                &:hover {
+                    color: #177bb9;
+                }
+            }
+
+            .icon-youtube {
+                color: #ff0000;
+
+                &:hover {
+                    color: #c90019;
+                }
+            }
+
+            .icon-itch {
+                color: #fa5c5c;
+
+                &:hover {
+                    color: #c90019;
+                }
+            }
+
+            .icon-linkedin {
+                color: #0077b5;
+
+                &:hover {
+                    color: #3860b2;
+                }
+            }
+        }
+    }
 }
 
 // _layout.scss override
@@ -138,6 +194,16 @@
             @media screen and (max-width: 800px) {
                 max-width: 100%;
             }
+        }
+    }
+}
+
+// _layout.scss override
+.site-footer {
+    .social-media-list {
+        .svg-icon {
+            // restore .grey class which was removed from social-item.html override
+            @extend .grey;
         }
     }
 }
