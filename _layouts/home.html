@@ -15,13 +15,17 @@ layout: default
   {%- assign portfolio_page_relative_paths = site.portfolio_pages -%}
   {%- if portfolio_page_relative_paths.size > 0 -%}
   <div class="portfolio-grid">
-    {%- for relative_path in portfolio_page_relative_paths -%}
-      {%- assign path = relative_path | prepend: "portfolio/" -%}
-      {%- assign portfolio_page = site.pages | where: "path", path | first -%}
-      {%- if portfolio_page.title -%}
-      <a class="page-link" href="{{ portfolio_page.url | relative_url }}">{{ portfolio_page.title | escape }}</a>
-      {%- endif -%}
-    {%- endfor -%}
+    <ul class="portfolio-list">
+      {%- for relative_path in portfolio_page_relative_paths -%}
+        {%- assign path = relative_path | prepend: "portfolio/" -%}
+        {%- assign portfolio_page = site.pages | where: "path", path | first -%}
+        {%- if portfolio_page.title -%}
+        <li>
+          <a class="page-link" href="{{ portfolio_page.url | relative_url }}">{{ portfolio_page.title | escape }}</a>
+        </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
   </div>
   {% endif %}
 

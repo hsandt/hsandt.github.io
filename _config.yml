@@ -48,7 +48,10 @@ header_pages:
 
 # Collection of portfolio pages, path relative to portfolio/
 portfolio_pages:
+  - evil-genius-2.markdown
+  - hotshot-racing.markdown
   - ghost-recon-breakpoint.markdown
+  - guns-gore-and-cannoli-2.markdown
 
 # Exclude from processing.
 # The following items will not be processed, by default.
