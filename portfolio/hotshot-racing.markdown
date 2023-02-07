@@ -21,7 +21,9 @@ meta:
 
 ## Description
 
-[Hotshot Racing](https://curvegames.com/our-games/hotshot-racing/){:target="_blank"} is a retro arcade racing game with a touch of modern design. It features the traditional Time Attack and Grand Prix for a single player, while up to 4 players offline and 8 players online can compete in Arcade races or more exotic game modes such as Cops & Robbers and Drive or Explode. Drift, slipstream behind your opponents and boost toward the goal! Based on Lucky Mountain Games’ prototype [Racing Apex](https://twitter.com/racingapexgame){:target="_blank"}.
+[Hotshot Racing](https://curvegames.com/our-games/hotshot-racing/){:target="_blank"} is a retro arcade racing game with a touch of modern design. It features the traditional Time Attack and Grand Prix for a single player, while up to 4 players offline and 8 players online can compete in Arcade races or more exotic game modes such as Cops & Robbers and Drive or Explode. Drift, slipstream behind your opponents and boost toward the goal!
+
+Based on Lucky Mountain Games’ prototype [Racing Apex](https://twitter.com/racingapexgame){:target="_blank"}, it was developed by [Sumo Digital](https://www.sumo-digital.com/){:target="_blank"} and published by Curve Digital (now rebranded [Curve Games](https://curvegames.com/){:target="_blank"}.
 
 ## Screenshots
 
@@ -34,7 +36,7 @@ meta:
 
 ## Context
 
-I worked on Hotshot Racing as a Game Programmer in [Sumo Digital](https://www.sumo-digital.com/){:target="_blank"} (Nottingham studio), with a team of around 15 people. I coded in C++ with the in-house racing game engine and in C# for external tools.
+I worked on Hotshot Racing as a Game Programmer in Sumo Digital, Nottingham studio, with a team of around 15 people. I coded in C++ with the in-house racing game engine and in C# for external tools.
 
 ## Role
 
