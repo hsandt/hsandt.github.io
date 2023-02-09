@@ -45,6 +45,7 @@ minima:
 
 header_pages:
   - about.markdown
+  - resume.markdown
 
 # Collection of portfolio pages, path relative to portfolio/
 portfolio_pages:
