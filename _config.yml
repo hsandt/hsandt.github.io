@@ -20,7 +20,7 @@
 
 title: Long Nguyen Huu
 description: >- # this means to ignore newlines until "baseurl:"
-  I'm Long Nguyen Huu, a game developer from France, and this is my portfolio.
+  This website was made with Jekyll and is hosted on GitHub Pages.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://hsandt.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -40,11 +40,16 @@ author:
   email: n.huu.long@gmail.com
 minima:
   social_links:
+    - { platform: itchio, user_url: "https://komehara.itch.io/" }
     - { platform: github,  user_url: "https://github.com/hsandt" }
+    - { platform: stackoverflow, user_url: "https://stackoverflow.com/users/3256073/hsandt" }
     - { platform: twitter, user_url: "https://twitter.com/n_huulong" }
+    - { platform: youtube, user_url: "https://www.youtube.com/channel/UCscc8AXbgMQCjzxsXLVvCsg" }
+    - { platform: linkedin, user_url: "https://www.linkedin.com/in/huulong/" }
 
 header_pages:
   - about.markdown
+  - resume.markdown
 
 # Collection of portfolio pages, path relative to portfolio/
 portfolio_pages:
