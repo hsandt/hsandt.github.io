@@ -22,11 +22,27 @@
             border: none;
             padding: 0;
             
+            .icon-itchio {
+                color: #fa5c5c;
+
+                &:hover {
+                    color: #c90019;
+                }
+            }
+
             .icon-github {
                 color: #1d1b1c;
 
                 &:hover {
-                    color: #551a8b;
+                    color: #6316ac;
+                }
+            }
+
+            .icon-stackoverflow {
+                color: #ef8236;
+
+                &:hover {
+                    color: #b46329;
                 }
             }
 
@@ -46,19 +62,11 @@
                 }
             }
 
-            .icon-itch {
-                color: #fa5c5c;
-
-                &:hover {
-                    color: #c90019;
-                }
-            }
-
             .icon-linkedin {
                 color: #0077b5;
 
                 &:hover {
-                    color: #3860b2;
+                    color: #203766;
                 }
             }
         }
