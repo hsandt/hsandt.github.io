@@ -180,6 +180,46 @@ table.th-width-20-percent {
 
 // Portfolio custom styling
 
+.portfolio-grid {
+    display: flex;
+    flex-wrap: wrap;
+
+    .portfolio-thumbnail {
+        // thumbnail must be non-static so position:absolute works on
+        // .portfolio-thumbnail-overlay below to place it relatively to thumbnail
+        position: relative;
+
+        // include padding in the width so we can really fit
+        // 3 entries at 33% (actually a little more since we add a counter-margin)
+        box-sizing: border-box;
+        width: 33.8%;
+
+        // padding between thumbnails with counter-margin on the left to still align left
+        padding: 5px;
+        margin-left: -5px;
+
+        // make image brighter on hover
+        img:hover {
+            filter:brightness(1.3);
+        }
+
+        .portfolio-thumbnail-overlay {
+            position: absolute;
+            // set top and left to match padding so text is really placed at the top-left corner
+            // of the thumbnail
+            top: 5px;
+            left: 5px;
+            // do not let the background overlap the padding on the right when document width
+            // is very small and thumbnails are very small too as a result
+            margin-right: 5px;
+            // padding with semi-transparent background and contrasting color for readability
+            padding: 5px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+        }
+    }
+}
+
 // center header text between two thick horizontal lines with padding
 .portfolio-item {
 
@@ -248,8 +288,8 @@ table.th-width-20-percent {
     .grid {
         margin-top: 10px;
         margin-bottom: $spacing-unit * .5;
-        // a small trick equivalent to display: flex; flex-wrap: wrap;
-        display: table;
+        display: flex;
+        flex-wrap: wrap;
 
         img {
             // include padding in the width so we can really fit

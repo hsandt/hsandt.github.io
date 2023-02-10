@@ -2,6 +2,7 @@
 layout: portfolio_item
 title: "Ghost Recon: Breakpoint"
 subtitle: "Open-world RPG military shooter"
+thumbnail: "Ghost-Recon-Breakpoint-Thumbnail-420x420.jpg"
 categories: video-game
 youtube:
   id: 5dcI6CZJI7Y

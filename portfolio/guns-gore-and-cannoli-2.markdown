@@ -2,6 +2,7 @@
 layout: portfolio_item
 title: "Guns, Gore & Cannoli 2"
 subtitle: "Over-the-top run ‘n gun"
+thumbnail: "GGC2-Thumbnail-420x420.png"
 categories: video-game
 youtube:
   id: aoXyO38tR5A

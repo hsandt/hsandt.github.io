@@ -2,6 +2,7 @@
 layout: portfolio_item
 title: "Hotshot Racing"
 subtitle: "Retro arcade-style racing game"
+thumbnail: "Hotshot-Racing-Thumbnail-420x420.png"
 categories: video-game
 youtube:
   id: Qce9nk7hkYg

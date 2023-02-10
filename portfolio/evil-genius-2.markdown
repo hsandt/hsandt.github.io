@@ -2,6 +2,7 @@
 layout: portfolio_item
 title: "Evil Genius 2: World Domination"
 subtitle: "Satirical spy-fi lair builder"
+thumbnail: "Evil-Genius-2-Thumbnail-420x420.png"
 categories: video-game
 youtube:
   id: HieJmZ3tsdQ
