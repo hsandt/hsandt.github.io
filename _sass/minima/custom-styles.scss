@@ -243,15 +243,41 @@ table.th-width-20-percent {
 
     // video and metadata at the top of a portfolio item
     .post-top {
-        display: flex;
-    
         .embedded-video {
-            padding: 0 20px 0 0;
+            iframe {
+                // small display
+                width: $youtube-width-small-display;
+                height: $youtube-height-small-display;
+            }
+        }
+
+        // large display
+        @media screen and (min-width: $on-large) {
+            // only worth wrapping on large display
+            display: flex;
+            flex-wrap: wrap;
+
+            .embedded-video {
+                // in large display, metatable may appear on the right of the video,
+                // in which case padding to the right makes it more readable
+                padding: 0 20px 0 0;
+    
+                iframe {
+                    width: $youtube-width-large-display;
+                    height: $youtube-height-large-display;
+                }
+            }
         }
     }
 
     // metadata table
     table.metadata {
+        // set max width to make sure that wrapping doesn't occur until content width
+        // is small enough
+        // take minima .wrapper max-width formula (in large case, since this is when we must
+        // decide whether to wrap or not; mobile format should always wrap)
+        max-width: calc(#{$content-width} - (#{$spacing-unit} * 2) - (#{$youtube-width-large-display}) - 50px);
+
         // no outside borders
         border: none;
     
@@ -293,13 +319,16 @@ table.th-width-20-percent {
 
         img {
             // include padding in the width so we can really fit
-            // 2 entries at 50%
+            // 2 entries at 50% in the large display case more below
             box-sizing: border-box;
             padding: 5px 5px;
-            max-width: 50%;
 
-            @media screen and (max-width: 800px) {
-                max-width: 100%;
+            // small display
+            max-width: 100%;
+            
+            // large display
+            @media screen and (min-width: $on-large) {
+                max-width: 50%;
             }
         }
     }

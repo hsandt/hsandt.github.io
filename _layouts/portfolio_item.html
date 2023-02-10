@@ -10,21 +10,23 @@ layout: default
 
   <div class="post-top">
     <div class="embedded-video">
-      <iframe width="470" height="264" src="https://www.youtube.com/embed/{{ page.youtube.id }}"
+      <iframe src="https://www.youtube.com/embed/{{ page.youtube.id }}"
         title="{{ page.youtube.title }}" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen>
       </iframe>
     </div>
     <table class="metadata">
+      <tbody>
         {% for field in page.meta %}
-            <tr>
-                <!-- Convert to readable string, e.g. "production-time" -> "Production time"
-                     with a few filters until we get proper localization -->
-                <th>{{ field[0] | capitalize | replace: "-", " " }}</td>
-                <td>{{ field[1] }}</td>
-            </tr>
+        <tr>
+          <!-- Convert to readable string, e.g. "production-time" -> "Production time"
+            with a few filters until we get proper localization -->
+          <th>{{ field[0] | capitalize | replace: "-", " " }}</td>
+          <td>{{ field[1] }}</td>
+        </tr>
         {% endfor %}
+        </tbody>
     </table>
   </div>
 
