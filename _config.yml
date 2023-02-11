@@ -42,6 +42,7 @@ minima:
   social_links:
     - { platform: itchio, user_url: "https://komehara.itch.io/" }
     - { platform: github,  user_url: "https://github.com/hsandt" }
+    - { platform: bitbucket, user_url: "https://bitbucket.org/hsandt/" }
     - { platform: stackoverflow, user_url: "https://stackoverflow.com/users/3256073/hsandt" }
     - { platform: twitter, user_url: "https://twitter.com/n_huulong" }
     - { platform: youtube, user_url: "https://www.youtube.com/channel/UCscc8AXbgMQCjzxsXLVvCsg" }
