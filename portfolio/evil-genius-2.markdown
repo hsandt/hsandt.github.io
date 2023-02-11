@@ -22,7 +22,7 @@ meta:
 
 ## Description
  
-[Evil Genius 2](https://evilgeniusgame.com/){:target="_blank"} is a construction and management simulation game with a touch of modern design. It features the traditional Time Attack and Grand Prix for a single player, while up to 4 players offline and 8 players online can compete in Arcade races or more exotic game modes such as Cops & Robbers and Drive or Explode. Drift, slipstream behind your opponents and boost toward the goal! Based on Lucky Mountain Games’ prototype [Racing Apex](https://twitter.com/racingapexgame){:target="_blank"}.
+[Evil Genius 2](https://evilgeniusgame.com/){:target="_blank"} is a construction and management simulation game where you build a hidden lair and manage minions in your quest to conquer the world. In this game packed with old spy movie references, you can upgrade your tech, send minions on missions across the world or even directly control your genius and their henchmen to fight the Forces of Justice and establish true world domination.
 
 ## Screenshots
 
