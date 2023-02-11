@@ -28,6 +28,10 @@
       </div>
       <div class="footer-col">
         <p>{{ site.description | escape }}</p>
+        {% if jekyll.environment == 'development' %}
+        <!-- Dummy text to verify that the website has been built for development or production -->
+        <p>[ DEVELOPMENT MODE ]</p>
+        {% endif %}
       </div>
     </div>
 
