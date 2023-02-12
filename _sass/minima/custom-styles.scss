@@ -149,6 +149,7 @@
     }
 }
 
+
 // Resume custom styling
 
 table {
@@ -208,6 +209,7 @@ table.th-width-20-percent {
         break-inside: avoid-page;
     }
 }
+
 
 // Portfolio custom styling
 
@@ -364,6 +366,16 @@ table.th-width-20-percent {
         }
     }
 }
+
+
+// Blog top custom styling
+
+.blog-thumbnail {
+    height: 200px;
+}
+
+
+// Footer custom styling
 
 // _layout.scss override
 .site-footer {

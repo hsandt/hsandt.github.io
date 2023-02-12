@@ -2,6 +2,7 @@
 layout: post
 title:  "Combat Platformer in Godot 4: Feb 2023 progress"
 tag: godot
+thumbnail: "2023-02-12-godot-combat-platformer-thumbnail.png"
 ---
 
 I started working on a side-scrolling combat platformer prototype in Godot 4.

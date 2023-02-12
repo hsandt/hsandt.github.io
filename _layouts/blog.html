@@ -25,7 +25,10 @@ layout: page
         <span class="post-meta">{{ post.date | date: date_format }}</span>
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
+            <p>{{ post.title | escape }}</p>
+            {%- if post.thumbnail -%}
+            <img class="blog-thumbnail" src="/assets/pictures/blog/{{ post.thumbnail }}" alt="Thumbnail for {{ post.title }}">
+            {%- endif -%}
           </a>
         </h3>
         {%- if site.show_excerpts -%}
