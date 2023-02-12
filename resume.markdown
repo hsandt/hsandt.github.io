@@ -104,7 +104,7 @@ I have 3 years of experience working in studios on shipped games for PC & consol
 
     <p class="work-info-header">2016.08 - 2016.12 @ Crazy Monkey Studios, Belgium (internship)</p>
     <p>Indie run 'n' gun for Windows, Switch, PS4, Xbox One</p>
-    <p>Unity - Gameplay programming, Level design (C#)</p>
+    <p>Unity - Gameplay programming (C#), Level design</p>
     <ul>
         <li>Prototype level section (whiteboxing, enemy spawns, events)</li>
         <li>Bomber enemy behavior</li>
@@ -117,11 +117,16 @@ I have 3 years of experience working in studios on shipped games for PC & consol
 
     <h2>Personal projects</h2>
 
-    <h3>pico sonic</h3>
+    <h3>pico sonic (fan game)</h3>
 
     <p class="work-info-header">2018.05 - present</p>
-    <p>A partial 8-bit demake of Sonic 3</p>
-    <p>PICO-8 - Programming, Level rebuild, Sprite/SFX adaptation, BGM adjustments</p>
+    <p>A partial 8-bit demake of Sonic 3 made with PICO-8</p>
+    <ul>
+        <li>Programming (Lua): menu, cinematics, in-game</li>
+        <li>Rebuild beginning of first level to work without enemies</li>
+        <li>Adapt sprite and SFX to lo-res</li>
+        <li>Convert and adjust FamiTracker BGM made by a chiptune composer for PICO-8</li>
+    </ul>
 
 </div>
 
