@@ -4,7 +4,7 @@ title: Resume
 permalink: /resume/
 ---
 
-You can read my resume below or [download the PDF](/assets/documents/Resume Long Nguyen Huu (scale 80).pdf){:target="_blank"}.
+You can read my resume below or [download the PDF](/assets/documents/Resume Long Nguyen Huu.pdf){:target="_blank"}.
 
 # Long Nguyen Huu
 
@@ -47,135 +47,128 @@ I have 3 years of experience working in studios on shipped games for PC & consol
     </tbody>
 </table>
 
-## Professional experience
+<div class="avoid-break-page">
 
-### Evil Genius 2
+    <h2>Professional experience</h2>
 
-**2020.10 - 2022.02 @ Rebellion Warwick, UK (remote work from France)**
+    <h3>Evil Genius 2</h3>
 
-Construction and management simulation for Windows, PS4, PS5, Xbox One, Xbox Series S/X
+    <p class="work-info-header">2020.10 - 2022.02 @ Rebellion Warwick, UK (remote work from France)</p>
+    <p>Construction and management simulation for Windows, PS4, PS5, Xbox One, Xbox Series S/X</p>
+    <p>In-house engine - Gameplay & UI programming (C++)</p>
+    <ul>
+        <li>Temperature system</li>
+        <li>Trap combo tracking system</li>
+        <li>New events & objectives</li>
+        <li>Misc fixes & improvements</li>
+    </ul>
 
-In-house engine - Gameplay & UI programming (C++)
+</div>
 
-- Temperature system
-- Trap combo tracking system
-- New events & objectives
-- Misc fixes & improvements
+<div class="avoid-break-page">
 
-### Hotshot Racing
+    <h3>Hotshot Racing</h3>
 
-**2018.11 - 2019.11 @ Sumo Digital, UK**
+    <p class="work-info-header">2018.11 - 2019.11 @ Sumo Digital, UK</p>
+    <p>Racing game for Windows, Switch, PS4, Xbox One</p>
+    <p>In-house engine - Gameplay, UI & Tool programming (C++/C#)</p>
+    <ul>
+        <li>Money reward & car part unlock/purchase system</li>
+        <li>Improve track surface effects on gameplay and aesthetics</li>
+        <li>Improve boost system (charge gauge, PFX and screen FX, HUD animations)</li>
+        <li>Improve debug tool (C#)</li>
+    </ul>
 
-Racing game for Windows, Switch, PS4, Xbox One
+</div>
 
-In-house engine - Gameplay, UI & Tool programming (C++/C#)
+<div class="avoid-break-page">
 
-* Money reward & car part unlock/purchase system
-* Improve track surface effects on gameplay and aesthetics
-* Improve boost system (charge gauge, PFX and screen FX, HUD animations)
-* Improve debug tool (C#)
+    <h3>Ghost Recon: Breakpoint</h3>
 
-### Ghost Recon: Breakpoint
+    <p class="work-info-header">2017.08 - 2018.08 @ Ubisoft Paris, France</p>
+    <p>Open-world military shooter for Windows, PS4, Xbox One</p>
+    <p>In-house engine - Gameplay programming in 3C team (C++)</p>
+    <p>Implement the following systems:</p>
+    <ul>
+        <li>Injury system</li>
+        <li>Suppressive fire</li>
+        <li>Sync shot drone</li>
+    </ul>
+    <p>and plug the associated character animations, voices, camera FX and/or network replication</p>
 
-**2017.08 - 2018.08 @ Ubisoft Paris, France**
+</div>
 
-Open-world military shooter for Windows, PS4, Xbox One
+<div class="avoid-break-page">
 
-In-house engine - Gameplay programming in 3C team (C++)
+    <h3>Guns, Gore & Cannoli 2</h3>
 
-Implement the following systems:
+    <p class="work-info-header">2016.08 - 2016.12 @ Crazy Monkey Studios, Belgium (internship)</p>
+    <p>Indie run 'n' gun for Windows, Switch, PS4, Xbox One</p>
+    <p>Unity - Gameplay programming (C#), Level design</p>
+    <ul>
+        <li>Prototype level section (whiteboxing, enemy spawns, events)</li>
+        <li>Bomber enemy behavior</li>
+        <li>Improve AI navmesh generation and custom editor tools</li>
+    </ul>
 
-* Injury system
-* Suppressive fire
-* Sync shot drone
+</div>
 
-and plug the associated character animations, voices, camera FX and/or network replication
+<div class="avoid-break-page">
 
-### Guns, Gore & Cannoli 2
+    <h2>Personal projects</h2>
 
-**2016.08 - 2016.12 @ Crazy Monkey Studios, Belgium (internship)**
+    <h3>pico sonic (fan game)</h3>
 
-Indie run 'n' gun for Windows, Switch, PS4, Xbox One
+    <p class="work-info-header">2018.05 - present</p>
+    <p>A partial 8-bit demake of Sonic 3 made with PICO-8</p>
+    <ul>
+        <li>Programming (Lua): menu, cinematics, in-game</li>
+        <li>Rebuild beginning of first level to work without enemies</li>
+        <li>Adapt sprite and SFX to lo-res</li>
+        <li>Convert and adjust FamiTracker BGM made by a chiptune composer for PICO-8</li>
+    </ul>
 
-Unity - Gameplay programming, Level design (C#)
+</div>
 
-* Prototype level section (whiteboxing, enemy spawns, events)
-* Bomber enemy behavior
-* Improve AI navmesh generation and custom editor tools
+<div class="avoid-break-page">
 
-## Personal projects
+    <h2>Education</h2>
 
-### pico sonic
+    <p class="work-info-header">Postgraduate degree in Interactive Digital Experiences</p>
+    <p>2015.10 - 2017.02 @ Gobelins (Paris, France) - Enjmin (Angoulême, France)</p>
 
-**2018.05 - present**
+    <p class="work-info-header">Double degree of Master of Science in Engineering</p>
+    <p>2011.09 - 2015.08 @ Supélec (France) - Keio University (Japan)</p>
 
-A partial 8-bit demake of Sonic 3 made with PICO-8.
+</div>
 
-Play: [https://komehara.itch.io/pico-sonic](https://komehara.itch.io/pico-sonic){:target="_blank"}
+<div class="avoid-break-page">
 
-Source code: [https://github.com/hsandt/sonic-pico8](https://github.com/hsandt/sonic-pico8){:target="_blank"}
+    <h2>Languages</h2>
 
-### Shmup Framework
+    <table class="invisible-table narrow-rows width-400 th-width-20-percent">
+        <tbody>
+            <tr>
+                <th>English</th>
+                <td>Full working proficiency</td>
+            </tr>
+            <tr>
+                <th>French</th>
+                <td>Native</td>
+            </tr>
+            <tr>
+                <th>Japanese</th>
+                <td>Limited working proficiency</td>
+            </tr>
+            <tr>
+                <th>German</th>
+                <td>Limited working proficiency</td>
+            <tr>
+            </tr>
+                <th>Korean</th>
+                <td>Beginner</td>
+            </tr>
+        </tbody>
+    </table>
 
-**2021.02 - present**
-
-A WIP side-scrolling shoot 'em up framework for Unity. Currently features:
-
-- health, weapon and power-up system with basic bullet patterns
-- level editor based on enemy waves with tunable motion paths
-- behavior tree to customize weapon and enemy behavior
-
-Source code: [https://bitbucket.org/hsandt/shmup-framework/src/develop/](https://bitbucket.org/hsandt/shmup-framework/src/develop/){:target="_blank"}
-
-Demo game: [https://komehara.itch.io/eminent-domain](https://komehara.itch.io/eminent-domain){:target="_blank"}
-
-### RPG Framework
-
-**2021.07 - present**
-
-A WIP classic RPG framework for Unity. Currently features:
-
-- turn-based battle
-- stats, buff, status ailment system
-- data-driven skills that can be extended easily
-
-Currently closed source
-
-Demo game: [https://komehara.itch.io/eras-time-delivery-service](https://komehara.itch.io/eras-time-delivery-service){:target="_blank"}
-
-## Education
-
-**Postgraduate degree in Interactive Digital Experiences**
-
-2015.10 - 2017.02 @ Gobelins (Paris, France) - Enjmin (Angoulême, France)
-
-**Double degree of Master of Science in Engineering**
-
-2011.09 - 2015.08 @ Supélec (France) - Keio University (Japan)
-
-## Languages
-
-<table class="invisible-table narrow-rows width-400 th-width-20-percent">
-    <tbody>
-        <tr>
-            <th>English</th>
-            <td>Full working proficiency</td>
-        </tr>
-        <tr>
-            <th>French</th>
-            <td>Native</td>
-        </tr>
-        <tr>
-            <th>Japanese</th>
-            <td>Limited working proficiency</td>
-        </tr>
-        <tr>
-            <th>German</th>
-            <td>Limited working proficiency</td>
-        <tr>
-        </tr>
-            <th>Korean</th>
-            <td>Beginner</td>
-        </tr>
-    </tbody>
-</table>
+</div>
