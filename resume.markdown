@@ -4,7 +4,7 @@ title: Resume
 permalink: /resume/
 ---
 
-You can read my resume below or [download the PDF](/assets/documents/Resume Long Nguyen Huu (scale 80).pdf){:target="_blank"}.
+You can read my resume below or [download the PDF](/assets/documents/Resume Long Nguyen Huu.pdf){:target="_blank"}.
 
 # Long Nguyen Huu
 
@@ -117,11 +117,11 @@ I have 3 years of experience working in studios on shipped games for PC & consol
 
     <h2>Personal projects</h2>
 
-    <ul>
-        <li>pico sonic (2018.05 - present): A partial 8-bit demake of Sonic 3 made with PICO-8.</li>
-        <li>Shmup Framework (2021.02 - present): A WIP side-scrolling shoot 'em up framework for </li>Unity.
-        <li>RPG Framework (2021.07 - present): A WIP classic RPG framework for Unity.</li>
-    </ul>
+    <h3>pico sonic</h3>
+
+    <p class="work-info-header">2018.05 - present</p>
+    <p>A partial 8-bit demake of Sonic 3</p>
+    <p>PICO-8 - Programming, Level rebuild, Sprite/SFX adaptation, BGM adjustments</p>
 
 </div>
 
