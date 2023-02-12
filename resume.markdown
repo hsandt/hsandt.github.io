@@ -54,11 +54,8 @@ I have 3 years of experience working in studios on shipped games for PC & consol
     <h3>Evil Genius 2</h3>
 
     <p class="work-info-header">2020.10 - 2022.02 @ Rebellion Warwick, UK (remote work from France)</p>
-
-    Construction and management simulation for Windows, PS4, PS5, Xbox One, Xbox Series S/X
-
-    In-house engine - Gameplay & UI programming (C++)
-
+    <p>Construction and management simulation for Windows, PS4, PS5, Xbox One, Xbox Series S/X</p>
+    <p>In-house engine - Gameplay & UI programming (C++)</p>
     <ul>
         <li>Temperature system</li>
         <li>Trap combo tracking system</li>
@@ -73,11 +70,8 @@ I have 3 years of experience working in studios on shipped games for PC & consol
     <h3>Hotshot Racing</h3>
 
     <p class="work-info-header">2018.11 - 2019.11 @ Sumo Digital, UK</p>
-
-    Racing game for Windows, Switch, PS4, Xbox One
-
-    In-house engine - Gameplay, UI & Tool programming (C++/C#)
-
+    <p>Racing game for Windows, Switch, PS4, Xbox One</p>
+    <p>In-house engine - Gameplay, UI & Tool programming (C++/C#)</p>
     <ul>
         <li>Money reward & car part unlock/purchase system</li>
         <li>Improve track surface effects on gameplay and aesthetics</li>
@@ -92,20 +86,15 @@ I have 3 years of experience working in studios on shipped games for PC & consol
     <h3>Ghost Recon: Breakpoint</h3>
 
     <p class="work-info-header">2017.08 - 2018.08 @ Ubisoft Paris, France</p>
-
-    Open-world military shooter for Windows, PS4, Xbox One
-
-    In-house engine - Gameplay programming in 3C team (C++)
-
-    Implement the following systems:
-
+    <p>Open-world military shooter for Windows, PS4, Xbox One</p>
+    <p>In-house engine - Gameplay programming in 3C team (C++)</p>
+    <p>Implement the following systems:</p>
     <ul>
         <li>Injury system</li>
         <li>Suppressive fire</li>
         <li>Sync shot drone</li>
     </ul>
-
-    and plug the associated character animations, voices, camera FX and/or network replication
+    <p>and plug the associated character animations, voices, camera FX and/or network replication</p>
 
 </div>
 
@@ -114,11 +103,8 @@ I have 3 years of experience working in studios on shipped games for PC & consol
     <h3>Guns, Gore & Cannoli 2</h3>
 
     <p class="work-info-header">2016.08 - 2016.12 @ Crazy Monkey Studios, Belgium (internship)</p>
-
-    Indie run 'n' gun for Windows, Switch, PS4, Xbox One
-
-    Unity - Gameplay programming, Level design (C#)
-
+    <p>Indie run 'n' gun for Windows, Switch, PS4, Xbox One</p>
+    <p>Unity - Gameplay programming, Level design (C#)</p>
     <ul>
         <li>Prototype level section (whiteboxing, enemy spawns, events)</li>
         <li>Bomber enemy behavior</li>
