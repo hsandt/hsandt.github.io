@@ -47,135 +47,137 @@ I have 3 years of experience working in studios on shipped games for PC & consol
     </tbody>
 </table>
 
-## Professional experience
+<div class="avoid-break-page">
 
-### Evil Genius 2
+    <h2>Professional experience</h2>
 
-**2020.10 - 2022.02 @ Rebellion Warwick, UK (remote work from France)**
+    <h3>Evil Genius 2</h3>
 
-Construction and management simulation for Windows, PS4, PS5, Xbox One, Xbox Series S/X
+    <p class="work-info-header">2020.10 - 2022.02 @ Rebellion Warwick, UK (remote work from France)</p>
 
-In-house engine - Gameplay & UI programming (C++)
+    Construction and management simulation for Windows, PS4, PS5, Xbox One, Xbox Series S/X
 
-- Temperature system
-- Trap combo tracking system
-- New events & objectives
-- Misc fixes & improvements
+    In-house engine - Gameplay & UI programming (C++)
 
-### Hotshot Racing
+    <ul>
+        <li>Temperature system</li>
+        <li>Trap combo tracking system</li>
+        <li>New events & objectives</li>
+        <li>Misc fixes & improvements</li>
+    </ul>
 
-**2018.11 - 2019.11 @ Sumo Digital, UK**
+</div>
 
-Racing game for Windows, Switch, PS4, Xbox One
+<div class="avoid-break-page">
 
-In-house engine - Gameplay, UI & Tool programming (C++/C#)
+    <h3>Hotshot Racing</h3>
 
-* Money reward & car part unlock/purchase system
-* Improve track surface effects on gameplay and aesthetics
-* Improve boost system (charge gauge, PFX and screen FX, HUD animations)
-* Improve debug tool (C#)
+    <p class="work-info-header">2018.11 - 2019.11 @ Sumo Digital, UK</p>
 
-### Ghost Recon: Breakpoint
+    Racing game for Windows, Switch, PS4, Xbox One
 
-**2017.08 - 2018.08 @ Ubisoft Paris, France**
+    In-house engine - Gameplay, UI & Tool programming (C++/C#)
 
-Open-world military shooter for Windows, PS4, Xbox One
+    <ul>
+        <li>Money reward & car part unlock/purchase system</li>
+        <li>Improve track surface effects on gameplay and aesthetics</li>
+        <li>Improve boost system (charge gauge, PFX and screen FX, HUD animations)</li>
+        <li>Improve debug tool (C#)</li>
+    </ul>
 
-In-house engine - Gameplay programming in 3C team (C++)
+</div>
 
-Implement the following systems:
+<div class="avoid-break-page">
 
-* Injury system
-* Suppressive fire
-* Sync shot drone
+    <h3>Ghost Recon: Breakpoint</h3>
 
-and plug the associated character animations, voices, camera FX and/or network replication
+    <p class="work-info-header">2017.08 - 2018.08 @ Ubisoft Paris, France</p>
 
-### Guns, Gore & Cannoli 2
+    Open-world military shooter for Windows, PS4, Xbox One
 
-**2016.08 - 2016.12 @ Crazy Monkey Studios, Belgium (internship)**
+    In-house engine - Gameplay programming in 3C team (C++)
 
-Indie run 'n' gun for Windows, Switch, PS4, Xbox One
+    Implement the following systems:
 
-Unity - Gameplay programming, Level design (C#)
+    <ul>
+        <li>Injury system</li>
+        <li>Suppressive fire</li>
+        <li>Sync shot drone</li>
+    </ul>
 
-* Prototype level section (whiteboxing, enemy spawns, events)
-* Bomber enemy behavior
-* Improve AI navmesh generation and custom editor tools
+    and plug the associated character animations, voices, camera FX and/or network replication
 
-## Personal projects
+</div>
 
-### pico sonic
+<div class="avoid-break-page">
 
-**2018.05 - present**
+    <h3>Guns, Gore & Cannoli 2</h3>
 
-A partial 8-bit demake of Sonic 3 made with PICO-8.
+    <p class="work-info-header">2016.08 - 2016.12 @ Crazy Monkey Studios, Belgium (internship)</p>
 
-Play: [https://komehara.itch.io/pico-sonic](https://komehara.itch.io/pico-sonic){:target="_blank"}
+    Indie run 'n' gun for Windows, Switch, PS4, Xbox One
 
-Source code: [https://github.com/hsandt/sonic-pico8](https://github.com/hsandt/sonic-pico8){:target="_blank"}
+    Unity - Gameplay programming, Level design (C#)
 
-### Shmup Framework
+    <ul>
+        <li>Prototype level section (whiteboxing, enemy spawns, events)</li>
+        <li>Bomber enemy behavior</li>
+        <li>Improve AI navmesh generation and custom editor tools</li>
+    </ul>
 
-**2021.02 - present**
+</div>
 
-A WIP side-scrolling shoot 'em up framework for Unity. Currently features:
+<div class="avoid-break-page">
 
-- health, weapon and power-up system with basic bullet patterns
-- level editor based on enemy waves with tunable motion paths
-- behavior tree to customize weapon and enemy behavior
+    <h2>Personal projects</h2>
 
-Source code: [https://bitbucket.org/hsandt/shmup-framework/src/develop/](https://bitbucket.org/hsandt/shmup-framework/src/develop/){:target="_blank"}
+    <ul>
+        <li>pico sonic (2018.05 - present): A partial 8-bit demake of Sonic 3 made with PICO-8.</li>
+        <li>Shmup Framework (2021.02 - present): A WIP side-scrolling shoot 'em up framework for </li>Unity.
+        <li>RPG Framework (2021.07 - present): A WIP classic RPG framework for Unity.</li>
+    </ul>
 
-Demo game: [https://komehara.itch.io/eminent-domain](https://komehara.itch.io/eminent-domain){:target="_blank"}
+</div>
 
-### RPG Framework
+<div class="avoid-break-page">
 
-**2021.07 - present**
+    <h2>Education</h2>
 
-A WIP classic RPG framework for Unity. Currently features:
+    <p class="work-info-header">Postgraduate degree in Interactive Digital Experiences</p>
+    <p>2015.10 - 2017.02 @ Gobelins (Paris, France) - Enjmin (Angoulême, France)</p>
 
-- turn-based battle
-- stats, buff, status ailment system
-- data-driven skills that can be extended easily
+    <p class="work-info-header">Double degree of Master of Science in Engineering</p>
+    <p>2011.09 - 2015.08 @ Supélec (France) - Keio University (Japan)</p>
 
-Currently closed source
+</div>
 
-Demo game: [https://komehara.itch.io/eras-time-delivery-service](https://komehara.itch.io/eras-time-delivery-service){:target="_blank"}
+<div class="avoid-break-page">
 
-## Education
+    <h2>Languages</h2>
 
-**Postgraduate degree in Interactive Digital Experiences**
+    <table class="invisible-table narrow-rows width-400 th-width-20-percent">
+        <tbody>
+            <tr>
+                <th>English</th>
+                <td>Full working proficiency</td>
+            </tr>
+            <tr>
+                <th>French</th>
+                <td>Native</td>
+            </tr>
+            <tr>
+                <th>Japanese</th>
+                <td>Limited working proficiency</td>
+            </tr>
+            <tr>
+                <th>German</th>
+                <td>Limited working proficiency</td>
+            <tr>
+            </tr>
+                <th>Korean</th>
+                <td>Beginner</td>
+            </tr>
+        </tbody>
+    </table>
 
-2015.10 - 2017.02 @ Gobelins (Paris, France) - Enjmin (Angoulême, France)
-
-**Double degree of Master of Science in Engineering**
-
-2011.09 - 2015.08 @ Supélec (France) - Keio University (Japan)
-
-## Languages
-
-<table class="invisible-table narrow-rows width-400 th-width-20-percent">
-    <tbody>
-        <tr>
-            <th>English</th>
-            <td>Full working proficiency</td>
-        </tr>
-        <tr>
-            <th>French</th>
-            <td>Native</td>
-        </tr>
-        <tr>
-            <th>Japanese</th>
-            <td>Limited working proficiency</td>
-        </tr>
-        <tr>
-            <th>German</th>
-            <td>Limited working proficiency</td>
-        <tr>
-        </tr>
-            <th>Korean</th>
-            <td>Beginner</td>
-        </tr>
-    </tbody>
-</table>
+</div>

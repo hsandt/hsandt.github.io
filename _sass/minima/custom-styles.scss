@@ -194,6 +194,16 @@ table.th-width-20-percent {
     }
 }
 
+.work-info-header {
+    font-weight: bold;
+}
+
+@media print {
+    .avoid-break-page {
+        break-inside: avoid-page;
+    }
+}
+
 // Portfolio custom styling
 
 .portfolio-grid {
