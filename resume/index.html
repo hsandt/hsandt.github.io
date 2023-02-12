@@ -33,7 +33,7 @@
 <li>
   <a rel="me" href="https://komehara.itch.io/" target="_blank" title="itchio">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-itchio (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-itchio">
       <use xlink:href="/assets/minima-social-icons.svg#itchio"></use>
     </svg>
@@ -44,7 +44,7 @@
 <li>
   <a rel="me" href="https://github.com/hsandt" target="_blank" title="github">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-github (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-github">
       <use xlink:href="/assets/minima-social-icons.svg#github"></use>
     </svg>
@@ -53,9 +53,20 @@
 <!-- Customized from https://github.com/jekyll/minima/blob/master/_includes/social-item.html
      (2022-12-22) under MIT license -->
 <li>
+  <a rel="me" href="https://bitbucket.org/hsandt/" target="_blank" title="bitbucket">
+    <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
+    <svg class="svg-icon icon-bitbucket">
+      <use xlink:href="/assets/minima-social-icons.svg#bitbucket"></use>
+    </svg>
+  </a>
+</li>
+<!-- Customized from https://github.com/jekyll/minima/blob/master/_includes/social-item.html
+     (2022-12-22) under MIT license -->
+<li>
   <a rel="me" href="https://stackoverflow.com/users/3256073/hsandt" target="_blank" title="stackoverflow">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-stackoverflow (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-stackoverflow">
       <use xlink:href="/assets/minima-social-icons.svg#stackoverflow"></use>
     </svg>
@@ -66,7 +77,7 @@
 <li>
   <a rel="me" href="https://twitter.com/n_huulong" target="_blank" title="twitter">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-twitter (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-twitter">
       <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
     </svg>
@@ -77,7 +88,7 @@
 <li>
   <a rel="me" href="https://www.youtube.com/channel/UCscc8AXbgMQCjzxsXLVvCsg" target="_blank" title="youtube">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-youtube (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-youtube">
       <use xlink:href="/assets/minima-social-icons.svg#youtube"></use>
     </svg>
@@ -88,7 +99,7 @@
 <li>
   <a rel="me" href="https://www.linkedin.com/in/huulong/" target="_blank" title="linkedin">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-linkedin (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-linkedin">
       <use xlink:href="/assets/minima-social-icons.svg#linkedin"></use>
     </svg>
@@ -106,7 +117,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/resume/">Resume</a></div>
+        <div class="trigger"><a class="page-link" href="/resume/">Resume</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -120,7 +131,7 @@
   </header>
 
   <div class="post-content">
-    <p>You can read my resume below or <a href="/assets/documents/Resume Long Nguyen Huu (scale 80).pdf" target="_blank">download the PDF</a>.</p>
+    <p>You can read my resume below or <a href="/assets/documents/Resume Long Nguyen Huu.pdf" target="_blank">download the PDF</a>.</p>
 
 <h1 id="long-nguyen-huu">Long Nguyen Huu</h1>
 
@@ -163,150 +174,131 @@
     </tbody>
 </table>
 
-<h2 id="professional-experience">Professional experience</h2>
+<div class="avoid-break-page">
 
-<h3 id="evil-genius-2">Evil Genius 2</h3>
+    <h2>Professional experience</h2>
 
-<p><strong>2020.10 - 2022.02 @ Rebellion Warwick, UK (remote work from France)</strong></p>
+    <h3>Evil Genius 2</h3>
 
-<p>Construction and management simulation for Windows, PS4, PS5, Xbox One, Xbox Series S/X</p>
+    <p class="work-info-header">2020.10 - 2022.02 @ Rebellion Warwick, UK (remote work from France)</p>
+    <p>Construction and management simulation for Windows, PS4, PS5, Xbox One, Xbox Series S/X</p>
+    <p>In-house engine - Gameplay &amp; UI programming (C++)</p>
+    <ul>
+        <li>Temperature system</li>
+        <li>Trap combo tracking system</li>
+        <li>New events &amp; objectives</li>
+        <li>Misc fixes &amp; improvements</li>
+    </ul>
 
-<p>In-house engine - Gameplay &amp; UI programming (C++)</p>
+</div>
 
-<ul>
-  <li>Temperature system</li>
-  <li>Trap combo tracking system</li>
-  <li>New events &amp; objectives</li>
-  <li>Misc fixes &amp; improvements</li>
-</ul>
+<div class="avoid-break-page">
 
-<h3 id="hotshot-racing">Hotshot Racing</h3>
+    <h3>Hotshot Racing</h3>
 
-<p><strong>2018.11 - 2019.11 @ Sumo Digital, UK</strong></p>
+    <p class="work-info-header">2018.11 - 2019.11 @ Sumo Digital, UK</p>
+    <p>Racing game for Windows, Switch, PS4, Xbox One</p>
+    <p>In-house engine - Gameplay, UI &amp; Tool programming (C++/C#)</p>
+    <ul>
+        <li>Money reward &amp; car part unlock/purchase system</li>
+        <li>Improve track surface effects on gameplay and aesthetics</li>
+        <li>Improve boost system (charge gauge, PFX and screen FX, HUD animations)</li>
+        <li>Improve debug tool (C#)</li>
+    </ul>
 
-<p>Racing game for Windows, Switch, PS4, Xbox One</p>
+</div>
 
-<p>In-house engine - Gameplay, UI &amp; Tool programming (C++/C#)</p>
+<div class="avoid-break-page">
 
-<ul>
-  <li>Money reward &amp; car part unlock/purchase system</li>
-  <li>Improve track surface effects on gameplay and aesthetics</li>
-  <li>Improve boost system (charge gauge, PFX and screen FX, HUD animations)</li>
-  <li>Improve debug tool (C#)</li>
-</ul>
+    <h3>Ghost Recon: Breakpoint</h3>
 
-<h3 id="ghost-recon-breakpoint">Ghost Recon: Breakpoint</h3>
+    <p class="work-info-header">2017.08 - 2018.08 @ Ubisoft Paris, France</p>
+    <p>Open-world military shooter for Windows, PS4, Xbox One</p>
+    <p>In-house engine - Gameplay programming in 3C team (C++)</p>
+    <p>Implement the following systems:</p>
+    <ul>
+        <li>Injury system</li>
+        <li>Suppressive fire</li>
+        <li>Sync shot drone</li>
+    </ul>
+    <p>and plug the associated character animations, voices, camera FX and/or network replication</p>
 
-<p><strong>2017.08 - 2018.08 @ Ubisoft Paris, France</strong></p>
+</div>
 
-<p>Open-world military shooter for Windows, PS4, Xbox One</p>
+<div class="avoid-break-page">
 
-<p>In-house engine - Gameplay programming in 3C team (C++)</p>
+    <h3>Guns, Gore &amp; Cannoli 2</h3>
 
-<p>Implement the following systems:</p>
+    <p class="work-info-header">2016.08 - 2016.12 @ Crazy Monkey Studios, Belgium (internship)</p>
+    <p>Indie run 'n' gun for Windows, Switch, PS4, Xbox One</p>
+    <p>Unity - Gameplay programming (C#), Level design</p>
+    <ul>
+        <li>Prototype level section (whiteboxing, enemy spawns, events)</li>
+        <li>Bomber enemy behavior</li>
+        <li>Improve AI navmesh generation and custom editor tools</li>
+    </ul>
 
-<ul>
-  <li>Injury system</li>
-  <li>Suppressive fire</li>
-  <li>Sync shot drone</li>
-</ul>
+</div>
 
-<p>and plug the associated character animations, voices, camera FX and/or network replication</p>
+<div class="avoid-break-page">
 
-<h3 id="guns-gore--cannoli-2">Guns, Gore &amp; Cannoli 2</h3>
+    <h2>Personal projects</h2>
 
-<p><strong>2016.08 - 2016.12 @ Crazy Monkey Studios, Belgium (internship)</strong></p>
+    <h3>pico sonic (fan game)</h3>
 
-<p>Indie run ‘n’ gun for Windows, Switch, PS4, Xbox One</p>
+    <p class="work-info-header">2018.05 - present</p>
+    <p>A partial 8-bit demake of Sonic 3 made with PICO-8</p>
+    <ul>
+        <li>Programming (Lua): menu, cinematics, in-game</li>
+        <li>Rebuild beginning of first level to work without enemies</li>
+        <li>Adapt sprite and SFX to lo-res</li>
+        <li>Convert and adjust FamiTracker BGM made by a chiptune composer for PICO-8</li>
+    </ul>
 
-<p>Unity - Gameplay programming, Level design (C#)</p>
+</div>
 
-<ul>
-  <li>Prototype level section (whiteboxing, enemy spawns, events)</li>
-  <li>Bomber enemy behavior</li>
-  <li>Improve AI navmesh generation and custom editor tools</li>
-</ul>
+<div class="avoid-break-page">
 
-<h2 id="personal-projects">Personal projects</h2>
+    <h2>Education</h2>
 
-<h3 id="pico-sonic">pico sonic</h3>
+    <p class="work-info-header">Postgraduate degree in Interactive Digital Experiences</p>
+    <p>2015.10 - 2017.02 @ Gobelins (Paris, France) - Enjmin (Angoulême, France)</p>
 
-<p><strong>2018.05 - present</strong></p>
+    <p class="work-info-header">Double degree of Master of Science in Engineering</p>
+    <p>2011.09 - 2015.08 @ Supélec (France) - Keio University (Japan)</p>
 
-<p>A partial 8-bit demake of Sonic 3 made with PICO-8.</p>
+</div>
 
-<p>Play: <a href="https://komehara.itch.io/pico-sonic" target="_blank">https://komehara.itch.io/pico-sonic</a></p>
+<div class="avoid-break-page">
 
-<p>Source code: <a href="https://github.com/hsandt/sonic-pico8" target="_blank">https://github.com/hsandt/sonic-pico8</a></p>
+    <h2>Languages</h2>
 
-<h3 id="shmup-framework">Shmup Framework</h3>
+    <table class="invisible-table narrow-rows width-400 th-width-20-percent">
+        <tbody>
+            <tr>
+                <th>English</th>
+                <td>Full working proficiency</td>
+            </tr>
+            <tr>
+                <th>French</th>
+                <td>Native</td>
+            </tr>
+            <tr>
+                <th>Japanese</th>
+                <td>Limited working proficiency</td>
+            </tr>
+            <tr>
+                <th>German</th>
+                <td>Limited working proficiency</td>
+            <tr>
+            </tr>
+                <th>Korean</th>
+                <td>Beginner</td>
+            </tr>
+        </tbody>
+    </table>
 
-<p><strong>2021.02 - present</strong></p>
-
-<p>A WIP side-scrolling shoot ‘em up framework for Unity. Currently features:</p>
-
-<ul>
-  <li>health, weapon and power-up system with basic bullet patterns</li>
-  <li>level editor based on enemy waves with tunable motion paths</li>
-  <li>behavior tree to customize weapon and enemy behavior</li>
-</ul>
-
-<p>Source code: <a href="https://bitbucket.org/hsandt/shmup-framework/src/develop/" target="_blank">https://bitbucket.org/hsandt/shmup-framework/src/develop/</a></p>
-
-<p>Demo game: <a href="https://komehara.itch.io/eminent-domain" target="_blank">https://komehara.itch.io/eminent-domain</a></p>
-
-<h3 id="rpg-framework">RPG Framework</h3>
-
-<p><strong>2021.07 - present</strong></p>
-
-<p>A WIP classic RPG framework for Unity. Currently features:</p>
-
-<ul>
-  <li>turn-based battle</li>
-  <li>stats, buff, status ailment system</li>
-  <li>data-driven skills that can be extended easily</li>
-</ul>
-
-<p>Currently closed source</p>
-
-<p>Demo game: <a href="https://komehara.itch.io/eras-time-delivery-service" target="_blank">https://komehara.itch.io/eras-time-delivery-service</a></p>
-
-<h2 id="education">Education</h2>
-
-<p><strong>Postgraduate degree in Interactive Digital Experiences</strong></p>
-
-<p>2015.10 - 2017.02 @ Gobelins (Paris, France) - Enjmin (Angoulême, France)</p>
-
-<p><strong>Double degree of Master of Science in Engineering</strong></p>
-
-<p>2011.09 - 2015.08 @ Supélec (France) - Keio University (Japan)</p>
-
-<h2 id="languages">Languages</h2>
-
-<table class="invisible-table narrow-rows width-400 th-width-20-percent">
-    <tbody>
-        <tr>
-            <th>English</th>
-            <td>Full working proficiency</td>
-        </tr>
-        <tr>
-            <th>French</th>
-            <td>Native</td>
-        </tr>
-        <tr>
-            <th>Japanese</th>
-            <td>Limited working proficiency</td>
-        </tr>
-        <tr>
-            <th>German</th>
-            <td>Limited working proficiency</td>
-        <tr>
-        </tr>
-            <th>Korean</th>
-            <td>Beginner</td>
-        </tr>
-    </tbody>
-</table>
+</div>
 
   </div>
 
@@ -337,6 +329,7 @@
       </div>
       <div class="footer-col">
         <p>This website was made with Jekyll and is hosted on GitHub Pages.</p>
+        
       </div>
     </div>
 
@@ -345,7 +338,7 @@
 <li>
   <a rel="me" href="https://komehara.itch.io/" target="_blank" title="itchio">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-itchio (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-itchio">
       <use xlink:href="/assets/minima-social-icons.svg#itchio"></use>
     </svg>
@@ -356,7 +349,7 @@
 <li>
   <a rel="me" href="https://github.com/hsandt" target="_blank" title="github">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-github (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-github">
       <use xlink:href="/assets/minima-social-icons.svg#github"></use>
     </svg>
@@ -365,9 +358,20 @@
 <!-- Customized from https://github.com/jekyll/minima/blob/master/_includes/social-item.html
      (2022-12-22) under MIT license -->
 <li>
+  <a rel="me" href="https://bitbucket.org/hsandt/" target="_blank" title="bitbucket">
+    <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
+    <svg class="svg-icon icon-bitbucket">
+      <use xlink:href="/assets/minima-social-icons.svg#bitbucket"></use>
+    </svg>
+  </a>
+</li>
+<!-- Customized from https://github.com/jekyll/minima/blob/master/_includes/social-item.html
+     (2022-12-22) under MIT license -->
+<li>
   <a rel="me" href="https://stackoverflow.com/users/3256073/hsandt" target="_blank" title="stackoverflow">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-stackoverflow (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-stackoverflow">
       <use xlink:href="/assets/minima-social-icons.svg#stackoverflow"></use>
     </svg>
@@ -378,7 +382,7 @@
 <li>
   <a rel="me" href="https://twitter.com/n_huulong" target="_blank" title="twitter">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-twitter (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-twitter">
       <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
     </svg>
@@ -389,7 +393,7 @@
 <li>
   <a rel="me" href="https://www.youtube.com/channel/UCscc8AXbgMQCjzxsXLVvCsg" target="_blank" title="youtube">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-youtube (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-youtube">
       <use xlink:href="/assets/minima-social-icons.svg#youtube"></use>
     </svg>
@@ -400,7 +404,7 @@
 <li>
   <a rel="me" href="https://www.linkedin.com/in/huulong/" target="_blank" title="linkedin">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-linkedin (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-linkedin">
       <use xlink:href="/assets/minima-social-icons.svg#linkedin"></use>
     </svg>

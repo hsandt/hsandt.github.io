@@ -33,7 +33,7 @@
 <li>
   <a rel="me" href="https://komehara.itch.io/" target="_blank" title="itchio">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-itchio (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-itchio">
       <use xlink:href="/assets/minima-social-icons.svg#itchio"></use>
     </svg>
@@ -44,7 +44,7 @@
 <li>
   <a rel="me" href="https://github.com/hsandt" target="_blank" title="github">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-github (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-github">
       <use xlink:href="/assets/minima-social-icons.svg#github"></use>
     </svg>
@@ -53,9 +53,20 @@
 <!-- Customized from https://github.com/jekyll/minima/blob/master/_includes/social-item.html
      (2022-12-22) under MIT license -->
 <li>
+  <a rel="me" href="https://bitbucket.org/hsandt/" target="_blank" title="bitbucket">
+    <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
+    <svg class="svg-icon icon-bitbucket">
+      <use xlink:href="/assets/minima-social-icons.svg#bitbucket"></use>
+    </svg>
+  </a>
+</li>
+<!-- Customized from https://github.com/jekyll/minima/blob/master/_includes/social-item.html
+     (2022-12-22) under MIT license -->
+<li>
   <a rel="me" href="https://stackoverflow.com/users/3256073/hsandt" target="_blank" title="stackoverflow">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-stackoverflow (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-stackoverflow">
       <use xlink:href="/assets/minima-social-icons.svg#stackoverflow"></use>
     </svg>
@@ -66,7 +77,7 @@
 <li>
   <a rel="me" href="https://twitter.com/n_huulong" target="_blank" title="twitter">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-twitter (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-twitter">
       <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
     </svg>
@@ -77,7 +88,7 @@
 <li>
   <a rel="me" href="https://www.youtube.com/channel/UCscc8AXbgMQCjzxsXLVvCsg" target="_blank" title="youtube">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-youtube (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-youtube">
       <use xlink:href="/assets/minima-social-icons.svg#youtube"></use>
     </svg>
@@ -88,7 +99,7 @@
 <li>
   <a rel="me" href="https://www.linkedin.com/in/huulong/" target="_blank" title="linkedin">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-linkedin (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-linkedin">
       <use xlink:href="/assets/minima-social-icons.svg#linkedin"></use>
     </svg>
@@ -106,7 +117,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/resume/">Resume</a></div>
+        <div class="trigger"><a class="page-link" href="/resume/">Resume</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -118,17 +129,23 @@
 <p>My main focus is gameplay, UI and tool programming. I also work on game design and some pixel art on my personal projects.</p>
 
 
-  <h2>Portfolio</h2><div class="portfolio-grid">
-    <ul class="portfolio-list"><li>
-          <a class="page-link" href="/portfolio/evil-genius-2.html">Evil Genius 2: World Domination</a>
-        </li><li>
-          <a class="page-link" href="/portfolio/hotshot-racing.html">Hotshot Racing</a>
-        </li><li>
-          <a class="page-link" href="/portfolio/ghost-recon-breakpoint.html">Ghost Recon: Breakpoint</a>
-        </li><li>
-          <a class="page-link" href="/portfolio/guns-gore-and-cannoli-2.html">Guns, Gore &amp; Cannoli 2</a>
-        </li></ul>
-  </div>
+  <h2>Portfolio</h2><div class="portfolio-grid"><div class="portfolio-thumbnail">
+      <a class="page-link" href="/portfolio/evil-genius-2.html"><img src="/assets/pictures/Evil-Genius-2-Thumbnail-420x420.png" alt="Thumbnail for Evil Genius 2: World Domination">
+        <div class="portfolio-thumbnail-overlay">Evil Genius 2: World Domination</div>
+      </a>
+    </div><div class="portfolio-thumbnail">
+      <a class="page-link" href="/portfolio/hotshot-racing.html"><img src="/assets/pictures/Hotshot-Racing-Thumbnail-420x420.png" alt="Thumbnail for Hotshot Racing">
+        <div class="portfolio-thumbnail-overlay">Hotshot Racing</div>
+      </a>
+    </div><div class="portfolio-thumbnail">
+      <a class="page-link" href="/portfolio/ghost-recon-breakpoint.html"><img src="/assets/pictures/Ghost-Recon-Breakpoint-Thumbnail-420x420.jpg" alt="Thumbnail for Ghost Recon: Breakpoint">
+        <div class="portfolio-thumbnail-overlay">Ghost Recon: Breakpoint</div>
+      </a>
+    </div><div class="portfolio-thumbnail">
+      <a class="page-link" href="/portfolio/guns-gore-and-cannoli-2.html"><img src="/assets/pictures/GGC2-Thumbnail-420x420.png" alt="Thumbnail for Guns, Gore & Cannoli 2">
+        <div class="portfolio-thumbnail-overlay">Guns, Gore &amp; Cannoli 2</div>
+      </a>
+    </div></div>
   
 
   </div>
@@ -158,6 +175,7 @@
       </div>
       <div class="footer-col">
         <p>This website was made with Jekyll and is hosted on GitHub Pages.</p>
+        
       </div>
     </div>
 
@@ -166,7 +184,7 @@
 <li>
   <a rel="me" href="https://komehara.itch.io/" target="_blank" title="itchio">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-itchio (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-itchio">
       <use xlink:href="/assets/minima-social-icons.svg#itchio"></use>
     </svg>
@@ -177,7 +195,7 @@
 <li>
   <a rel="me" href="https://github.com/hsandt" target="_blank" title="github">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-github (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-github">
       <use xlink:href="/assets/minima-social-icons.svg#github"></use>
     </svg>
@@ -186,9 +204,20 @@
 <!-- Customized from https://github.com/jekyll/minima/blob/master/_includes/social-item.html
      (2022-12-22) under MIT license -->
 <li>
+  <a rel="me" href="https://bitbucket.org/hsandt/" target="_blank" title="bitbucket">
+    <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
+    <svg class="svg-icon icon-bitbucket">
+      <use xlink:href="/assets/minima-social-icons.svg#bitbucket"></use>
+    </svg>
+  </a>
+</li>
+<!-- Customized from https://github.com/jekyll/minima/blob/master/_includes/social-item.html
+     (2022-12-22) under MIT license -->
+<li>
   <a rel="me" href="https://stackoverflow.com/users/3256073/hsandt" target="_blank" title="stackoverflow">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-stackoverflow (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-stackoverflow">
       <use xlink:href="/assets/minima-social-icons.svg#stackoverflow"></use>
     </svg>
@@ -199,7 +228,7 @@
 <li>
   <a rel="me" href="https://twitter.com/n_huulong" target="_blank" title="twitter">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-twitter (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-twitter">
       <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
     </svg>
@@ -210,7 +239,7 @@
 <li>
   <a rel="me" href="https://www.youtube.com/channel/UCscc8AXbgMQCjzxsXLVvCsg" target="_blank" title="youtube">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-youtube (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-youtube">
       <use xlink:href="/assets/minima-social-icons.svg#youtube"></use>
     </svg>
@@ -221,7 +250,7 @@
 <li>
   <a rel="me" href="https://www.linkedin.com/in/huulong/" target="_blank" title="linkedin">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-linkedin (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-linkedin">
       <use xlink:href="/assets/minima-social-icons.svg#linkedin"></use>
     </svg>

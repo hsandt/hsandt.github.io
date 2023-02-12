@@ -33,7 +33,7 @@
 <li>
   <a rel="me" href="https://komehara.itch.io/" target="_blank" title="itchio">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-itchio (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-itchio">
       <use xlink:href="/assets/minima-social-icons.svg#itchio"></use>
     </svg>
@@ -44,7 +44,7 @@
 <li>
   <a rel="me" href="https://github.com/hsandt" target="_blank" title="github">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-github (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-github">
       <use xlink:href="/assets/minima-social-icons.svg#github"></use>
     </svg>
@@ -53,9 +53,20 @@
 <!-- Customized from https://github.com/jekyll/minima/blob/master/_includes/social-item.html
      (2022-12-22) under MIT license -->
 <li>
+  <a rel="me" href="https://bitbucket.org/hsandt/" target="_blank" title="bitbucket">
+    <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
+    <svg class="svg-icon icon-bitbucket">
+      <use xlink:href="/assets/minima-social-icons.svg#bitbucket"></use>
+    </svg>
+  </a>
+</li>
+<!-- Customized from https://github.com/jekyll/minima/blob/master/_includes/social-item.html
+     (2022-12-22) under MIT license -->
+<li>
   <a rel="me" href="https://stackoverflow.com/users/3256073/hsandt" target="_blank" title="stackoverflow">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-stackoverflow (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-stackoverflow">
       <use xlink:href="/assets/minima-social-icons.svg#stackoverflow"></use>
     </svg>
@@ -66,7 +77,7 @@
 <li>
   <a rel="me" href="https://twitter.com/n_huulong" target="_blank" title="twitter">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-twitter (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-twitter">
       <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
     </svg>
@@ -77,7 +88,7 @@
 <li>
   <a rel="me" href="https://www.youtube.com/channel/UCscc8AXbgMQCjzxsXLVvCsg" target="_blank" title="youtube">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-youtube (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-youtube">
       <use xlink:href="/assets/minima-social-icons.svg#youtube"></use>
     </svg>
@@ -88,7 +99,7 @@
 <li>
   <a rel="me" href="https://www.linkedin.com/in/huulong/" target="_blank" title="linkedin">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-linkedin (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-linkedin">
       <use xlink:href="/assets/minima-social-icons.svg#linkedin"></use>
     </svg>
@@ -106,7 +117,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/resume/">Resume</a></div>
+        <div class="trigger"><a class="page-link" href="/resume/">Resume</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -120,77 +131,79 @@
 
   <div class="post-top">
     <div class="embedded-video">
-      <iframe width="470" height="264" src="https://www.youtube.com/embed/HieJmZ3tsdQ"
+      <iframe src="https://www.youtube.com/embed/HieJmZ3tsdQ"
         title="Evil Genius 2: World Domination – Launch Trailer | PS4, PS5, Xbox One, Xbox Series X/S" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen>
       </iframe>
     </div>
     <table class="metadata">
+      <tbody>
         
-            <tr>
-                <!-- Convert to readable string, e.g. "production-time" -> "Production time"
-                     with a few filters until we get proper localization -->
-                <th>Developer</td>
-                <td>Rebellion Developments</td>
-            </tr>
+        <tr>
+          <!-- Convert to readable string, e.g. "production-time" -> "Production time"
+            with a few filters until we get proper localization -->
+          <th>Developer</td>
+          <td>Rebellion Developments</td>
+        </tr>
         
-            <tr>
-                <!-- Convert to readable string, e.g. "production-time" -> "Production time"
-                     with a few filters until we get proper localization -->
-                <th>Release</td>
-                <td>Mar 2021</td>
-            </tr>
+        <tr>
+          <!-- Convert to readable string, e.g. "production-time" -> "Production time"
+            with a few filters until we get proper localization -->
+          <th>Release</td>
+          <td>Mar 2021</td>
+        </tr>
         
-            <tr>
-                <!-- Convert to readable string, e.g. "production-time" -> "Production time"
-                     with a few filters until we get proper localization -->
-                <th>Platform</td>
-                <td>Windows, PS4, PS5, Xbox One, Xbox Series X/S</td>
-            </tr>
+        <tr>
+          <!-- Convert to readable string, e.g. "production-time" -> "Production time"
+            with a few filters until we get proper localization -->
+          <th>Platform</td>
+          <td>Windows, PS4, PS5, Xbox One, Xbox Series X/S</td>
+        </tr>
         
-            <tr>
-                <!-- Convert to readable string, e.g. "production-time" -> "Production time"
-                     with a few filters until we get proper localization -->
-                <th>Genre</td>
-                <td>Construction and management simulation</td>
-            </tr>
+        <tr>
+          <!-- Convert to readable string, e.g. "production-time" -> "Production time"
+            with a few filters until we get proper localization -->
+          <th>Genre</td>
+          <td>Construction and management simulation</td>
+        </tr>
         
-            <tr>
-                <!-- Convert to readable string, e.g. "production-time" -> "Production time"
-                     with a few filters until we get proper localization -->
-                <th>Mode</td>
-                <td>1 player</td>
-            </tr>
+        <tr>
+          <!-- Convert to readable string, e.g. "production-time" -> "Production time"
+            with a few filters until we get proper localization -->
+          <th>Mode</td>
+          <td>1 player</td>
+        </tr>
         
-            <tr>
-                <!-- Convert to readable string, e.g. "production-time" -> "Production time"
-                     with a few filters until we get proper localization -->
-                <th>Working period</td>
-                <td>Oct 2020 - Mar 2022</td>
-            </tr>
+        <tr>
+          <!-- Convert to readable string, e.g. "production-time" -> "Production time"
+            with a few filters until we get proper localization -->
+          <th>Working period</td>
+          <td>Oct 2020 - Mar 2022</td>
+        </tr>
         
-            <tr>
-                <!-- Convert to readable string, e.g. "production-time" -> "Production time"
-                     with a few filters until we get proper localization -->
-                <th>Team</td>
-                <td>~60 people</td>
-            </tr>
+        <tr>
+          <!-- Convert to readable string, e.g. "production-time" -> "Production time"
+            with a few filters until we get proper localization -->
+          <th>Team</td>
+          <td>~60 people</td>
+        </tr>
         
-            <tr>
-                <!-- Convert to readable string, e.g. "production-time" -> "Production time"
-                     with a few filters until we get proper localization -->
-                <th>Role</td>
-                <td>Programming</td>
-            </tr>
+        <tr>
+          <!-- Convert to readable string, e.g. "production-time" -> "Production time"
+            with a few filters until we get proper localization -->
+          <th>Role</td>
+          <td>Programming</td>
+        </tr>
         
-            <tr>
-                <!-- Convert to readable string, e.g. "production-time" -> "Production time"
-                     with a few filters until we get proper localization -->
-                <th>Technology</td>
-                <td>Proprietary engine</td>
-            </tr>
+        <tr>
+          <!-- Convert to readable string, e.g. "production-time" -> "Production time"
+            with a few filters until we get proper localization -->
+          <th>Technology</td>
+          <td>Proprietary engine</td>
+        </tr>
         
+        </tbody>
     </table>
   </div>
 
@@ -199,7 +212,7 @@
 
 <h2 id="description">Description</h2>
 
-<p><a href="https://evilgeniusgame.com/" target="_blank">Evil Genius 2</a> is a construction and management simulation game with a touch of modern design. It features the traditional Time Attack and Grand Prix for a single player, while up to 4 players offline and 8 players online can compete in Arcade races or more exotic game modes such as Cops &amp; Robbers and Drive or Explode. Drift, slipstream behind your opponents and boost toward the goal! Based on Lucky Mountain Games’ prototype <a href="https://twitter.com/racingapexgame" target="_blank">Racing Apex</a>.</p>
+<p><a href="https://evilgeniusgame.com/" target="_blank">Evil Genius 2</a> is a construction and management simulation game where you build a hidden lair and manage minions in your quest to conquer the world. In this game packed with old spy movie references, you can upgrade your tech, send minions on missions across the world or even directly control your genius and their henchmen to fight the Forces of Justice and establish true world domination.</p>
 
 <h2 id="screenshots">Screenshots</h2>
 
@@ -284,6 +297,7 @@
       </div>
       <div class="footer-col">
         <p>This website was made with Jekyll and is hosted on GitHub Pages.</p>
+        
       </div>
     </div>
 
@@ -292,7 +306,7 @@
 <li>
   <a rel="me" href="https://komehara.itch.io/" target="_blank" title="itchio">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-itchio (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-itchio">
       <use xlink:href="/assets/minima-social-icons.svg#itchio"></use>
     </svg>
@@ -303,7 +317,7 @@
 <li>
   <a rel="me" href="https://github.com/hsandt" target="_blank" title="github">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-github (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-github">
       <use xlink:href="/assets/minima-social-icons.svg#github"></use>
     </svg>
@@ -312,9 +326,20 @@
 <!-- Customized from https://github.com/jekyll/minima/blob/master/_includes/social-item.html
      (2022-12-22) under MIT license -->
 <li>
+  <a rel="me" href="https://bitbucket.org/hsandt/" target="_blank" title="bitbucket">
+    <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
+    <svg class="svg-icon icon-bitbucket">
+      <use xlink:href="/assets/minima-social-icons.svg#bitbucket"></use>
+    </svg>
+  </a>
+</li>
+<!-- Customized from https://github.com/jekyll/minima/blob/master/_includes/social-item.html
+     (2022-12-22) under MIT license -->
+<li>
   <a rel="me" href="https://stackoverflow.com/users/3256073/hsandt" target="_blank" title="stackoverflow">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-stackoverflow (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-stackoverflow">
       <use xlink:href="/assets/minima-social-icons.svg#stackoverflow"></use>
     </svg>
@@ -325,7 +350,7 @@
 <li>
   <a rel="me" href="https://twitter.com/n_huulong" target="_blank" title="twitter">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-twitter (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-twitter">
       <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
     </svg>
@@ -336,7 +361,7 @@
 <li>
   <a rel="me" href="https://www.youtube.com/channel/UCscc8AXbgMQCjzxsXLVvCsg" target="_blank" title="youtube">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-youtube (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-youtube">
       <use xlink:href="/assets/minima-social-icons.svg#youtube"></use>
     </svg>
@@ -347,7 +372,7 @@
 <li>
   <a rel="me" href="https://www.linkedin.com/in/huulong/" target="_blank" title="linkedin">
     <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
-    <!-- OVERRIDE: add icon-linkedin (e.g. icon-github) class for further color customization -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
     <svg class="svg-icon icon-linkedin">
       <use xlink:href="/assets/minima-social-icons.svg#linkedin"></use>
     </svg>

@@ -768,6 +768,18 @@ table td {
 .site-header .social-media-list a .icon-github:hover, .site-header .pagination a .icon-github:hover {
   color: #6316ac;
 }
+.site-header .social-media-list a .icon-bitbucket, .site-header .pagination a .icon-bitbucket {
+  color: #2684ff;
+}
+.site-header .social-media-list a .icon-bitbucket:hover, .site-header .pagination a .icon-bitbucket:hover {
+  color: #1856a7;
+}
+.site-header .social-media-list a .icon-gitlab, .site-header .pagination a .icon-gitlab {
+  color: #fc6d26;
+}
+.site-header .social-media-list a .icon-gitlab:hover, .site-header .pagination a .icon-gitlab:hover {
+  color: #af4c1b;
+}
 .site-header .social-media-list a .icon-stackoverflow, .site-header .pagination a .icon-stackoverflow {
   color: #ef8236;
 }
@@ -870,6 +882,39 @@ table.th-width-20-percent th {
   width: 20%;
 }
 
+.work-info-header {
+  font-weight: bold;
+}
+
+@media print {
+  .avoid-break-page {
+    break-inside: avoid-page;
+  }
+}
+.portfolio-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+.portfolio-grid .portfolio-thumbnail {
+  position: relative;
+  box-sizing: border-box;
+  width: 33.8%;
+  padding: 5px;
+  margin-left: -5px;
+}
+.portfolio-grid .portfolio-thumbnail img:hover {
+  filter: brightness(1.3);
+}
+.portfolio-grid .portfolio-thumbnail .portfolio-thumbnail-overlay {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  margin-right: 5px;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+}
+
 .portfolio-item .post-header {
   border-top: 4px solid #424242;
   padding-top: 15px;
@@ -883,13 +928,25 @@ table.th-width-20-percent th {
 .portfolio-item .post-header .post-subtitle {
   line-height: 1;
 }
-.portfolio-item .post-top {
-  display: flex;
+.portfolio-item .post-top .embedded-video iframe {
+  width: 256px;
+  height: 144px;
 }
-.portfolio-item .post-top .embedded-video {
-  padding: 0 20px 0 0;
+@media screen and (min-width: 800px) {
+  .portfolio-item .post-top {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .portfolio-item .post-top .embedded-video {
+    padding: 0 20px 0 0;
+  }
+  .portfolio-item .post-top .embedded-video iframe {
+    width: 470px;
+    height: 264px;
+  }
 }
 .portfolio-item table.metadata {
+  max-width: calc(1000px - (30px * 2) - (470px) - 50px);
   border: none;
   font-size: 0.9rem;
 }
@@ -909,16 +966,17 @@ table.th-width-20-percent th {
 .portfolio-item .grid {
   margin-top: 10px;
   margin-bottom: 15px;
-  display: table;
+  display: flex;
+  flex-wrap: wrap;
 }
 .portfolio-item .grid img {
   box-sizing: border-box;
   padding: 5px 5px;
-  max-width: 50%;
+  max-width: 100%;
 }
-@media screen and (max-width: 800px) {
+@media screen and (min-width: 800px) {
   .portfolio-item .grid img {
-    max-width: 100%;
+    max-width: 50%;
   }
 }
 
