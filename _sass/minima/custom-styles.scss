@@ -122,6 +122,11 @@
 }
 
 // _layout.scss override
+.post-title {
+    @include relative-font-size(2.2);
+}
+
+// _layout.scss override
 .post-content {
     h1 {
         margin-bottom: 5px;
@@ -143,6 +148,7 @@
         font-weight: 500;
     }
 }
+
 
 // Resume custom styling
 
@@ -203,6 +209,7 @@ table.th-width-20-percent {
         break-inside: avoid-page;
     }
 }
+
 
 // Portfolio custom styling
 
@@ -359,6 +366,16 @@ table.th-width-20-percent {
         }
     }
 }
+
+
+// Blog top custom styling
+
+.blog-thumbnail {
+    height: 200px;
+}
+
+
+// Footer custom styling
 
 // _layout.scss override
 .site-footer {
