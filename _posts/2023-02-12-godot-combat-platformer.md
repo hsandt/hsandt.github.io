@@ -14,6 +14,11 @@ I managed to port most of my code for character control/animation from an [older
 
 The biggest issue I had with physics was a regression on `move_and_slide` (see [this issue](https://github.com/godotengine/godot/issues/71993)). Otherwise, I'd say Godot's built-in classes made it pretty simple. I don't have any custom raycasts in my code so far.
 
+So far I implemented the following features for the player character:
+- move and jump
+- melee attack: can chain up to two slashes
+- health system: get hurt and die
+
 I'd like to make this open source, but as it contains some copyrighted third-party assets (although free).
 I may extract the scripts into some public submodule (as with my Unity projects) though, so stay tuned!
 

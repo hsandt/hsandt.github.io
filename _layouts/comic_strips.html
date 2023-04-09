@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+
+  {%- assign comic_strip_page_relative_paths = site.comic_strip_pages -%}
+  {%- if comic_strip_page_relative_paths.size > 0 -%}
+  <div class="item-grid">
+    {%- for relative_path in comic_strip_page_relative_paths -%}
+    {%- assign path = relative_path | prepend: "comic-strips/" -%}
+    {%- assign comic_strip_page = site.pages | where: "path", path | first -%}
+    {%- if comic_strip_page.title -%}
+    <div class="item-thumbnail">
+      <a class="page-link" href="{{ comic_strip_page.url | relative_url }}">
+        <!-- If no custom thumbnail is defined, use the shrinked comic strip image instead -->
+        {%- assign thumbnail = comic_strip_page.thumbnail | default: comic_strip_page.image -%}
+        <img src="/assets/pictures/comic-strips/{{ thumbnail }}" alt="Thumbnail for {{ comic_strip_page.title }}">
+        <div class="item-thumbnail-overlay">{{ comic_strip_page.title | escape }}</div>
+      </a>
+    </div>
+    {%- endif -%}
+    {%- endfor -%}
+  </div>
+  {% endif %}
+
+</div>

@@ -1,0 +1,31 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Bundle install",
+			"command": "bundle install",
+			"type": "shell",
+			"args": [],
+			"problemMatcher": [
+				"$tsc"
+			],
+			"presentation": {
+				"reveal": "always"
+			},
+			"group": "build"
+		},
+		{
+			"label": "Run server with live reload",
+			"command": "bundle exec jekyll s -l",
+			"type": "shell",
+			"args": [],
+			"problemMatcher": [
+				"$tsc"
+			],
+			"presentation": {
+				"reveal": "always"
+			},
+			"group": "build"
+		}
+	]
+}
