@@ -1,18 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://hsandt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hsandt.github.io/" rel="alternate" type="text/html" /><updated>2023-02-12T17:53:24+00:00</updated><id>https://hsandt.github.io/feed.xml</id><title type="html">Long Nguyen Huu</title><subtitle>This website was made with Jekyll and is hosted on GitHub Pages.</subtitle><author><name>Long Nguyen Huu</name><email>n.huu.long@gmail.com</email></author><entry><title type="html">Combat Platformer in Godot 4: Feb 2023 progress</title><link href="https://hsandt.github.io/2023/02/12/godot-combat-platformer.html" rel="alternate" type="text/html" title="Combat Platformer in Godot 4: Feb 2023 progress" /><published>2023-02-12T00:00:00+00:00</published><updated>2023-02-12T00:00:00+00:00</updated><id>https://hsandt.github.io/2023/02/12/godot-combat-platformer</id><content type="html" xml:base="https://hsandt.github.io/2023/02/12/godot-combat-platformer.html">&lt;p&gt;I started working on a side-scrolling combat platformer prototype in Godot 4.
-I’m regularly downloading new snapshots of Godot 4 beta which sometimes introduces breaking API changes, but I hope it will be worth it when it finally gets released.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://hsandt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hsandt.github.io/" rel="alternate" type="text/html" /><updated>2023-04-09T17:25:23+00:00</updated><id>https://hsandt.github.io/feed.xml</id><title type="html">Long Nguyen Huu</title><subtitle>This website was made with Jekyll and is hosted on GitHub Pages.</subtitle><author><name>Long Nguyen Huu</name><email>n.huu.long@gmail.com</email></author><entry><title type="html">Combat Platformer in Godot 4: Feb 2023 progress</title><link href="https://hsandt.github.io/2023/02/12/godot-combat-platformer.html" rel="alternate" type="text/html" title="Combat Platformer in Godot 4: Feb 2023 progress" /><published>2023-02-12T00:00:00+00:00</published><updated>2023-02-12T00:00:00+00:00</updated><id>https://hsandt.github.io/2023/02/12/godot-combat-platformer</id><content type="html" xml:base="https://hsandt.github.io/2023/02/12/godot-combat-platformer.html"><![CDATA[<p>I started working on a side-scrolling combat platformer prototype in Godot 4.
+I’m regularly downloading new snapshots of Godot 4 beta which sometimes introduces breaking API changes, but I hope it will be worth it when it finally gets released.</p>
 
-&lt;p&gt;&lt;img src=&quot;/assets/pictures/blog/2023-02-12 demo features so far.gif&quot; alt=&quot;Combat platformer demo: warrior runs, jumps and slashes a slime&quot; /&gt;&lt;/p&gt;
+<p><img src="/assets/pictures/blog/2023-02-12 demo features so far.gif" alt="Combat platformer demo: warrior runs, jumps and slashes a slime" /></p>
 
-&lt;p&gt;I managed to port most of my code for character control/animation from an &lt;a href=&quot;https://github.com/hsandt/flame-of-hope-godot/tree/master/Scripts&quot;&gt;older project&lt;/a&gt;. But it was top-view, so I still had to work more to get running and jumping to work.&lt;/p&gt;
+<p>I managed to port most of my code for character control/animation from an <a href="https://github.com/hsandt/flame-of-hope-godot/tree/master/Scripts">older project</a>. But it was top-view, so I still had to work more to get running and jumping to work.</p>
 
-&lt;p&gt;The biggest issue I had with physics was a regression on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;move_and_slide&lt;/code&gt; (see &lt;a href=&quot;https://github.com/godotengine/godot/issues/71993&quot;&gt;this issue&lt;/a&gt;). Otherwise, I’d say Godot’s built-in classes made it pretty simple. I don’t have any custom raycasts in my code so far.&lt;/p&gt;
+<p>The biggest issue I had with physics was a regression on <code class="language-plaintext highlighter-rouge">move_and_slide</code> (see <a href="https://github.com/godotengine/godot/issues/71993">this issue</a>). Otherwise, I’d say Godot’s built-in classes made it pretty simple. I don’t have any custom raycasts in my code so far.</p>
 
-&lt;p&gt;I’d like to make this open source, but as it contains some copyrighted third-party assets (although free).
-I may extract the scripts into some public submodule (as with my Unity projects) though, so stay tuned!&lt;/p&gt;
+<p>So far I implemented the following features for the player character:</p>
+<ul>
+  <li>move and jump</li>
+  <li>melee attack: can chain up to two slashes</li>
+  <li>health system: get hurt and die</li>
+</ul>
 
-&lt;p&gt;Assets used:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://clembod.itch.io/warrior-free-animation-set&quot;&gt;Warrior-Free Animation set V1.3 by Clembod&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://rvros.itch.io/pixel-art-animated-slime&quot;&gt;Pixel Slime by rvros (CC0 1.0)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://untiedgames.itch.io/free-grasslands-tileset&quot;&gt;Free Pixel Art Grasslands Tileset by Will Tice / unTied Games&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Long Nguyen Huu</name><email>n.huu.long@gmail.com</email></author><category term="godot" /><summary type="html">I started working on a side-scrolling combat platformer prototype in Godot 4. I’m regularly downloading new snapshots of Godot 4 beta which sometimes introduces breaking API changes, but I hope it will be worth it when it finally gets released.</summary></entry></feed>
+<p>I’d like to make this open source, but as it contains some copyrighted third-party assets (although free).
+I may extract the scripts into some public submodule (as with my Unity projects) though, so stay tuned!</p>
+
+<p>Assets used:</p>
+<ul>
+  <li><a href="https://clembod.itch.io/warrior-free-animation-set">Warrior-Free Animation set V1.3 by Clembod</a></li>
+  <li><a href="https://rvros.itch.io/pixel-art-animated-slime">Pixel Slime by rvros (CC0 1.0)</a></li>
+  <li><a href="https://untiedgames.itch.io/free-grasslands-tileset">Free Pixel Art Grasslands Tileset by Will Tice / unTied Games</a></li>
+</ul>]]></content><author><name>Long Nguyen Huu</name><email>n.huu.long@gmail.com</email></author><category term="godot" /><summary type="html"><![CDATA[I started working on a side-scrolling combat platformer prototype in Godot 4. I’m regularly downloading new snapshots of Godot 4 beta which sometimes introduces breaking API changes, but I hope it will be worth it when it finally gets released.]]></summary></entry></feed>

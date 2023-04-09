@@ -895,21 +895,21 @@ table.th-width-20-percent th {
     break-inside: avoid-page;
   }
 }
-.portfolio-grid {
+.item-grid {
   display: flex;
   flex-wrap: wrap;
 }
-.portfolio-grid .portfolio-thumbnail {
+.item-grid .item-thumbnail {
   position: relative;
   box-sizing: border-box;
   width: 33.8%;
   padding: 5px;
   margin-left: -5px;
 }
-.portfolio-grid .portfolio-thumbnail img:hover {
+.item-grid .item-thumbnail img:hover {
   filter: brightness(1.3);
 }
-.portfolio-grid .portfolio-thumbnail .portfolio-thumbnail-overlay {
+.item-grid .item-thumbnail .item-thumbnail-overlay {
   position: absolute;
   top: 5px;
   left: 5px;
