@@ -211,13 +211,13 @@ table.th-width-20-percent {
 }
 
 
-// Portfolio custom styling
+// Item grid & thumbnail custom styling
 
-.portfolio-grid {
+.item-grid {
     display: flex;
     flex-wrap: wrap;
 
-    .portfolio-thumbnail {
+    .item-thumbnail {
         // thumbnail must be non-static so position:absolute works on
         // .portfolio-thumbnail-overlay below to place it relatively to thumbnail
         position: relative;
@@ -236,7 +236,7 @@ table.th-width-20-percent {
             filter:brightness(1.3);
         }
 
-        .portfolio-thumbnail-overlay {
+        .item-thumbnail-overlay {
             position: absolute;
             // set top and left to match padding so text is really placed at the top-left corner
             // of the thumbnail
@@ -373,7 +373,6 @@ table.th-width-20-percent {
 .blog-thumbnail {
     height: 200px;
 }
-
 
 // Footer custom styling
 

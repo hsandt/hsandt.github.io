@@ -14,16 +14,16 @@ layout: default
 
   {%- assign portfolio_page_relative_paths = site.portfolio_pages -%}
   {%- if portfolio_page_relative_paths.size > 0 -%}
-  <div class="portfolio-grid">
+  <div class="item-grid">
     {%- for relative_path in portfolio_page_relative_paths -%}
     {%- assign path = relative_path | prepend: "portfolio/" -%}
     {%- assign portfolio_page = site.pages | where: "path", path | first -%}
     {%- if portfolio_page.title -%}
-    <div class="portfolio-thumbnail">
+    <div class="item-thumbnail">
       <a class="page-link" href="{{ portfolio_page.url | relative_url }}">
         {%- assign thumbnail = portfolio_page.thumbnail | default: "Missing-Thumbnail-420x420.png" -%}
         <img src="/assets/pictures/{{ thumbnail }}" alt="Thumbnail for {{ portfolio_page.title }}">
-        <div class="portfolio-thumbnail-overlay">{{ portfolio_page.title | escape }}</div>
+        <div class="item-thumbnail-overlay">{{ portfolio_page.title | escape }}</div>
       </a>
     </div>
     {%- endif -%}
