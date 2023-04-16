@@ -60,8 +60,10 @@ portfolio_pages:
   - ghost-recon-breakpoint.markdown
   - guns-gore-and-cannoli-2.markdown
 
-# Collection of comic strip pages, path relative to comic_strips/
+# Collection of comic strip pages, path relative to comic-strips/
 comic_strip_pages:
+  - crash-report.markdown
+  - spellcaster.markdown
   - prototype.markdown
 
 # Exclude from processing.
