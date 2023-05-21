@@ -69,6 +69,7 @@ comic_strip_pages:
   - crash-report.markdown
   - spellcaster.markdown
   - prototype.markdown
+  - lens-of-truth.markdown
 
 # Exclude from processing.
 # The following items will not be processed, by default.
