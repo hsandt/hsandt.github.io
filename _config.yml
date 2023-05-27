@@ -68,6 +68,7 @@ portfolio_pages:
 comic_strip_pages:
   - crash-report.markdown
   - spellcaster.markdown
+  - v-sync.markdown
   - prototype.markdown
   - lens-of-truth.markdown
 
