@@ -1,28 +1,139 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://hsandt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hsandt.github.io/" rel="alternate" type="text/html" /><updated>2023-06-01T19:39:07+00:00</updated><id>https://hsandt.github.io/feed.xml</id><title type="html">Long Nguyen Huu</title><subtitle>The personal website of Long Nguyen Huu aka komehara</subtitle><author><name>Long Nguyen Huu</name><email>n.huu.long@gmail.com</email></author><entry><title type="html">Combat Platformer in Godot 4: Feb 2023 progress</title><link href="https://hsandt.github.io/2023/02/12/godot-combat-platformer.html" rel="alternate" type="text/html" title="Combat Platformer in Godot 4: Feb 2023 progress" /><published>2023-02-12T00:00:00+00:00</published><updated>2023-02-12T00:00:00+00:00</updated><id>https://hsandt.github.io/2023/02/12/godot-combat-platformer</id><content type="html" xml:base="https://hsandt.github.io/2023/02/12/godot-combat-platformer.html"><![CDATA[<p>I started working on a side-scrolling combat platformer prototype in Godot 4.
-I’m regularly downloading new snapshots of Godot 4 beta which sometimes introduces breaking API changes, but I hope it will be worth it when it finally gets released.</p>
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Blueprint-defined behavior with dynamic multicast delegates in Unreal Engine | Long Nguyen Huu</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Blueprint-defined behavior with dynamic multicast delegates in Unreal Engine" />
+<meta name="author" content="Long Nguyen Huu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however UE5 documentation shows that delegate macro names have not changed. Content has been adjusted to fix dead links and update links to their redirection, such as UE4 doc -&gt; UE5 doc." />
+<meta property="og:description" content="Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however UE5 documentation shows that delegate macro names have not changed. Content has been adjusted to fix dead links and update links to their redirection, such as UE4 doc -&gt; UE5 doc." />
+<link rel="canonical" href="https://hsandt.github.io/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine.html" />
+<meta property="og:url" content="https://hsandt.github.io/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine.html" />
+<meta property="og:site_name" content="Long Nguyen Huu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-02-14T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Blueprint-defined behavior with dynamic multicast delegates in Unreal Engine" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Long Nguyen Huu"},"dateModified":"2017-02-14T00:00:00+00:00","datePublished":"2017-02-14T00:00:00+00:00","description":"Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however UE5 documentation shows that delegate macro names have not changed. Content has been adjusted to fix dead links and update links to their redirection, such as UE4 doc -&gt; UE5 doc.","headline":"Blueprint-defined behavior with dynamic multicast delegates in Unreal Engine","mainEntityOfPage":{"@type":"WebPage","@id":"https://hsandt.github.io/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine.html"},"url":"https://hsandt.github.io/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://hsandt.github.io/feed.xml" title="Long Nguyen Huu" />
+</head>
+<body><!-- Customized from https://github.com/jekyll/minima/blob/b5df2ee9eb90c7bca24cd2f7cecf2cb0ea92dace/_includes/header.html
+     (2018-10-29) under MIT license -->
+<header class="site-header">
 
-<p><img src="/assets/pictures/blog/2023-02-12 demo features so far.gif" alt="Combat platformer demo: warrior runs, jumps and slashes a slime" /></p>
-
-<p>I managed to port most of my code for character control/animation from an <a href="https://github.com/hsandt/flame-of-hope-godot/tree/master/Scripts">older project</a>. But it was top-view, so I still had to work more to get running and jumping to work.</p>
-
-<p>The biggest issue I had with physics was a regression on <code class="language-plaintext highlighter-rouge">move_and_slide</code> (see <a href="https://github.com/godotengine/godot/issues/71993">this issue</a>). Otherwise, I’d say Godot’s built-in classes made it pretty simple. I don’t have any custom raycasts in my code so far.</p>
-
-<p>So far I implemented the following features for the player character:</p>
-<ul>
-  <li>move and jump</li>
-  <li>melee attack: can chain up to two slashes</li>
-  <li>health system: get hurt and die</li>
+  <div class="wrapper"><div class="site-brand">
+      <a class="site-title" rel="author" href="/">Long Nguyen Huu</a>
+      <div class="site-subtitle">Game developer</div>
+      <div class="social-links"><ul class="social-media-list"><!-- Customized from https://github.com/jekyll/minima/blob/master/_includes/social-item.html
+     (2022-12-22) under MIT license -->
+<li>
+  <a rel="me" href="https://komehara.itch.io/" target="_blank" title="itchio">
+    <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
+    <svg class="svg-icon icon-itchio">
+      <use xlink:href="/assets/minima-social-icons.svg#itchio"></use>
+    </svg>
+  </a>
+</li>
+<!-- Customized from https://github.com/jekyll/minima/blob/master/_includes/social-item.html
+     (2022-12-22) under MIT license -->
+<li>
+  <a rel="me" href="https://github.com/hsandt" target="_blank" title="github">
+    <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
+    <svg class="svg-icon icon-github">
+      <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<!-- Customized from https://github.com/jekyll/minima/blob/master/_includes/social-item.html
+     (2022-12-22) under MIT license -->
+<li>
+  <a rel="me" href="https://bitbucket.org/hsandt/" target="_blank" title="bitbucket">
+    <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
+    <svg class="svg-icon icon-bitbucket">
+      <use xlink:href="/assets/minima-social-icons.svg#bitbucket"></use>
+    </svg>
+  </a>
+</li>
+<!-- Customized from https://github.com/jekyll/minima/blob/master/_includes/social-item.html
+     (2022-12-22) under MIT license -->
+<li>
+  <a rel="me" href="https://stackoverflow.com/users/3256073/hsandt" target="_blank" title="stackoverflow">
+    <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
+    <svg class="svg-icon icon-stackoverflow">
+      <use xlink:href="/assets/minima-social-icons.svg#stackoverflow"></use>
+    </svg>
+  </a>
+</li>
+<!-- Customized from https://github.com/jekyll/minima/blob/master/_includes/social-item.html
+     (2022-12-22) under MIT license -->
+<li>
+  <a rel="me" href="https://twitter.com/n_huulong" target="_blank" title="twitter">
+    <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
+    <svg class="svg-icon icon-twitter">
+      <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+<!-- Customized from https://github.com/jekyll/minima/blob/master/_includes/social-item.html
+     (2022-12-22) under MIT license -->
+<li>
+  <a rel="me" href="https://www.youtube.com/channel/UCscc8AXbgMQCjzxsXLVvCsg" target="_blank" title="youtube">
+    <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
+    <svg class="svg-icon icon-youtube">
+      <use xlink:href="/assets/minima-social-icons.svg#youtube"></use>
+    </svg>
+  </a>
+</li>
+<!-- Customized from https://github.com/jekyll/minima/blob/master/_includes/social-item.html
+     (2022-12-22) under MIT license -->
+<li>
+  <a rel="me" href="https://www.linkedin.com/in/huulong/" target="_blank" title="linkedin">
+    <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
+    <svg class="svg-icon icon-linkedin">
+      <use xlink:href="/assets/minima-social-icons.svg#linkedin"></use>
+    </svg>
+  </a>
+</li>
 </ul>
+</div>
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
 
-<p>I’d like to make this open source, but as it contains some copyrighted third-party assets (although free).
-I may extract the scripts into some public submodule (as with my Unity projects) though, so stay tuned!</p>
+        <div class="trigger"><a class="page-link" href="/blog/">Blog</a><a class="page-link" href="/comic-strips/">Comic strips</a><a class="page-link" href="/resume/">Resume</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-<p>Assets used:</p>
-<ul>
-  <li><a href="https://clembod.itch.io/warrior-free-animation-set">Warrior-Free Animation set V1.3 by Clembod</a></li>
-  <li><a href="https://rvros.itch.io/pixel-art-animated-slime">Pixel Slime by rvros (CC0 1.0)</a></li>
-  <li><a href="https://untiedgames.itch.io/free-grasslands-tileset">Free Pixel Art Grasslands Tileset by Will Tice / unTied Games</a></li>
-</ul>]]></content><author><name>Long Nguyen Huu</name><email>n.huu.long@gmail.com</email></author><category term="godot" /><summary type="html"><![CDATA[I started working on a side-scrolling combat platformer prototype in Godot 4. I’m regularly downloading new snapshots of Godot 4 beta which sometimes introduces breaking API changes, but I hope it will be worth it when it finally gets released.]]></summary></entry><entry><title type="html">Blueprint-defined behavior with dynamic multicast delegates in Unreal Engine</title><link href="https://hsandt.github.io/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine.html" rel="alternate" type="text/html" title="Blueprint-defined behavior with dynamic multicast delegates in Unreal Engine" /><published>2017-02-14T00:00:00+00:00</published><updated>2017-02-14T00:00:00+00:00</updated><id>https://hsandt.github.io/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine</id><content type="html" xml:base="https://hsandt.github.io/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine.html"><![CDATA[<p><em>Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however UE5 documentation shows that delegate macro names have not changed. Content has been adjusted to fix dead links and update links to their redirection, such as UE4 doc -&gt; UE5 doc.</em></p>
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Blueprint-defined behavior with dynamic multicast delegates in Unreal Engine</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2017-02-14T00:00:00+00:00" itemprop="datePublished">
+        Feb 14, 2017
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><em>Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however UE5 documentation shows that delegate macro names have not changed. Content has been adjusted to fix dead links and update links to their redirection, such as UE4 doc -&gt; UE5 doc.</em></p>
 
 <p>Quite often, gameplay programmers need to hand over the task of creating scripted events to level designers. In Unreal, a common workflow is to define shared features in C++ and level-specific behaviors with Blueprints.</p>
 
@@ -197,4 +308,122 @@ I may extract the scripts into some public submodule (as with my Unity projects)
 
 <p><img src="/assets/pictures/blog/2017-02-14/UE4-delegate-blueprint-Switch-level-event.png" alt="Level Blueprint binding action to On Switch delegate" /></p>
 
-<p>For examples on how to bind functions from raw C++, check out <a href="https://unrealcommunity.wiki/delegates-in-ue4-raw-cpp-and-bp-exposed-xifmcmq5">Rama’s article on Delegates</a>.</p>]]></content><author><name>Long Nguyen Huu</name><email>n.huu.long@gmail.com</email></author><category term="ue4" /><summary type="html"><![CDATA[Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however UE5 documentation shows that delegate macro names have not changed. Content has been adjusted to fix dead links and update links to their redirection, such as UE4 doc -&gt; UE5 doc.]]></summary></entry></feed>
+<p>For examples on how to bind functions from raw C++, check out <a href="https://unrealcommunity.wiki/delegates-in-ue4-raw-cpp-and-bp-exposed-xifmcmq5">Rama’s article on Delegates</a>.</p>
+
+  </div><a class="u-url" href="/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine.html" hidden></a>
+</article>
+
+      </div>
+    </main><!-- Customized from https://github.com/jekyll/minima/blob/2f032a403c2338db6d35c83ee2376150e2ded468/_includes/footer.html
+     (2022-12-22) under MIT license -->
+<footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <!-- OVERRIDE: commented out Subscribe part -->
+        <!-- <p class="feed-subscribe">
+          <a href="https://hsandt.github.io/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p> -->
+        <ul class="contact-list">
+          <li class="p-name">Long Nguyen Huu</li>
+          <li><a class="u-email" href="mailto:n.huu.long@gmail.com">n.huu.long@gmail.com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>This website was made with Jekyll and is hosted on GitHub Pages.</p>
+        
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><!-- Customized from https://github.com/jekyll/minima/blob/master/_includes/social-item.html
+     (2022-12-22) under MIT license -->
+<li>
+  <a rel="me" href="https://komehara.itch.io/" target="_blank" title="itchio">
+    <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
+    <svg class="svg-icon icon-itchio">
+      <use xlink:href="/assets/minima-social-icons.svg#itchio"></use>
+    </svg>
+  </a>
+</li>
+<!-- Customized from https://github.com/jekyll/minima/blob/master/_includes/social-item.html
+     (2022-12-22) under MIT license -->
+<li>
+  <a rel="me" href="https://github.com/hsandt" target="_blank" title="github">
+    <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
+    <svg class="svg-icon icon-github">
+      <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<!-- Customized from https://github.com/jekyll/minima/blob/master/_includes/social-item.html
+     (2022-12-22) under MIT license -->
+<li>
+  <a rel="me" href="https://bitbucket.org/hsandt/" target="_blank" title="bitbucket">
+    <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
+    <svg class="svg-icon icon-bitbucket">
+      <use xlink:href="/assets/minima-social-icons.svg#bitbucket"></use>
+    </svg>
+  </a>
+</li>
+<!-- Customized from https://github.com/jekyll/minima/blob/master/_includes/social-item.html
+     (2022-12-22) under MIT license -->
+<li>
+  <a rel="me" href="https://stackoverflow.com/users/3256073/hsandt" target="_blank" title="stackoverflow">
+    <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
+    <svg class="svg-icon icon-stackoverflow">
+      <use xlink:href="/assets/minima-social-icons.svg#stackoverflow"></use>
+    </svg>
+  </a>
+</li>
+<!-- Customized from https://github.com/jekyll/minima/blob/master/_includes/social-item.html
+     (2022-12-22) under MIT license -->
+<li>
+  <a rel="me" href="https://twitter.com/n_huulong" target="_blank" title="twitter">
+    <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
+    <svg class="svg-icon icon-twitter">
+      <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+<!-- Customized from https://github.com/jekyll/minima/blob/master/_includes/social-item.html
+     (2022-12-22) under MIT license -->
+<li>
+  <a rel="me" href="https://www.youtube.com/channel/UCscc8AXbgMQCjzxsXLVvCsg" target="_blank" title="youtube">
+    <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
+    <svg class="svg-icon icon-youtube">
+      <use xlink:href="/assets/minima-social-icons.svg#youtube"></use>
+    </svg>
+  </a>
+</li>
+<!-- Customized from https://github.com/jekyll/minima/blob/master/_includes/social-item.html
+     (2022-12-22) under MIT license -->
+<li>
+  <a rel="me" href="https://www.linkedin.com/in/huulong/" target="_blank" title="linkedin">
+    <!-- OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) -->
+    <!-- OVERRIDE: add icon-{entry.platform} (e.g. icon-github) class for further color customization -->
+    <svg class="svg-icon icon-linkedin">
+      <use xlink:href="/assets/minima-social-icons.svg#linkedin"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer></body>
+
+</html>
