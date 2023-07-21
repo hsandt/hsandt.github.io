@@ -1,7 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://hsandt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hsandt.github.io/" rel="alternate" type="text/html" /><updated>2023-06-01T19:39:07+00:00</updated><id>https://hsandt.github.io/feed.xml</id><title type="html">Long Nguyen Huu</title><subtitle>The personal website of Long Nguyen Huu aka komehara</subtitle><author><name>Long Nguyen Huu</name><email>n.huu.long@gmail.com</email></author><entry><title type="html">Combat Platformer in Godot 4: Feb 2023 progress</title><link href="https://hsandt.github.io/2023/02/12/godot-combat-platformer.html" rel="alternate" type="text/html" title="Combat Platformer in Godot 4: Feb 2023 progress" /><published>2023-02-12T00:00:00+00:00</published><updated>2023-02-12T00:00:00+00:00</updated><id>https://hsandt.github.io/2023/02/12/godot-combat-platformer</id><content type="html" xml:base="https://hsandt.github.io/2023/02/12/godot-combat-platformer.html"><![CDATA[<p>I started working on a side-scrolling combat platformer prototype in Godot 4.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://hsandt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hsandt.github.io/" rel="alternate" type="text/html" /><updated>2023-07-21T16:50:51+00:00</updated><id>https://hsandt.github.io/feed.xml</id><title type="html">Long Nguyen Huu</title><subtitle>The personal website of Long Nguyen Huu aka komehara</subtitle><author><name>Long Nguyen Huu</name><email>n.huu.long@gmail.com</email></author><entry><title type="html">Combat Platformer in Godot 4: June 2023 progress</title><link href="https://hsandt.github.io/2023/06/08/godot-combat-platformer-progress.html" rel="alternate" type="text/html" title="Combat Platformer in Godot 4: June 2023 progress" /><published>2023-06-08T00:00:00+00:00</published><updated>2023-06-08T00:00:00+00:00</updated><id>https://hsandt.github.io/2023/06/08/godot-combat-platformer-progress</id><content type="html" xml:base="https://hsandt.github.io/2023/06/08/godot-combat-platformer-progress.html"><![CDATA[<p>I have added a few features to my prototype of combat platformer made in Godot since February, as well as less visible QoL/debug improvements:</p>
+
+<h3 id="gameplay">Gameplay</h3>
+
+<ul>
+  <li>Actions: Slide, airborne Attack</li>
+  <li>Flow: better action constraints (cannot move while attacking on ground, but can move when attacking airborne, with locked direction)</li>
+  <li>Enemy AI: Behaviour Trees with <a href="https://github.com/AdrienQuillet/godot-yet-another-behavior-tree">Yet Another Behavior Tree</a></li>
+</ul>
+
+<h3 id="visual">Visual</h3>
+<ul>
+  <li>Feedback: red hurt color, blue invincible color during Slide</li>
+  <li>More robust animation system with base (continuous) animations like Run + override (one-time) animations like Attack</li>
+</ul>
+
+<video autoplay="autoplay" loop="loop" width="400" height="300">
+  <source src="/assets/pictures/blog/2023-06-08/2023-06-08 Godot 4 Platformer Combat progress.webm" type="video/webm" />
+</video>
+
+<h3 id="debug">Debug</h3>
+<ul>
+  <li>Restart all entities immediately when pressing R</li>
+  <li>Debug overlay: FPS, current frame, currently pressed input</li>
+</ul>
+
+<video autoplay="autoplay" loop="loop" width="640" height="360">
+  <source src="/assets/pictures/blog/2023-06-08/2023-06-08 Godot 4 Platformer Combat - Debug overlay demo.webm" type="video/webm" />
+</video>
+
+<p>Assets used:</p>
+<ul>
+  <li><a href="https://clembod.itch.io/warrior-free-animation-set">Warrior-Free Animation set V1.3 by Clembod</a></li>
+  <li><a href="https://astrobob.itch.io/animated-pixel-art-skeleton">Animated pixel art skeleton by AstroBob</a></li>
+  <li><a href="https://untiedgames.itch.io/free-grasslands-tileset">Free Pixel Art Grasslands Tileset by Will Tice / unTied Games</a></li>
+</ul>]]></content><author><name>Long Nguyen Huu</name><email>n.huu.long@gmail.com</email></author><category term="godot" /><summary type="html"><![CDATA[I have added a few features to my prototype of combat platformer made in Godot since February, as well as less visible QoL/debug improvements:]]></summary></entry><entry><title type="html">Combat Platformer in Godot 4: Feb 2023 progress</title><link href="https://hsandt.github.io/2023/02/12/godot-combat-platformer-progress.html" rel="alternate" type="text/html" title="Combat Platformer in Godot 4: Feb 2023 progress" /><published>2023-02-12T00:00:00+00:00</published><updated>2023-02-12T00:00:00+00:00</updated><id>https://hsandt.github.io/2023/02/12/godot-combat-platformer-progress</id><content type="html" xml:base="https://hsandt.github.io/2023/02/12/godot-combat-platformer-progress.html"><![CDATA[<p>I started working on a side-scrolling combat platformer prototype in Godot 4.
 I’m regularly downloading new snapshots of Godot 4 beta which sometimes introduces breaking API changes, but I hope it will be worth it when it finally gets released.</p>
 
-<p><img src="/assets/pictures/blog/2023-02-12 demo features so far.gif" alt="Combat platformer demo: warrior runs, jumps and slashes a slime" /></p>
+<p><img src="/assets/pictures/blog/2023-02-12/2023-02-12 demo features so far.gif" alt="Combat platformer demo: warrior runs, jumps and slashes a slime" /></p>
 
 <p>I managed to port most of my code for character control/animation from an <a href="https://github.com/hsandt/flame-of-hope-godot/tree/master/Scripts">older project</a>. But it was top-view, so I still had to work more to get running and jumping to work.</p>
 
