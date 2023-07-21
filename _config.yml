@@ -67,6 +67,7 @@ portfolio_pages:
 # Collection of comic strip pages, path relative to comic-strips/
 comic_strip_pages:
   - crash-report.markdown
+  - confrontation.markdown
   - spellcaster.markdown
   - v-sync.markdown
   - prototype.markdown
