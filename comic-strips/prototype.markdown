@@ -1,7 +1,9 @@
 ---
 layout: comic_strip
 title: "Prototype"
-image: "Comic Strips - Prototype 200 ppi q80.jpg"
+image: "/assets/pictures/comic-strips/Prototype thumbnail.webp"
+thumbnail: "/assets/pictures/comic-strips/Prototype thumbnail.webp"
+comic_image: "/assets/pictures/comic-strips/Prototype.jpg"
 alt_text: >
     Spider-Man (2002)
     Green Goblin (in front of hi-tech lab testing field): "I’m gonna steal that prototype of hoverboard!"

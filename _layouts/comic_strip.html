@@ -12,6 +12,7 @@ layout: default
     {{ content }}
   </div>
 
-  <img src="/assets/pictures/comic-strips/{{ page.image }}" alt="{{ page.alt_text | escape }}">
+  <!-- Note that `page.image` is used for social media preview only -->
+  <img src="{{ page.comic_image }}" alt="{{ page.alt_text | escape }}">
 
 </article>

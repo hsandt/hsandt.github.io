@@ -1,7 +1,9 @@
 ---
 layout: comic_strip
 title: "VSync"
-image: "Comic Strips - V-sync 200 ppi q80.jpg"
+image: "/assets/pictures/comic-strips/V-sync thumbnail.webp"
+thumbnail: "/assets/pictures/comic-strips/V-sync thumbnail.webp"
+comic_image: "/assets/pictures/comic-strips/V-sync.jpg"
 alt_text: >
     V-Sync
 
@@ -11,6 +13,6 @@ alt_text: >
     V-Sync OFF: YEAAAH!!! (gamer is 100% into the game, but computer is burning)
 
     Signed: komehara
-categories: society humor
+categories: game humor
 ---
 I spotted a typo, should be "modes" plural.
