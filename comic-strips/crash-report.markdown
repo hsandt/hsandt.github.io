@@ -1,7 +1,9 @@
 ---
 layout: comic_strip
 title: "Crash report"
-image: "Crash report.png"
+image: "/assets/pictures/comic-strips/Crash report thumbnail.webp"
+thumbnail: "/assets/pictures/comic-strips/Crash report thumbnail.webp"
+comic_image: "/assets/pictures/comic-strips/Crash report.webp"
 alt_text: >
     Crash 1
     Uh, what happened?

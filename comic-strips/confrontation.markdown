@@ -1,7 +1,9 @@
 ---
 layout: comic_strip
 title: "Confrontation"
-image: "Comic Strips - Confrontation 300 ppi - better contrast.jpg"
+image: "/assets/pictures/comic-strips/Confrontation thumbnail.webp"
+thumbnail: "/assets/pictures/comic-strips/Confrontation thumbnail.webp"
+comic_image: "/assets/pictures/comic-strips/Confrontation.avif"
 alt_text: >
     Player: I think your game is not optimized.
     Developer: I think your GPU is too slow.

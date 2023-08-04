@@ -1,7 +1,9 @@
 ---
 layout: comic_strip
 title: "Spellcaster"
-image: "Comic Strips - Spellcaster 200 ppi q80.jpg"
+image: "/assets/pictures/comic-strips/Spellcaster thumbnail.webp"
+thumbnail: "/assets/pictures/comic-strips/Spellcaster thumbnail.webp"
+comic_image: "/assets/pictures/comic-strips/Spellcaster.jpg"
 alt_text: >
     Spellcaster
 
