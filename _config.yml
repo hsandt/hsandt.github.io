@@ -42,13 +42,34 @@ author:
   email: n.huu.long@gmail.com
 minima:
   social_links:
-    - { platform: itchio, user_url: "https://komehara.itch.io/" }
-    - { platform: github,  user_url: "https://github.com/hsandt" }
-    - { platform: bitbucket, user_url: "https://bitbucket.org/hsandt/" }
-    - { platform: stackoverflow, user_url: "https://stackoverflow.com/users/3256073/hsandt" }
-    - { platform: twitter, user_url: "https://twitter.com/n_huulong" }
-    - { platform: youtube, user_url: "https://www.youtube.com/channel/UCscc8AXbgMQCjzxsXLVvCsg" }
-    - { platform: linkedin, user_url: "https://www.linkedin.com/in/huulong/" }
+    - platform: itchio
+      user_url: "https://komehara.itch.io/"
+      title: My games on itch.io
+    - platform: github
+      user_url: "https://github.com/hsandt"
+      title: My GitHub repositories
+    - platform: bitbucket
+      user_url: "https://bitbucket.org/hsandt/"
+      title: My BitBucket repositories
+    - platform: stackoverflow
+      user_url: "https://stackoverflow.com/users/3256073/hsandt"
+      title: My profile on Stack Overflow
+    - platform: twitter
+      user_url: "https://twitter.com/n_huulong"
+      title: My posts on Twitter
+    - platform: mastodon
+      user_url: "https://mastodon.gamedev.place/@leyn"
+      title: My posts on Mastodon
+    - platform: youtube
+      user_url: "https://www.youtube.com/channel/UCscc8AXbgMQCjzxsXLVvCsg"
+      title: My videos on YouTube
+    - platform: linkedin
+      user_url: "https://www.linkedin.com/in/huulong/"
+      title: My profile on LinkedIn
+    - platform: kofi
+      user_url: "https://ko-fi.com/komehara"
+      title: Donations on Ko-fi
+
 footer: >- # this means to ignore newlines until "baseurl:"
   This website was made with Jekyll and is hosted on GitHub Pages.
 
