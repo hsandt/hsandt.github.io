@@ -66,6 +66,10 @@ minima:
     - platform: linkedin
       user_url: "https://www.linkedin.com/in/huulong/"
       title: My profile on LinkedIn
+    - platform: kofi
+      user_url: "https://ko-fi.com/komehara"
+      title: Donations on Ko-fi
+
 footer: >- # this means to ignore newlines until "baseurl:"
   This website was made with Jekyll and is hosted on GitHub Pages.
 
