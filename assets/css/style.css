@@ -907,7 +907,7 @@ table.th-width-20-percent th {
   margin-left: -5px;
 }
 .item-grid .item-thumbnail img:hover {
-  filter: brightness(1.3);
+  filter: brightness(1.2);
 }
 .item-grid .item-thumbnail .item-thumbnail-overlay {
   position: absolute;
@@ -917,6 +917,7 @@ table.th-width-20-percent th {
   padding: 5px;
   background: rgba(0, 0, 0, 0.5);
   color: #ffffff;
+  pointer-events: none;
 }
 
 .portfolio-item .post-header {
