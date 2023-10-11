@@ -1,4 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://hsandt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hsandt.github.io/" rel="alternate" type="text/html" /><updated>2023-08-11T18:25:46+00:00</updated><id>https://hsandt.github.io/feed.xml</id><title type="html">Long Nguyen Huu</title><subtitle>The personal website of Long Nguyen Huu aka komehara</subtitle><author><name>Long Nguyen Huu</name><email>n.huu.long@gmail.com</email></author><entry><title type="html">Combat Platformer in Godot 4: June 2023 progress</title><link href="https://hsandt.github.io/2023/06/08/godot-combat-platformer-progress.html" rel="alternate" type="text/html" title="Combat Platformer in Godot 4: June 2023 progress" /><published>2023-06-08T00:00:00+00:00</published><updated>2023-06-08T00:00:00+00:00</updated><id>https://hsandt.github.io/2023/06/08/godot-combat-platformer-progress</id><content type="html" xml:base="https://hsandt.github.io/2023/06/08/godot-combat-platformer-progress.html"><![CDATA[<p>I have added a few features to my prototype of combat platformer made in Godot since February, as well as less visible QoL/debug improvements:</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://hsandt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hsandt.github.io/" rel="alternate" type="text/html" /><updated>2023-10-11T12:40:58+00:00</updated><id>https://hsandt.github.io/feed.xml</id><title type="html">Long Nguyen Huu</title><subtitle>The personal website of Long Nguyen Huu aka komehara</subtitle><author><name>Long Nguyen Huu</name><email>n.huu.long@gmail.com</email></author><entry><title type="html">Snake remake in Godot 4: October 2023 progress</title><link href="https://hsandt.github.io/2023/10/11/godot-snake-evolved-progress.html" rel="alternate" type="text/html" title="Snake remake in Godot 4: October 2023 progress" /><published>2023-10-11T00:00:00+00:00</published><updated>2023-10-11T00:00:00+00:00</updated><id>https://hsandt.github.io/2023/10/11/godot-snake-evolved-progress</id><content type="html" xml:base="https://hsandt.github.io/2023/10/11/godot-snake-evolved-progress.html"><![CDATA[<p>In July 2023, I started working on a “Snake with a twist” in parallel to my other games. It’s a smaller project that I intend to finish within 100 hours of work, using only geometrical graphics and simple arcade mechanics to avoid artistic and technical difficulties (game design will probably be the most difficult part).</p>
+
+<p><img src="/assets/pictures/blog/2023-10-11/Snake Evolved - 2023-08-29 - wrap-around and laddering.gif" alt="Snake Evolved: wrap-around and laddering" height="360" /></p>
+
+<p>My latest addition is moving enemies. They currently move at half the speed of the player snake, but they still make the game significantly harder: new enemies regularly spawn and keep coming at you, and touching them causes instant game over. You can trick them by repeatedly warping to the other side of the arena, but I may eventually fix this by making enemies aware of edge warping to find the real shortest distance to player snake.</p>
+
+<video controls="" width="640" height="360">
+  <source src="/assets/pictures/blog/2023-10-11/Snake Evolved - 2023-10-10 - Adding moving enemies - Eat and lose 720p.webm" type="video/webm" />
+</video>
+
+<p>One problem is inherent to snake: you cannot control the tail, so it is very vulnerable, even more as your snake gets longer. I may mitigate this by reducing penalty when a body part other than the head hits an enemy.</p>
+
+<h3 id="gameplay">Gameplay</h3>
+
+<ul>
+  <li>Player character: move like a classic snake (hold diagonal for laddering)</li>
+  <li>Pick-up: eat to extend snake length by 1 and increase Score</li>
+</ul>
+
+<h3 id="visual">Visual</h3>
+
+<ul>
+  <li>Dark background</li>
+  <li>All sprites are colored squares</li>
+</ul>
+
+<h3 id="hud">HUD</h3>
+
+<ul>
+  <li>Display score in top-left corner</li>
+</ul>
+
+<h3 id="known-issues">Known issues</h3>
+
+<ul>
+  <li>Pick-up and enemies can spawn anywhere, including near and inside the player snake without warning!</li>
+</ul>]]></content><author><name>Long Nguyen Huu</name><email>n.huu.long@gmail.com</email></author><category term="godot" /><summary type="html"><![CDATA[In July 2023, I started working on a “Snake with a twist” in parallel to my other games. It’s a smaller project that I intend to finish within 100 hours of work, using only geometrical graphics and simple arcade mechanics to avoid artistic and technical difficulties (game design will probably be the most difficult part).]]></summary></entry><entry><title type="html">Combat Platformer in Godot 4: June 2023 progress</title><link href="https://hsandt.github.io/2023/06/08/godot-combat-platformer-progress.html" rel="alternate" type="text/html" title="Combat Platformer in Godot 4: June 2023 progress" /><published>2023-06-08T00:00:00+00:00</published><updated>2023-06-08T00:00:00+00:00</updated><id>https://hsandt.github.io/2023/06/08/godot-combat-platformer-progress</id><content type="html" xml:base="https://hsandt.github.io/2023/06/08/godot-combat-platformer-progress.html"><![CDATA[<p>I have added a few features to my prototype of combat platformer made in Godot since February, as well as less visible QoL/debug improvements:</p>
 
 <h3 id="gameplay">Gameplay</h3>
 
