@@ -850,6 +850,9 @@ table td {
   font-size: 1.3rem;
   font-weight: 500;
 }
+.post-content video {
+  margin-bottom: 10px;
+}
 
 table.invisible-table {
   table-layout: fixed;

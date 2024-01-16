@@ -3,23 +3,22 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Spellcaster | Long Nguyen Huu</title>
+<title>Combat Platformer in Godot 4: January 2024 progress | Long Nguyen Huu</title>
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Spellcaster" />
+<meta property="og:title" content="Combat Platformer in Godot 4: January 2024 progress" />
 <meta name="author" content="Long Nguyen Huu" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="The personal website of Long Nguyen Huu aka komehara" />
-<meta property="og:description" content="The personal website of Long Nguyen Huu aka komehara" />
-<link rel="canonical" href="https://hsandt.github.io/comic-strips/spellcaster.html" />
-<meta property="og:url" content="https://hsandt.github.io/comic-strips/spellcaster.html" />
+<meta name="description" content="I decided to switch from a combat platformer where you fight many minions to a single boss fight where platforming is essentially to dodge boss attacks and find a right angle to counter-attack. I started drawing the first original sprites for the boss, so I could get exactly the character and projectile animations I needed." />
+<meta property="og:description" content="I decided to switch from a combat platformer where you fight many minions to a single boss fight where platforming is essentially to dodge boss attacks and find a right angle to counter-attack. I started drawing the first original sprites for the boss, so I could get exactly the character and projectile animations I needed." />
+<link rel="canonical" href="https://hsandt.github.io/2024/01/06/godot-combat-platformer-progress.html" />
+<meta property="og:url" content="https://hsandt.github.io/2024/01/06/godot-combat-platformer-progress.html" />
 <meta property="og:site_name" content="Long Nguyen Huu" />
-<meta property="og:image" content="https://hsandt.github.io/assets/pictures/comic-strips/Spellcaster%20thumbnail.webp" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://hsandt.github.io/assets/pictures/comic-strips/Spellcaster%20thumbnail.webp" />
-<meta property="twitter:title" content="Spellcaster" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-01-06T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Combat Platformer in Godot 4: January 2024 progress" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Long Nguyen Huu"},"description":"The personal website of Long Nguyen Huu aka komehara","headline":"Spellcaster","image":"https://hsandt.github.io/assets/pictures/comic-strips/Spellcaster%20thumbnail.webp","url":"https://hsandt.github.io/comic-strips/spellcaster.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Long Nguyen Huu"},"dateModified":"2024-01-06T00:00:00+00:00","datePublished":"2024-01-06T00:00:00+00:00","description":"I decided to switch from a combat platformer where you fight many minions to a single boss fight where platforming is essentially to dodge boss attacks and find a right angle to counter-attack. I started drawing the first original sprites for the boss, so I could get exactly the character and projectile animations I needed.","headline":"Combat Platformer in Godot 4: January 2024 progress","mainEntityOfPage":{"@type":"WebPage","@id":"https://hsandt.github.io/2024/01/06/godot-combat-platformer-progress.html"},"url":"https://hsandt.github.io/2024/01/06/godot-combat-platformer-progress.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://hsandt.github.io/feed.xml" title="Long Nguyen Huu" />
 </head>
@@ -146,28 +145,44 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post comic-strip">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">Spellcaster</h1>
-    <h2 class="post-subtitle"></h2>
+    <h1 class="post-title p-name" itemprop="name headline">Combat Platformer in Godot 4: January 2024 progress</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2024-01-06T00:00:00+00:00" itemprop="datePublished">
+        Jan 6, 2024
+      </time></p>
   </header>
 
-  <div class="post-content">
-    
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I decided to switch from a combat platformer where you fight many minions to <strong>a single boss fight</strong> where platforming is essentially to dodge boss attacks and find a right angle to counter-attack. I started drawing the first original sprites for the boss, so I could get exactly the character and projectile animations I needed.</p>
 
-  </div>
+<h3 id="gameplay">Gameplay</h3>
 
-  <!-- Note that `page.image` is used for social media preview only -->
-  <img src="/assets/pictures/comic-strips/Spellcaster.jpg" alt="Spellcaster
-Journalist: If you could use one of the spells in Harry Potter, which one would you choose?
-Interviewed person A (annoyed by the surrounding voices): Silencio
-Interviewed person B (locked out of his house): Alohomora
-Interviewed person C (standing in his own untidy room): Scrougify
-Interviewed person D (reading under her bed sheets, trying to reach a bag of crisps 10cm too far for her hand, but too lazy to move her body): Accio
-Signed: komehara
-" height="">
+<ul>
+  <li>Level: added 1 boss: the sorcerer</li>
+  <li>Enemy AI: the sorcerer continuously shoots fireballs in the same direction</li>
+</ul>
 
+<h3 id="visual">Visual</h3>
+
+<ul>
+  <li>Character sprite: Sorcerer 2-frame Idle, 2-frame Hurt, 2-frame Die, 4-frame SpellForward (not used yet)</li>
+  <li>Projectile sprite: Fireball 4-frame Move</li>
+</ul>
+
+<video autoplay="autoplay" loop="loop">
+  <source src="/assets/pictures/blog/2024-01-16/2024-01-16 Godot 4 Platformer Combat progress - Boss - Fireball, Hurt and Die 640x360.webm" type="video/webm" />
+</video>
+
+<p>Assets used:</p>
+<ul>
+  <li><a href="https://clembod.itch.io/warrior-free-animation-set">Warrior-Free Animation set V1.3 by Clembod</a></li>
+  <li><a href="https://untiedgames.itch.io/free-grasslands-tileset">Free Pixel Art Grasslands Tileset by Will Tice / unTied Games</a></li>
+</ul>
+
+
+  </div><a class="u-url" href="/2024/01/06/godot-combat-platformer-progress.html" hidden></a>
 </article>
 
       </div>

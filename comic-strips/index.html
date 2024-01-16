@@ -139,15 +139,31 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/blog/">Blog</a><a class="page-link" href="/comic-strips/">Comic strips</a><a class="page-link" href="/resume/">Resume</a></div>
+        <div class="trigger"><a class="page-link" href="/portfolio/">Portfolio</a><a class="page-link" href="/blog/">Blog</a><a class="page-link" href="/comic-strips/">Comic strips</a><a class="page-link" href="/resume/">Resume</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home"><h1 class="page-heading">Comic strips</h1><p>I’m writing comic strips (mostly 3/4-panels) about general dev, game dev, and sometimes daily life. I’m gradually filling this page with old strips I’ve already drawn (on paper), and new strips (mostly digital). The strips are broadly sorted by drawing date, starting with the most recent ones.</p>
+        <!-- Customized from https://github.com/jekyll/minima/blob/7f749d69cb7834e2cf874ad4deaf7d479be7ef3d/_layouts/page.html
+     (2016-05-21) under MIT license -->
+<article class="post">
+
+  <header class="post-header standard-page">
+    <h1 class="post-title">Comic strips</h1>
+  </header>
+
+  <div class="post-content">
+    <div class="comic_strips">
+
+  <p>I’m writing comic strips (mostly 3/4-panels) about general dev, game dev, and sometimes daily life. I’m gradually filling this page with old strips I’ve already drawn (on paper), and new strips (mostly digital). The strips are broadly sorted by drawing date, starting with the most recent ones.</p>
 
 <p>You can click on them to see them bigger, and sometimes with an extra comment.</p>
 <div class="item-grid"><div class="item-thumbnail">
+      <a class="page-link" href="/comic-strips/welfare.html">
+        <!-- If no custom thumbnail is defined, use the shrinked comic strip image instead --><img src="/assets/pictures/comic-strips/Welfare thumbnail.webp" alt="Thumbnail for Welfare">
+        <div class="item-thumbnail-overlay">Welfare</div>
+      </a>
+    </div><div class="item-thumbnail">
       <a class="page-link" href="/comic-strips/engine.html">
         <!-- If no custom thumbnail is defined, use the shrinked comic strip image instead --><img src="/assets/pictures/comic-strips/Engine thumbnail.webp" alt="Thumbnail for Engine">
         <div class="item-thumbnail-overlay">Engine</div>
@@ -186,6 +202,10 @@
   
 
 </div>
+
+  </div>
+
+</article>
 
       </div>
     </main><!-- Customized from https://github.com/jekyll/minima/blob/2f032a403c2338db6d35c83ee2376150e2ded468/_includes/footer.html
