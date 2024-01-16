@@ -19,7 +19,7 @@ meta:
   role: "Gameplay programming (3C)"
   technology: "Anvil (proprietary engine)"
 ---
-![Ghost Recon Breakpoint Banner](/assets/pictures/Ghost-Recon-Breakpoint-Title-1024x576.jpg)
+![Ghost Recon Breakpoint Banner](/assets/pictures/portfolio/Ghost-Recon-Breakpoint-Title-1024x576.jpg)
 
 ## Description
 
@@ -28,10 +28,10 @@ meta:
 ## Screenshots
 
 <div class="grid">
-  <img src="/assets/pictures/Ghost-Recon-Breakpoint-Drone-768x432.png" alt="Teamwork">
-  <img src="/assets/pictures/Ghost-Recon-Breakpoint-No-HUD-battle-768x432.png" alt="Ghost shooting a rocket">
-  <img src="/assets/pictures/Ghost-Recon-Breakpoint-No-HUD-stealth-768x432.jpg" alt="Ghost hiding from a drone">
-  <img src="/assets/pictures/Ghost-Recon-Breakpoint-No-HUD-Teamwork-768x432.jpg" alt="Enemy grounded drone">
+  <img src="/assets/pictures/portfolio/Ghost-Recon-Breakpoint-Drone-768x432.png" alt="Teamwork">
+  <img src="/assets/pictures/portfolio/Ghost-Recon-Breakpoint-No-HUD-battle-768x432.png" alt="Ghost shooting a rocket">
+  <img src="/assets/pictures/portfolio/Ghost-Recon-Breakpoint-No-HUD-stealth-768x432.jpg" alt="Ghost hiding from a drone">
+  <img src="/assets/pictures/portfolio/Ghost-Recon-Breakpoint-No-HUD-Teamwork-768x432.jpg" alt="Enemy grounded drone">
 </div>
 
 ## Context
