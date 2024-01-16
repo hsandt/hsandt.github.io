@@ -5,10 +5,12 @@
 layout: home
 ---
 
-Hello! I am a game developer from France with 3 years of professional experience.
+Hello! I am a game developer from France with 3 years of professional experience working in a company and 3 years working on personal projects.
 
-My main focus is gameplay, UI and tool programming. I also work on game design and some pixel art on my personal projects.
+My main focus is gameplay programming, along some UI and tool programming. I also work on game design and some pixel art on my personal projects.
 
-Company projects are listed below. For personal projects, have a look at my [itch.io](https://komehara.itch.io/).
+Company projects are listed below.
+
+For personal projects, have a look at my [itch.io](https://komehara.itch.io/).
 
 For my works in progress, check out my [blog](/blog/).

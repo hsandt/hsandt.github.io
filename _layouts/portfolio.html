@@ -1,0 +1,13 @@
+---
+layout: page
+---
+<!-- Customized from https://github.com/jekyll/minima/blob/f3de471bf38a14c5025319fdd541c30fe9f6916f/_layouts/home.html
+     (2020-02-17) under MIT license -->
+<div class="portfolio">
+
+  {{ content }}
+
+  {% comment %} show_count <= 0 means we want to show all the items {% endcomment %}
+  {%- include portfolio-grid.html show_count=-1 -%}
+
+</div>

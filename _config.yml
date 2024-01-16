@@ -74,6 +74,7 @@ footer: >- # this means to ignore newlines until "baseurl:"
   This website was made with Jekyll and is hosted on GitHub Pages.
 
 header_pages:
+  - portfolio.markdown
   - blog.markdown
   - comic-strips.markdown
   - resume.markdown
