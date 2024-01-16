@@ -17,6 +17,10 @@ My latest addition is moving enemies. They currently move at half the speed of t
 
 One problem is inherent to snake: you cannot control the tail, so it is very vulnerable, even more as your snake gets longer. I may mitigate this by reducing penalty when a body part other than the head hits an enemy.
 
+## Dev status
+
+Total work time: 27h
+
 ### Gameplay
 
 - Player character: move like a classic snake (hold diagonal for laddering)

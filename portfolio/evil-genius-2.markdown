@@ -18,26 +18,26 @@ meta:
   role: "Programming"
   technology: "Proprietary engine"
 ---
-![Evil Genius 2 banner](/assets/pictures/Evil-Genius-2-Banner_TitleTopRightMargin_1000x563.jpg)
+![Evil Genius 2 banner](/assets/pictures/portfolio/Evil-Genius-2-Banner_TitleTopRightMargin_1000x563.jpg)
 
 ## Description
- 
+
 [Evil Genius 2](https://evilgeniusgame.com/){:target="_blank"} is a construction and management simulation game where you build a hidden lair and manage minions in your quest to conquer the world. In this game packed with old spy movie references, you can upgrade your tech, send minions on missions across the world or even directly control your genius and their henchmen to fight the Forces of Justice and establish true world domination.
 
 ## Screenshots
 
 <div class="grid">
-  <img src="/assets/pictures/Evil-Genius-2 20201103163907_1 (construction).jpg" alt="Evil Genius 2 - Construction">
-  <img src="/assets/pictures/Evil-Genius-2-World-Domination06162021-112200-78857 (genius control) from Game UI Database.jpg" alt="Evil Genius 2 - Genius control">
-  <img src="/assets/pictures/Evil-Genius-2-World-Domination06162021-112158-85012 (world map) from Game UI Database.jpg" alt="Evil Genius 2 - World map">
-  <img src="/assets/pictures/Evil-Genius-2-World-Domination06162021-112155-94083 (minion management) from Game UI Database.jpg" alt="Evil Genius 2 - Minion management">
+  <img src="/assets/pictures/portfolio/Evil-Genius-2 20201103163907_1 (construction).jpg" alt="Evil Genius 2 - Construction">
+  <img src="/assets/pictures/portfolio/Evil-Genius-2-World-Domination06162021-112200-78857 (genius control) from Game UI Database.jpg" alt="Evil Genius 2 - Genius control">
+  <img src="/assets/pictures/portfolio/Evil-Genius-2-World-Domination06162021-112158-85012 (world map) from Game UI Database.jpg" alt="Evil Genius 2 - World map">
+  <img src="/assets/pictures/portfolio/Evil-Genius-2-World-Domination06162021-112155-94083 (minion management) from Game UI Database.jpg" alt="Evil Genius 2 - Minion management">
 </div>
 
 (some screenshots from [Game UI Database](https://www.gameuidatabase.com/gameData.php?id=710){:target="_blank"})
 
 ## Context
 
-I worked remotely from France with Rebellion Warwick. I coded in C++ using the in-house engine. 
+I worked remotely from France with Rebellion Warwick. I coded in C++ using the in-house engine.
 
 ## Role
 
