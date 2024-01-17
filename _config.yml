@@ -73,6 +73,13 @@ minima:
 footer: >- # this means to ignore newlines until "baseurl:"
   This website was made with Jekyll and is hosted on GitHub Pages.
 
+defaults:
+  - scope:
+      path: "_posts/devlog"
+      type: "posts"
+    values:
+      category: devlog
+
 header_pages:
   - portfolio.markdown
   - blog.markdown
