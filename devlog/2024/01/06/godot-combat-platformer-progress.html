@@ -3,21 +3,22 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Resume | Long Nguyen Huu</title>
+<title>Combat Platformer in Godot 4: January 2024 progress | Long Nguyen Huu</title>
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Resume" />
+<meta property="og:title" content="Combat Platformer in Godot 4: January 2024 progress" />
 <meta name="author" content="Long Nguyen Huu" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="The personal website of Long Nguyen Huu aka komehara" />
-<meta property="og:description" content="The personal website of Long Nguyen Huu aka komehara" />
-<link rel="canonical" href="https://hsandt.github.io/resume/" />
-<meta property="og:url" content="https://hsandt.github.io/resume/" />
+<meta name="description" content="I decided to switch from a combat platformer where you fight many minions to a single boss fight where platforming is essentially to dodge boss attacks and find a right angle to counter-attack. I started drawing the first original sprites for the boss, so I could get exactly the character and projectile animations I needed." />
+<meta property="og:description" content="I decided to switch from a combat platformer where you fight many minions to a single boss fight where platforming is essentially to dodge boss attacks and find a right angle to counter-attack. I started drawing the first original sprites for the boss, so I could get exactly the character and projectile animations I needed." />
+<link rel="canonical" href="https://hsandt.github.io/devlog/2024/01/06/godot-combat-platformer-progress.html" />
+<meta property="og:url" content="https://hsandt.github.io/devlog/2024/01/06/godot-combat-platformer-progress.html" />
 <meta property="og:site_name" content="Long Nguyen Huu" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-01-06T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Resume" />
+<meta property="twitter:title" content="Combat Platformer in Godot 4: January 2024 progress" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Long Nguyen Huu"},"description":"The personal website of Long Nguyen Huu aka komehara","headline":"Resume","url":"https://hsandt.github.io/resume/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Long Nguyen Huu"},"dateModified":"2024-01-06T00:00:00+00:00","datePublished":"2024-01-06T00:00:00+00:00","description":"I decided to switch from a combat platformer where you fight many minions to a single boss fight where platforming is essentially to dodge boss attacks and find a right angle to counter-attack. I started drawing the first original sprites for the boss, so I could get exactly the character and projectile animations I needed.","headline":"Combat Platformer in Godot 4: January 2024 progress","mainEntityOfPage":{"@type":"WebPage","@id":"https://hsandt.github.io/devlog/2024/01/06/godot-combat-platformer-progress.html"},"url":"https://hsandt.github.io/devlog/2024/01/06/godot-combat-platformer-progress.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://hsandt.github.io/feed.xml" title="Long Nguyen Huu" />
 </head>
@@ -144,186 +145,44 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <!-- Customized from https://github.com/jekyll/minima/blob/7f749d69cb7834e2cf874ad4deaf7d479be7ef3d/_layouts/page.html
-     (2016-05-21) under MIT license -->
-<article class="post">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header standard-page">
-    <h1 class="post-title">Resume</h1>
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Combat Platformer in Godot 4: January 2024 progress</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2024-01-06T00:00:00+00:00" itemprop="datePublished">
+        Jan 6, 2024
+      </time></p>
   </header>
 
-  <div class="post-content">
-    <p>You can read my resume below or <a href="/assets/documents/Resume Long Nguyen Huu.pdf" target="_blank">download the PDF</a>.</p>
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I decided to switch from a combat platformer where you fight many minions to <strong>a single boss fight</strong> where platforming is essentially to dodge boss attacks and find a right angle to counter-attack. I started drawing the first original sprites for the boss, so I could get exactly the character and projectile animations I needed.</p>
 
-<h1 id="long-nguyen-huu">Long Nguyen Huu</h1>
+<h3 id="gameplay">Gameplay</h3>
 
-<h2 id="game-programmer">Game Programmer</h2>
+<ul>
+  <li>Level: added 1 boss: the sorcerer</li>
+  <li>Enemy AI: the sorcerer continuously shoots fireballs in the same direction</li>
+</ul>
 
-<table class="invisible-table narrow-rows width-800">
-    <tbody>
-        <tr>
-            <td><a href="https://hsandt.github.io">https://hsandt.github.io</a></td>
-            <td>Skype: n_huulong</td>
-            <td>Paris, France</td>
-        </tr>
-        <tr>
-            <td><a href="https://komehara.itch.io" target="_blank">https://komehara.itch.io</a></td>
-            <td>n.huu.long@gmail.com</td>
-            <td>+33 6 98 06 82 74</td>
-        </tr>
-        <tr>
-            <td><a href="https://github.com/hsandt" target="_blank">https://github.com/hsandt</a></td>
-        </tr>
-    </tbody>
-</table>
+<h3 id="visual">Visual</h3>
 
-<h2 id="profile">Profile</h2>
+<ul>
+  <li>Character sprite: Sorcerer 2-frame Idle, 2-frame Hurt, 2-frame Die, 4-frame SpellForward (not used yet)</li>
+  <li>Projectile sprite: Fireball 4-frame Move</li>
+</ul>
 
-<p>I have 3 years of experience working in studios on shipped games for PC &amp; console. I also enjoy working solo or in jams with lightweight engines. I’m enthusiastic about new tools and seek efficient workflows.</p>
+<video autoplay="autoplay" loop="loop">
+  <source src="/assets/pictures/blog/2024-01-16/2024-01-16 Godot 4 Platformer Combat progress - Boss - Fireball, Hurt and Die 640x360.webm" type="video/webm" />
+</video>
 
-<h2 id="tech">Tech</h2>
+<p>Assets used:</p>
+<ul>
+  <li><a href="https://clembod.itch.io/warrior-free-animation-set">Warrior-Free Animation set V1.3 by Clembod</a></li>
+  <li><a href="https://untiedgames.itch.io/free-grasslands-tileset">Free Pixel Art Grasslands Tileset by Will Tice / unTied Games</a></li>
+</ul>
 
-<table class="invisible-table narrow-rows width-500">
-    <tbody>
-        <tr>
-            <th>Engines</th>
-            <td>Unity, PICO-8, Godot, UE4</td>
-        </tr>
-        <tr>
-            <th>Programming languages</th>
-            <td>C#, C++, Python, Lua, Rust</td>
-        </tr>
-    </tbody>
-</table>
 
-<div class="avoid-break-page">
-
-    <h2>Professional experience</h2>
-
-    <h3>Evil Genius 2</h3>
-
-    <p class="work-info-header">2020.10 - 2022.02 @ Rebellion Warwick, UK (remote work from France)</p>
-    <p>Construction and management simulation for Windows, PS4, PS5, Xbox One, Xbox Series S/X</p>
-    <p>In-house engine - Gameplay &amp; UI programming (C++)</p>
-    <ul>
-        <li>Temperature system</li>
-        <li>Trap combo tracking system</li>
-        <li>New events &amp; objectives</li>
-        <li>Misc fixes &amp; improvements</li>
-    </ul>
-
-</div>
-
-<div class="avoid-break-page">
-
-    <h3>Hotshot Racing</h3>
-
-    <p class="work-info-header">2018.11 - 2019.11 @ Sumo Digital, UK</p>
-    <p>Racing game for Windows, Switch, PS4, Xbox One</p>
-    <p>In-house engine - Gameplay, UI &amp; Tool programming (C++/C#)</p>
-    <ul>
-        <li>Money reward &amp; car part unlock/purchase system</li>
-        <li>Improve track surface effects on gameplay and aesthetics</li>
-        <li>Improve boost system (charge gauge, PFX and screen FX, HUD animations)</li>
-        <li>Improve debug tool (C#)</li>
-    </ul>
-
-</div>
-
-<div class="avoid-break-page">
-
-    <h3>Ghost Recon: Breakpoint</h3>
-
-    <p class="work-info-header">2017.08 - 2018.08 @ Ubisoft Paris, France</p>
-    <p>Open-world military shooter for Windows, PS4, Xbox One</p>
-    <p>In-house engine - Gameplay programming in 3C team (C++)</p>
-    <p>Implement the following systems:</p>
-    <ul>
-        <li>Injury system</li>
-        <li>Suppressive fire</li>
-        <li>Sync shot drone</li>
-    </ul>
-    <p>and plug the associated character animations, voices, camera FX and/or network replication</p>
-
-</div>
-
-<div class="avoid-break-page">
-
-    <h3>Guns, Gore &amp; Cannoli 2</h3>
-
-    <p class="work-info-header">2016.08 - 2016.12 @ Crazy Monkey Studios, Belgium (internship)</p>
-    <p>Indie run 'n' gun for Windows, Switch, PS4, Xbox One</p>
-    <p>Unity - Gameplay programming (C#), Level design</p>
-    <ul>
-        <li>Prototype level section (whiteboxing, enemy spawns, events)</li>
-        <li>Bomber enemy behavior</li>
-        <li>Improve AI navmesh generation and custom editor tools</li>
-    </ul>
-
-</div>
-
-<div class="avoid-break-page">
-
-    <h2>Personal projects</h2>
-
-    <h3>pico sonic (fan game)</h3>
-
-    <p class="work-info-header">2018.05 - present</p>
-    <p>A partial 8-bit demake of Sonic 3 made with PICO-8</p>
-    <ul>
-        <li>Programming (Lua): menu, cinematics, in-game</li>
-        <li>Rebuild beginning of first level to work without enemies</li>
-        <li>Adapt sprite and SFX to lo-res</li>
-        <li>Convert and adjust FamiTracker BGM made by a chiptune composer for PICO-8</li>
-    </ul>
-
-</div>
-
-<div class="avoid-break-page">
-
-    <h2>Education</h2>
-
-    <p class="work-info-header">Postgraduate degree in Interactive Digital Experiences</p>
-    <p>2015.10 - 2017.02 @ Gobelins (Paris, France) - Enjmin (Angoulême, France)</p>
-
-    <p class="work-info-header">Double degree of Master of Science in Engineering</p>
-    <p>2011.09 - 2015.08 @ Supélec (France) - Keio University (Japan)</p>
-
-</div>
-
-<div class="avoid-break-page">
-
-    <h2>Languages</h2>
-
-    <table class="invisible-table narrow-rows width-400 th-width-20-percent">
-        <tbody>
-            <tr>
-                <th>English</th>
-                <td>Full working proficiency</td>
-            </tr>
-            <tr>
-                <th>French</th>
-                <td>Native</td>
-            </tr>
-            <tr>
-                <th>Japanese</th>
-                <td>Limited working proficiency</td>
-            </tr>
-            <tr>
-                <th>German</th>
-                <td>Limited working proficiency</td>
-            <tr>
-            </tr>
-                <th>Korean</th>
-                <td>Beginner</td>
-            </tr>
-        </tbody>
-    </table>
-
-</div>
-
-  </div>
-
+  </div><a class="u-url" href="/devlog/2024/01/06/godot-combat-platformer-progress.html" hidden></a>
 </article>
 
       </div>
