@@ -92,3 +92,26 @@ I'll stay here until the close<br>
 *Initial draft written on 2020-03-07 on the theme "Personal experience" for Creating Writing Taster Day @ Nottingham with Maggi Fazzini*
 
 *Website version written on 2024-01-31*
+
+### Iron first
+
+Today I ironed my clothes for the first time<br>
+I had enough of looking like a *hikikomori*<br>
+— Although I probably am —<br>
+Now, no wrinkles, my shirt is smooth<br>
+It looks good on me, and it's warm<br>
+I finally understand what my mother meant<br>
+<br>
+❧❧❧<br>
+<br>
+It has been three months since I haven't touched the iron<br>
+I had to work hard to balance the *gacha*<br>
+— So no time left to spend on futility —<br>
+My shirt is full of ripples, but I do know the trick<br>
+During video calls, I tilt the camera so it only shows my face<br>
+This is enough for me<br>
+But I miss the warmth of ironed clothes<br>
+
+*Initial draft written on 2020-02-04 on the theme "I have done something new" for Songwriters Group Workshop @ Nottingham with Rikki Thomas-Martinez*
+
+*Website version written on 2024-01-31*
