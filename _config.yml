@@ -73,9 +73,26 @@ minima:
 footer: >- # this means to ignore newlines until "baseurl:"
   This website was made with Jekyll and is hosted on GitHub Pages.
 
+# Apply category [category] to all posts under _posts/[category]
+# This allows us to add new category sub-folders under _posts, easier than adding a folder [category]/_posts
+# to project root, for a cleaner hierarchy.
+# Source: https://stackoverflow.com/questions/26676839/how-can-i-create-a-directory-for-each-category-under-posts-in-jekyll
+defaults:
+  - scope:
+      path: "_posts/devlog"
+      type: "posts"
+    values:
+      category: devlog
+  - scope:
+      path: "_posts/writing"
+      type: "posts"
+    values:
+      category: writing
+
 header_pages:
   - portfolio.markdown
   - blog.markdown
+  - writing.markdown
   - comic-strips.markdown
   - resume.markdown
 
