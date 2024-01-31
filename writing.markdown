@@ -27,3 +27,68 @@ Until you say:<br>
 ‘Crap, it looked much better when I was a kid.’<br>
 
 *Written on 2020-03-07 on the theme "Senses" for Creating Writing Taster Day @ Nottingham with Maggi Fazzini*
+
+### The Site That Sends You Mad
+
+I am tired of website UI that feels like nobody tested them,<br>
+or maybe just shovel-hired people getting paid peanuts.<br>
+Their pages are digital time machines<br>
+that put you back to web 1.0, before "UX was invented",<br>
+but without the excuse of having to code everything on your own.<br>
+<br>
+I want to give you feedback on that buggy form<br>
+but Ctrl+F shows me no contact link.<br>
+Ironically, the only modern feature is that chatbot,<br>
+a renowned specialist in missing the point.<br>
+<br>
+Yes, I want to speak to a human.<br>
+Ah! Finally someone who can understand me.<br>
+Let's get this over with. My issue is...<br>
+No, I've already read this FAQ.<br>
+Your metallic assistant spammed me hyperlinks to it.<br>
+<br>
+Oh, you have to stop working now,<br>
+so someone else will continue our talk?<br>
+Fine, but they are asking me the same questions all over again.<br>
+I'll let them read what we've just discussed instead.<br>
+<br>
+... It's taking quite a lot of time...<br>
+Sorry, I have to go to sleep myself.<br>
+Maybe we can meet another day<br>
+to solve this issue,<br>
+if you don't go amnesic all over again.<br>
+<br>
+Okay, how do I copy the chat content<br>
+so I can back it up somewhere for later?<br>
+I'll just highlight the text with my mouse...<br>
+Oh no! Releasing the button outside the chat window closed it!!<br>
+
+*Initial draft written on 2020-03-07 on the theme "The Real Me: I am tired of..." for Creating Writing Taster Day @ Nottingham with Maggi Fazzini*
+
+*Website version written on 2024-01-31*
+
+### Rival
+
+Waiting for my rival<br>
+I'm facing the *goban* alone<br>
+Studying patterns from the book<br>
+And preparing my strategy<br>
+<br>
+Will that make the difference?<br>
+This opponent is tough<br>
+But the board is the neutral referee<br>
+I got my chances<br>
+<br>
+Quarter to two<br>
+Almost time to go back to class<br>
+Once more, he didn't come<br>
+And will probably never again<br>
+<br>
+Why am I still here?<br>
+Because I have to<br>
+I'm the club leader<br>
+I'll stay here until the close<br>
+
+*Initial draft written on 2020-03-07 on the theme "Personal experience" for Creating Writing Taster Day @ Nottingham with Maggi Fazzini*
+
+*Website version written on 2024-01-31*
