@@ -91,8 +91,6 @@
 
 // _layout.scss override
 .site-title {
-    // uppercase title
-    text-transform: uppercase;
     // bigger title
     @include relative-font-size(2);
     // bolder title
