@@ -8,7 +8,7 @@ thumbnail: "2023-02-12/2023-02-12-godot-combat-platformer-thumbnail.png"
 I started working on a side-scrolling combat platformer prototype in Godot 4.
 I'm regularly downloading new snapshots of Godot 4 beta which sometimes introduces breaking API changes, but I hope it will be worth it when it finally gets released.
 
-![Combat platformer demo: warrior runs, jumps and slashes a slime](/assets/pictures/blog/2023-02-12/2023-02-12 demo features so far.gif)
+![Combat platformer demo: warrior runs, jumps and slashes a slime](/assets/pictures/blog/devlog/2023-02-12/2023-02-12 demo features so far.gif)
 
 I managed to port most of my code for character control/animation from an [older project](https://github.com/hsandt/flame-of-hope-godot/tree/master/Scripts). But it was top-view, so I still had to work more to get running and jumping to work.
 

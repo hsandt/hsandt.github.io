@@ -18,7 +18,7 @@ I have added a few features to my prototype of combat platformer made in Godot s
 - More robust animation system with base (continuous) animations like Run + override (one-time) animations like Attack
 
 <video autoplay="autoplay" loop="loop" width="400" height="300">
-  <source src="/assets/pictures/blog/2023-06-08/2023-06-08 Godot 4 Platformer Combat progress.webm" type="video/webm">
+  <source src="/assets/pictures/blog/devlog/2023-06-08/2023-06-08 Godot 4 Platformer Combat progress.webm" type="video/webm">
 </video>
 
 ### Debug
@@ -26,7 +26,7 @@ I have added a few features to my prototype of combat platformer made in Godot s
 - Debug overlay: FPS, current frame, currently pressed input
 
 <video autoplay="autoplay" loop="loop" width="640" height="360">
-  <source src="/assets/pictures/blog/2023-06-08/2023-06-08 Godot 4 Platformer Combat - Debug overlay demo.webm" type="video/webm">
+  <source src="/assets/pictures/blog/devlog/2023-06-08/2023-06-08 Godot 4 Platformer Combat - Debug overlay demo.webm" type="video/webm">
 </video>
 
 Assets used:

@@ -148,29 +148,29 @@ AWallSwitch::AWallSwitch()
 
 We create an Actor Blueprint `BP_WallSwitch` derived from `WallSwitch`. The Components panel shows:
 
-![WallSwitch Actor blueprint with SwitchableComponent](/assets/pictures/blog/2017-02-14/UE4-delegate-blueprint-BP_WallSwitch-components.png)
+![WallSwitch Actor blueprint with SwitchableComponent](/assets/pictures/blog/devlog/2017-02-14/UE4-delegate-blueprint-BP_WallSwitch-components.png)
 
 When we select the Switchable Component, the Details panel shows:
 
-![Switchable Component details panel with OnSwitch event View button](/assets/pictures/blog/2017-02-14/UE4-delegate-blueprint-BP_WallSwitch-details.png)
+![Switchable Component details panel with OnSwitch event View button](/assets/pictures/blog/devlog/2017-02-14/UE4-delegate-blueprint-BP_WallSwitch-details.png)
 
 ## Binding
 
 At first, the buttons in the Events section should all show a “+”. We click on the button next to *On Switch* to create the event node below (from then on, the button will show “View” as on the screenshot above):
 
-![On Switch event, no binding](/assets/pictures/blog/2017-02-14/UE4-delegate-blueprint-BP_WallSwitch-Event-Graph-no-binding.png)
+![On Switch event, no binding](/assets/pictures/blog/devlog/2017-02-14/UE4-delegate-blueprint-BP_WallSwitch-Event-Graph-no-binding.png)
 
 Alternatively, you may right-click in the Event Graph area and type “Add On Switch” in the search field (ensuring SwitchableComponent is still selected and Context Sensitive is checked).
 
 From here, we can bind a Blueprint graph to the OnSwitch delegate (represented by an event node) defined earlier in C++. In this example, we play a Sequence from a Sequence Actor reference we added directly as a Variable in the Actor Blueprint.
 
-![Binding for Switchable Component OnSwitch event on Wall Switch actor](/assets/pictures/blog/2017-02-14/UE4-delegate-blueprint-BP_WallSwitch-Event-Graph.png)
+![Binding for Switchable Component OnSwitch event on Wall Switch actor](/assets/pictures/blog/devlog/2017-02-14/UE4-delegate-blueprint-BP_WallSwitch-Event-Graph.png)
 
 # Result
 
 When the player character tries to interact with the Wall Switch, the level sequence plays:
 
-![Player Character uses Switch to move Wall](/assets/pictures/blog/2017-02-14/UE4-Blueprint-delegates-On-Switch-action.gif)
+![Player Character uses Switch to move Wall](/assets/pictures/blog/devlog/2017-02-14/UE4-Blueprint-delegates-On-Switch-action.gif)
 
 The red/green box you see is a Box Trace with visual debug that the Player Character uses to detect interactables. It’s quite easy to do with Blueprints but may be tricky in C++, I’ll explain how this works in another post.
 
@@ -180,6 +180,6 @@ The OnSwitch event node that appeared seems to be a convenience node provided by
 
 For instance, I selected a Wall Switch instance in the Viewport, then in the Level Blueprint editor I right-clicked > Assign to OnSwitch. This allowed me to add an extra logging event when the Wall Switch was pressed (the multi-cast delegates will trigger **all** bounds functions/events on Broadcast).
 
-![Level Blueprint binding action to On Switch delegate](/assets/pictures/blog/2017-02-14/UE4-delegate-blueprint-Switch-level-event.png)
+![Level Blueprint binding action to On Switch delegate](/assets/pictures/blog/devlog/2017-02-14/UE4-delegate-blueprint-Switch-level-event.png)
 
 For examples on how to bind functions from raw C++, check out [Rama’s article on Delegates](https://unrealcommunity.wiki/delegates-in-ue4-raw-cpp-and-bp-exposed-xifmcmq5).
