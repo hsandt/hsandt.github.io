@@ -27,4 +27,6 @@ Bonus mention for puzzles: most of them are quite easy, but the rotating pillars
 
 # Localization
 
+The Japanese and EFIGS (English and English-based translations) text do not match in many instances, making it harder to follow when you use Japanese voices + EFIGS text and vice-versa (and you can understand a bit of each language).
 
+According to [this interview with denfaminicogamer (JP)](https://news.denfaminicogamer.jp/interview/220917i#i-5), whose section on the Japanese version was summarized in [this article by TheGamer](https://www.thegamer.com/sonic-frontiers-writing-japan-asia-regional-changes/), this is intentional as the Japanese dialogues were meant to be more serious to better suit the Japanese audience (and JRPG players like me, I suppose). But that means you cannot play with Japanese voices and overall matching English subtitles. Just like CC and non-CC subtitles, you would need an extra “English (Japanese dialogue)” subtitle language for that. Due to the extra effort it would require, I understand they didn’t do it. But I’m glad that the Japanese dialogues have been made this way (although they did keep a few jokes along the way!).
