@@ -99,6 +99,7 @@ header_pages:
 
 # Collection of portfolio pages, path relative to portfolio/
 portfolio_pages:
+  # - pico-sonic.markdown
   - evil-genius-2.markdown
   - hotshot-racing.markdown
   - ghost-recon-breakpoint.markdown
