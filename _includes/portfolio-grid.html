@@ -1,4 +1,4 @@
-{% comment %} show_count <= 0 means we want to show all the items {% endcomment %}
+{% comment %} include.show_count <= 0 means we want to show all the items {% endcomment %}
 {% if include.show_count > 0 %}
   {% assign portfolio_page_relative_paths = site.portfolio_pages | slice: 0, include.show_count %}
 {% else %}

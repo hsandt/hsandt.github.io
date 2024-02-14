@@ -4,10 +4,20 @@ title: "Evil Genius 2: World Domination"
 subtitle: "Satirical spy-fi lair builder"
 asset-dir: "Evil-Genius-2"
 thumbnail: "Evil-Genius-2-Thumbnail-420x420.png"
+banner: "Evil-Genius-2-Banner_TitleTopRightMargin_1000x563.jpg"
 categories: video-game
 youtube:
   id: HieJmZ3tsdQ
   title: "Evil Genius 2: World Domination – Launch Trailer | PS4, PS5, Xbox One, Xbox Series X/S"
+screenshots:
+  - path: "Evil-Genius-2 20201103163907_1 (construction).jpg"
+    description: "Evil Genius 2 - Construction"
+  - path: "Evil-Genius-2-World-Domination06162021-112200-78857 (genius control) from Game UI Database.jpg"
+    description: "Evil Genius 2 - Genius control"
+  - path: "Evil-Genius-2-World-Domination06162021-112158-85012 (world map) from Game UI Database.jpg"
+    description: "Evil Genius 2 - World map"
+  - path: "Evil-Genius-2-World-Domination06162021-112155-94083 (minion management) from Game UI Database.jpg"
+    description: "Evil Genius 2 - Minion management"
 meta:
   developer: "Rebellion Developments"
   release: "Mar 2021"
@@ -19,7 +29,6 @@ meta:
   role: "Programming"
   technology: "Proprietary engine"
 ---
-![Evil Genius 2 banner](/assets/pictures/portfolio/{{ page.asset-dir }}/Evil-Genius-2-Banner_TitleTopRightMargin_1000x563.jpg)
 
 ## Description
 
@@ -27,12 +36,7 @@ meta:
 
 ## Screenshots
 
-<div class="grid">
-  <img src="/assets/pictures/portfolio/{{ page.asset-dir }}/Evil-Genius-2 20201103163907_1 (construction).jpg" alt="Evil Genius 2 - Construction">
-  <img src="/assets/pictures/portfolio/{{ page.asset-dir }}/Evil-Genius-2-World-Domination06162021-112200-78857 (genius control) from Game UI Database.jpg" alt="Evil Genius 2 - Genius control">
-  <img src="/assets/pictures/portfolio/{{ page.asset-dir }}/Evil-Genius-2-World-Domination06162021-112158-85012 (world map) from Game UI Database.jpg" alt="Evil Genius 2 - World map">
-  <img src="/assets/pictures/portfolio/{{ page.asset-dir }}/Evil-Genius-2-World-Domination06162021-112155-94083 (minion management) from Game UI Database.jpg" alt="Evil Genius 2 - Minion management">
-</div>
+{% include portfolio-item-screenshots.html screenshots=page.screenshots %}
 
 (some screenshots from [Game UI Database](https://www.gameuidatabase.com/gameData.php?id=710){:target="_blank"})
 

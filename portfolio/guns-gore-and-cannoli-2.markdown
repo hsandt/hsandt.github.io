@@ -4,10 +4,20 @@ title: "Guns, Gore & Cannoli 2"
 subtitle: "Over-the-top run ‘n gun"
 asset-dir: "GGC2"
 thumbnail: "GGC2-Thumbnail-420x420.png"
+banner: "GGC2-Banner-1024x576.png"
 categories: video-game
 youtube:
   id: aoXyO38tR5A
   title: "Guns, Gore & Cannoli 2 announcement Trailer"
+screenshots:
+  - path: "GGC2-1.jpg"
+    description: "Guns Gore and Cannoli 2 - Fighting in a bar"
+  - path: "GGC2-2.jpg"
+    description: "Guns Gore and Cannoli 2 - Fighting with the police"
+  - path: "GGC2-3.jpg"
+    description: "Guns Gore and Cannoli 2 - Flamethrower"
+  - path: "GGC2-4.jpg"
+    description: "Guns Gore and Cannoli 2 - Fighting on the beach"
 meta:
   developer: "Crazy Monkey Studios (now Rogueside)"
   release: "Mar 2018"
@@ -20,7 +30,6 @@ meta:
   role: "Programming, Level design"
   technology: "Unity"
 ---
-![Guns, Gore & Cannoli 2 Banner](/assets/pictures/portfolio/{{ page.asset-dir }}/GGC2-Banner-1024x576.png)
 
 ## Description
 
@@ -28,12 +37,7 @@ Guns, Gore & Cannoli 2 is the sequel of [Guns, Gore & Cannoli](https://www.rogue
 
 ## Screenshots
 
-<div class="grid">
-  <img src="/assets/pictures/portfolio/{{ page.asset-dir }}/GGC2-1.jpg" alt="Guns Gore and Cannoli 2 - Fighting in a bar">
-  <img src="/assets/pictures/portfolio/{{ page.asset-dir }}/GGC2-2.jpg" alt="Guns Gore and Cannoli 2 - Fighting with the police">
-  <img src="/assets/pictures/portfolio/{{ page.asset-dir }}/GGC2-3.jpg" alt="Guns Gore and Cannoli 2 - Flamethrower">
-  <img src="/assets/pictures/portfolio/{{ page.asset-dir }}/GGC2-4.jpg" alt="Guns Gore and Cannoli 2 - Fighting on the beach">
-</div>
+{% include portfolio-item-screenshots.html screenshots=page.screenshots %}
 
 ## Context
 
@@ -69,7 +73,7 @@ I worked on the input hint system for the tutorial sections:
 
 - Display keyboard, mouse or gamepad button icons based on current input device
 
-![Tutorial input hint message: Press LT to jump](/assets/pictures/GCC2-Tutorial-input-hint.png)
+![Tutorial input hint message: Press LT to jump](/assets/pictures/portfolio/{{ page.asset-dir }}/GCC2-Tutorial-input-hint.png)
 
 ### Tool programming
 

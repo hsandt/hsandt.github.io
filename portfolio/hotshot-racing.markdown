@@ -4,10 +4,20 @@ title: "Hotshot Racing"
 subtitle: "Retro arcade-style racing game"
 asset-dir: "Hotshot-Racing"
 thumbnail: "Hotshot-Racing-Thumbnail-420x420.png"
+banner: "Hotshot-Racing_marque_1200x700-1024x597.png"
 categories: video-game
 youtube:
   id: Qce9nk7hkYg
   title: "Hotshot Racing | Official Reveal Trailer | Curve Digital"
+screenshots:
+  - path: "Hotshot Racing - Race.jpg"
+    description: "Hotshot Racing - Race"
+  - path: "Hotshot Racing - Cops intro.jpg"
+    description: "Hotshot Racing - Cops intro"
+  - path: "Hotshot Racing - Cops & Robbers.jpg"
+    description: "Hotshot Racing - Cops & Robbers"
+  - path: "Hotshot Racing - 4 players splitscreen.jpg"
+    description: "Hotshot Racing - 4 players splitscreen"
 meta:
   developer: "Sumo Digital"
   release: "Sep 2020"
@@ -19,7 +29,6 @@ meta:
   role: "Programming"
   technology: "Proprietary engine"
 ---
-![Hotshot Racing banner](/assets/pictures/portfolio/{{ page.asset-dir }}/Hotshot-Racing_marque_1200x700-1024x597.png)
 
 ## Description
 
@@ -29,12 +38,7 @@ Based on Lucky Mountain Games’ prototype [Racing Apex](https://twitter.com/rac
 
 ## Screenshots
 
-<div class="grid">
-  <img src="/assets/pictures/portfolio/{{ page.asset-dir }}/Hotshot Racing - Race.jpg" alt="Hotshot Racing - Race">
-  <img src="/assets/pictures/portfolio/{{ page.asset-dir }}/Hotshot Racing - Cops intro.jpg" alt="Hotshot Racing - Cops intro">
-  <img src="/assets/pictures/portfolio/{{ page.asset-dir }}/Hotshot Racing - Cops & Robbers.jpg" alt="Hotshot Racing - Cops & Robbers">
-  <img src="/assets/pictures/portfolio/{{ page.asset-dir }}/Hotshot Racing - 4 players splitscreen.jpg" alt="Hotshot Racing - 4 players splitscreen">
-</div>
+{% include portfolio-item-screenshots.html screenshots=page.screenshots %}
 
 ## Context
 
