@@ -2,6 +2,7 @@
 layout: portfolio_item
 title: "Hotshot Racing"
 subtitle: "Retro arcade-style racing game"
+asset-dir: "Hotshot-Racing"
 thumbnail: "Hotshot-Racing-Thumbnail-420x420.png"
 categories: video-game
 youtube:
@@ -18,7 +19,7 @@ meta:
   role: "Programming"
   technology: "Proprietary engine"
 ---
-![Hotshot Racing banner](/assets/pictures/portfolio/Hotshot-Racing_marque_1200x700-1024x597.png)
+![Hotshot Racing banner](/assets/pictures/portfolio/{{ page.asset-dir }}/Hotshot-Racing_marque_1200x700-1024x597.png)
 
 ## Description
 
@@ -29,10 +30,10 @@ Based on Lucky Mountain Games’ prototype [Racing Apex](https://twitter.com/rac
 ## Screenshots
 
 <div class="grid">
-  <img src="/assets/pictures/portfolio/Hotshot Racing - Race.jpg" alt="Hotshot Racing - Race">
-  <img src="/assets/pictures/portfolio/Hotshot Racing - Cops intro.jpg" alt="Hotshot Racing - Cops intro">
-  <img src="/assets/pictures/portfolio/Hotshot Racing - Cops & Robbers.jpg" alt="Hotshot Racing - Cops & Robbers">
-  <img src="/assets/pictures/portfolio/Hotshot Racing - 4 players splitscreen.jpg" alt="Hotshot Racing - 4 players splitscreen">
+  <img src="/assets/pictures/portfolio/{{ page.asset-dir }}/Hotshot Racing - Race.jpg" alt="Hotshot Racing - Race">
+  <img src="/assets/pictures/portfolio/{{ page.asset-dir }}/Hotshot Racing - Cops intro.jpg" alt="Hotshot Racing - Cops intro">
+  <img src="/assets/pictures/portfolio/{{ page.asset-dir }}/Hotshot Racing - Cops & Robbers.jpg" alt="Hotshot Racing - Cops & Robbers">
+  <img src="/assets/pictures/portfolio/{{ page.asset-dir }}/Hotshot Racing - 4 players splitscreen.jpg" alt="Hotshot Racing - 4 players splitscreen">
 </div>
 
 ## Context

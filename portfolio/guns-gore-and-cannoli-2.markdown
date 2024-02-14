@@ -2,6 +2,7 @@
 layout: portfolio_item
 title: "Guns, Gore & Cannoli 2"
 subtitle: "Over-the-top run ‘n gun"
+asset-dir: "GGC2"
 thumbnail: "GGC2-Thumbnail-420x420.png"
 categories: video-game
 youtube:
@@ -19,7 +20,7 @@ meta:
   role: "Programming, Level design"
   technology: "Unity"
 ---
-![Guns, Gore & Cannoli 2 Banner](/assets/pictures/portfolio/GGC2-Banner-1024x576.png)
+![Guns, Gore & Cannoli 2 Banner](/assets/pictures/portfolio/{{ page.asset-dir }}/GGC2-Banner-1024x576.png)
 
 ## Description
 
@@ -28,10 +29,10 @@ Guns, Gore & Cannoli 2 is the sequel of [Guns, Gore & Cannoli](https://www.rogue
 ## Screenshots
 
 <div class="grid">
-  <img src="/assets/pictures/portfolio/GGC2-1.jpg" alt="Guns Gore and Cannoli 2 - Fighting in a bar">
-  <img src="/assets/pictures/portfolio/GGC2-2.jpg" alt="Guns Gore and Cannoli 2 - Fighting with the police">
-  <img src="/assets/pictures/portfolio/GGC2-3.jpg" alt="Guns Gore and Cannoli 2 - Flamethrower">
-  <img src="/assets/pictures/portfolio/GGC2-4.jpg" alt="Guns Gore and Cannoli 2 - Fighting on the beach">
+  <img src="/assets/pictures/portfolio/{{ page.asset-dir }}/GGC2-1.jpg" alt="Guns Gore and Cannoli 2 - Fighting in a bar">
+  <img src="/assets/pictures/portfolio/{{ page.asset-dir }}/GGC2-2.jpg" alt="Guns Gore and Cannoli 2 - Fighting with the police">
+  <img src="/assets/pictures/portfolio/{{ page.asset-dir }}/GGC2-3.jpg" alt="Guns Gore and Cannoli 2 - Flamethrower">
+  <img src="/assets/pictures/portfolio/{{ page.asset-dir }}/GGC2-4.jpg" alt="Guns Gore and Cannoli 2 - Fighting on the beach">
 </div>
 
 ## Context
