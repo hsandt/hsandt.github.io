@@ -2,7 +2,8 @@
 layout: post
 title:  "Sonic Frontiers issues"
 tag: sonic
-thumbnail: "2024-??-??-sonic-frontiers-issues/thumbnail.png"
+thumbnail: "2024-02-14-sonic-frontiers-issues/thumbnail.png"
+published: false
 ---
 
 More than a review, this is a list of issues I found in Sonic Frontiers. Since the game has a pretty clear gameplay loop, I found most of the controls and UI issues in the first hours of playing. Later, I found more issues related to progression. After finishing the game once at any %, I got a compilation of issues that I am now posting here. I also noticed a few odd things about localization, although they all seem done on purpose.
