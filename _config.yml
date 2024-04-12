@@ -84,10 +84,11 @@ defaults:
     values:
       category: devlog
   - scope:
-      path: "_posts/writing"
+      path: "_posts/review"
       type: "posts"
     values:
-      category: writing
+      category: review
+# add new [category] here
 
 header_pages:
   - portfolio.markdown
@@ -98,6 +99,7 @@ header_pages:
 
 # Collection of portfolio pages, path relative to portfolio/
 portfolio_pages:
+  # - pico-sonic.markdown
   - evil-genius-2.markdown
   - hotshot-racing.markdown
   - ghost-recon-breakpoint.markdown

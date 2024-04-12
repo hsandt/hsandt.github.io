@@ -18,7 +18,7 @@ I decided to switch from a combat platformer where you fight many minions to **a
 - Projectile sprite: Fireball 4-frame Move
 
 <video autoplay="autoplay" loop="loop">
-  <source src="/assets/pictures/blog/2024-01-16/2024-01-16 Godot 4 Platformer Combat progress - Boss - Fireball, Hurt and Die 640x360.webm" type="video/webm">
+  <source src="/assets/pictures/blog/devlog/2024-01-16/2024-01-16 Godot 4 Platformer Combat progress - Boss - Fireball, Hurt and Die 640x360.webm" type="video/webm">
 </video>
 
 Assets used:

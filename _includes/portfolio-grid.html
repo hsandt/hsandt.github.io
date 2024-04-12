@@ -1,4 +1,4 @@
-{% comment %} show_count <= 0 means we want to show all the items {% endcomment %}
+{% comment %} include.show_count <= 0 means we want to show all the items {% endcomment %}
 {% if include.show_count > 0 %}
   {% assign portfolio_page_relative_paths = site.portfolio_pages | slice: 0, include.show_count %}
 {% else %}
@@ -13,7 +13,7 @@
   <div class="item-thumbnail">
     <a class="page-link" href="{{ portfolio_page.url | relative_url }}">
       {%- assign thumbnail = portfolio_page.thumbnail | default: "Missing-Thumbnail-420x420.png" -%}
-      <img src="/assets/pictures/portfolio/{{ thumbnail }}" alt="Thumbnail for {{ portfolio_page.title }}">
+      <img src="/assets/pictures/portfolio/{{ portfolio_page.asset-dir }}/{{ thumbnail }}" alt="Thumbnail for {{ portfolio_page.title }}">
       <div class="item-thumbnail-overlay">{{ portfolio_page.title | escape }}</div>
     </a>
   </div>

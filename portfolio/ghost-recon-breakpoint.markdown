@@ -2,11 +2,22 @@
 layout: portfolio_item
 title: "Ghost Recon: Breakpoint"
 subtitle: "Open-world RPG military shooter"
+asset-dir: "Ghost-Recon-Breakpoint"
 thumbnail: "Ghost-Recon-Breakpoint-Thumbnail-420x420.jpg"
+banner: "Ghost-Recon-Breakpoint-Title-1024x576.jpg"
 categories: video-game
 youtube:
   id: 5dcI6CZJI7Y
   title: "Ghost Recon Breakpoint: What is Breakpoint? Gameplay Trailer"
+screenshots:
+  - path: "Ghost-Recon-Breakpoint-Drone-768x432.png"
+    description: "Teamwork"
+  - path: "Ghost-Recon-Breakpoint-No-HUD-battle-768x432.png"
+    description: "Ghost shooting a rocket"
+  - path: "Ghost-Recon-Breakpoint-No-HUD-stealth-768x432.jpg"
+    description: "Ghost hiding from a drone"
+  - path: "Ghost-Recon-Breakpoint-No-HUD-Teamwork-768x432.jpg"
+    description: "Enemy grounded drone"
 meta:
   developer: "Ubisoft Paris + sister studios"
   release: "Oct 2019"
@@ -19,7 +30,6 @@ meta:
   role: "Gameplay programming (3C)"
   technology: "Anvil (proprietary engine)"
 ---
-![Ghost Recon Breakpoint Banner](/assets/pictures/portfolio/Ghost-Recon-Breakpoint-Title-1024x576.jpg)
 
 ## Description
 
@@ -27,12 +37,7 @@ meta:
 
 ## Screenshots
 
-<div class="grid">
-  <img src="/assets/pictures/portfolio/Ghost-Recon-Breakpoint-Drone-768x432.png" alt="Teamwork">
-  <img src="/assets/pictures/portfolio/Ghost-Recon-Breakpoint-No-HUD-battle-768x432.png" alt="Ghost shooting a rocket">
-  <img src="/assets/pictures/portfolio/Ghost-Recon-Breakpoint-No-HUD-stealth-768x432.jpg" alt="Ghost hiding from a drone">
-  <img src="/assets/pictures/portfolio/Ghost-Recon-Breakpoint-No-HUD-Teamwork-768x432.jpg" alt="Enemy grounded drone">
-</div>
+{% include portfolio-item-screenshots.html screenshots=page.screenshots %}
 
 ## Context
 

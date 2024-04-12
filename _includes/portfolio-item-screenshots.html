@@ -1,0 +1,9 @@
+{% comment %}
+  include.screenshot_paths is an array of file paths to screenshots to display,
+  relative to /assets/pictures/portfolio/{{ page.asset-dir }}
+{% endcomment %}
+<div class="grid">
+  {% for screenshot in include.screenshots %}
+    <img src="/assets/pictures/portfolio/{{ page.asset-dir }}/{{ screenshot.path }}" alt="{{ screenshot.description }}">
+  {% endfor %}
+</div>
