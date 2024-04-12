@@ -2,7 +2,7 @@
 layout: post
 title:  "Combat Platformer in Godot 4: April 2024 progress"
 tag: godot
-thumbnail: "2024-04-11/thumbnail.png"
+thumbnail: "2024-04-12/thumbnail.png"
 ---
 
 # Summary
@@ -11,7 +11,7 @@ thumbnail: "2024-04-11/thumbnail.png"
 
 Big revamp! I finally switched the whole game to **full custom graphics**. I first worked with a resolution similar to the proto character asset (see [previous post](/devlog/2024/01/06/godot-combat-platformer-progress.html) 3 months ago), then tried smaller sizes to draw faster. Below, some character scale research:
 
-![Main character sprite scale research](/assets/pictures/blog/devlog/2024-04-11/paladin_Idle_sword_demo_all_sizes_2024-03-19_@4x.png)
+![Main character sprite scale research](/assets/pictures/blog/devlog/2024-04-12/paladin_Idle_sword_demo_all_sizes_2024-03-19_@4x.png)
 
 From left to right:
 
@@ -38,7 +38,7 @@ The biggest issue was [Reaper + Vital plugin crashing on Linux](https://forum.vi
 Since I was busy working on new graphics and plugging the HUD behavior, there is no new gameplay features in this update. I will work on improved boss patterns and main character moves next time.
 
 <video controls loop="loop">
-  <source src="/assets/pictures/blog/devlog/2024-04-11/2024-04-11 Godot Boss - 5 platforms, MC attack vs Fireballs and Ice spikes.webm" type="video/webm">
+  <source src="/assets/pictures/blog/devlog/2024-04-12/2024-04-11 Godot Boss - 5 platforms, MC attack vs Fireballs and Ice spikes.webm" type="video/webm">
 </video>
 
 # Changelog
