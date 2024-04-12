@@ -3,22 +3,22 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Snake remake in Godot 4: October 2023 progress | Long Nguyen Huu</title>
+<title>Combat Platformer in Godot 4: April 2024 progress | Long Nguyen Huu</title>
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Snake remake in Godot 4: October 2023 progress" />
+<meta property="og:title" content="Combat Platformer in Godot 4: April 2024 progress" />
 <meta name="author" content="Long Nguyen Huu" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="In July 2023, I started working on a “Snake with a twist” in parallel to my other games. It’s a smaller project that I intend to finish within 100 hours of work, using only geometrical graphics and simple arcade mechanics to avoid artistic and technical difficulties (game design will probably be the most difficult part)." />
-<meta property="og:description" content="In July 2023, I started working on a “Snake with a twist” in parallel to my other games. It’s a smaller project that I intend to finish within 100 hours of work, using only geometrical graphics and simple arcade mechanics to avoid artistic and technical difficulties (game design will probably be the most difficult part)." />
-<link rel="canonical" href="https://hsandt.github.io/devlog/2023/10/11/godot-snake-evolved-progress.html" />
-<meta property="og:url" content="https://hsandt.github.io/devlog/2023/10/11/godot-snake-evolved-progress.html" />
+<meta name="description" content="Summary" />
+<meta property="og:description" content="Summary" />
+<link rel="canonical" href="https://hsandt.github.io/devlog/2024/04/12/godot-combat-platformer-progress.html" />
+<meta property="og:url" content="https://hsandt.github.io/devlog/2024/04/12/godot-combat-platformer-progress.html" />
 <meta property="og:site_name" content="Long Nguyen Huu" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-10-11T00:00:00+00:00" />
+<meta property="article:published_time" content="2024-04-12T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Snake remake in Godot 4: October 2023 progress" />
+<meta property="twitter:title" content="Combat Platformer in Godot 4: April 2024 progress" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Long Nguyen Huu"},"dateModified":"2023-10-11T00:00:00+00:00","datePublished":"2023-10-11T00:00:00+00:00","description":"In July 2023, I started working on a “Snake with a twist” in parallel to my other games. It’s a smaller project that I intend to finish within 100 hours of work, using only geometrical graphics and simple arcade mechanics to avoid artistic and technical difficulties (game design will probably be the most difficult part).","headline":"Snake remake in Godot 4: October 2023 progress","mainEntityOfPage":{"@type":"WebPage","@id":"https://hsandt.github.io/devlog/2023/10/11/godot-snake-evolved-progress.html"},"url":"https://hsandt.github.io/devlog/2023/10/11/godot-snake-evolved-progress.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Long Nguyen Huu"},"dateModified":"2024-04-12T00:00:00+00:00","datePublished":"2024-04-12T00:00:00+00:00","description":"Summary","headline":"Combat Platformer in Godot 4: April 2024 progress","mainEntityOfPage":{"@type":"WebPage","@id":"https://hsandt.github.io/devlog/2024/04/12/godot-combat-platformer-progress.html"},"url":"https://hsandt.github.io/devlog/2024/04/12/godot-combat-platformer-progress.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://hsandt.github.io/feed.xml" title="Long Nguyen Huu" />
 </head>
@@ -148,56 +148,129 @@
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Snake remake in Godot 4: October 2023 progress</h1>
-    <p class="post-meta"><time class="dt-published" datetime="2023-10-11T00:00:00+00:00" itemprop="datePublished">
-        Oct 11, 2023
+    <h1 class="post-title p-name" itemprop="name headline">Combat Platformer in Godot 4: April 2024 progress</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2024-04-12T00:00:00+00:00" itemprop="datePublished">
+        Apr 12, 2024
       </time></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>In July 2023, I started working on a “Snake with a twist” in parallel to my other games. It’s a smaller project that I intend to finish within 100 hours of work, using only geometrical graphics and simple arcade mechanics to avoid artistic and technical difficulties (game design will probably be the most difficult part).</p>
+    <h1 id="summary">Summary</h1>
 
-<p><img src="/assets/pictures/blog/devlog/2023-10-11/Snake Evolved - 2023-08-29 - wrap-around and laddering.gif" alt="Snake Evolved: wrap-around and laddering" height="360" /></p>
+<h2 id="visual-revamp">Visual revamp</h2>
 
-<p>My latest addition is moving enemies. They currently move at half the speed of the player snake, but they still make the game significantly harder: new enemies regularly spawn and keep coming at you, and touching them causes instant game over. You can trick them by repeatedly warping to the other side of the arena, but I may eventually fix this by making enemies aware of edge warping to find the real shortest distance to player snake.</p>
+<p>Big revamp! I finally switched the whole game to <strong>full custom graphics</strong>. I first worked with a resolution similar to the proto character asset (see <a href="/devlog/2024/01/06/godot-combat-platformer-progress.html">previous post</a> 3 months ago), then tried smaller sizes to draw faster. Below, some character scale research:</p>
 
-<video controls="" width="640" height="360">
-  <source src="/assets/pictures/blog/devlog/2023-10-11/Snake Evolved - 2023-10-10 - Adding moving enemies - Eat and lose 720p.webm" type="video/webm" />
+<p><img src="/assets/pictures/blog/devlog/2024-04-12/paladin_Idle_sword_demo_all_sizes_2024-03-19_@4x.png" alt="Main character sprite scale research" /></p>
+
+<p>From left to right:</p>
+
+<ol>
+  <li><strong>Tiny</strong>: fast to draw, but hard to show details like scars, sword erosion or body limb animations. Instead, it relies a lot on translations and FX.</li>
+  <li><strong>Chibi</strong>: I don’t like how this one turned out, it was supposed to look like <a href="https://rdein.itch.io/">Momodora I-III</a> but got ugly and now it reminds me of the <a href="https://mixnmojo.com/galleries/full/full20100912100720.png">horned idol statue</a> in <em>Indiana Jones and the Fate of Atlantis</em>.</li>
+  <li><strong>Small</strong>: It’s a nice compromise, I’d go with this one if I had more time.</li>
+  <li><strong>Normal</strong>: The original sprite I’ve drawn, would take more time to animate, but I’d go with this one if I hired a pixel artist.</li>
+  <li><strong>Tall</strong>: A funny experiment with the “thin body - long legs” pixel art style found in indie games like <a href="https://store.steampowered.com/app/204060/Superbrothers_Sword__Sworcery_EP/">Superbrothers: Sword &amp; Sworcery EP</a>.</li>
+</ol>
+
+<p>In the end I went for the Tiny art style, using references such as <a href="https://ldjam.com/events/ludum-dare/53/$366108">Time for Lunch</a> (PICO-8 game) and <a href="https://store.steampowered.com/app/607400/Necrosphere/">Necrosphere</a>.</p>
+
+<p>Then I converted the other elements (boss, projectiles and FX) and added new elements (background, HUD) to fit in this style. The ice spike FX is very big so it was quite easy to convert (although the warm up animation needed some tuning), while I had to redo the fireball animation from scratch (and also recolored them).</p>
+
+<h2 id="rebuilt-boss-level">Rebuilt boss level</h2>
+
+<p>I also rebuilt the whole level to something symmetrical with a few platforms. Kudos to the <a href="https://lospec.com/pixel-school/">Lospec Pixel School</a> which helped me tune the color palette! Using Aseprite, it’s quite fast with the Indexed Color Mode + Edit Color button.</p>
+
+<h2 id="first-sfx">First SFX</h2>
+
+<p>Finally, I added fireball spawn SFX. Instead of the usual sfxr (via <a href="https://sfxr.me/">jsfxr</a>), I tried to use audio synthesizer <a href="https://vital.audio/">Vital</a>. I had already tested its free little brother <a href="https://tytel.org/helm/">Helm</a> but was limited by the lack of wave modulation and wanted more features… Well, I got them, there are too many for me to understand now, so I just used a little bit of Vital’s features.</p>
+
+<p>The biggest issue was <a href="https://forum.vital.audio/t/vital-crashing-reaper-linux-clap-and-vst3-versions/13540">Reaper + Vital plugin crashing on Linux</a> which forced me to manually record the SFX from Vital standalone. I may eventually switch back to jsfxr or Helm because of this.</p>
+
+<p>Since I was busy working on new graphics and plugging the HUD behavior, there is no new gameplay features in this update. I will work on improved boss patterns and main character moves next time.</p>
+
+<video controls="" loop="loop">
+  <source src="/assets/pictures/blog/devlog/2024-04-12/2024-04-11 Godot Boss - 5 platforms, MC attack vs Fireballs and Ice spikes.webm" type="video/webm" />
 </video>
 
-<p>One problem is inherent to snake: you cannot control the tail, so it is very vulnerable, even more as your snake gets longer. I may mitigate this by reducing penalty when a body part other than the head hits an enemy.</p>
+<h1 id="changelog">Changelog</h1>
 
-<h2 id="dev-status">Dev status</h2>
-
-<p>Total work time: 27h</p>
-
-<h3 id="gameplay">Gameplay</h3>
+<h2 id="level">Level</h2>
 
 <ul>
-  <li>Player character: move like a classic snake (hold diagonal for laddering)</li>
-  <li>Pick-up: eat to extend snake length by 1 and increase Score</li>
+  <li>Rebuilt full level as a small, one-screen room with 5 platforms</li>
 </ul>
 
-<h3 id="visual">Visual</h3>
+<h2 id="visual">Visual</h2>
 
 <ul>
-  <li>Dark background</li>
-  <li>All sprites are colored squares</li>
+  <li>Main character sprites: Idle (1 frame), Run cycle (4 frames), Attack (7 frames)</li>
+  <li>Boss sprites (Tiny art style): Idle (1 frame)</li>
+  <li>Fireball sprites (Tiny art style): Move (4 frames)</li>
+  <li>Ice spikes (Tiny art style): Warm up (13 frames), Appear (6 frames), Active (4 frames), Disappear (3 frames)</li>
+  <li>HUD: Main character life gauge (discrete cells), Boss life gauge (continuous gauge)</li>
 </ul>
 
-<h3 id="hud">HUD</h3>
+<h2 id="audio">Audio</h2>
 
 <ul>
-  <li>Display score in top-left corner</li>
+  <li>SFX: Fireball spawn</li>
 </ul>
 
-<h3 id="known-issues">Known issues</h3>
+<h1 id="godot-threads-opened">Godot threads opened</h1>
+
+<p>For the first time, I’ll also post the list of Godot issues and proposals I opened since the last devlog. It’s pretty long because they span over 3 months, hopefully next list will be shorter.</p>
+
+<p>I realised I spent a considerable amount of time debugging, isolating MWE (Minimum Working Examples) and posting them on GitHub, so tracking issues I have opened is a good way to motivate me: I’ve not been doing nothing that day!</p>
+
+<p>For now it’s my main way to contribute to Godot, but I hope I’ll be able to send pull requests to contribute to engine code in the near future.</p>
+
+<h2 id="issues">Issues</h2>
 
 <ul>
-  <li>Pick-up and enemies can spawn anywhere, including near and inside the player snake without warning!</li>
+  <li><a href="https://github.com/godotengine/godot/issues/87254">#87254 Sometimes after saving scene, both instantiated scene and original scene node numerical properties become null, shown as 0 in inspector</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/88067">#88067 Erratic behavior when CharacterBody2D is inside tilemap (or group of small colliders) with collision shapes, is_on_floor returns false</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/88115">#88115 AnimatedSprite2D: Empty Animation name error on ready/instantiation propagates to inherited scenes</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/88303">#88303 Scene editor: Mouse middle click doesn’t always close scene tab</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/88400">#88400 Export: Save a File: Godot doesn’t update Quick Access folders if changed after opening editor, causing offset display or even out-of-bounds error</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/88408">#88408 Linux: Scene editor: Control: Releasing mouse primary button after Alt+drag for centered Control resize will not end resize operation</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/89543">#89543 Linux X11 OpenGL/Vulkan - After changing window size, window content doesn’t immediately refresh to match new size</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/89621">#89621 Linux - Portable installation of Blender not recognized for Blender import with error: Blender Path does not contain a Blender installation</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/89785">#89785 Autocomplete Input.get_axis StringName parameter suddenly switches from action name to symbols while typing</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/89910">#89910 When Import ETC2 ASTC option is disabled, Remote Debug on Android is still allowed but fails Export with empty error message in Project Run popup</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/89923">#89923 TileSet: Leftover patterns after TileSet atlas source removal causes output error spam “No TileSet atlas source with id N”</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/90021">#90021 Instances of inherited scenes are not updated when changing exported var value on base scene if scene containing them was already open, until editor restart</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/90264">#90264 Literal String as int (or float) cast causes Parser Error “Cannot cast a value of type “String” as “int”.” although it works with variable String</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/90537">#90537 Repeated toggle fullscreen increases window size by the window decorations size each time we leave fullscreen</a></li>
 </ul>
 
-  </div><a class="u-url" href="/devlog/2023/10/11/godot-snake-evolved-progress.html" hidden></a>
+<h2 id="discussions">Discussions</h2>
+
+<ul>
+  <li><a href="https://github.com/godotengine/godot-proposals/discussions/8948">#8948 Add a button/option to build and run directly on plugged Android device</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/discussions/8958">#8958 Confused by CanvasLayer property follow_viewport_enable / follow_viewport_enabled, sounded like follow_camera_enabled but it’s the opposite</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/discussions/9096">#9096 Ctrl+Click to go to definition of method name defined as StringName &amp;”my_method”</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/discussions/9396">#9396 Add Control child class/node that fits own size to children (maximum bounding box) to be used as intermediate parent under HBoxContainer/VBoxContainer</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/discussions/9400">#9400 Tilemap tile full rect collision shapes are considered independent, causing Raycast to hit individual tiles inside tilemap</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/discussions/9461">#9461 Add exception methods to CharacterBody2D to ignore specific collision objects during move_and_slide</a></li>
+</ul>
+
+<h2 id="proposals">Proposals</h2>
+
+<ul>
+  <li><a href="https://github.com/godotengine/godot-proposals/issues/8854">#8854 Hover long editor bell notification text (cut with ellipsis) to see full message and/or allow copying full text with right-click</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/issues/8947">#8947 Export to Android: improve Invalid package name error message by showing Project name converted to $genname explicitly</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/issues/9095">#9095 F1 Search Help reused to navigate code: show custom symbols without doc + go to source code of custom class/method (from F1 popup or documentation)</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/issues/9102">#9102 Debug: Code editor: command to debug content of Object variable under cursor/caret in remote Inspector</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/issues/9105">#9105 Allow setting Mouse Default Cursor Shape differently when Button is disabled</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/issues/9107">#9107 Add contextual menu to convert binary resource .res to serialized text .tres (and vice-versa)</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/issues/9129">#9129 Windows export: Indicate reason for “Invalid file version” and “Invalid product version”</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/issues/9146">#9146 Project settings: add Debug &gt; GDScript &gt; Warnings parameter to include/exclude specific add-ons</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/issues/9307">#9307 Add an option to make Wide / Full Rect control anchor presets take Window Stretch Scale project setting into account</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/issues/9387">#9387 Animation SpriteFrames: do not lose focus when deleting frame</a></li>
+</ul>
+
+  </div><a class="u-url" href="/devlog/2024/04/12/godot-combat-platformer-progress.html" hidden></a>
 </article>
 
       </div>

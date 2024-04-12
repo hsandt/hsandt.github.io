@@ -830,18 +830,21 @@ table td {
   font-size: 2.2rem;
 }
 
+.post-content .banner {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 .post-content h1 {
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   font-size: 2.2rem;
   font-weight: 500;
-  text-transform: uppercase;
 }
 .post-content h2 {
   margin-top: 0px;
   margin-bottom: 5px;
   font-size: 1.6rem;
   font-weight: 500;
-  text-transform: uppercase;
 }
 .post-content h3 {
   margin-top: 5px;
