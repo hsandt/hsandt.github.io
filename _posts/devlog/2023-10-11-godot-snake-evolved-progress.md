@@ -2,6 +2,7 @@
 layout: post
 title:  "Snake remake in Godot 4: October 2023 progress"
 tag: godot
+image: "/assets/pictures/blog/devlog/2023-10-11/thumbnail.png"
 thumbnail: "2023-10-11/thumbnail.png"
 ---
 

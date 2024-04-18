@@ -2,6 +2,7 @@
 layout: post
 title:  "Combat Platformer in Godot 4: April 2024 progress"
 tag: godot
+image: "/assets/pictures/blog/devlog/2024-04-12/thumbnail.png"
 thumbnail: "2024-04-12/thumbnail.png"
 ---
 
@@ -46,6 +47,10 @@ Since I was busy working on new graphics and plugging the HUD behavior, there is
 ## Level
 
 - Rebuilt full level as a small, one-screen room with 5 platforms
+
+## UI
+
+- HUD: plug main character & boss life gauges to their remaining HP
 
 ## Visual
 
