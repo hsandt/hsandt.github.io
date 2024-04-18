@@ -48,6 +48,10 @@ Since I was busy working on new graphics and plugging the HUD behavior, there is
 
 - Rebuilt full level as a small, one-screen room with 5 platforms
 
+## UI
+
+- HUD: plug main character & boss life gauges to their remaining HP
+
 ## Visual
 
 - Main character sprites: Idle (1 frame), Run cycle (4 frames), Attack (7 frames)
