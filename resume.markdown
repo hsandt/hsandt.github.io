@@ -34,15 +34,15 @@ I have 3 years of experience working in studios on shipped games for PC & consol
 
 ## Tech
 
-<table class="invisible-table narrow-rows width-500">
+<table class="invisible-table narrow-rows width-700">
     <tbody>
         <tr>
             <th>Engines</th>
-            <td>Unity, PICO-8, Godot, UE4</td>
+            <td>Unity, Godot, Renpy, PICO-8, Unreal Engine</td>
         </tr>
         <tr>
             <th>Programming languages</th>
-            <td>C#, C++, Python, Lua, Rust</td>
+            <td>C#, C++, Python, GDScript, Lua, Rust</td>
         </tr>
     </tbody>
 </table>
@@ -106,9 +106,9 @@ I have 3 years of experience working in studios on shipped games for PC & consol
     <p>Indie run 'n' gun for Windows, Switch, PS4, Xbox One</p>
     <p>Unity - Gameplay programming (C#), Level design</p>
     <ul>
-        <li>Prototype level section (whiteboxing, enemy spawns, events)</li>
-        <li>Bomber enemy behavior</li>
-        <li>Improve AI navmesh generation and custom editor tools</li>
+        <li>Level design: prototype area with houses (whiteboxing, enemy spawns, switches and events)</li>
+        <li>Gameplay programming: bomber enemy (movement and attack behavior)</li>
+        <li>Tool programming: improve AI navmesh generation and custom editor tools</li>
     </ul>
 
 </div>
@@ -119,7 +119,7 @@ I have 3 years of experience working in studios on shipped games for PC & consol
 
     <h3>pico sonic (fan game)</h3>
 
-    <p class="work-info-header">2018.05 - present</p>
+    <p class="work-info-header">2018.05 - 2023.02</p>
     <p>A partial 8-bit demake of Sonic 3 made with PICO-8</p>
     <ul>
         <li>Programming (Lua): menu, cinematics, in-game</li>
