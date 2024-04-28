@@ -217,7 +217,8 @@ table.th-width-20-percent {
     font-weight: bold;
 }
 
-@media print {
+// Hack: should be @media print but Chromium
+@media all {
     .avoid-break-page {
         break-inside: avoid-page;
     }
