@@ -883,6 +883,14 @@ table.narrow-rows th, table.narrow-rows td {
   width: 500px;
 }
 
+.width-600 {
+  width: 600px;
+}
+
+.width-700 {
+  width: 700px;
+}
+
 .width-800 {
   width: 800px;
 }
@@ -895,7 +903,7 @@ table.th-width-20-percent th {
   font-weight: bold;
 }
 
-@media print {
+@media all {
   .avoid-break-page {
     break-inside: avoid-page;
   }
