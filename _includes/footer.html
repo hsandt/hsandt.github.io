@@ -1,5 +1,5 @@
-<!-- Customized from https://github.com/jekyll/minima/blob/2f032a403c2338db6d35c83ee2376150e2ded468/_includes/footer.html
-     (2022-12-22) under MIT license -->
+{% comment %} Customized from https://github.com/jekyll/minima/blob/2f032a403c2338db6d35c83ee2376150e2ded468/_includes/footer.html
+(2022-12-22) under MIT license {% endcomment %}
 <footer class="site-footer h-card">
   <data class="u-url" href="{{ "/" | relative_url }}"></data>
 
@@ -7,14 +7,16 @@
 
     <div class="footer-col-wrapper">
       <div class="footer-col">
-        <!-- OVERRIDE: commented out Subscribe part -->
-        <!-- <p class="feed-subscribe">
+        {% comment %} OVERRIDE: commented out Subscribe part {% endcomment %}
+        {% comment %}
+        <p class="feed-subscribe">
           <a href="{{ site.feed.path | default: 'feed.xml' | absolute_url }}">
             <svg class="svg-icon orange">
               <use xlink:href="{{ 'assets/minima-social-icons.svg#rss' | relative_url }}"></use>
             </svg><span>Subscribe</span>
           </a>
-        </p> -->
+        </p>
+        {% endcomment %}
       {%- if site.author %}
         <ul class="contact-list">
           {% if site.author.name -%}
@@ -29,7 +31,7 @@
       <div class="footer-col">
         <p>{{ site.footer | escape }}</p>
         {% if jekyll.environment == 'development' %}
-        <!-- Dummy text to verify that the website has been built for development or production -->
+        {% comment %} Dummy text to verify that the website has been built for development or production {% endcomment %}
         <p>[ DEVELOPMENT MODE ]</p>
         {% endif %}
       </div>

@@ -1,8 +1,8 @@
 ---
 layout: default
 ---
-<!-- Customized from https://github.com/jekyll/minima/blob/f3de471bf38a14c5025319fdd541c30fe9f6916f/_layouts/home.html
-     (2020-02-17) under MIT license -->
+{% comment %} Customized from https://github.com/jekyll/minima/blob/f3de471bf38a14c5025319fdd541c30fe9f6916f/_layouts/home.html
+(2020-02-17) under MIT license {% endcomment %}
 <div class="home">
   {%- if page.title -%}
     <h1 class="page-heading">{{ page.title }}</h1>
@@ -12,7 +12,7 @@ layout: default
 
   <h2>Portfolio</h2>
 
-  <!-- For the home page, only show the first N items of each category -->
+   {% comment %} For the home page, only show the first N items of each category {% endcomment %}
   {% include portfolio-grid.html show_count=2 %}
 
 </div>
