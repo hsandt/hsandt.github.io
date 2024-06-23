@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+<title>Long Nguyen Huu</title>
+<subtitle>The personal website of Long Nguyen Huu aka komehara</subtitle>
+<link href="/atom.xml" rel="self"/>
+<link href="https://hsandt.github.io/"/>
+<updated>2024-06-23T20:20:27+00:00</updated>
+<id>https://hsandt.github.io</id>
+<author>
+<name>Long Nguyen Huu</name>
+<email>n.huu.long@gmail.com</email>
+</author>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <entry>
+        <title>Blueprint-defined behavior with dynamic multicast delegates in Unreal Engine</title>
+        <link href="https://hsandt.github.io/devlog/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine.html"/>
+        <updated>2017-02-14T00:00:00+00:00</updated>
+        <id>https://hsandt.github.io/devlog/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine</id>
+        <category term="devlog" />
+        <content type="html"><![CDATA[<p><em>Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however UE5 documentation shows that delegate macro names have not changed. Content has been adjusted to fix dead links and update links to their redirection, such as UE4 doc -&gt; UE5 doc.</em></p>
+
+<p>Quite often, gameplay programmers need to hand over the task of creating scripted events to level designers. In Unreal, a common workflow is to define shared features in C++ and level-specific behaviors with Blueprints.</p>
+
+<p>While it is possible to implement C++ Actor methods via Blueprints using either <a href="https://wiki.unrealengine.com/Blueprints,_Empower_Your_Entire_Team_With_BlueprintImplementableEvent"><code class="language-plaintext highlighter-rouge">BlueprintImplementableEvent</code></a> or <code class="language-plaintext highlighter-rouge">BlueprintNativeEvent</code>, in this post, I’ll talk about <strong>dynamic multicast delegates</strong>.</p>
+
+<h1 id="concept">Concept</h1>
+
+<p>Delegates allow you to handle functions as objects, pass them around and execute them later with the appropriate context. There are various ways to implement them in C++ (see <a href="http://stackoverflow.com/questions/9568150/what-is-a-c-delegate">this discussion on stack overflow</a> and <a href="https://nikitablack.github.io/post/generic_c++_delegates/">this proposition of Generic C++ delegates</a>), and Unreal provides its own implementation (see <a href="https://docs.unrealengine.com/5.2/en-US/delegates-and-lamba-functions-in-unreal-engine/">Delegates</a> in UE documentation). I won’t try to explain how they work in UE (getting myself lost among all the macros in the source code) but I’ll show you how to use them in a very specific case.</p>
+
+<p>Imagine we have several Actors that share the same behaviors via <strong>Actor Components</strong>. Both Actors and Actor Components are initially defined in C++, but only Actors are extended via Blueprints (to reduce the number of Blueprints).  Behaviors are defined as C++ methods in the Actor Components’ classes, but since those are not derived into Blueprints, we cannot use <code class="language-plaintext highlighter-rouge">BlueprintImplementableEvent</code> nor <code class="language-plaintext highlighter-rouge">BlueprintNativeEvent</code> <code class="language-plaintext highlighter-rouge">UFUNCTION</code>s to move the implementation to a Blueprint event graph.</p>
+
+<p>Instead, we declare a <strong>dynamic multicast delegate member</strong> in the Actor Component (called <code class="language-plaintext highlighter-rouge">SwitchableComponent</code>) and bind a function (actually a Blueprint graph) to that delegate in the <strong>Actor’s Blueprint</strong>.</p>
+
+<h1 id="code">Code</h1>
+
+<h2 id="actor-component">Actor Component</h2>
+
+<p>Below is an example on how to do that with a switch and a delegate for functions that takes 1 boolean parameter (<code class="language-plaintext highlighter-rouge">true</code> to switch on).</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// SwitchableComponent.h</span>
+
+<span class="cp">#pragma once
+</span>
+<span class="cp">#include</span> <span class="cpf">"Item/InteractableComponent.h"</span><span class="cp">
+#include</span> <span class="cpf">"SwitchableComponent.generated.h"</span><span class="cp">
+</span>
+<span class="c1">// This macro will generate a declaration for a delegate that supports functions receiving</span>
+<span class="c1">// one boolean parameter. Check the documentation for parameter variants.</span>
+<span class="n">DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam</span><span class="p">(</span><span class="n">FSwitchableComponentSwitchSignature</span><span class="p">,</span> <span class="kt">bool</span><span class="p">,</span> <span class="n">bOn</span><span class="p">);</span>
+
+<span class="c1">// In my game, UInteractableComponent allows interaction from the player character,</span>
+<span class="c1">// but you can derive directly from UActorComponent instead</span>
+<span class="n">UCLASS</span><span class="p">(</span><span class="n">BlueprintType</span><span class="p">,</span> <span class="n">ClassGroup</span> <span class="o">=</span> <span class="p">(</span><span class="n">Interaction</span><span class="p">),</span> <span class="n">meta</span> <span class="o">=</span> <span class="p">(</span><span class="n">BlueprintSpawnableComponent</span><span class="p">))</span>
+<span class="k">class</span> <span class="nc">MYGAME_API</span> <span class="n">USwitchableComponent</span> <span class="o">:</span> <span class="k">public</span> <span class="n">UInteractableComponent</span>
+<span class="p">{</span>
+    <span class="n">GENERATED_BODY</span><span class="p">()</span>
+
+<span class="nl">public:</span>
+
+    <span class="n">USwitchableComponent</span><span class="p">();</span>
+
+    <span class="n">UPROPERTY</span><span class="p">(</span><span class="n">Transient</span><span class="p">,</span> <span class="n">Category</span> <span class="o">=</span> <span class="s">"State"</span><span class="p">)</span>
+    <span class="kt">bool</span> <span class="n">bIsOn</span><span class="p">;</span>
+
+    <span class="cm">/** Toggle switch */</span>
+    <span class="kt">void</span> <span class="n">Switch</span><span class="p">();</span>
+
+<span class="nl">protected:</span>
+
+    <span class="c1">// Here is the delegate we'll bind the behavior to in the Actor Blueprint</span>
+    <span class="cm">/** Callback on switch on / off (passed boolean argument is true if switching on) */</span>
+    <span class="n">UPROPERTY</span><span class="p">(</span><span class="n">BlueprintAssignable</span><span class="p">,</span> <span class="n">Category</span> <span class="o">=</span> <span class="s">"Interaction"</span><span class="p">)</span>
+    <span class="n">FSwitchableComponentSwitchSignature</span> <span class="n">OnSwitch</span><span class="p">;</span>
+
+<span class="p">};</span>
+
+<span class="c1">// SwitchableComponent.cpp</span>
+
+<span class="cp">#include</span> <span class="cpf">"StairlessTower.h"</span><span class="cp">
+#include</span> <span class="cpf">"SwitchableComponent.h"</span><span class="cp">
+</span>
+<span class="n">USwitchableComponent</span><span class="o">::</span><span class="n">USwitchableComponent</span><span class="p">()</span> <span class="o">:</span> <span class="n">UInteractableComponent</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">bIsOn</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">USwitchableComponent</span><span class="o">::</span><span class="n">Switch</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// Toggle</span>
+    <span class="n">bIsOn</span> <span class="o">=</span> <span class="o">!</span><span class="n">bIsOn</span><span class="p">;</span>
+
+    <span class="c1">// The IsBound() check is optional for multi-cast delegates, but let you know if</span>
+    <span class="c1">// at least one function is bound to the delegate</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">OnSwitch</span><span class="p">.</span><span class="n">IsBound</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">OnSwitch</span><span class="p">.</span><span class="n">Broadcast</span><span class="p">(</span><span class="n">bIsOn</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Note that we need a <strong>dynamic</strong> delegate because dynamic delegates are serializable, which allows them to be saved in the Blueprints. I’m not sure why <strong>multicasts</strong> delegates are required, maybe it’s because they support multiple function bindings or because they don’t have return values. Anyway, if you try to use <code class="language-plaintext highlighter-rouge">DECLARE_DYNAMIC_DELEGATE_OneParam</code> you’ll get the following error: <em>‘BlueprintAssignable’ is only allowed on multicast delegate properties.</em></p>
+
+<h2 id="actor">Actor</h2>
+
+<p>Now, we create a <code class="language-plaintext highlighter-rouge">WallSwitch</code> Actor that uses <code class="language-plaintext highlighter-rouge">SwitchableComponent</code>:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// WallSwitch.h</span>
+
+<span class="cp">#pragma once
+</span>
+<span class="cp">#include</span> <span class="cpf">"GameFramework/Actor.h"</span><span class="cp">
+#include</span> <span class="cpf">"WallSwitch.generated.h"</span><span class="cp">
+</span>
+<span class="c1">// We'll need to derive a Blueprint from this Actor, so we make it Blueprintable</span>
+<span class="n">UCLASS</span><span class="p">(</span><span class="n">Blueprintable</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">MYGAME_API</span> <span class="n">AWallSwitch</span> <span class="o">:</span> <span class="k">public</span> <span class="n">AActor</span>
+<span class="p">{</span>
+    <span class="n">GENERATED_BODY</span><span class="p">()</span>
+
+    <span class="c1">// Make the switchable component accessible in the Blueprint editor for later</span>
+    <span class="cm">/** Switchable component */</span>
+    <span class="n">UPROPERTY</span><span class="p">(</span><span class="n">VisibleAnywhere</span><span class="p">,</span> <span class="n">BlueprintReadOnly</span><span class="p">,</span> <span class="n">Category</span> <span class="o">=</span> <span class="s">"Interaction"</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="p">(</span><span class="n">AllowPrivateAccess</span> <span class="o">=</span> <span class="s">"true"</span><span class="p">))</span>
+    <span class="k">class</span> <span class="nc">USwitchableComponent</span><span class="o">*</span> <span class="n">SwitchableComponent</span><span class="p">;</span>
+
+<span class="nl">public:</span>
+    <span class="c1">// Sets default values for this component's properties</span>
+    <span class="n">AWallSwitch</span><span class="p">();</span>
+
+    <span class="c1">// Called when the game starts</span>
+    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">BeginPlay</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+
+    <span class="c1">// Called every frame</span>
+    <span class="c1">// virtual void Tick( float DeltaSeconds ) override;</span>
+
+<span class="p">};</span>
+
+
+<span class="c1">// WallSwitch.cpp</span>
+
+<span class="cp">#include</span> <span class="cpf">"StairlessTower.h"</span><span class="cp">
+#include</span> <span class="cpf">"WallSwitch.h"</span><span class="cp">
+</span>
+<span class="cp">#include</span> <span class="cpf">"Item/SwitchableComponent.h"</span><span class="cp">
+</span>
+<span class="c1">// Sets default values for this component's properties</span>
+<span class="n">AWallSwitch</span><span class="o">::</span><span class="n">AWallSwitch</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">PrimaryActorTick</span><span class="p">.</span><span class="n">bCanEverTick</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+    <span class="c1">// Create and attach a SwitchableComponent</span>
+    <span class="n">SwitchableComponent</span> <span class="o">=</span> <span class="n">CreateDefaultSubobject</span><span class="o">&lt;</span><span class="n">USwitchableComponent</span><span class="o">&gt;</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">"SwitchableComponent"</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="blueprint">Blueprint</h1>
+
+<h2 id="actor-blueprint">Actor Blueprint</h2>
+
+<p>We create an Actor Blueprint <code class="language-plaintext highlighter-rouge">BP_WallSwitch</code> derived from <code class="language-plaintext highlighter-rouge">WallSwitch</code>. The Components panel shows:</p>
+
+<p><img src="/assets/pictures/blog/devlog/2017-02-14/UE4-delegate-blueprint-BP_WallSwitch-components.png" alt="WallSwitch Actor blueprint with SwitchableComponent" /></p>
+
+<p>When we select the Switchable Component, the Details panel shows:</p>
+
+<p><img src="/assets/pictures/blog/devlog/2017-02-14/UE4-delegate-blueprint-BP_WallSwitch-details.png" alt="Switchable Component details panel with OnSwitch event View button" /></p>
+
+<h2 id="binding">Binding</h2>
+
+<p>At first, the buttons in the Events section should all show a “+”. We click on the button next to <em>On Switch</em> to create the event node below (from then on, the button will show “View” as on the screenshot above):</p>
+
+<p><img src="/assets/pictures/blog/devlog/2017-02-14/UE4-delegate-blueprint-BP_WallSwitch-Event-Graph-no-binding.png" alt="On Switch event, no binding" /></p>
+
+<p>Alternatively, you may right-click in the Event Graph area and type “Add On Switch” in the search field (ensuring SwitchableComponent is still selected and Context Sensitive is checked).</p>
+
+<p>From here, we can bind a Blueprint graph to the OnSwitch delegate (represented by an event node) defined earlier in C++. In this example, we play a Sequence from a Sequence Actor reference we added directly as a Variable in the Actor Blueprint.</p>
+
+<p><img src="/assets/pictures/blog/devlog/2017-02-14/UE4-delegate-blueprint-BP_WallSwitch-Event-Graph.png" alt="Binding for Switchable Component OnSwitch event on Wall Switch actor" /></p>
+
+<h1 id="result">Result</h1>
+
+<p>When the player character tries to interact with the Wall Switch, the level sequence plays:</p>
+
+<p><img src="/assets/pictures/blog/devlog/2017-02-14/UE4-Blueprint-delegates-On-Switch-action.gif" alt="Player Character uses Switch to move Wall" /></p>
+
+<p>The red/green box you see is a Box Trace with visual debug that the Player Character uses to detect interactables. It’s quite easy to do with Blueprints but may be tricky in C++, I’ll explain how this works in another post.</p>
+
+<h1 id="notes">Notes</h1>
+
+<p>The OnSwitch event node that appeared seems to be a convenience node provided by the Event Graph when handling a delegate on an Actor Component (BlueprintImplementableEvents also show such nodes). But in general, you can bind events to delegates by creating a Custom Event with its own subgraph and assigning it to the Event input pin of the <em>Bind Event to …</em> node (type “Assign” in the Blueprint search box and you’ll find an action that generates both the Custom Event and the Bind Event node for the delegate you want, provided it is accessible from the current Blueprint or you have selected it in the World Viewport).</p>
+
+<p>For instance, I selected a Wall Switch instance in the Viewport, then in the Level Blueprint editor I right-clicked &gt; Assign to OnSwitch. This allowed me to add an extra logging event when the Wall Switch was pressed (the multi-cast delegates will trigger <strong>all</strong> bounds functions/events on Broadcast).</p>
+
+<p><img src="/assets/pictures/blog/devlog/2017-02-14/UE4-delegate-blueprint-Switch-level-event.png" alt="Level Blueprint binding action to On Switch delegate" /></p>
+
+<p>For examples on how to bind functions from raw C++, check out <a href="https://unrealcommunity.wiki/delegates-in-ue4-raw-cpp-and-bp-exposed-xifmcmq5">Rama’s article on Delegates</a>.</p>
+]]></content>
+    </entry>
+    
+
+
+</feed>

@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+<title>Long Nguyen Huu</title>
+<subtitle>The personal website of Long Nguyen Huu aka komehara</subtitle>
+<link href="/atom.xml" rel="self"/>
+<link href="https://hsandt.github.io/"/>
+<updated>2024-06-23T20:20:27+00:00</updated>
+<id>https://hsandt.github.io</id>
+<author>
+<name>Long Nguyen Huu</name>
+<email>n.huu.long@gmail.com</email>
+</author>
+
+
+    
+    <entry>
+        <title>Combat Platformer in Godot 4: June 2024 progress</title>
+        <link href="https://hsandt.github.io/devlog/2024/06/18/godot-combat-platformer-progress.html"/>
+        <updated>2024-06-18T00:00:00+00:00</updated>
+        <id>https://hsandt.github.io/devlog/2024/06/18/godot-combat-platformer-progress</id>
+        <category term="devlog" />
+        <content type="html"><![CDATA[<h1 id="summary">Summary</h1>
+
+<h2 id="fireball-rain">Fireball Rain</h2>
+
+<p>The big addition is the Fireball Rain, which is a more classic bullet hell platformer move, inspired by <a href="https://www.neoseeker.com/touhou-luna-nights/walkthrough/Boss_Marisa">Marisa’s Energy Bombardment</a> in Touhou Luna Nights. Except instead of spawn a pillar of light, each fireball spawns a fire AOE that stays on the ground/wall it hit for a while.</p>
+
+<p>The move is more regular that the previous homing fireballs, so it encourages the player to learn the pattern and safe spots to get there quickly rather than adapting to each shot very fast. That said, I find it a bit too regular now, maybe I’ll add some randomized offset to force the player to adjust their position a little.</p>
+
+<h2 id="new-moves-and-animations">New moves and animations</h2>
+
+<p>Player character can now Air dodge, and existing moves all got a dedicated animation. The boss is also animated when casting a spell and getting hurt.</p>
+
+<p>Here is a video to recap new animations, all while trying to dodge the new Fireball Rain.</p>
+
+<video controls="" loop="loop">
+  <source src="/assets/pictures/blog/devlog/2024-06-18/2024-06-18 Godot Boss - Fireball Rain, new PC animations and Air Slide.mp4" type="video/webm" />
+</video>
+
+<p>And the player character death animation:</p>
+
+<p><img src="/assets/pictures/blog/devlog/2024-06-18/paladin_tiny_Death_demo@8x.gif" alt="Player character death animation" /></p>
+
+<h2 id="simpler-level">Simpler level</h2>
+
+<p>I removed all the platforms and re-added two so the player character can still jump high enough to reach the boss who is shooting Fireball Rain from very high above.</p>
+
+<h2 id="first-bgm">First BGM</h2>
+
+<p>I was tired of testing in a silent room so I added the first BGM, some free asset <a href="https://maou.audio/game_lastboss01/">Last Boss 01 (ラストボス01)</a>, by MaouDamashii under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+
+<h1 id="changelog">Changelog</h1>
+
+<h2 id="gameplay">Gameplay</h2>
+
+<ul>
+  <li>Player character: shorter ground Slide, add Air Slide</li>
+  <li>Player character: Melee attack: allow changing direction when chaining attacks</li>
+  <li>Boss: skill: replaced single fireball shot with new Fireball rain (projectile accelerates)</li>
+  <li>Projectile: Fireball damages player character but moves through it</li>
+  <li>Projectile: Fireball generates fire AOE for a short time after hitting ground or wall</li>
+</ul>
+
+<h2 id="level">Level</h2>
+
+<ul>
+  <li>Simplify level with only 2 platforms</li>
+</ul>
+
+<h2 id="visual">Visual</h2>
+
+<ul>
+  <li>Player character: Slide, Hurt, Death, Jump, Fall, Crouch, DashAttack, AirSlide + transitions</li>
+  <li>Boss: new Idle, Hurt, SpellForward, SpellUpward animations and transitions between them (using AnimationTree)</li>
+  <li>Projectile: Fireball warm up FX, Fireball Rain round fireball sprite, Fireball explosion on hit</li>
+</ul>
+
+<h2 id="audio">Audio</h2>
+
+<ul>
+  <li>BGM: Boss theme phase 1 extracted from free BGM “Last Boss ラストボス01” by MaouDamashii</li>
+</ul>
+
+<h1 id="godot-threads-opened">Godot threads opened</h1>
+
+<h2 id="issues">Issues</h2>
+
+<ul>
+  <li><a href="https://github.com/godotengine/godot/issues/90868">Animation SpriteFrames panel: FPS field is too small, long numbers (e.g. using decimal fraction) are cropped</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/91065">Animation Tree: State machine nodes view does not refresh on Undo/Redo creating new node (until next click)</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/91162">Code editor: hover debug empty String / StringName variable shows nothing</a></li>
+</ul>
+
+<h2 id="proposals">Proposals</h2>
+
+<ul>
+  <li><a href="https://github.com/godotengine/godot-proposals/issues/9550">Animation SpriteFrames: add keyboard shortcut to rename animation (default F2)</a></li>
+</ul>
+]]></content>
+    </entry>
+    
+
+    
+    <entry>
+        <title>Combat Platformer in Godot 4: April 2024 progress</title>
+        <link href="https://hsandt.github.io/devlog/2024/04/12/godot-combat-platformer-progress.html"/>
+        <updated>2024-04-12T00:00:00+00:00</updated>
+        <id>https://hsandt.github.io/devlog/2024/04/12/godot-combat-platformer-progress</id>
+        <category term="devlog" />
+        <content type="html"><![CDATA[<h1 id="summary">Summary</h1>
+
+<h2 id="visual-revamp">Visual revamp</h2>
+
+<p>Big revamp! I finally switched the whole game to <strong>full custom graphics</strong>. I first worked with a resolution similar to the proto character asset (see <a href="/devlog/2024/01/06/godot-combat-platformer-progress.html">previous post</a> 3 months ago), then tried smaller sizes to draw faster. Below, some character scale research:</p>
+
+<p><img src="/assets/pictures/blog/devlog/2024-04-12/paladin_Idle_sword_demo_all_sizes_2024-03-19_@4x.png" alt="Main character sprite scale research" /></p>
+
+<p>From left to right:</p>
+
+<ol>
+  <li><strong>Tiny</strong>: fast to draw, but hard to show details like scars, sword erosion or body limb animations. Instead, it relies a lot on translations and FX.</li>
+  <li><strong>Chibi</strong>: I don’t like how this one turned out, it was supposed to look like <a href="https://rdein.itch.io/">Momodora I-III</a> but got ugly and now it reminds me of the <a href="https://mixnmojo.com/galleries/full/full20100912100720.png">horned idol statue</a> in <em>Indiana Jones and the Fate of Atlantis</em>.</li>
+  <li><strong>Small</strong>: It’s a nice compromise, I’d go with this one if I had more time.</li>
+  <li><strong>Normal</strong>: The original sprite I’ve drawn, would take more time to animate, but I’d go with this one if I hired a pixel artist.</li>
+  <li><strong>Tall</strong>: A funny experiment with the “thin body - long legs” pixel art style found in indie games like <a href="https://store.steampowered.com/app/204060/Superbrothers_Sword__Sworcery_EP/">Superbrothers: Sword &amp; Sworcery EP</a>.</li>
+</ol>
+
+<p>In the end I went for the Tiny art style, using references such as <a href="https://ldjam.com/events/ludum-dare/53/$366108">Time for Lunch</a> (PICO-8 game) and <a href="https://store.steampowered.com/app/607400/Necrosphere/">Necrosphere</a>.</p>
+
+<p>Then I converted the other elements (boss, projectiles and FX) and added new elements (background, HUD) to fit in this style. The ice spike FX is very big so it was quite easy to convert (although the warm up animation needed some tuning), while I had to redo the fireball animation from scratch (and also recolored them).</p>
+
+<h2 id="rebuilt-boss-level">Rebuilt boss level</h2>
+
+<p>I also rebuilt the whole level to something symmetrical with a few platforms. Kudos to the <a href="https://lospec.com/pixel-school/">Lospec Pixel School</a> which helped me tune the color palette! Using Aseprite, it’s quite fast with the Indexed Color Mode + Edit Color button.</p>
+
+<h2 id="first-sfx">First SFX</h2>
+
+<p>Finally, I added fireball spawn SFX. Instead of the usual sfxr (via <a href="https://sfxr.me/">jsfxr</a>), I tried to use audio synthesizer <a href="https://vital.audio/">Vital</a>. I had already tested its free little brother <a href="https://tytel.org/helm/">Helm</a> but was limited by the lack of wave modulation and wanted more features… Well, I got them, there are too many for me to understand now, so I just used a little bit of Vital’s features.</p>
+
+<p>The biggest issue was <a href="https://forum.vital.audio/t/vital-crashing-reaper-linux-clap-and-vst3-versions/13540">Reaper + Vital plugin crashing on Linux</a> which forced me to manually record the SFX from Vital standalone. I may eventually switch back to jsfxr or Helm because of this.</p>
+
+<p>Since I was busy working on new graphics and plugging the HUD behavior, there is no new gameplay features in this update. I will work on improved boss patterns and main character moves next time.</p>
+
+<video controls="" loop="loop">
+  <source src="/assets/pictures/blog/devlog/2024-04-12/2024-04-11 Godot Boss - 5 platforms, MC attack vs Fireballs and Ice spikes.webm" type="video/webm" />
+</video>
+
+<h1 id="changelog">Changelog</h1>
+
+<h2 id="level">Level</h2>
+
+<ul>
+  <li>Rebuilt full level as a small, one-screen room with 5 platforms</li>
+</ul>
+
+<h2 id="ui">UI</h2>
+
+<ul>
+  <li>HUD: plug main character &amp; boss life gauges to their remaining HP</li>
+</ul>
+
+<h2 id="visual">Visual</h2>
+
+<ul>
+  <li>Main character sprites: Idle (1 frame), Run cycle (4 frames), Attack (7 frames)</li>
+  <li>Boss sprites (Tiny art style): Idle (1 frame)</li>
+  <li>Fireball sprites (Tiny art style): Move (4 frames)</li>
+  <li>Ice spikes (Tiny art style): Warm up (13 frames), Appear (6 frames), Active (4 frames), Disappear (3 frames)</li>
+  <li>HUD: Main character life gauge (discrete cells), Boss life gauge (continuous gauge)</li>
+</ul>
+
+<h2 id="audio">Audio</h2>
+
+<ul>
+  <li>SFX: Fireball spawn</li>
+</ul>
+
+<h1 id="godot-threads-opened">Godot threads opened</h1>
+
+<p>For the first time, I’ll also post the list of Godot issues and proposals I opened since the last devlog. It’s pretty long because they span over 3 months, hopefully next list will be shorter.</p>
+
+<p>I realised I spent a considerable amount of time debugging, isolating MWE (Minimum Working Examples) and posting them on GitHub, so tracking issues I have opened is a good way to motivate me: I’ve not been doing nothing that day!</p>
+
+<p>For now it’s my main way to contribute to Godot, but I hope I’ll be able to send pull requests to contribute to engine code in the near future.</p>
+
+<h2 id="issues">Issues</h2>
+
+<ul>
+  <li><a href="https://github.com/godotengine/godot/issues/87254">#87254 Sometimes after saving scene, both instantiated scene and original scene node numerical properties become null, shown as 0 in inspector</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/88067">#88067 Erratic behavior when CharacterBody2D is inside tilemap (or group of small colliders) with collision shapes, is_on_floor returns false</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/88115">#88115 AnimatedSprite2D: Empty Animation name error on ready/instantiation propagates to inherited scenes</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/88303">#88303 Scene editor: Mouse middle click doesn’t always close scene tab</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/88400">#88400 Export: Save a File: Godot doesn’t update Quick Access folders if changed after opening editor, causing offset display or even out-of-bounds error</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/88408">#88408 Linux: Scene editor: Control: Releasing mouse primary button after Alt+drag for centered Control resize will not end resize operation</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/89543">#89543 Linux X11 OpenGL/Vulkan - After changing window size, window content doesn’t immediately refresh to match new size</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/89621">#89621 Linux - Portable installation of Blender not recognized for Blender import with error: Blender Path does not contain a Blender installation</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/89785">#89785 Autocomplete Input.get_axis StringName parameter suddenly switches from action name to symbols while typing</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/89910">#89910 When Import ETC2 ASTC option is disabled, Remote Debug on Android is still allowed but fails Export with empty error message in Project Run popup</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/89923">#89923 TileSet: Leftover patterns after TileSet atlas source removal causes output error spam “No TileSet atlas source with id N”</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/90021">#90021 Instances of inherited scenes are not updated when changing exported var value on base scene if scene containing them was already open, until editor restart</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/90264">#90264 Literal String as int (or float) cast causes Parser Error “Cannot cast a value of type “String” as “int”.” although it works with variable String</a></li>
+  <li><a href="https://github.com/godotengine/godot/issues/90537">#90537 Repeated toggle fullscreen increases window size by the window decorations size each time we leave fullscreen</a></li>
+</ul>
+
+<h2 id="discussions">Discussions</h2>
+
+<ul>
+  <li><a href="https://github.com/godotengine/godot-proposals/discussions/8948">#8948 Add a button/option to build and run directly on plugged Android device</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/discussions/8958">#8958 Confused by CanvasLayer property follow_viewport_enable / follow_viewport_enabled, sounded like follow_camera_enabled but it’s the opposite</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/discussions/9096">#9096 Ctrl+Click to go to definition of method name defined as StringName &amp;”my_method”</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/discussions/9396">#9396 Add Control child class/node that fits own size to children (maximum bounding box) to be used as intermediate parent under HBoxContainer/VBoxContainer</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/discussions/9400">#9400 Tilemap tile full rect collision shapes are considered independent, causing Raycast to hit individual tiles inside tilemap</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/discussions/9461">#9461 Add exception methods to CharacterBody2D to ignore specific collision objects during move_and_slide</a></li>
+</ul>
+
+<h2 id="proposals">Proposals</h2>
+
+<ul>
+  <li><a href="https://github.com/godotengine/godot-proposals/issues/8854">#8854 Hover long editor bell notification text (cut with ellipsis) to see full message and/or allow copying full text with right-click</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/issues/8947">#8947 Export to Android: improve Invalid package name error message by showing Project name converted to $genname explicitly</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/issues/9095">#9095 F1 Search Help reused to navigate code: show custom symbols without doc + go to source code of custom class/method (from F1 popup or documentation)</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/issues/9102">#9102 Debug: Code editor: command to debug content of Object variable under cursor/caret in remote Inspector</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/issues/9105">#9105 Allow setting Mouse Default Cursor Shape differently when Button is disabled</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/issues/9107">#9107 Add contextual menu to convert binary resource .res to serialized text .tres (and vice-versa)</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/issues/9129">#9129 Windows export: Indicate reason for “Invalid file version” and “Invalid product version”</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/issues/9146">#9146 Project settings: add Debug &gt; GDScript &gt; Warnings parameter to include/exclude specific add-ons</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/issues/9307">#9307 Add an option to make Wide / Full Rect control anchor presets take Window Stretch Scale project setting into account</a></li>
+  <li><a href="https://github.com/godotengine/godot-proposals/issues/9387">#9387 Animation SpriteFrames: do not lose focus when deleting frame</a></li>
+</ul>
+]]></content>
+    </entry>
+    
+
+    
+    <entry>
+        <title>Combat Platformer in Godot 4: January 2024 progress</title>
+        <link href="https://hsandt.github.io/devlog/2024/01/06/godot-combat-platformer-progress.html"/>
+        <updated>2024-01-06T00:00:00+00:00</updated>
+        <id>https://hsandt.github.io/devlog/2024/01/06/godot-combat-platformer-progress</id>
+        <category term="devlog" />
+        <content type="html"><![CDATA[<p>I decided to switch from a combat platformer where you fight many minions to <strong>a single boss fight</strong> where platforming is essentially to dodge boss attacks and find a right angle to counter-attack. I started drawing the first original sprites for the boss, so I could get exactly the character and projectile animations I needed.</p>
+
+<h3 id="gameplay">Gameplay</h3>
+
+<ul>
+  <li>Level: added 1 boss: the sorcerer</li>
+  <li>Enemy AI: the sorcerer continuously shoots fireballs in the same direction</li>
+</ul>
+
+<h3 id="visual">Visual</h3>
+
+<ul>
+  <li>Character sprite: Sorcerer 2-frame Idle, 2-frame Hurt, 2-frame Die, 4-frame SpellForward (not used yet)</li>
+  <li>Projectile sprite: Fireball 4-frame Move</li>
+</ul>
+
+<video autoplay="autoplay" loop="loop">
+  <source src="/assets/pictures/blog/devlog/2024-01-16/2024-01-16 Godot 4 Platformer Combat progress - Boss - Fireball, Hurt and Die 640x360.webm" type="video/webm" />
+</video>
+
+<p>Assets used:</p>
+<ul>
+  <li><a href="https://clembod.itch.io/warrior-free-animation-set">Warrior-Free Animation set V1.3 by Clembod</a></li>
+  <li><a href="https://untiedgames.itch.io/free-grasslands-tileset">Free Pixel Art Grasslands Tileset by Will Tice / unTied Games</a></li>
+</ul>
+
+]]></content>
+    </entry>
+    
+
+    
+    <entry>
+        <title>Snake remake in Godot 4: October 2023 progress</title>
+        <link href="https://hsandt.github.io/devlog/2023/10/11/godot-snake-evolved-progress.html"/>
+        <updated>2023-10-11T00:00:00+00:00</updated>
+        <id>https://hsandt.github.io/devlog/2023/10/11/godot-snake-evolved-progress</id>
+        <category term="devlog" />
+        <content type="html"><![CDATA[<p>In July 2023, I started working on a “Snake with a twist” in parallel to my other games. It’s a smaller project that I intend to finish within 100 hours of work, using only geometrical graphics and simple arcade mechanics to avoid artistic and technical difficulties (game design will probably be the most difficult part).</p>
+
+<p><img src="/assets/pictures/blog/devlog/2023-10-11/Snake Evolved - 2023-08-29 - wrap-around and laddering.gif" alt="Snake Evolved: wrap-around and laddering" height="360" /></p>
+
+<p>My latest addition is moving enemies. They currently move at half the speed of the player snake, but they still make the game significantly harder: new enemies regularly spawn and keep coming at you, and touching them causes instant game over. You can trick them by repeatedly warping to the other side of the arena, but I may eventually fix this by making enemies aware of edge warping to find the real shortest distance to player snake.</p>
+
+<video controls="" width="640" height="360">
+  <source src="/assets/pictures/blog/devlog/2023-10-11/Snake Evolved - 2023-10-10 - Adding moving enemies - Eat and lose 720p.webm" type="video/webm" />
+</video>
+
+<p>One problem is inherent to snake: you cannot control the tail, so it is very vulnerable, even more as your snake gets longer. I may mitigate this by reducing penalty when a body part other than the head hits an enemy.</p>
+
+<h2 id="dev-status">Dev status</h2>
+
+<p>Total work time: 27h</p>
+
+<h3 id="gameplay">Gameplay</h3>
+
+<ul>
+  <li>Player character: move like a classic snake (hold diagonal for laddering)</li>
+  <li>Pick-up: eat to extend snake length by 1 and increase Score</li>
+</ul>
+
+<h3 id="visual">Visual</h3>
+
+<ul>
+  <li>Dark background</li>
+  <li>All sprites are colored squares</li>
+</ul>
+
+<h3 id="hud">HUD</h3>
+
+<ul>
+  <li>Display score in top-left corner</li>
+</ul>
+
+<h3 id="known-issues">Known issues</h3>
+
+<ul>
+  <li>Pick-up and enemies can spawn anywhere, including near and inside the player snake without warning!</li>
+</ul>
+]]></content>
+    </entry>
+    
+
+    
+    <entry>
+        <title>Combat Platformer in Godot 4: June 2023 progress</title>
+        <link href="https://hsandt.github.io/devlog/2023/06/08/godot-combat-platformer-progress.html"/>
+        <updated>2023-06-08T00:00:00+00:00</updated>
+        <id>https://hsandt.github.io/devlog/2023/06/08/godot-combat-platformer-progress</id>
+        <category term="devlog" />
+        <content type="html"><![CDATA[<p>I have added a few features to my prototype of combat platformer made in Godot since February, as well as less visible QoL/debug improvements:</p>
+
+<h3 id="gameplay">Gameplay</h3>
+
+<ul>
+  <li>Actions: Slide, airborne Attack</li>
+  <li>Flow: better action constraints (cannot move while attacking on ground, but can move when attacking airborne, with locked direction)</li>
+  <li>Enemy AI: Behaviour Trees with <a href="https://github.com/AdrienQuillet/godot-yet-another-behavior-tree">Yet Another Behavior Tree</a></li>
+</ul>
+
+<h3 id="visual">Visual</h3>
+<ul>
+  <li>Feedback: red hurt color, blue invincible color during Slide</li>
+  <li>More robust animation system with base (continuous) animations like Run + override (one-time) animations like Attack</li>
+</ul>
+
+<video autoplay="autoplay" loop="loop" width="400" height="300">
+  <source src="/assets/pictures/blog/devlog/2023-06-08/2023-06-08 Godot 4 Platformer Combat progress.webm" type="video/webm" />
+</video>
+
+<h3 id="debug">Debug</h3>
+<ul>
+  <li>Restart all entities immediately when pressing R</li>
+  <li>Debug overlay: FPS, current frame, currently pressed input</li>
+</ul>
+
+<video autoplay="autoplay" loop="loop" width="640" height="360">
+  <source src="/assets/pictures/blog/devlog/2023-06-08/2023-06-08 Godot 4 Platformer Combat - Debug overlay demo.webm" type="video/webm" />
+</video>
+
+<p>Assets used:</p>
+<ul>
+  <li><a href="https://clembod.itch.io/warrior-free-animation-set">Warrior-Free Animation set V1.3 by Clembod</a></li>
+  <li><a href="https://astrobob.itch.io/animated-pixel-art-skeleton">Animated pixel art skeleton by AstroBob</a></li>
+  <li><a href="https://untiedgames.itch.io/free-grasslands-tileset">Free Pixel Art Grasslands Tileset by Will Tice / unTied Games</a></li>
+</ul>
+]]></content>
+    </entry>
+    
+
+    
+    <entry>
+        <title>Combat Platformer in Godot 4: Feb 2023 progress</title>
+        <link href="https://hsandt.github.io/devlog/2023/02/12/godot-combat-platformer-progress.html"/>
+        <updated>2023-02-12T00:00:00+00:00</updated>
+        <id>https://hsandt.github.io/devlog/2023/02/12/godot-combat-platformer-progress</id>
+        <category term="devlog" />
+        <content type="html"><![CDATA[<p>I started working on a side-scrolling combat platformer prototype in Godot 4.
+I’m regularly downloading new snapshots of Godot 4 beta which sometimes introduces breaking API changes, but I hope it will be worth it when it finally gets released.</p>
+
+<p><img src="/assets/pictures/blog/devlog/2023-02-12/2023-02-12 demo features so far.gif" alt="Combat platformer demo: warrior runs, jumps and slashes a slime" /></p>
+
+<p>I managed to port most of my code for character control/animation from an <a href="https://github.com/hsandt/flame-of-hope-godot/tree/master/Scripts">older project</a>. But it was top-view, so I still had to work more to get running and jumping to work.</p>
+
+<p>The biggest issue I had with physics was a regression on <code class="language-plaintext highlighter-rouge">move_and_slide</code> (see <a href="https://github.com/godotengine/godot/issues/71993">this issue</a>). Otherwise, I’d say Godot’s built-in classes made it pretty simple. I don’t have any custom raycasts in my code so far.</p>
+
+<p>So far I implemented the following features for the player character:</p>
+<ul>
+  <li>move and jump</li>
+  <li>melee attack: can chain up to two slashes</li>
+  <li>health system: get hurt and die</li>
+</ul>
+
+<p>I’d like to make this open source, but as it contains some copyrighted third-party assets (although free).
+I may extract the scripts into some public submodule (as with my Unity projects) though, so stay tuned!</p>
+
+<p>Assets used:</p>
+<ul>
+  <li><a href="https://clembod.itch.io/warrior-free-animation-set">Warrior-Free Animation set V1.3 by Clembod</a></li>
+  <li><a href="https://rvros.itch.io/pixel-art-animated-slime">Pixel Slime by rvros (CC0 1.0)</a></li>
+  <li><a href="https://untiedgames.itch.io/free-grasslands-tileset">Free Pixel Art Grasslands Tileset by Will Tice / unTied Games</a></li>
+</ul>
+]]></content>
+    </entry>
+    
+
+    
+
+
+</feed>
