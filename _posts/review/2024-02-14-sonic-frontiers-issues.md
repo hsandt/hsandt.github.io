@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Sonic Frontiers issues"
-tag: sonic
+tags: sonic
 thumbnail: "2024-02-14-sonic-frontiers-issues/thumbnail.png"
 published: false
 ---
