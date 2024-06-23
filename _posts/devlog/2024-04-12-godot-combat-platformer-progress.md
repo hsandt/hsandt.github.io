@@ -10,7 +10,7 @@ thumbnail: "2024-04-12/thumbnail.png"
 
 ## Visual revamp
 
-Big revamp! I finally switched the whole game to **full custom graphics**. I first worked with a resolution similar to the proto character asset (see [previous post](/devlog/2024/01/06/godot-combat-platformer-progress.html) 3 months ago), then tried smaller sizes to draw faster. Below, some character scale research:
+Big revamp! I finally switched the whole game to **full custom graphics**. I first worked with a resolution similar to the proto character asset (see [previous post]({% post_url /devlog/2024-01-06-godot-combat-platformer-progress %}) 3 months ago), then tried smaller sizes to draw faster. Below, some character scale research:
 
 ![Main character sprite scale research](/assets/pictures/blog/devlog/2024-04-12/paladin_Idle_sword_demo_all_sizes_2024-03-19_@4x.png)
 
