@@ -20,7 +20,7 @@ end
 def generate_tag_file(tag)
     # generate tag file
     File.open("tags/#{tag}.md", "wb") do |file|
-    file << "---\nlayout: tags\ntag-name: #{tag}\n---\n"
+    file << "---\nlayout: tags\ntag-name: #{tag}\ntitle: Blog\n---\n"
     end
     # generate feed file
     File.open("feeds/#{tag}.xml", "wb") do |file|
