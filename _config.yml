@@ -70,8 +70,9 @@ minima:
       user_url: "https://ko-fi.com/komehara"
       title: Donations on Ko-fi
 
-footer: >- # this means to ignore newlines until "baseurl:"
+footer: >- # this means to ignore newlines until "defaults:"
   This website was made with Jekyll and is hosted on GitHub Pages.
+  It uses Google Analytics.
 
 # Apply category [category] to all posts under _posts/[category]
 # This allows us to add new category sub-folders under _posts, easier than adding a folder [category]/_posts
@@ -116,6 +117,9 @@ comic_strip_pages:
   - v-sync.markdown
   - prototype.markdown
   - lens-of-truth.markdown
+
+# Analytics
+google_analytics: G-TKEELY26NL
 
 # Exclude from processing.
 # The following items will not be processed, by default.

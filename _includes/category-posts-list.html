@@ -1,7 +1,7 @@
 {%- assign category_name = include.category[0] -%}
 {%- assign category_posts = include.category[1] -%}
 
-<h2>{{ category_name | capitalize }}</h3>
+<h2>{{ category_name | capitalize }}</h2>
   {%- if category_posts.size > 0 -%}
 
     {% comment %} This is replaced by category, kept code until adding per-category posts pages {% endcomment %}
@@ -9,24 +9,6 @@
       <h2 class="post-list-heading">{{ page.list_title }}</h2>
     {%- endif -%}
 
-    <ul class="post-list">
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      {%- for post in category_posts -%}
-        <li>
-          <span class="post-meta">{{ post.date | date: date_format }}</span>
-          <h3>
-            <a class="post-link" href="{{ post.url | relative_url }}">
-              <p>{{ post.title | escape }}</p>
-              {%- if post.thumbnail -%}
-                <img class="blog-thumbnail" src="/assets/pictures/blog/{{ category_name }}/{{ post.thumbnail }}" alt="Thumbnail for {{ post.title }}">
-              {%- endif -%}
-            </a>
-          </h3>
-          {%- if site.show_excerpts -%}
-            {{ post.excerpt }}
-          {%- endif -%}
-        </li>
-      {%- endfor -%}
-    </ul>
+    {% include posts-list.html posts=category_posts %}
 
   {%- endif -%}

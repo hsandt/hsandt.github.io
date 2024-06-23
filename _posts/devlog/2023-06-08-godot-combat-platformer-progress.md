@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Combat Platformer in Godot 4: June 2023 progress"
-tag: godot
+tags: godot
 image: "/assets/pictures/blog/devlog/2023-06-08/thumbnail.png"
 thumbnail: "2023-06-08/thumbnail.png"
 ---

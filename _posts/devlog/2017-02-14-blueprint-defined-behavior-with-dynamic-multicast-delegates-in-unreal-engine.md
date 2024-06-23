@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Blueprint-defined behavior with dynamic multicast delegates in Unreal Engine"
-tag: ue4
+tags: ue4
 image: "/assets/pictures/blog/devlog/2017-02-14/thumbnail.png"
 thumbnail: "2017-02-14/thumbnail.png"
 ---
