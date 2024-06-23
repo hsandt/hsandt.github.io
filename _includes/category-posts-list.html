@@ -1,7 +1,7 @@
 {%- assign category_name = include.category[0] -%}
 {%- assign category_posts = include.category[1] -%}
 
-<h2>{{ category_name | capitalize }}</h3>
+<h2>{{ category_name | capitalize }}</h2>
   {%- if category_posts.size > 0 -%}
 
     {% comment %} This is replaced by category, kept code until adding per-category posts pages {% endcomment %}
