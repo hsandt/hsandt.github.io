@@ -31,7 +31,9 @@ meta:
 
 ## Description
 
-TODO
+**pico sonic** is a partial demake of Sonic the Hedgehog 3 made with PICO-8. It features a simplified version of Angel Island Act 1 with some tweaks. Various classic Sonic games were used as reference, including the 8-bit games (Game Gear and Master System), which have sprites closer to PICO-8's resolution and color palette, and the GBA titles, which have more clear-cut graphics.
+
+The project was started as a personal challenge and was meant to be a fully-fledged fan game, but I eventually dropped many features to focus on Sonic's main movements and the exploration of the stage. Consider it a technical demo with some exploration challenge.
 
 ## Screenshots
 
