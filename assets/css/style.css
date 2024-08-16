@@ -963,6 +963,30 @@ table.th-width-20-percent th {
     height: 264px;
   }
 }
+.portfolio-item .social-media-list, .portfolio-item .pagination {
+  line-height: 1.5;
+  margin: 0;
+}
+.portfolio-item .social-media-list a, .portfolio-item .pagination a {
+  border: none;
+  padding: 0;
+}
+.portfolio-item .social-media-list a .svg-icon, .portfolio-item .pagination a .svg-icon {
+  width: 2em;
+  height: 2em;
+}
+.portfolio-item .social-media-list a .icon-itchio, .portfolio-item .pagination a .icon-itchio {
+  color: #fa5c5c;
+}
+.portfolio-item .social-media-list a .icon-itchio:hover, .portfolio-item .pagination a .icon-itchio:hover {
+  color: #c90019;
+}
+.portfolio-item .social-media-list a .icon-github, .portfolio-item .pagination a .icon-github {
+  color: #1d1b1c;
+}
+.portfolio-item .social-media-list a .icon-github:hover, .portfolio-item .pagination a .icon-github:hover {
+  color: #6316ac;
+}
 .portfolio-item table.metadata {
   max-width: calc(1000px - (30px * 2) - (470px) - 50px);
   border: none;
