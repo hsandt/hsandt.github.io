@@ -1,0 +1,14 @@
+{% comment %} Copied and adapted from https://github.com/jekyll/minima/blob/master/_includes/social-item.html
+(2022-12-22) under MIT license {% endcomment %}
+<li>{% assign entry = include.item %}
+  <a rel="me" href="{{ entry.url }}" target="_blank" title="{{ entry.title | default: entry.platform }}">
+    {% comment %} OVERRIDE: removed grey (let custom-styles.scss decide color based on placed in header or footer) {% endcomment %}
+    {% comment %} OVERRIDE: add icon-{entry.platform} (e.g. icon-itchio) class for further color customization {% endcomment %}
+    <svg class="svg-icon icon-{{entry.platform}}">
+      {% comment %} xlink:href is no longer recommended, but we keep it only for retrocompatibility
+      If dropped and icons are brokens, just remove 'xlink:' before 'href'
+      See https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/xlink:href {% endcomment %}
+      <use xlink:href="/assets/minima-social-icons.svg#{{entry.platform}}" ></use>
+    </svg>
+  </a>
+</li>

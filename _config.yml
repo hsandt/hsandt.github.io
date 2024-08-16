@@ -101,14 +101,15 @@ header_pages:
 
 # Collection of portfolio pages, path relative to portfolio/
 portfolio_pages:
-  # - pico-sonic.markdown
   - evil-genius-2.markdown
+  - pico-sonic.markdown
   - hotshot-racing.markdown
   - ghost-recon-breakpoint.markdown
   - guns-gore-and-cannoli-2.markdown
 
 # Collection of comic strip pages, path relative to comic-strips/
 comic_strip_pages:
+  - values.markdown
   - welfare.markdown
   - engine.markdown
   - crash-report.markdown

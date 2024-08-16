@@ -321,6 +321,49 @@ table.th-width-20-percent {
         }
     }
 
+    .social-media-list {
+        // Technically not social media, rather deliverable, but we keep the same name
+        // to benefit from base styles
+        // We need to copy the parts we want in portfolio too from .site-header .social-media-list
+
+        // reduce line height to standard, so the surrounding space is closer to
+        // a square than a vertical rectangle, and looks more like the social icons
+        // in the footer (comment out `border: none;` to see the square easily)
+        line-height: $base-line-height;
+        // move back to left instead of center
+        margin: 0;
+
+        a {
+            // remove border and padding for a more compact presentation in the header than in the
+            // footer
+            border: none;
+            padding: 0;
+
+            // show icons bigger for portfolio deliverables than header & footer social media
+            .svg-icon {
+                width: 2em;
+                height: 2em;
+            }
+
+            // Redundant with header social media styles, consider merging (but excluding footer)
+            .icon-itchio {
+                color: #fa5c5c;
+
+                &:hover {
+                    color: #c90019;
+                }
+            }
+
+            .icon-github {
+                color: #1d1b1c;
+
+                &:hover {
+                    color: #6316ac;
+                }
+            }
+        }
+    }
+
     // metadata table
     table.metadata {
         // set max width to make sure that wrapping doesn't occur until content width
