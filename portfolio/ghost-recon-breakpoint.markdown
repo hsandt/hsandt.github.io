@@ -5,7 +5,7 @@ subtitle: "Open-world RPG military shooter"
 asset-dir: "Ghost-Recon-Breakpoint"
 thumbnail: "Ghost-Recon-Breakpoint-Thumbnail-420x420.jpg"
 banner: "Ghost-Recon-Breakpoint-Title-1024x576.jpg"
-categories: video-game
+categories: video-game company
 youtube:
   id: 5dcI6CZJI7Y
   title: "Ghost Recon Breakpoint: What is Breakpoint? Gameplay Trailer"

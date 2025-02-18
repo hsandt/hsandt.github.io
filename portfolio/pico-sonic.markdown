@@ -5,7 +5,7 @@ subtitle: "1-stage demake of Sonic 3 made with PICO-8"
 asset-dir: "pico-sonic"
 thumbnail: "picosonic_itch_banner_cropped_420x420_animated.gif"
 banner: "picosonic_itch_banner_cropped_420x420_animated.gif"
-categories: video-game
+categories: video-game indie fan-game
 youtube:
   id: aW1FSE64CBQ
   title: "pico sonic SAGE 2021 Trailer with text (v5.4 footage)"

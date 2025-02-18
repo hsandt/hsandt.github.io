@@ -5,7 +5,7 @@ subtitle: "Over-the-top run ‘n gun"
 asset-dir: "GGC2"
 thumbnail: "GGC2-Thumbnail-420x420.png"
 banner: "GGC2-Banner-1024x576.png"
-categories: video-game
+categories: video-game company
 youtube:
   id: aoXyO38tR5A
   title: "Guns, Gore & Cannoli 2 announcement Trailer"

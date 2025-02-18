@@ -5,7 +5,7 @@ subtitle: "Retro arcade-style racing game"
 asset-dir: "Hotshot-Racing"
 thumbnail: "Hotshot-Racing-Thumbnail-420x420.png"
 banner: "Hotshot-Racing_marque_1200x700-1024x597.png"
-categories: video-game
+categories: video-game company
 youtube:
   id: Qce9nk7hkYg
   title: "Hotshot Racing | Official Reveal Trailer | Curve Digital"

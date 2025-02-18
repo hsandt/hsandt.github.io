@@ -99,6 +99,8 @@ header_pages:
   - resume.markdown
   - newsletter.markdown
 
+# TODO: use collections and put items under _portfolio, _comic_strips (or custom collections_dir)
+
 # Collection of portfolio pages, path relative to portfolio/
 portfolio_pages:
   - evil-genius-2.markdown
