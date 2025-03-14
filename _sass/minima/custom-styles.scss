@@ -159,7 +159,7 @@
     }
     video {
         margin-bottom: 10px;
-        
+
         &.full-width {
             width: 100%;
         }
@@ -445,6 +445,40 @@ table.th-width-20-percent {
 
 .blog-thumbnail {
     height: 200px;
+}
+
+// Post content styling
+
+// Code styling
+// Remove borders, adjust padding and show a green gutter
+// in the style of https://wordpress.org/plugins/syntaxhighlighter/
+.highlight {
+    > pre {
+        border: none;
+        padding: 0;
+    }
+
+    .rouge-table {
+        // this ensures that the gutter is not too wide when code lines are short
+        width: auto;
+        border: none;
+        margin-bottom: 0;
+
+        td {
+            border: none;
+            padding: 5px 0 0 5px;
+        }
+
+        pre {
+            border: none;
+            padding: 5px 8px;
+
+            &.lineno {
+                text-align: right;
+                border-right: 3px solid #6ce26c;
+            }
+        }
+    }
 }
 
 // Footer custom styling

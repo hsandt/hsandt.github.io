@@ -41,6 +41,13 @@ sass:
   # see https://github.com/jekyll/minima/issues/815
   quiet_deps: true
 
+kramdown:
+  # enable line numbering for ```code blocks``` (as if using {% highlight <language> linenos %})
+  # see https://stackoverflow.com/questions/25133223/jekyll-fenced-code-blocks-with-line-numbers
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
 # Theme config
 author:
   name: Long Nguyen Huu
