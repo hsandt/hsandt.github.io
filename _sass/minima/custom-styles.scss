@@ -461,6 +461,7 @@ table.th-width-20-percent {
     .rouge-table {
         // this ensures that the gutter is not too wide when code lines are short
         width: auto;
+
         border: none;
         margin-bottom: 0;
 
@@ -479,6 +480,13 @@ table.th-width-20-percent {
             }
         }
     }
+}
+
+// Image & Caption styling
+figcaption {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 25px;
 }
 
 // Footer custom styling
