@@ -36,6 +36,11 @@ plugins:
 # (commit from 2023-01-09)
 remote_theme: jekyll/minima@32468f51758b0b37c2b1f423265d4f29db461b27
 
+sass:
+  # reduce @import deprecations due to Minima Jekyll v3 compatibility to the minimum (5)
+  # see https://github.com/jekyll/minima/issues/815
+  quiet_deps: true
+
 # Theme config
 author:
   name: Long Nguyen Huu
