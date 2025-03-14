@@ -68,7 +68,7 @@ I also pass `false` as the 5th parameter of  AddOnScreenDebugMessage, bNewerOnTo
 
 <figcaption>Debug messages after switching view to third person</figcaption>
 
-# Further
+# Going further
 
 I am still prototyping my new game, but when I enter production I  will probably want to strip out the debugging calls of my non-dev  builds. I will probably add conditional macros such as
 
