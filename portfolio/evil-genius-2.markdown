@@ -2,10 +2,10 @@
 layout: portfolio_item
 title: "Evil Genius 2: World Domination"
 subtitle: "Satirical spy-fi lair builder"
+categories: video-game company
 asset-dir: "Evil-Genius-2"
 thumbnail: "Evil-Genius-2-Thumbnail-420x420.png"
 banner: "Evil-Genius-2-Banner_TitleTopRightMargin_1000x563.jpg"
-categories: video-game company
 youtube:
   id: HieJmZ3tsdQ
   title: "Evil Genius 2: World Domination – Launch Trailer | PS4, PS5, Xbox One, Xbox Series X/S"

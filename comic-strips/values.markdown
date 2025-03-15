@@ -1,6 +1,7 @@
 ---
 layout: comic_strip
 title: "Values"
+categories: society game humor
 image: "/assets/pictures/comic-strips/Values thumbnail.webp"
 thumbnail: "/assets/pictures/comic-strips/Values thumbnail.webp"
 comic_image: "/assets/pictures/comic-strips/Values portrait 0.75.webp"
@@ -26,7 +27,6 @@ alt_text: >
 
     Thanks to Malcolm in the Middle
     2024-07-29 komehara
-categories: society game humor
 ---
 
 A retake on [Dewey's Tea Party in Malcolm in the Middle](https://youtu.be/9tXZpxPj7yA?t=59), mobile game version.
