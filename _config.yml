@@ -120,6 +120,7 @@ portfolio_pages:
   - hotshot-racing.markdown
   - ghost-recon-breakpoint.markdown
   - guns-gore-and-cannoli-2.markdown
+  - code-tuning.markdown
 
 # Collection of comic strip pages, path relative to comic-strips/
 comic_strip_pages:
