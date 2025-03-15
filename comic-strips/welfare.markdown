@@ -1,6 +1,7 @@
 ---
 layout: comic_strip
 title: "Welfare"
+categories: society humor
 image: "/assets/pictures/comic-strips/Welfare thumbnail.webp"
 thumbnail: "/assets/pictures/comic-strips/Welfare thumbnail.webp"
 comic_image: "/assets/pictures/comic-strips/Welfare.webp"
@@ -23,5 +24,4 @@ alt_text: >
     Character: 400 euros for doing nothing? I feel like such a crook...
 
     2023-12-01 komehara
-categories: society humor
 ---

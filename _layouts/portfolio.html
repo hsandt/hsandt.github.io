@@ -7,6 +7,15 @@ layout: page
 
   {{ content }}
 
+  <ul>
+    <li>
+        <a class="page-link" href="/portfolio/company/">Company games only</a>
+    </li>
+    <li>
+      <a class="page-link" href="/portfolio/indie/">Indie games only</a>
+    </li>
+  </ul>
+
   {% comment %} show_count <= 0 means we want to show all the items {% endcomment %}
   {%- include portfolio-grid.html show_count=-1 -%}
 

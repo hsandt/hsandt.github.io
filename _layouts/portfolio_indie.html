@@ -1,0 +1,14 @@
+---
+layout: page
+---
+{% comment %} Variant of portfolio.html with category filter {% endcomment %}
+{% comment %} Eventually we want to auto-detect category variable from URL,
+see https://stackoverflow.com/questions/23935882/jekyll-filter-by-tags-with-url-parameter {% endcomment %}
+<div class="portfolio">
+
+  {{ content }}
+
+  {% comment %} show_count <= 0 means we want to show all the items {% endcomment %}
+  {%- include portfolio-grid.html show_count=-1 category_filter="indie" -%}
+
+</div>

@@ -1,14 +1,22 @@
 {% comment %} include.show_count <= 0 means we want to show all the items {% endcomment %}
-{% if include.show_count > 0 %}
-  {% assign portfolio_page_relative_paths = site.portfolio_pages | slice: 0, include.show_count %}
-{% else %}
-  {% assign portfolio_page_relative_paths = site.portfolio_pages %}
-{% endif %}
-{%- if portfolio_page_relative_paths.size > 0 -%}
-<div class="item-grid">
-  {%- for relative_path in portfolio_page_relative_paths -%}
+{% assign portfolio_page_relative_paths = site.portfolio_pages %}
+{% comment %} https://stackoverflow.com/questions/41263553/how-to-create-an-array-in-a-for-loop-in-liquid {% endcomment %}
+{% assign all_portfolio_pages = '' | split: '' %}
+{% for relative_path in site.portfolio_pages %}
   {%- assign path = relative_path | prepend: "portfolio/" -%}
-  {%- assign portfolio_page = site.pages | where: "path", path | first -%}
+  {%- assign matching_page = site.pages | where: "path", path | first -%}
+  {% if include.category_filter == nil or matching_page.categories contains include.category_filter %}
+    {%- assign all_portfolio_pages = all_portfolio_pages | push: matching_page -%}
+  {% endif %}
+{% endfor %}
+{% if include.show_count > 0 %}
+  {% assign portfolio_pages_to_show = all_portfolio_pages | slice: 0, include.show_count %}
+{% else %}
+  {% assign portfolio_pages_to_show = all_portfolio_pages %}
+{% endif %}
+{%- if portfolio_pages_to_show.size > 0 -%}
+<div class="item-grid">
+  {%- for portfolio_page in portfolio_pages_to_show -%}
   {%- if portfolio_page.title -%}
   <div class="item-thumbnail">
     <a class="page-link" href="{{ portfolio_page.url | relative_url }}">

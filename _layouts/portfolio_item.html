@@ -11,11 +11,15 @@ layout: default
   <div class="post-top">
     <div class="top-left">
       <div class="embedded-video">
-        <iframe src="https://www.youtube.com/embed/{{ page.youtube.id }}"
-        title="{{ page.youtube.title }}" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-        </iframe>
+        {%- if page.youtube %}
+          <iframe src="https://www.youtube.com/embed/{{ page.youtube.id }}"
+            title="{{ page.youtube.title }}" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        {% else if page.video-fallback-image %}
+          <img class="banner" src="/assets/pictures/portfolio/{{ page.asset-dir }}/{{ page.video-fallback-image }}" alt="{{ page.title }} Image">
+        {% endif %}
       </div>
       <ul class="social-media-list">
         {%- for entry in page.deliverable_links -%}
@@ -40,9 +44,9 @@ layout: default
   </div>
 
   <div class="post-content">
-    <p>
+    {%- if page.banner %}
       <img class="banner" src="/assets/pictures/portfolio/{{ page.asset-dir }}/{{ page.banner }}" alt="{{ page.title }} Banner">
-    </p>
+    {% endif %}
 
     {{ content }}
   </div>
