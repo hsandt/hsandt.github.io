@@ -21,7 +21,7 @@ screenshots:
 meta:
   developer: "Crazy Monkey Studios (now Rogueside)"
   release: "Mar 2018"
-  platform: "Windows, OSX, PS4, Xbox One"
+  platform: "Windows, macOS, PS4, Xbox One"
   genre: "Run and gun"
   mode: "1-4 players co-op and PvP"
   play-time: "3h30 - 5h30"

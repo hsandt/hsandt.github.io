@@ -3,6 +3,7 @@ layout: page
 ---
 
 {%- comment -%} loosely adapted from https://www.untangled.dev/2020/06/02/tag-management-jekyll/ {%- endcomment -%}
+
 <h2>Posts tagged with #{{ page.tag-name }}</h2>
 
 {% assign posts_with_tag = site.posts | where_exp: "post", "post.tags contains page.tag-name" -%}

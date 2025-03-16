@@ -14,6 +14,9 @@
 {% else %}
   {% assign portfolio_pages_to_show = all_portfolio_pages %}
 {% endif %}
+
+{% comment %} Below, we use portfolio_pages_to_show.size instead of include.show_count since the latter may be negative (no limit) {% endcomment %}
+
 {%- if portfolio_pages_to_show.size > 0 -%}
 <div class="item-grid">
   {%- for portfolio_page in portfolio_pages_to_show -%}
@@ -28,7 +31,9 @@
   {%- endif -%}
   {%- endfor -%}
 
-  {% if include.show_count > 0 %}
+  {% comment %} Only show More... special item if there are more items to show {% endcomment %}
+
+  {% if all_portfolio_pages.size > portfolio_pages_to_show.size %}
   <div class="item-thumbnail">
     <a class="page-link" href="/portfolio/">
       {%- assign thumbnail = portfolio_page.thumbnail | default: "Missing-Thumbnail-420x420.png" -%}
