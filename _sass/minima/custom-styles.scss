@@ -464,6 +464,8 @@ table.th-width-20-percent {
 
             // small display
             max-width: 100%;
+            // preserve aspect ratio
+            height: fit-content;
 
             // large display
             @media screen and (min-width: $on-large) {
