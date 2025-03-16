@@ -44,15 +44,15 @@ First, I defined a bunch of macros to print debug messages on screen. The code i
 
 There are multiple versions for each define because I wanted to support channels and string formats.
 
-A message printed on a channel will override any previous message on  the same channel, whereas a message not printed on a channel (-1) will  always be printed as a new message.
+A message printed on a channel will override any previous message on the same channel, whereas a message not printed on a channel (-1) will always be printed as a new message.
 
-String formats are very convenient for debugging, just remember to pass `*TCHAR` arguments to Printf by calling the `operator*` on the FString you want to display (variadic arguments, a float or a  vector converted to a string). Note that I use  FVector::ToCompactString() instead of ToString() to display 2 decimals  instead of 3, but your mileage may vary.
+String formats are very convenient for debugging, just remember to pass `*TCHAR` arguments to Printf by calling the `operator*` on the FString you want to display (variadic arguments, a float or a vector converted to a string). Note that I use FVector::ToCompactString() instead of ToString() to display 2 decimals instead of 3, but your mileage may vary.
 
-`#variable` allows me to print the name of the  variable or expression in front of its value. The fallback is that you  shouldn’t type expressions that are too long.
+`#variable` allows me to print the name of the variable or expression in front of its value. The fallback is that you shouldn’t type expressions that are too long.
 
 In the other defines, the `##` before `__VA_ARGS__` will make sure the last comma will be stripped out of Printf arguments if no argument is passed along a format, although it is not required when using variadic macros in C++ (see [Variadic Macros](https://gcc.gnu.org/onlinedocs/cpp/Variadic-Macros.html)). Since the format version of each method (`printf`, `printcf`, `printfwarn`, etc.) supports 0 extra arguments, you may get rid of the non-format versions (`print`, `printc`, `printwarn`, etc.) and rely entirely on the format versions.
 
-I also pass `false` as the 5th parameter of  AddOnScreenDebugMessage, bNewerOnTop, so that new messages are  printed toward the bottom of the screen. Again, you may prefer the  opposite option (in this case, don’t pass a 5th argument at all, since  the default is true).
+I also pass `false` as the 5th parameter of AddOnScreenDebugMessage, bNewerOnTop, so that new messages are printed toward the bottom of the screen. Again, you may prefer the opposite option (in this case, don’t pass a 5th argument at all, since the default is true).
 
 # Demo
 
@@ -70,7 +70,7 @@ I also pass `false` as the 5th parameter of  AddOnScreenDebugMessage, bNewerOnTo
 
 # Going further
 
-I am still prototyping my new game, but when I enter production I  will probably want to strip out the debugging calls of my non-dev  builds. I will probably add conditional macros such as
+I am still prototyping my new game, but when I enter production I will probably want to strip out the debugging calls of my non-dev builds. I will probably add conditional macros such as
 
 ```cpp
 #if UE_BUILD_DEBUG
