@@ -127,6 +127,16 @@
     padding-top: 15px;
 }
 
+
+// Blog top custom styling
+
+.blog-thumbnail {
+    height: 200px;
+}
+
+
+// Post content styling
+
 // _layout.scss override
 .post-title {
     @include relative-font-size(2.2);
@@ -156,6 +166,12 @@
         margin-bottom: 10px;
         @include relative-font-size(1.3);
         font-weight: 500;
+    }
+    img {
+        // center horizontally
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
     video {
         // center horizontally
@@ -444,15 +460,6 @@ table.th-width-20-percent {
         }
     }
 }
-
-
-// Blog top custom styling
-
-.blog-thumbnail {
-    height: 200px;
-}
-
-// Post content styling
 
 // Code styling
 // Remove borders, adjust padding and show a green gutter
