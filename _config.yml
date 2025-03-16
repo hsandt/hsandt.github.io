@@ -123,6 +123,7 @@ portfolio_pages:
   - mars-21.markdown
   - code-tuning.markdown
   - unity-2d-collider-debug-view.markdown
+  - 2d-packing-application.markdown
 
 # Collection of comic strip pages, path relative to comic-strips/
 comic_strip_pages:

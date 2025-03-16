@@ -32,8 +32,8 @@ layout: default
         <tbody>
           {% for field in page.meta %}
           <tr>
-            <!-- Convert to readable string, e.g. "production-time" -> "Production time"
-              with a few filters until we get proper localization -->
+            {%- comment -%} Convert to readable string, e.g. "production-time" -> "Production time"
+            with a few filters until we get proper localization. Limitation: "ai" -> "Ai" instead of "AI" {%- endcomment -%}
             <th>{{ field[0] | capitalize | replace: "-", " " }}</td>
             <td>{{ field[1] }}</td>
           </tr>
