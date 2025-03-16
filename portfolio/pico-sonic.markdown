@@ -20,7 +20,7 @@ screenshots:
     description: "Try again with Eggman juggling with the emeralds"
 meta:
   release: "Jan 2021"
-  platform: "Windows, macOSX, Linux, Web, PICO-8"
+  platform: "Windows, macOS, Linux, Web, PICO-8"
   genre: "Platformer"
   mode: "1 player"
   working-period: "May 2018 - Feb 2023"

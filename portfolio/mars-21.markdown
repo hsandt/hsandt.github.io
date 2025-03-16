@@ -21,7 +21,7 @@ screenshots:
 meta:
   school: "Gobelins & Cnam-Enjmin"
   release: "2015"
-  platform: "Windows, macOSX, Linux, Web"
+  platform: "Windows, macOS, Linux, Web"
   genre: "Platformer"
   mode: "2 players co-op"
   play-time: "4 minutes"
