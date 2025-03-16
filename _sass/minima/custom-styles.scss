@@ -328,8 +328,14 @@ table.th-width-20-percent {
     // video and metadata at the top of a portfolio item
     .post-top {
         .embedded-video {
+            // small display
             iframe {
-                // small display
+                width: $youtube-width-small-display;
+                height: $youtube-height-small-display;
+            }
+
+            // fallback image
+            img {
                 width: $youtube-width-small-display;
                 height: $youtube-height-small-display;
             }
@@ -347,6 +353,12 @@ table.th-width-20-percent {
                 padding: 0 20px 0 0;
 
                 iframe {
+                    width: $youtube-width-large-display;
+                    height: $youtube-height-large-display;
+                }
+
+                // fallback image
+                img {
                     width: $youtube-width-large-display;
                     height: $youtube-height-large-display;
                 }
