@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+<title>Long Nguyen Huu</title>
+<subtitle>The personal website of Long Nguyen Huu aka komehara</subtitle>
+<link href="/atom.xml" rel="self"/>
+<link href="https://hsandt.github.io/"/>
+<updated>2025-03-17T14:15:34+00:00</updated>
+<id>https://hsandt.github.io</id>
+<author>
+<name>Long Nguyen Huu</name>
+<email>n.huu.long@gmail.com</email>
+</author>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <entry>
+        <title>Blueprint-defined behavior with dynamic multicast delegates in Unreal Engine</title>
+        <link href="https://hsandt.github.io/devlog/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine.html"/>
+        <updated>2017-02-14T00:00:00+00:00</updated>
+        <id>https://hsandt.github.io/devlog/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine</id>
+        <category term="devlog" />
+        <content type="html"><![CDATA[<p><em>Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however UE5 documentation shows that delegate macro names have not changed. Content has been adjusted to fix dead links and update links to their redirection, such as UE4 doc -&gt; UE5 doc.</em></p>
+
+<p>Quite often, gameplay programmers need to hand over the task of creating scripted events to level designers. In Unreal, a common workflow is to define shared features in C++ and level-specific behaviors with Blueprints.</p>
+
+<p>While it is possible to implement C++ Actor methods via Blueprints using either <a href="https://wiki.unrealengine.com/Blueprints,_Empower_Your_Entire_Team_With_BlueprintImplementableEvent"><code class="language-plaintext highlighter-rouge">BlueprintImplementableEvent</code></a> or <code class="language-plaintext highlighter-rouge">BlueprintNativeEvent</code>, in this post, I’ll talk about <strong>dynamic multicast delegates</strong>.</p>
+
+<h1 id="concept">Concept</h1>
+
+<p>Delegates allow you to handle functions as objects, pass them around and execute them later with the appropriate context. There are various ways to implement them in C++ (see <a href="http://stackoverflow.com/questions/9568150/what-is-a-c-delegate">this discussion on stack overflow</a> and <a href="https://nikitablack.github.io/post/generic_c++_delegates/">this proposition of Generic C++ delegates</a>), and Unreal provides its own implementation (see <a href="https://docs.unrealengine.com/5.2/en-US/delegates-and-lamba-functions-in-unreal-engine/">Delegates</a> in UE documentation). I won’t try to explain how they work in UE (getting myself lost among all the macros in the source code) but I’ll show you how to use them in a very specific case.</p>
+
+<p>Imagine we have several Actors that share the same behaviors via <strong>Actor Components</strong>. Both Actors and Actor Components are initially defined in C++, but only Actors are extended via Blueprints (to reduce the number of Blueprints). Behaviors are defined as C++ methods in the Actor Components’ classes, but since those are not derived into Blueprints, we cannot use <code class="language-plaintext highlighter-rouge">BlueprintImplementableEvent</code> nor <code class="language-plaintext highlighter-rouge">BlueprintNativeEvent</code> <code class="language-plaintext highlighter-rouge">UFUNCTION</code>s to move the implementation to a Blueprint event graph.</p>
+
+<p>Instead, we declare a <strong>dynamic multicast delegate member</strong> in the Actor Component (called <code class="language-plaintext highlighter-rouge">SwitchableComponent</code>) and bind a function (actually a Blueprint graph) to that delegate in the <strong>Actor’s Blueprint</strong>.</p>
+
+<h1 id="code">Code</h1>
+
+<h2 id="actor-component">Actor Component</h2>
+
+<p>Below is an example on how to do that with a switch and a delegate for functions that takes 1 boolean parameter (<code class="language-plaintext highlighter-rouge">true</code> to switch on).</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+</pre></td><td class="rouge-code"><pre><span class="c1">// SwitchableComponent.h</span>
+
+<span class="cp">#pragma once
+</span>
+<span class="cp">#include</span> <span class="cpf">"Item/InteractableComponent.h"</span><span class="cp">
+#include</span> <span class="cpf">"SwitchableComponent.generated.h"</span><span class="cp">
+</span>
+<span class="c1">// This macro will generate a declaration for a delegate that supports functions receiving</span>
+<span class="c1">// one boolean parameter. Check the documentation for parameter variants.</span>
+<span class="n">DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam</span><span class="p">(</span><span class="n">FSwitchableComponentSwitchSignature</span><span class="p">,</span> <span class="kt">bool</span><span class="p">,</span> <span class="n">bOn</span><span class="p">);</span>
+
+<span class="c1">// In my game, UInteractableComponent allows interaction from the player character,</span>
+<span class="c1">// but you can derive directly from UActorComponent instead</span>
+<span class="n">UCLASS</span><span class="p">(</span><span class="n">BlueprintType</span><span class="p">,</span> <span class="n">ClassGroup</span> <span class="o">=</span> <span class="p">(</span><span class="n">Interaction</span><span class="p">),</span> <span class="n">meta</span> <span class="o">=</span> <span class="p">(</span><span class="n">BlueprintSpawnableComponent</span><span class="p">))</span>
+<span class="k">class</span> <span class="nc">MYGAME_API</span> <span class="n">USwitchableComponent</span> <span class="o">:</span> <span class="k">public</span> <span class="n">UInteractableComponent</span>
+<span class="p">{</span>
+    <span class="n">GENERATED_BODY</span><span class="p">()</span>
+
+<span class="nl">public:</span>
+
+    <span class="n">USwitchableComponent</span><span class="p">();</span>
+
+    <span class="n">UPROPERTY</span><span class="p">(</span><span class="n">Transient</span><span class="p">,</span> <span class="n">Category</span> <span class="o">=</span> <span class="s">"State"</span><span class="p">)</span>
+    <span class="kt">bool</span> <span class="n">bIsOn</span><span class="p">;</span>
+
+    <span class="cm">/** Toggle switch */</span>
+    <span class="kt">void</span> <span class="n">Switch</span><span class="p">();</span>
+
+<span class="nl">protected:</span>
+
+    <span class="c1">// Here is the delegate we'll bind the behavior to in the Actor Blueprint</span>
+    <span class="cm">/** Callback on switch on / off (passed boolean argument is true if switching on) */</span>
+    <span class="n">UPROPERTY</span><span class="p">(</span><span class="n">BlueprintAssignable</span><span class="p">,</span> <span class="n">Category</span> <span class="o">=</span> <span class="s">"Interaction"</span><span class="p">)</span>
+    <span class="n">FSwitchableComponentSwitchSignature</span> <span class="n">OnSwitch</span><span class="p">;</span>
+
+<span class="p">};</span>
+
+<span class="c1">// SwitchableComponent.cpp</span>
+
+<span class="cp">#include</span> <span class="cpf">"StairlessTower.h"</span><span class="cp">
+#include</span> <span class="cpf">"SwitchableComponent.h"</span><span class="cp">
+</span>
+<span class="n">USwitchableComponent</span><span class="o">::</span><span class="n">USwitchableComponent</span><span class="p">()</span> <span class="o">:</span> <span class="n">UInteractableComponent</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">bIsOn</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">USwitchableComponent</span><span class="o">::</span><span class="n">Switch</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// Toggle</span>
+    <span class="n">bIsOn</span> <span class="o">=</span> <span class="o">!</span><span class="n">bIsOn</span><span class="p">;</span>
+
+    <span class="c1">// The IsBound() check is optional for multi-cast delegates, but let you know if</span>
+    <span class="c1">// at least one function is bound to the delegate</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">OnSwitch</span><span class="p">.</span><span class="n">IsBound</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">OnSwitch</span><span class="p">.</span><span class="n">Broadcast</span><span class="p">(</span><span class="n">bIsOn</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Note that we need a <strong>dynamic</strong> delegate because dynamic delegates are serializable, which allows them to be saved in the Blueprints. I’m not sure why <strong>multicasts</strong> delegates are required, maybe it’s because they support multiple function bindings or because they don’t have return values. Anyway, if you try to use <code class="language-plaintext highlighter-rouge">DECLARE_DYNAMIC_DELEGATE_OneParam</code> you’ll get the following error: <em>‘BlueprintAssignable’ is only allowed on multicast delegate properties.</em></p>
+
+<h2 id="actor">Actor</h2>
+
+<p>Now, we create a <code class="language-plaintext highlighter-rouge">WallSwitch</code> Actor that uses <code class="language-plaintext highlighter-rouge">SwitchableComponent</code>:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+</pre></td><td class="rouge-code"><pre><span class="c1">// WallSwitch.h</span>
+
+<span class="cp">#pragma once
+</span>
+<span class="cp">#include</span> <span class="cpf">"GameFramework/Actor.h"</span><span class="cp">
+#include</span> <span class="cpf">"WallSwitch.generated.h"</span><span class="cp">
+</span>
+<span class="c1">// We'll need to derive a Blueprint from this Actor, so we make it Blueprintable</span>
+<span class="n">UCLASS</span><span class="p">(</span><span class="n">Blueprintable</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">MYGAME_API</span> <span class="n">AWallSwitch</span> <span class="o">:</span> <span class="k">public</span> <span class="n">AActor</span>
+<span class="p">{</span>
+    <span class="n">GENERATED_BODY</span><span class="p">()</span>
+
+    <span class="c1">// Make the switchable component accessible in the Blueprint editor for later</span>
+    <span class="cm">/** Switchable component */</span>
+    <span class="n">UPROPERTY</span><span class="p">(</span><span class="n">VisibleAnywhere</span><span class="p">,</span> <span class="n">BlueprintReadOnly</span><span class="p">,</span> <span class="n">Category</span> <span class="o">=</span> <span class="s">"Interaction"</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="p">(</span><span class="n">AllowPrivateAccess</span> <span class="o">=</span> <span class="s">"true"</span><span class="p">))</span>
+    <span class="k">class</span> <span class="nc">USwitchableComponent</span><span class="o">*</span> <span class="n">SwitchableComponent</span><span class="p">;</span>
+
+<span class="nl">public:</span>
+    <span class="c1">// Sets default values for this component's properties</span>
+    <span class="n">AWallSwitch</span><span class="p">();</span>
+
+    <span class="c1">// Called when the game starts</span>
+    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">BeginPlay</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+
+    <span class="c1">// Called every frame</span>
+    <span class="c1">// virtual void Tick( float DeltaSeconds ) override;</span>
+
+<span class="p">};</span>
+
+
+<span class="c1">// WallSwitch.cpp</span>
+
+<span class="cp">#include</span> <span class="cpf">"StairlessTower.h"</span><span class="cp">
+#include</span> <span class="cpf">"WallSwitch.h"</span><span class="cp">
+</span>
+<span class="cp">#include</span> <span class="cpf">"Item/SwitchableComponent.h"</span><span class="cp">
+</span>
+<span class="c1">// Sets default values for this component's properties</span>
+<span class="n">AWallSwitch</span><span class="o">::</span><span class="n">AWallSwitch</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">PrimaryActorTick</span><span class="p">.</span><span class="n">bCanEverTick</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+    <span class="c1">// Create and attach a SwitchableComponent</span>
+    <span class="n">SwitchableComponent</span> <span class="o">=</span> <span class="n">CreateDefaultSubobject</span><span class="o">&lt;</span><span class="n">USwitchableComponent</span><span class="o">&gt;</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">"SwitchableComponent"</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h1 id="blueprint">Blueprint</h1>
+
+<h2 id="actor-blueprint">Actor Blueprint</h2>
+
+<p>We create an Actor Blueprint <code class="language-plaintext highlighter-rouge">BP_WallSwitch</code> derived from <code class="language-plaintext highlighter-rouge">WallSwitch</code>. The Components panel shows:</p>
+
+<p><img src="/assets/pictures/blog/devlog/2017-02-14/UE4-delegate-blueprint-BP_WallSwitch-components.png" alt="WallSwitch Actor blueprint with SwitchableComponent" /></p>
+
+<p>When we select the Switchable Component, the Details panel shows:</p>
+
+<p><img src="/assets/pictures/blog/devlog/2017-02-14/UE4-delegate-blueprint-BP_WallSwitch-details.png" alt="Switchable Component details panel with OnSwitch event View button" /></p>
+
+<h2 id="binding">Binding</h2>
+
+<p>At first, the buttons in the Events section should all show a “+”. We click on the button next to <em>On Switch</em> to create the event node below (from then on, the button will show “View” as on the screenshot above):</p>
+
+<p><img src="/assets/pictures/blog/devlog/2017-02-14/UE4-delegate-blueprint-BP_WallSwitch-Event-Graph-no-binding.png" alt="On Switch event, no binding" /></p>
+
+<p>Alternatively, you may right-click in the Event Graph area and type “Add On Switch” in the search field (ensuring SwitchableComponent is still selected and Context Sensitive is checked).</p>
+
+<p>From here, we can bind a Blueprint graph to the OnSwitch delegate (represented by an event node) defined earlier in C++. In this example, we play a Sequence from a Sequence Actor reference we added directly as a Variable in the Actor Blueprint.</p>
+
+<p><img src="/assets/pictures/blog/devlog/2017-02-14/UE4-delegate-blueprint-BP_WallSwitch-Event-Graph.png" alt="Binding for Switchable Component OnSwitch event on Wall Switch actor" /></p>
+
+<h1 id="result">Result</h1>
+
+<p>When the player character tries to interact with the Wall Switch, the level sequence plays:</p>
+
+<p><img src="/assets/pictures/blog/devlog/2017-02-14/UE4-Blueprint-delegates-On-Switch-action.gif" alt="Player Character uses Switch to move Wall" /></p>
+
+<p>The red/green box you see is a Box Trace with visual debug that the Player Character uses to detect interactables. It’s quite easy to do with Blueprints but may be tricky in C++, I’ll explain how this works in another post.</p>
+
+<h1 id="notes">Notes</h1>
+
+<p>The OnSwitch event node that appeared seems to be a convenience node provided by the Event Graph when handling a delegate on an Actor Component (BlueprintImplementableEvents also show such nodes). But in general, you can bind events to delegates by creating a Custom Event with its own subgraph and assigning it to the Event input pin of the <em>Bind Event to …</em> node (type “Assign” in the Blueprint search box and you’ll find an action that generates both the Custom Event and the Bind Event node for the delegate you want, provided it is accessible from the current Blueprint or you have selected it in the World Viewport).</p>
+
+<p>For instance, I selected a Wall Switch instance in the Viewport, then in the Level Blueprint editor I right-clicked &gt; Assign to OnSwitch. This allowed me to add an extra logging event when the Wall Switch was pressed (the multi-cast delegates will trigger <strong>all</strong> bounds functions/events on Broadcast).</p>
+
+<p><img src="/assets/pictures/blog/devlog/2017-02-14/UE4-delegate-blueprint-Switch-level-event.png" alt="Level Blueprint binding action to On Switch delegate" /></p>
+
+<p>For examples on how to bind functions from raw C++, check out <a href="https://unrealcommunity.wiki/delegates-in-ue4-raw-cpp-and-bp-exposed-xifmcmq5">Rama’s article on Delegates</a>.</p>
+]]></content>
+    </entry>
+    
+
+    
+
+    
+
+    
+    <entry>
+        <title>Scales prototype in Unreal Engine</title>
+        <link href="https://hsandt.github.io/devlog/2016/07/26/scales-prototype-in-unreal-engine.html"/>
+        <updated>2016-07-26T00:00:00+00:00</updated>
+        <id>https://hsandt.github.io/devlog/2016/07/26/scales-prototype-in-unreal-engine</id>
+        <category term="devlog" />
+        <content type="html"><![CDATA[<p><em>Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however most functions should be compatible.</em></p>
+
+<p>I made a prototype of <strong>giant scales</strong> for a third-person puzzle platformer I am developing with Unreal Engine. They are similar to the scales found in The Legend of Zelda: The Wind Waker in the Tower of the Gods, i.e. the side with the higher total weight goes down and the character has its own height. I worked with Blueprints but I intend to convert them to C++ for the final game.</p>
+
+<p><img src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Character-and-all-blocks.png" alt="TP Unreal - Scale prototype Character and all blocks" /></p>
+
+<h1 id="blueprints">Blueprints</h1>
+
+<h2 id="scales">Scales</h2>
+
+<p>Each scale acts as a platform on which the player character can stand. The scales move vertically depending on the difference of weights between the two scales.</p>
+
+<p><img src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Blueprint-viewport.png" alt="TP Unreal - Scale prototype Blueprint viewport" /></p>
+
+<h2 id="weight">Weight</h2>
+
+<p>Each weight is a blueprint that inherits from a base <code class="language-plaintext highlighter-rouge">BP_Weight</code> class. They have one float parameter, their <strong>mass</strong> (in arbitrary unit), and have specific meshes so we can guess their masses at a glance. The Player character is not a <code class="language-plaintext highlighter-rouge">BP_Weight</code> itself, but in terms of mass it is equivalent to a tall block.</p>
+
+<p>I wanted to detect weight located on top of a scale, but unfortunately Unreal does not send a specific event when a collider stops touching another (only <code class="language-plaintext highlighter-rouge">OnHit</code> when a contact starts). I didn’t want to rely on physics either, so I ended up using <code class="language-plaintext highlighter-rouge">OnBeginOverlap</code> and <code class="language-plaintext highlighter-rouge">OnEndOverlap</code> with very thin triggers I added on the surface of the platforms. Weights that enter the trigger are considered to be on top of the platform until they exit it. Not very elegant, but does the job.</p>
+
+<p><img src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Blueprint-platform-trigger.png" alt="TP Unreal - Scale prototype Blueprint platform trigger" /></p>
+
+<p>I needed to detect the Player character’s weight too, but character blueprints already have their own base class, so instead of using <code class="language-plaintext highlighter-rouge">BP_Weight</code> I added a manual check for the character (class <code class="language-plaintext highlighter-rouge">ThirdPersonCharacter</code>). So the blueprint tests for both <code class="language-plaintext highlighter-rouge">BP_Weight</code> and <code class="language-plaintext highlighter-rouge">ThirdPersonCharacter</code> in Overlap events.</p>
+
+<p>[<img src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Blueprint-scale-overlap.png" alt="TP Unreal - Scale prototype Blueprint scale overlap" /></p>
+
+<p><em>UPDATE 2025</em></p>
+
+<p>The sub-graphs <strong>Attach to Platform</strong> and <strong>Detach to Platform</strong> are not shown here. They register/unregister weights put on a given platform. This is used to compute the weight difference and therefore the height difference in <strong>Update Target Delta Height</strong>, as described below.</p>
+
+<h2 id="platform-motion">Platform motion</h2>
+
+<p>Each time a new weight or the character stands on or leave one of the scales, I update the total mass on top of each scale. Then I compute the difference between the two values and multiply that by some factor to get the delta height of the scales, i.e. their new height relative to their height in the neutral position (the delta height is linear of weight difference).</p>
+
+<p>For a smooth motion, I update the height of each scale gradually by playing a <strong>Timeline</strong> that returns a value between 0 and 1. I use the returned value in a linear interpolation (LERP) between the initial and the target height.</p>
+
+<p><img src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Lift-Motion-Timeline.png" alt="TP Unreal - Scale prototype Lift Motion Timeline" /></p>
+
+<p>Note that in Unreal Blueprints, timelines can only appear on the top-level event flow (probably because they rely on the   tick). If you want to play the timeline from inside a method as I did, you have to trigger an event in the method and bind that event to the Timeline node in the event flow.</p>
+
+<h1 id="result">Result</h1>
+
+<p>A demo of the scales in video:</p>
+
+<video controls="" loop="loop" class="full-width">
+    <source src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Demo.mp4" />
+    Your browser does not support the video tag.
+</video>
+
+<h1 id="issues-and-future-improvements">Issues and future improvements</h1>
+
+<p>An important issue with the Overlap method is that objects standing on top of another object on the platform are not detected. This is also true for the character. Have a look:</p>
+
+<p><img src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Character-on-block-bug.png" alt="TP Unreal - Scale prototype Character on block bug" /></p>
+
+<p>The character seems to have no weight since it is not detected by the platform box trigger.</p>
+
+<p>To solve the problem mentioned above, we could either:</p>
+
+<ul>
+  <li>detect objects on top of other objects with multiple trigger overlap tests</li>
+  <li>use a completely different approach (still thinking about it)</li>
+</ul>
+
+<p>Also, rather than using a base class <code class="language-plaintext highlighter-rouge">BP_Weight</code> for all weight objects, I could create an <strong>Actor Component</strong> for more flexibility. The Actor Component could then be added to any actor that should interact with the scales, including the Player character, without affecting its whole structure. Instead of casting objects detected by the scales, I would try to get that component. Note that Unreal Engine also provides Interfaces (not native in C++), but interfaces do not allow to define attributes such as a Mass.</p>
+
+<h1 id="further-topic">Further topic</h1>
+
+<p>I haven’t talked about the Zelda-like contextual actions Grab and Drop here. I need to improve them, maybe they will be the topic of another post.</p>
+]]></content>
+    </entry>
+    
+
+
+</feed>

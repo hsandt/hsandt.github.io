@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+<title>Long Nguyen Huu</title>
+<subtitle>The personal website of Long Nguyen Huu aka komehara</subtitle>
+<link href="/atom.xml" rel="self"/>
+<link href="https://hsandt.github.io/"/>
+<updated>2025-03-17T14:15:34+00:00</updated>
+<id>https://hsandt.github.io</id>
+<author>
+<name>Long Nguyen Huu</name>
+<email>n.huu.long@gmail.com</email>
+</author>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <entry>
+        <title>Crawling side-view character in Unity</title>
+        <link href="https://hsandt.github.io/devlog/2016/12/18/crawling-side-view-character-in-unity.html"/>
+        <updated>2016-12-18T00:00:00+00:00</updated>
+        <id>https://hsandt.github.io/devlog/2016/12/18/crawling-side-view-character-in-unity</id>
+        <category term="devlog" />
+        <content type="html"><![CDATA[<p><em>Note: this post has been moved from my old website. It was written for Unity 5 but Animation Controller has not changed much since.</em></p>
+
+<p>I implemented crawling for my human character controller in a cooperative platformer made with Unity, Mars 21.</p>
+
+<p><img src="/assets/pictures/blog/devlog/2016-12-18/Mars-21-v2-crawling.gif" alt="Astronaut crawling" /></p>
+
+<figcaption>Astronaut crawling</figcaption>
+
+<h1 id="structure">Structure</h1>
+
+<p>The controller works with two MonoBehaviour scripts, <code class="language-plaintext highlighter-rouge">AstronautPlayerControl.cs</code> and <code class="language-plaintext highlighter-rouge">AstronautMotor.cs</code>, and an Animator component. The Animator Controller has 2 layers:</p>
+
+<h2 id="motion-layer-for-logic">Motion layer for logic</h2>
+
+<p>The Motion Layer represents the character’s finite-state machine (FSM). A StateBehaviour containing the actual motion logic is added to each state, and all the transitions are immediate (transition time = 0). Below, you can see graph of the sub-state machine “Grounded”, with the grounded sub-states: Idle, Walk (hidden on the right), Turn 180 (for animated 180° turns), Crouched, Crawl and Idle-Crouch transition states.</p>
+
+<p><img src="/assets/pictures/blog/devlog/2016-12-18/Mars-21-v2-character-animator-motion-layer.png" alt="Astronaut Animator Motion Layer Crawl" /></p>
+
+<figcaption>Motion Layer</figcaption>
+
+<p>The Crouched and Crawl state logic is pretty simple. Both StateBehaviours contain the following:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="k">override</span> <span class="k">public</span> <span class="k">void</span> <span class="nf">OnStateUpdate</span><span class="p">(</span><span class="n">Animator</span> <span class="n">animator</span><span class="p">,</span> <span class="n">AnimatorStateInfo</span> <span class="n">stateInfo</span><span class="p">,</span> <span class="kt">int</span> <span class="n">layerIndex</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(!</span><span class="n">motor</span><span class="p">.</span><span class="n">isGrounded</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">motor</span><span class="p">.</span><span class="nf">Fall</span><span class="p">();</span>  <span class="c1">// enter Fall state (apply gravity + fall animation)</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(!</span><span class="n">control</span><span class="p">.</span><span class="n">continueCrouchIntention</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// is the player still holding D-pad / stick down?</span>
+        <span class="n">motor</span><span class="p">.</span><span class="nf">StopCrouching</span><span class="p">();</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">motor</span><span class="p">.</span><span class="nf">MoveCrawling</span><span class="p">(</span><span class="n">control</span><span class="p">.</span><span class="n">moveIntentionVector</span><span class="p">.</span><span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>where control is an <code class="language-plaintext highlighter-rouge">AstronautPlayerControl</code> and motor is an <code class="language-plaintext highlighter-rouge">AstronautMotor</code>. <code class="language-plaintext highlighter-rouge">MoveCrawling()</code> moves the character by setting his velocity as it would with a normal walking 2D character, with 3 main differences:</p>
+
+<ul>
+  <li>the character preserves his current direction when moving backward (he does not turn)</li>
+  <li>the motion velocity is lower, and even lower when moving backward</li>
+  <li>the character starts crawling after any motion in the Crouched state (à la Metal Gear Solid), although this difference is merely visual</li>
+</ul>
+
+<p>On the video, the character switches between Idle, IdleToCrouched, Crouched, Crawl and CrouchedToIdle. The transitions between IdleToCrouched and CrouchedToIdle allow the character to quickly interrupt crouching to stand up again smoothly and vice-versa.</p>
+
+<h2 id="animation-layer-for-aesthetics">Animation Layer for aesthetics</h2>
+
+<p>The Animation Layer animates the character model. An animation is attached to each state, and the transitions have short durations (0.1s).</p>
+
+<p><img src="/assets/pictures/blog/devlog/2016-12-18/Mars-21-v2-character-animator-animation-layer.png" alt="Astronaut Animator Animation Layer Crawl" /></p>
+
+<figcaption>Animation Layer</figcaption>
+
+<p>Animations have been downloaded from <a href="https://www.mixamo.com/">mixamo</a> after uploading the character model of the Astronaut.</p>
+
+<h1 id="limitations">Limitations</h1>
+
+<p>This approach has an important drawback: you have to duplicate the structure of the FSM between the two layers. Unity has a feature called <em>Animation layer syncing</em> which allows you to reuse an existing structure on multiple layers, but unfortunately it doesn’t support using different transition times on different layers (0 for the Motion layer and 0.1s for the Animation layer). For my next project, I will probably switch to an FSM completely in code (with my own StateMachine class), only using the Animator for actual animations.</p>
+]]></content>
+    </entry>
+    
+
+    
+
+
+</feed>

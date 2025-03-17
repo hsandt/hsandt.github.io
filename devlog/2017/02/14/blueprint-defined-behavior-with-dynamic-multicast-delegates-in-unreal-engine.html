@@ -4,7 +4,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Blueprint-defined behavior with dynamic multicast delegates in Unreal Engine | Long Nguyen Huu</title>
-<meta name="generator" content="Jekyll v4.3.2" />
+<meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Blueprint-defined behavior with dynamic multicast delegates in Unreal Engine" />
 <meta name="author" content="Long Nguyen Huu" />
 <meta property="og:locale" content="en_US" />
@@ -158,6 +158,8 @@
       
       <a href="/tags/ue4">
         #ue4
+      </a><a href="/tags/blueprints">
+        #blueprints
       </a>
     </p>
   </header>
@@ -173,7 +175,7 @@
 
 <p>Delegates allow you to handle functions as objects, pass them around and execute them later with the appropriate context. There are various ways to implement them in C++ (see <a href="http://stackoverflow.com/questions/9568150/what-is-a-c-delegate">this discussion on stack overflow</a> and <a href="https://nikitablack.github.io/post/generic_c++_delegates/">this proposition of Generic C++ delegates</a>), and Unreal provides its own implementation (see <a href="https://docs.unrealengine.com/5.2/en-US/delegates-and-lamba-functions-in-unreal-engine/">Delegates</a> in UE documentation). I won’t try to explain how they work in UE (getting myself lost among all the macros in the source code) but I’ll show you how to use them in a very specific case.</p>
 
-<p>Imagine we have several Actors that share the same behaviors via <strong>Actor Components</strong>. Both Actors and Actor Components are initially defined in C++, but only Actors are extended via Blueprints (to reduce the number of Blueprints).  Behaviors are defined as C++ methods in the Actor Components’ classes, but since those are not derived into Blueprints, we cannot use <code class="language-plaintext highlighter-rouge">BlueprintImplementableEvent</code> nor <code class="language-plaintext highlighter-rouge">BlueprintNativeEvent</code> <code class="language-plaintext highlighter-rouge">UFUNCTION</code>s to move the implementation to a Blueprint event graph.</p>
+<p>Imagine we have several Actors that share the same behaviors via <strong>Actor Components</strong>. Both Actors and Actor Components are initially defined in C++, but only Actors are extended via Blueprints (to reduce the number of Blueprints). Behaviors are defined as C++ methods in the Actor Components’ classes, but since those are not derived into Blueprints, we cannot use <code class="language-plaintext highlighter-rouge">BlueprintImplementableEvent</code> nor <code class="language-plaintext highlighter-rouge">BlueprintNativeEvent</code> <code class="language-plaintext highlighter-rouge">UFUNCTION</code>s to move the implementation to a Blueprint event graph.</p>
 
 <p>Instead, we declare a <strong>dynamic multicast delegate member</strong> in the Actor Component (called <code class="language-plaintext highlighter-rouge">SwitchableComponent</code>) and bind a function (actually a Blueprint graph) to that delegate in the <strong>Actor’s Blueprint</strong>.</p>
 
@@ -183,7 +185,66 @@
 
 <p>Below is an example on how to do that with a switch and a delegate for functions that takes 1 boolean parameter (<code class="language-plaintext highlighter-rouge">true</code> to switch on).</p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// SwitchableComponent.h</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+</pre></td><td class="rouge-code"><pre><span class="c1">// SwitchableComponent.h</span>
 
 <span class="cp">#pragma once
 </span>
@@ -242,7 +303,7 @@
         <span class="n">OnSwitch</span><span class="p">.</span><span class="n">Broadcast</span><span class="p">(</span><span class="n">bIsOn</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>Note that we need a <strong>dynamic</strong> delegate because dynamic delegates are serializable, which allows them to be saved in the Blueprints. I’m not sure why <strong>multicasts</strong> delegates are required, maybe it’s because they support multiple function bindings or because they don’t have return values. Anyway, if you try to use <code class="language-plaintext highlighter-rouge">DECLARE_DYNAMIC_DELEGATE_OneParam</code> you’ll get the following error: <em>‘BlueprintAssignable’ is only allowed on multicast delegate properties.</em></p>
 
@@ -250,7 +311,53 @@
 
 <p>Now, we create a <code class="language-plaintext highlighter-rouge">WallSwitch</code> Actor that uses <code class="language-plaintext highlighter-rouge">SwitchableComponent</code>:</p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// WallSwitch.h</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+</pre></td><td class="rouge-code"><pre><span class="c1">// WallSwitch.h</span>
 
 <span class="cp">#pragma once
 </span>
@@ -296,7 +403,7 @@
     <span class="c1">// Create and attach a SwitchableComponent</span>
     <span class="n">SwitchableComponent</span> <span class="o">=</span> <span class="n">CreateDefaultSubobject</span><span class="o">&lt;</span><span class="n">USwitchableComponent</span><span class="o">&gt;</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">"SwitchableComponent"</span><span class="p">));</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h1 id="blueprint">Blueprint</h1>
 

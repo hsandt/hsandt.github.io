@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Unity 2D collider debug view | Long Nguyen Huu</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Unity 2D collider debug view" />
+<meta name="author" content="Long Nguyen Huu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The personal website of Long Nguyen Huu aka komehara" />
+<meta property="og:description" content="The personal website of Long Nguyen Huu aka komehara" />
+<link rel="canonical" href="https://hsandt.github.io/portfolio/unity-2d-collider-debug-view.html" />
+<meta property="og:url" content="https://hsandt.github.io/portfolio/unity-2d-collider-debug-view.html" />
+<meta property="og:site_name" content="Long Nguyen Huu" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Unity 2D collider debug view" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Long Nguyen Huu"},"description":"The personal website of Long Nguyen Huu aka komehara","headline":"Unity 2D collider debug view","url":"https://hsandt.github.io/portfolio/unity-2d-collider-debug-view.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://hsandt.github.io/feed.xml" title="Long Nguyen Huu" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-TKEELY26NL"></script>
+<script>
+  window['ga-disable-G-TKEELY26NL'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TKEELY26NL');
+</script>
+
+</head>
+<body>
+<header class="site-header">
+
+  <div class="wrapper"><div class="site-brand">
+      <a class="site-title" rel="author" href="/">Long Nguyen Huu</a>
+      <div class="site-subtitle">aka komehara – Game developer</div>
+      <div class="social-links"><ul class="social-media-list">
+<li>
+  <a rel="me" href="https://komehara.itch.io/" target="_blank" title="My games on itch.io">
+    
+    
+    <svg class="svg-icon icon-itchio">
+      <use xlink:href="/assets/minima-social-icons.svg#itchio"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://github.com/hsandt" target="_blank" title="My GitHub repositories">
+    
+    
+    <svg class="svg-icon icon-github">
+      <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://bitbucket.org/hsandt/" target="_blank" title="My BitBucket repositories">
+    
+    
+    <svg class="svg-icon icon-bitbucket">
+      <use xlink:href="/assets/minima-social-icons.svg#bitbucket"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://stackoverflow.com/users/3256073/hsandt" target="_blank" title="My profile on Stack Overflow">
+    
+    
+    <svg class="svg-icon icon-stackoverflow">
+      <use xlink:href="/assets/minima-social-icons.svg#stackoverflow"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://twitter.com/n_huulong" target="_blank" title="My posts on Twitter">
+    
+    
+    <svg class="svg-icon icon-twitter">
+      <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://mastodon.gamedev.place/@leyn" target="_blank" title="My posts on Mastodon">
+    
+    
+    <svg class="svg-icon icon-mastodon">
+      <use xlink:href="/assets/minima-social-icons.svg#mastodon"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://www.youtube.com/channel/UCscc8AXbgMQCjzxsXLVvCsg" target="_blank" title="My videos on YouTube">
+    
+    
+    <svg class="svg-icon icon-youtube">
+      <use xlink:href="/assets/minima-social-icons.svg#youtube"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://www.linkedin.com/in/huulong/" target="_blank" title="My profile on LinkedIn">
+    
+    
+    <svg class="svg-icon icon-linkedin">
+      <use xlink:href="/assets/minima-social-icons.svg#linkedin"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://ko-fi.com/komehara" target="_blank" title="Donations on Ko-fi">
+    
+    
+    <svg class="svg-icon icon-kofi">
+      <use xlink:href="/assets/minima-social-icons.svg#kofi"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/portfolio/">Portfolio</a><a class="page-link" href="/blog/">Blog</a><a class="page-link" href="/writing/">Writing</a><a class="page-link" href="/comic-strips/">Comic strips</a><a class="page-link" href="/resume/">Resume</a><a class="page-link" href="/newsletter/">Newsletter</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post portfolio-item">
+
+  <header class="post-header">
+    <h1 class="post-title">Unity 2D collider debug view</h1>
+    <h2 class="post-subtitle">Reveal unselected 2D colliders in Unity Editor</h2>
+  </header>
+
+  <div class="post-top">
+    <div class="top-left">
+      <div class="embedded-video">
+          <img class="banner" src="/assets/pictures/portfolio/Unity-2D-collider-debug-view/EditCollider-2D-screenshot.webp" alt="Unity 2D collider debug view Image">
+        
+      </div>
+      <ul class="social-media-list">
+<li>
+  <a rel="me" href="https://github.com/hsandt/hyper-unity-commons/tree/develop/Runtime/Debug" target="_blank" title="Source code on GitHub">
+    
+    
+    <svg class="svg-icon icon-github">
+      
+      <use xlink:href="/assets/minima-social-icons.svg#github" ></use>
+    </svg>
+  </a>
+</li>
+</ul>
+    </div>
+    <div class="top-right">
+      <table class="metadata">
+        <tbody>
+          
+          <tr><th>Type</td>
+            <td>Debug tool</td>
+          </tr>
+          
+          <tr><th>Engine</td>
+            <td>Unity</td>
+          </tr>
+          
+          <tr><th>Working period</td>
+            <td>Jan 2016 - May 2021</td>
+          </tr>
+          
+          </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="post-content">
+
+    <h2 id="description">Description</h2>
+
+<p>A collection of components and editor scripts that allow the  level designer to see the 2D collider of any object at any time, a  feature not natively available in Unity</p>
+
+<h2 id="features">Features</h2>
+
+<ul>
+  <li>Always show 2D collider, even when the object is not selected (disable when you want)</li>
+  <li>Support rotating and scaling the object or a parent</li>
+  <li>Customize the color of the collider lines</li>
+  <li>For Edge and Polygon 2D colliders, edit points directly by coordinates (this feature is now native since Unity 5.4)</li>
+  <li>Inspector button to Round all coordinates to 1/16 px</li>
+  <li>Also works in 3D view (displays the 2D colliders in perspective)</li>
+</ul>
+
+<h2 id="screenshots">Screenshots</h2>
+
+<div class="grid">
+  
+    <img src="/assets/pictures/portfolio/Unity-2D-collider-debug-view/EditCollider-Inspector.webp" alt="EditBoxCollider2D component in Unity Inspector" />
+  
+    <img src="/assets/pictures/portfolio/Unity-2D-collider-debug-view/EditCollider-2D-screenshot.webp" alt="Unity scene in 2D mode with collider view enabled" />
+  
+    <img src="/assets/pictures/portfolio/Unity-2D-collider-debug-view/EditCollider-3D-screenshot.webp" alt="Unity scene in 3D mode with collider view enabled" />
+  
+    <img src="/assets/pictures/portfolio/Unity-2D-collider-debug-view/EditCollider-EditEdgeCollider2D.webp" alt="EditEdgeCollider2D component allows to edit coordinates and always view the edge" />
+  
+</div>
+
+<figcaption>The "Round all coordinates to 1/16 px" button was added after those screenshots were taken</figcaption>
+
+<h2 id="source-code">Source code</h2>
+
+<p>The link above targets the parent directory of the scripts. The individual scripts are:</p>
+
+<ul>
+  <li><a href="https://github.com/hsandt/hyper-unity-commons/tree/develop/Runtime/Debug/EditBoxCollider2D.cs">EditBoxCollider2D.cs</a> : show a BoxCollider2D</li>
+  <li><a href="https://github.com/hsandt/hyper-unity-commons/tree/develop/Runtime/Debug/EditEdgeCollider2D.cs">EditEdgeCollider2D.cs</a> and <a href="https://github.com/hsandt/hyper-unity-commons/tree/develop/Runtime/Debug/Editor/EditEdgeCollider2DEditor.cs">EditEdgeColliderEditor.cs</a> : show and edit coordinates of an EdgeCollider2D</li>
+  <li><a href="https://github.com/hsandt/hyper-unity-commons/tree/develop/Runtime/Debug/EditPolygonCollider2D.cs">EditPolygonCollider2D.cs</a> and <a href="https://github.com/hsandt/hyper-unity-commons/tree/develop/Runtime/Debug/Editor/EditPolygonCollider2DEditor.cs">EditPolygonColliderEditor.cs</a> : show and edit coordinates of a PolygonCollider2D</li>
+</ul>
+
+<p>The scripts depend on <a href="https://github.com/hsandt/hyper-unity-commons/tree/develop/Runtime/Helper/Util/GizmosUtil.cs">GizmosUtil</a>, a helper script I mainly wrote to support the 2D collider debug view.</p>
+
+<h2 id="credits">Credits</h2>
+
+<p>The editing part is based on <a href="http://stackoverflow.com/questions/29819697/manually-edit-unity3d-collider-coordinates">Raphael Marques’ answer on Stackoverflow</a>.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+<footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        
+        
+        <ul class="contact-list">
+          <li class="p-name">Long Nguyen Huu</li>
+          <li><a class="u-email" href="mailto:n.huu.long@gmail.com">n.huu.long@gmail.com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>This website was made with Jekyll and is hosted on GitHub Pages. It uses Google Analytics.</p>
+        
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list">
+<li>
+  <a rel="me" href="https://komehara.itch.io/" target="_blank" title="My games on itch.io">
+    
+    
+    <svg class="svg-icon icon-itchio">
+      <use xlink:href="/assets/minima-social-icons.svg#itchio"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://github.com/hsandt" target="_blank" title="My GitHub repositories">
+    
+    
+    <svg class="svg-icon icon-github">
+      <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://bitbucket.org/hsandt/" target="_blank" title="My BitBucket repositories">
+    
+    
+    <svg class="svg-icon icon-bitbucket">
+      <use xlink:href="/assets/minima-social-icons.svg#bitbucket"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://stackoverflow.com/users/3256073/hsandt" target="_blank" title="My profile on Stack Overflow">
+    
+    
+    <svg class="svg-icon icon-stackoverflow">
+      <use xlink:href="/assets/minima-social-icons.svg#stackoverflow"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://twitter.com/n_huulong" target="_blank" title="My posts on Twitter">
+    
+    
+    <svg class="svg-icon icon-twitter">
+      <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://mastodon.gamedev.place/@leyn" target="_blank" title="My posts on Mastodon">
+    
+    
+    <svg class="svg-icon icon-mastodon">
+      <use xlink:href="/assets/minima-social-icons.svg#mastodon"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://www.youtube.com/channel/UCscc8AXbgMQCjzxsXLVvCsg" target="_blank" title="My videos on YouTube">
+    
+    
+    <svg class="svg-icon icon-youtube">
+      <use xlink:href="/assets/minima-social-icons.svg#youtube"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://www.linkedin.com/in/huulong/" target="_blank" title="My profile on LinkedIn">
+    
+    
+    <svg class="svg-icon icon-linkedin">
+      <use xlink:href="/assets/minima-social-icons.svg#linkedin"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://ko-fi.com/komehara" target="_blank" title="Donations on Ko-fi">
+    
+    
+    <svg class="svg-icon icon-kofi">
+      <use xlink:href="/assets/minima-social-icons.svg#kofi"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer></body>
+
+</html>

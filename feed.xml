@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://hsandt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hsandt.github.io/" rel="alternate" type="text/html" /><updated>2024-08-16T17:02:25+00:00</updated><id>https://hsandt.github.io/feed.xml</id><title type="html">Long Nguyen Huu</title><subtitle>The personal website of Long Nguyen Huu aka komehara</subtitle><author><name>Long Nguyen Huu</name><email>n.huu.long@gmail.com</email></author><entry><title type="html">Combat Platformer in Godot 4: June 2024 progress</title><link href="https://hsandt.github.io/devlog/2024/06/18/godot-combat-platformer-progress.html" rel="alternate" type="text/html" title="Combat Platformer in Godot 4: June 2024 progress" /><published>2024-06-18T00:00:00+00:00</published><updated>2024-06-18T00:00:00+00:00</updated><id>https://hsandt.github.io/devlog/2024/06/18/godot-combat-platformer-progress</id><content type="html" xml:base="https://hsandt.github.io/devlog/2024/06/18/godot-combat-platformer-progress.html"><![CDATA[<h1 id="summary">Summary</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://hsandt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hsandt.github.io/" rel="alternate" type="text/html" /><updated>2025-03-17T14:15:34+00:00</updated><id>https://hsandt.github.io/feed.xml</id><title type="html">Long Nguyen Huu</title><subtitle>The personal website of Long Nguyen Huu aka komehara</subtitle><author><name>Long Nguyen Huu</name><email>n.huu.long@gmail.com</email></author><entry><title type="html">Combat Platformer in Godot 4: June 2024 progress</title><link href="https://hsandt.github.io/devlog/2024/06/18/godot-combat-platformer-progress.html" rel="alternate" type="text/html" title="Combat Platformer in Godot 4: June 2024 progress" /><published>2024-06-18T00:00:00+00:00</published><updated>2024-06-18T00:00:00+00:00</updated><id>https://hsandt.github.io/devlog/2024/06/18/godot-combat-platformer-progress</id><content type="html" xml:base="https://hsandt.github.io/devlog/2024/06/18/godot-combat-platformer-progress.html"><![CDATA[<h1 id="summary">Summary</h1>
 
 <h2 id="fireball-rain">Fireball Rain</h2>
 
@@ -326,7 +326,7 @@ I may extract the scripts into some public submodule (as with my Unity projects)
 
 <p>Delegates allow you to handle functions as objects, pass them around and execute them later with the appropriate context. There are various ways to implement them in C++ (see <a href="http://stackoverflow.com/questions/9568150/what-is-a-c-delegate">this discussion on stack overflow</a> and <a href="https://nikitablack.github.io/post/generic_c++_delegates/">this proposition of Generic C++ delegates</a>), and Unreal provides its own implementation (see <a href="https://docs.unrealengine.com/5.2/en-US/delegates-and-lamba-functions-in-unreal-engine/">Delegates</a> in UE documentation). I won’t try to explain how they work in UE (getting myself lost among all the macros in the source code) but I’ll show you how to use them in a very specific case.</p>
 
-<p>Imagine we have several Actors that share the same behaviors via <strong>Actor Components</strong>. Both Actors and Actor Components are initially defined in C++, but only Actors are extended via Blueprints (to reduce the number of Blueprints).  Behaviors are defined as C++ methods in the Actor Components’ classes, but since those are not derived into Blueprints, we cannot use <code class="language-plaintext highlighter-rouge">BlueprintImplementableEvent</code> nor <code class="language-plaintext highlighter-rouge">BlueprintNativeEvent</code> <code class="language-plaintext highlighter-rouge">UFUNCTION</code>s to move the implementation to a Blueprint event graph.</p>
+<p>Imagine we have several Actors that share the same behaviors via <strong>Actor Components</strong>. Both Actors and Actor Components are initially defined in C++, but only Actors are extended via Blueprints (to reduce the number of Blueprints). Behaviors are defined as C++ methods in the Actor Components’ classes, but since those are not derived into Blueprints, we cannot use <code class="language-plaintext highlighter-rouge">BlueprintImplementableEvent</code> nor <code class="language-plaintext highlighter-rouge">BlueprintNativeEvent</code> <code class="language-plaintext highlighter-rouge">UFUNCTION</code>s to move the implementation to a Blueprint event graph.</p>
 
 <p>Instead, we declare a <strong>dynamic multicast delegate member</strong> in the Actor Component (called <code class="language-plaintext highlighter-rouge">SwitchableComponent</code>) and bind a function (actually a Blueprint graph) to that delegate in the <strong>Actor’s Blueprint</strong>.</p>
 
@@ -336,7 +336,66 @@ I may extract the scripts into some public submodule (as with my Unity projects)
 
 <p>Below is an example on how to do that with a switch and a delegate for functions that takes 1 boolean parameter (<code class="language-plaintext highlighter-rouge">true</code> to switch on).</p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// SwitchableComponent.h</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+</pre></td><td class="rouge-code"><pre><span class="c1">// SwitchableComponent.h</span>
 
 <span class="cp">#pragma once
 </span>
@@ -395,7 +454,7 @@ I may extract the scripts into some public submodule (as with my Unity projects)
         <span class="n">OnSwitch</span><span class="p">.</span><span class="n">Broadcast</span><span class="p">(</span><span class="n">bIsOn</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>Note that we need a <strong>dynamic</strong> delegate because dynamic delegates are serializable, which allows them to be saved in the Blueprints. I’m not sure why <strong>multicasts</strong> delegates are required, maybe it’s because they support multiple function bindings or because they don’t have return values. Anyway, if you try to use <code class="language-plaintext highlighter-rouge">DECLARE_DYNAMIC_DELEGATE_OneParam</code> you’ll get the following error: <em>‘BlueprintAssignable’ is only allowed on multicast delegate properties.</em></p>
 
@@ -403,7 +462,53 @@ I may extract the scripts into some public submodule (as with my Unity projects)
 
 <p>Now, we create a <code class="language-plaintext highlighter-rouge">WallSwitch</code> Actor that uses <code class="language-plaintext highlighter-rouge">SwitchableComponent</code>:</p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// WallSwitch.h</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+</pre></td><td class="rouge-code"><pre><span class="c1">// WallSwitch.h</span>
 
 <span class="cp">#pragma once
 </span>
@@ -449,7 +554,7 @@ I may extract the scripts into some public submodule (as with my Unity projects)
     <span class="c1">// Create and attach a SwitchableComponent</span>
     <span class="n">SwitchableComponent</span> <span class="o">=</span> <span class="n">CreateDefaultSubobject</span><span class="o">&lt;</span><span class="n">USwitchableComponent</span><span class="o">&gt;</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">"SwitchableComponent"</span><span class="p">));</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h1 id="blueprint">Blueprint</h1>
 
@@ -491,4 +596,248 @@ I may extract the scripts into some public submodule (as with my Unity projects)
 
 <p><img src="/assets/pictures/blog/devlog/2017-02-14/UE4-delegate-blueprint-Switch-level-event.png" alt="Level Blueprint binding action to On Switch delegate" /></p>
 
-<p>For examples on how to bind functions from raw C++, check out <a href="https://unrealcommunity.wiki/delegates-in-ue4-raw-cpp-and-bp-exposed-xifmcmq5">Rama’s article on Delegates</a>.</p>]]></content><author><name>Long Nguyen Huu</name><email>n.huu.long@gmail.com</email></author><category term="devlog" /><category term="ue4" /><summary type="html"><![CDATA[Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however UE5 documentation shows that delegate macro names have not changed. Content has been adjusted to fix dead links and update links to their redirection, such as UE4 doc -&gt; UE5 doc.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://hsandt.github.io/assets/pictures/blog/devlog/2017-02-14/thumbnail.png" /><media:content medium="image" url="https://hsandt.github.io/assets/pictures/blog/devlog/2017-02-14/thumbnail.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<p>For examples on how to bind functions from raw C++, check out <a href="https://unrealcommunity.wiki/delegates-in-ue4-raw-cpp-and-bp-exposed-xifmcmq5">Rama’s article on Delegates</a>.</p>]]></content><author><name>Long Nguyen Huu</name><email>n.huu.long@gmail.com</email></author><category term="devlog" /><category term="ue4" /><category term="blueprints" /><summary type="html"><![CDATA[Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however UE5 documentation shows that delegate macro names have not changed. Content has been adjusted to fix dead links and update links to their redirection, such as UE4 doc -&gt; UE5 doc.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://hsandt.github.io/assets/pictures/blog/devlog/2017-02-14/thumbnail.png" /><media:content medium="image" url="https://hsandt.github.io/assets/pictures/blog/devlog/2017-02-14/thumbnail.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Screen Debug Message macros for Unreal Engine</title><link href="https://hsandt.github.io/devlog/2017/01/23/screen-debug-message-macros-for-unreal-engine.html" rel="alternate" type="text/html" title="Screen Debug Message macros for Unreal Engine" /><published>2017-01-23T00:00:00+00:00</published><updated>2017-01-23T00:00:00+00:00</updated><id>https://hsandt.github.io/devlog/2017/01/23/screen-debug-message-macros-for-unreal-engine</id><content type="html" xml:base="https://hsandt.github.io/devlog/2017/01/23/screen-debug-message-macros-for-unreal-engine.html"><![CDATA[<p><em>Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however UE5 documentation shows that AddOnScreenDebugMessage’s signature has not changed. Content has been adjusted to fix dead links and update links to their redirection, such as UE4 doc -&gt; UE5 doc.</em></p>
+
+<p>For all my Unreal projects, I insert a small header containing debugging utility, especially for printing on screen.</p>
+
+<h1 id="code">Code</h1>
+
+<p>First, I defined a bunch of macros to print debug messages on screen. The code is based on <a href="https://unrealcommunity.wiki/logs-printing-messages-to-yourself-during-runtime-n5ifosqc">Logs, Printing Messages To Yourself During Runtime</a> and uses <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Engine/UEngine/AddOnScreenDebugMessage">AddOnScreenDebugMessage</a></p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre></td><td class="rouge-code"><pre><span class="cp">#pragma once
+</span>
+<span class="cp">#include</span> <span class="cpf">"EngineGlobals.h"</span><span class="cp">
+#include</span> <span class="cpf">"Engine/Engine.h"</span><span class="cp">
+</span>
+<span class="cp">#define print(text)                         if (GEngine) GEngine-&gt;AddOnScreenDebugMessage(-1, 1.5f, FColor::White, TEXT(text), false)
+#define printc(channel, text)               if (GEngine) GEngine-&gt;AddOnScreenDebugMessage(channel, 1.5f, FColor::White, TEXT(text))
+#define printf(format, ...)                 if (GEngine) GEngine-&gt;AddOnScreenDebugMessage(-1, 1.5f, FColor::White, FString::Printf(TEXT(format), ##__VA_ARGS__), false)
+#define printcf(channel, format, ...)       if (GEngine) GEngine-&gt;AddOnScreenDebugMessage(channel, 1.5f, FColor::White, FString::Printf(TEXT(format), ##__VA_ARGS__))
+</span>
+<span class="cp">#define printwarn(text)                     if (GEngine) GEngine-&gt;AddOnScreenDebugMessage(-1, 1.5f, FColor::Yellow, TEXT(text), false)
+#define printcwarn(channel, text)           if (GEngine) GEngine-&gt;AddOnScreenDebugMessage(channel, 1.5f, FColor::Yellow, TEXT(text))
+#define printfwarn(format, ...)             if (GEngine) GEngine-&gt;AddOnScreenDebugMessage(-1, 1.5f, FColor::Yellow, FString::Printf(TEXT(format), ##__VA_ARGS__), false)
+#define printcfwarn(channel, format, ...)   if (GEngine) GEngine-&gt;AddOnScreenDebugMessage(channel, 1.5f, FColor::Yellow, FString::Printf(TEXT(format), ##__VA_ARGS__))
+</span>
+<span class="cp">#define printerr(text)                      if (GEngine) GEngine-&gt;AddOnScreenDebugMessage(-1, 1.5f, FColor::Red, TEXT(text), false)
+#define printcerr(channel, text)            if (GEngine) GEngine-&gt;AddOnScreenDebugMessage(channel, 1.5f, FColor::Red, TEXT(text))
+#define printferr(format, ...)              if (GEngine) GEngine-&gt;AddOnScreenDebugMessage(-1, 1.5f, FColor::Red, FString::Printf(TEXT(format), ##__VA_ARGS__), false)
+#define printcferr(channel, format, ...)    if (GEngine) GEngine-&gt;AddOnScreenDebugMessage(channel, 1.5f, FColor::Red, FString::Printf(TEXT(format), ##__VA_ARGS__))
+</span>
+<span class="cp">#define printfloat(variable)                if (GEngine) GEngine-&gt;AddOnScreenDebugMessage(-1, 1.5f, FColor::Cyan, FString::Printf(TEXT(#variable ": %f"), variable), false)
+#define printcfloat(channel, variable)      if (GEngine) GEngine-&gt;AddOnScreenDebugMessage(channel, 1.5f, FColor::Cyan, FString::Printf(TEXT(#variable ": %f"), variable))
+</span>
+<span class="cp">#define printvector(variable)               if (GEngine) GEngine-&gt;AddOnScreenDebugMessage(-1, 1.5f, FColor::Green, FString::Printf(TEXT(#variable ": %s"), *variable.ToCompactString()), false)
+#define printcvector(channel, variable)     if (GEngine) GEngine-&gt;AddOnScreenDebugMessage(channel, 1.5f, FColor::Green, FString::Printf(TEXT(#variable ": %s"), *variable.ToCompactString()))
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>There are multiple versions for each define because I wanted to support channels and string formats.</p>
+
+<p>A message printed on a channel will override any previous message on the same channel, whereas a message not printed on a channel (-1) will always be printed as a new message.</p>
+
+<p>String formats are very convenient for debugging, just remember to pass <code class="language-plaintext highlighter-rouge">*TCHAR</code> arguments to Printf by calling the <code class="language-plaintext highlighter-rouge">operator*</code> on the FString you want to display (variadic arguments, a float or a vector converted to a string). Note that I use FVector::ToCompactString() instead of ToString() to display 2 decimals instead of 3, but your mileage may vary.</p>
+
+<p><code class="language-plaintext highlighter-rouge">#variable</code> allows me to print the name of the variable or expression in front of its value. The fallback is that you shouldn’t type expressions that are too long.</p>
+
+<p>In the other defines, the <code class="language-plaintext highlighter-rouge">##</code> before <code class="language-plaintext highlighter-rouge">__VA_ARGS__</code> will make sure the last comma will be stripped out of Printf arguments if no argument is passed along a format, although it is not required when using variadic macros in C++ (see <a href="https://gcc.gnu.org/onlinedocs/cpp/Variadic-Macros.html">Variadic Macros</a>). Since the format version of each method (<code class="language-plaintext highlighter-rouge">printf</code>, <code class="language-plaintext highlighter-rouge">printcf</code>, <code class="language-plaintext highlighter-rouge">printfwarn</code>, etc.) supports 0 extra arguments, you may get rid of the non-format versions (<code class="language-plaintext highlighter-rouge">print</code>, <code class="language-plaintext highlighter-rouge">printc</code>, <code class="language-plaintext highlighter-rouge">printwarn</code>, etc.) and rely entirely on the format versions.</p>
+
+<p>I also pass <code class="language-plaintext highlighter-rouge">false</code> as the 5th parameter of AddOnScreenDebugMessage, bNewerOnTop, so that new messages are printed toward the bottom of the screen. Again, you may prefer the opposite option (in this case, don’t pass a 5th argument at all, since the default is true).</p>
+
+<h1 id="demo">Demo</h1>
+
+<p><img src="/assets/pictures/blog/devlog/2017-01-23/UE4-Screen-Debug-Actor-location.jpg" alt="UE4 Screen Debug - Actor location" /></p>
+
+<figcaption>Actor location debug message is continuously updated</figcaption>
+
+<p><img src="/assets/pictures/blog/devlog/2017-01-23/UE4-Screen-Debug-Switched-view-to-first-person.jpg" alt="UE4 Screen Debug - Switched view to first person" /></p>
+
+<figcaption>Debug messages after switching view to first person</figcaption>
+
+<p><img src="/assets/pictures/blog/devlog/2017-01-23/UE4-Screen-Debug-Switched-view-to-third-person.jpg" alt="UE4 Screen Debug - Switched view to third person" /></p>
+
+<figcaption>Debug messages after switching view to third person</figcaption>
+
+<h1 id="going-further">Going further</h1>
+
+<p>I am still prototyping my new game, but when I enter production I will probably want to strip out the debugging calls of my non-dev builds. I will probably add conditional macros such as</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="cp">#if UE_BUILD_DEBUG
+</span>    <span class="c1">// defines here</span>
+    <span class="c1">// ...</span>
+<span class="cp">#else
+</span>    <span class="c1">// empty defines here</span>
+    <span class="cp">#define print(text)
+</span>    <span class="c1">// ...</span>
+<span class="cp">#endif
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Also check out <a href="https://forums.unrealengine.com/showthread.php?57154-New-Wiki-How-to-Get-a-UE4-FString-of-Calling-Class-Function-and-Line-Number-Rama&amp;p=210060&amp;viewfull=1">Rama’s post</a> to prepend the function name and line to the message.</p>]]></content><author><name>Long Nguyen Huu</name><email>n.huu.long@gmail.com</email></author><category term="devlog" /><category term="ue4" /><category term="c++" /><summary type="html"><![CDATA[Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however UE5 documentation shows that AddOnScreenDebugMessage’s signature has not changed. Content has been adjusted to fix dead links and update links to their redirection, such as UE4 doc -&gt; UE5 doc.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://hsandt.github.io/assets/pictures/blog/devlog/2017-01-23/thumbnail.png" /><media:content medium="image" url="https://hsandt.github.io/assets/pictures/blog/devlog/2017-01-23/thumbnail.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Crawling side-view character in Unity</title><link href="https://hsandt.github.io/devlog/2016/12/18/crawling-side-view-character-in-unity.html" rel="alternate" type="text/html" title="Crawling side-view character in Unity" /><published>2016-12-18T00:00:00+00:00</published><updated>2016-12-18T00:00:00+00:00</updated><id>https://hsandt.github.io/devlog/2016/12/18/crawling-side-view-character-in-unity</id><content type="html" xml:base="https://hsandt.github.io/devlog/2016/12/18/crawling-side-view-character-in-unity.html"><![CDATA[<p><em>Note: this post has been moved from my old website. It was written for Unity 5 but Animation Controller has not changed much since.</em></p>
+
+<p>I implemented crawling for my human character controller in a cooperative platformer made with Unity, Mars 21.</p>
+
+<p><img src="/assets/pictures/blog/devlog/2016-12-18/Mars-21-v2-crawling.gif" alt="Astronaut crawling" /></p>
+
+<figcaption>Astronaut crawling</figcaption>
+
+<h1 id="structure">Structure</h1>
+
+<p>The controller works with two MonoBehaviour scripts, <code class="language-plaintext highlighter-rouge">AstronautPlayerControl.cs</code> and <code class="language-plaintext highlighter-rouge">AstronautMotor.cs</code>, and an Animator component. The Animator Controller has 2 layers:</p>
+
+<h2 id="motion-layer-for-logic">Motion layer for logic</h2>
+
+<p>The Motion Layer represents the character’s finite-state machine (FSM). A StateBehaviour containing the actual motion logic is added to each state, and all the transitions are immediate (transition time = 0). Below, you can see graph of the sub-state machine “Grounded”, with the grounded sub-states: Idle, Walk (hidden on the right), Turn 180 (for animated 180° turns), Crouched, Crawl and Idle-Crouch transition states.</p>
+
+<p><img src="/assets/pictures/blog/devlog/2016-12-18/Mars-21-v2-character-animator-motion-layer.png" alt="Astronaut Animator Motion Layer Crawl" /></p>
+
+<figcaption>Motion Layer</figcaption>
+
+<p>The Crouched and Crawl state logic is pretty simple. Both StateBehaviours contain the following:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="k">override</span> <span class="k">public</span> <span class="k">void</span> <span class="nf">OnStateUpdate</span><span class="p">(</span><span class="n">Animator</span> <span class="n">animator</span><span class="p">,</span> <span class="n">AnimatorStateInfo</span> <span class="n">stateInfo</span><span class="p">,</span> <span class="kt">int</span> <span class="n">layerIndex</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(!</span><span class="n">motor</span><span class="p">.</span><span class="n">isGrounded</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">motor</span><span class="p">.</span><span class="nf">Fall</span><span class="p">();</span>  <span class="c1">// enter Fall state (apply gravity + fall animation)</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(!</span><span class="n">control</span><span class="p">.</span><span class="n">continueCrouchIntention</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// is the player still holding D-pad / stick down?</span>
+        <span class="n">motor</span><span class="p">.</span><span class="nf">StopCrouching</span><span class="p">();</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">motor</span><span class="p">.</span><span class="nf">MoveCrawling</span><span class="p">(</span><span class="n">control</span><span class="p">.</span><span class="n">moveIntentionVector</span><span class="p">.</span><span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>where control is an <code class="language-plaintext highlighter-rouge">AstronautPlayerControl</code> and motor is an <code class="language-plaintext highlighter-rouge">AstronautMotor</code>. <code class="language-plaintext highlighter-rouge">MoveCrawling()</code> moves the character by setting his velocity as it would with a normal walking 2D character, with 3 main differences:</p>
+
+<ul>
+  <li>the character preserves his current direction when moving backward (he does not turn)</li>
+  <li>the motion velocity is lower, and even lower when moving backward</li>
+  <li>the character starts crawling after any motion in the Crouched state (à la Metal Gear Solid), although this difference is merely visual</li>
+</ul>
+
+<p>On the video, the character switches between Idle, IdleToCrouched, Crouched, Crawl and CrouchedToIdle. The transitions between IdleToCrouched and CrouchedToIdle allow the character to quickly interrupt crouching to stand up again smoothly and vice-versa.</p>
+
+<h2 id="animation-layer-for-aesthetics">Animation Layer for aesthetics</h2>
+
+<p>The Animation Layer animates the character model. An animation is attached to each state, and the transitions have short durations (0.1s).</p>
+
+<p><img src="/assets/pictures/blog/devlog/2016-12-18/Mars-21-v2-character-animator-animation-layer.png" alt="Astronaut Animator Animation Layer Crawl" /></p>
+
+<figcaption>Animation Layer</figcaption>
+
+<p>Animations have been downloaded from <a href="https://www.mixamo.com/">mixamo</a> after uploading the character model of the Astronaut.</p>
+
+<h1 id="limitations">Limitations</h1>
+
+<p>This approach has an important drawback: you have to duplicate the structure of the FSM between the two layers. Unity has a feature called <em>Animation layer syncing</em> which allows you to reuse an existing structure on multiple layers, but unfortunately it doesn’t support using different transition times on different layers (0 for the Motion layer and 0.1s for the Animation layer). For my next project, I will probably switch to an FSM completely in code (with my own StateMachine class), only using the Animator for actual animations.</p>]]></content><author><name>Long Nguyen Huu</name><email>n.huu.long@gmail.com</email></author><category term="devlog" /><category term="unity" /><category term="character" /><summary type="html"><![CDATA[Note: this post has been moved from my old website. It was written for Unity 5 but Animation Controller has not changed much since.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://hsandt.github.io/assets/pictures/blog/devlog/2016-12-18/thumbnail.png" /><media:content medium="image" url="https://hsandt.github.io/assets/pictures/blog/devlog/2016-12-18/thumbnail.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Scales prototype in Unreal Engine</title><link href="https://hsandt.github.io/devlog/2016/07/26/scales-prototype-in-unreal-engine.html" rel="alternate" type="text/html" title="Scales prototype in Unreal Engine" /><published>2016-07-26T00:00:00+00:00</published><updated>2016-07-26T00:00:00+00:00</updated><id>https://hsandt.github.io/devlog/2016/07/26/scales-prototype-in-unreal-engine</id><content type="html" xml:base="https://hsandt.github.io/devlog/2016/07/26/scales-prototype-in-unreal-engine.html"><![CDATA[<p><em>Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however most functions should be compatible.</em></p>
+
+<p>I made a prototype of <strong>giant scales</strong> for a third-person puzzle platformer I am developing with Unreal Engine. They are similar to the scales found in The Legend of Zelda: The Wind Waker in the Tower of the Gods, i.e. the side with the higher total weight goes down and the character has its own height. I worked with Blueprints but I intend to convert them to C++ for the final game.</p>
+
+<p><img src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Character-and-all-blocks.png" alt="TP Unreal - Scale prototype Character and all blocks" /></p>
+
+<h1 id="blueprints">Blueprints</h1>
+
+<h2 id="scales">Scales</h2>
+
+<p>Each scale acts as a platform on which the player character can stand. The scales move vertically depending on the difference of weights between the two scales.</p>
+
+<p><img src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Blueprint-viewport.png" alt="TP Unreal - Scale prototype Blueprint viewport" /></p>
+
+<h2 id="weight">Weight</h2>
+
+<p>Each weight is a blueprint that inherits from a base <code class="language-plaintext highlighter-rouge">BP_Weight</code> class. They have one float parameter, their <strong>mass</strong> (in arbitrary unit), and have specific meshes so we can guess their masses at a glance. The Player character is not a <code class="language-plaintext highlighter-rouge">BP_Weight</code> itself, but in terms of mass it is equivalent to a tall block.</p>
+
+<p>I wanted to detect weight located on top of a scale, but unfortunately Unreal does not send a specific event when a collider stops touching another (only <code class="language-plaintext highlighter-rouge">OnHit</code> when a contact starts). I didn’t want to rely on physics either, so I ended up using <code class="language-plaintext highlighter-rouge">OnBeginOverlap</code> and <code class="language-plaintext highlighter-rouge">OnEndOverlap</code> with very thin triggers I added on the surface of the platforms. Weights that enter the trigger are considered to be on top of the platform until they exit it. Not very elegant, but does the job.</p>
+
+<p><img src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Blueprint-platform-trigger.png" alt="TP Unreal - Scale prototype Blueprint platform trigger" /></p>
+
+<p>I needed to detect the Player character’s weight too, but character blueprints already have their own base class, so instead of using <code class="language-plaintext highlighter-rouge">BP_Weight</code> I added a manual check for the character (class <code class="language-plaintext highlighter-rouge">ThirdPersonCharacter</code>). So the blueprint tests for both <code class="language-plaintext highlighter-rouge">BP_Weight</code> and <code class="language-plaintext highlighter-rouge">ThirdPersonCharacter</code> in Overlap events.</p>
+
+<p>[<img src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Blueprint-scale-overlap.png" alt="TP Unreal - Scale prototype Blueprint scale overlap" /></p>
+
+<p><em>UPDATE 2025</em></p>
+
+<p>The sub-graphs <strong>Attach to Platform</strong> and <strong>Detach to Platform</strong> are not shown here. They register/unregister weights put on a given platform. This is used to compute the weight difference and therefore the height difference in <strong>Update Target Delta Height</strong>, as described below.</p>
+
+<h2 id="platform-motion">Platform motion</h2>
+
+<p>Each time a new weight or the character stands on or leave one of the scales, I update the total mass on top of each scale. Then I compute the difference between the two values and multiply that by some factor to get the delta height of the scales, i.e. their new height relative to their height in the neutral position (the delta height is linear of weight difference).</p>
+
+<p>For a smooth motion, I update the height of each scale gradually by playing a <strong>Timeline</strong> that returns a value between 0 and 1. I use the returned value in a linear interpolation (LERP) between the initial and the target height.</p>
+
+<p><img src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Lift-Motion-Timeline.png" alt="TP Unreal - Scale prototype Lift Motion Timeline" /></p>
+
+<p>Note that in Unreal Blueprints, timelines can only appear on the top-level event flow (probably because they rely on the   tick). If you want to play the timeline from inside a method as I did, you have to trigger an event in the method and bind that event to the Timeline node in the event flow.</p>
+
+<h1 id="result">Result</h1>
+
+<p>A demo of the scales in video:</p>
+
+<video controls="" loop="loop" class="full-width">
+    <source src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Demo.mp4" />
+    Your browser does not support the video tag.
+</video>
+
+<h1 id="issues-and-future-improvements">Issues and future improvements</h1>
+
+<p>An important issue with the Overlap method is that objects standing on top of another object on the platform are not detected. This is also true for the character. Have a look:</p>
+
+<p><img src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Character-on-block-bug.png" alt="TP Unreal - Scale prototype Character on block bug" /></p>
+
+<p>The character seems to have no weight since it is not detected by the platform box trigger.</p>
+
+<p>To solve the problem mentioned above, we could either:</p>
+
+<ul>
+  <li>detect objects on top of other objects with multiple trigger overlap tests</li>
+  <li>use a completely different approach (still thinking about it)</li>
+</ul>
+
+<p>Also, rather than using a base class <code class="language-plaintext highlighter-rouge">BP_Weight</code> for all weight objects, I could create an <strong>Actor Component</strong> for more flexibility. The Actor Component could then be added to any actor that should interact with the scales, including the Player character, without affecting its whole structure. Instead of casting objects detected by the scales, I would try to get that component. Note that Unreal Engine also provides Interfaces (not native in C++), but interfaces do not allow to define attributes such as a Mass.</p>
+
+<h1 id="further-topic">Further topic</h1>
+
+<p>I haven’t talked about the Zelda-like contextual actions Grab and Drop here. I need to improve them, maybe they will be the topic of another post.</p>]]></content><author><name>Long Nguyen Huu</name><email>n.huu.long@gmail.com</email></author><category term="devlog" /><category term="ue4" /><category term="blueprints" /><summary type="html"><![CDATA[Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however most functions should be compatible.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://hsandt.github.io/assets/pictures/blog/devlog/2016-07-26/thumbnail.png" /><media:content medium="image" url="https://hsandt.github.io/assets/pictures/blog/devlog/2016-07-26/thumbnail.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

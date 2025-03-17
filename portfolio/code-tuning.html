@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Code Tuning for Unity | Long Nguyen Huu</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Code Tuning for Unity" />
+<meta name="author" content="Long Nguyen Huu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The personal website of Long Nguyen Huu aka komehara" />
+<meta property="og:description" content="The personal website of Long Nguyen Huu aka komehara" />
+<link rel="canonical" href="https://hsandt.github.io/portfolio/code-tuning.html" />
+<meta property="og:url" content="https://hsandt.github.io/portfolio/code-tuning.html" />
+<meta property="og:site_name" content="Long Nguyen Huu" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Code Tuning for Unity" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Long Nguyen Huu"},"description":"The personal website of Long Nguyen Huu aka komehara","headline":"Code Tuning for Unity","url":"https://hsandt.github.io/portfolio/code-tuning.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://hsandt.github.io/feed.xml" title="Long Nguyen Huu" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-TKEELY26NL"></script>
+<script>
+  window['ga-disable-G-TKEELY26NL'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TKEELY26NL');
+</script>
+
+</head>
+<body>
+<header class="site-header">
+
+  <div class="wrapper"><div class="site-brand">
+      <a class="site-title" rel="author" href="/">Long Nguyen Huu</a>
+      <div class="site-subtitle">aka komehara – Game developer</div>
+      <div class="social-links"><ul class="social-media-list">
+<li>
+  <a rel="me" href="https://komehara.itch.io/" target="_blank" title="My games on itch.io">
+    
+    
+    <svg class="svg-icon icon-itchio">
+      <use xlink:href="/assets/minima-social-icons.svg#itchio"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://github.com/hsandt" target="_blank" title="My GitHub repositories">
+    
+    
+    <svg class="svg-icon icon-github">
+      <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://bitbucket.org/hsandt/" target="_blank" title="My BitBucket repositories">
+    
+    
+    <svg class="svg-icon icon-bitbucket">
+      <use xlink:href="/assets/minima-social-icons.svg#bitbucket"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://stackoverflow.com/users/3256073/hsandt" target="_blank" title="My profile on Stack Overflow">
+    
+    
+    <svg class="svg-icon icon-stackoverflow">
+      <use xlink:href="/assets/minima-social-icons.svg#stackoverflow"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://twitter.com/n_huulong" target="_blank" title="My posts on Twitter">
+    
+    
+    <svg class="svg-icon icon-twitter">
+      <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://mastodon.gamedev.place/@leyn" target="_blank" title="My posts on Mastodon">
+    
+    
+    <svg class="svg-icon icon-mastodon">
+      <use xlink:href="/assets/minima-social-icons.svg#mastodon"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://www.youtube.com/channel/UCscc8AXbgMQCjzxsXLVvCsg" target="_blank" title="My videos on YouTube">
+    
+    
+    <svg class="svg-icon icon-youtube">
+      <use xlink:href="/assets/minima-social-icons.svg#youtube"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://www.linkedin.com/in/huulong/" target="_blank" title="My profile on LinkedIn">
+    
+    
+    <svg class="svg-icon icon-linkedin">
+      <use xlink:href="/assets/minima-social-icons.svg#linkedin"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://ko-fi.com/komehara" target="_blank" title="Donations on Ko-fi">
+    
+    
+    <svg class="svg-icon icon-kofi">
+      <use xlink:href="/assets/minima-social-icons.svg#kofi"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/portfolio/">Portfolio</a><a class="page-link" href="/blog/">Blog</a><a class="page-link" href="/writing/">Writing</a><a class="page-link" href="/comic-strips/">Comic strips</a><a class="page-link" href="/resume/">Resume</a><a class="page-link" href="/newsletter/">Newsletter</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post portfolio-item">
+
+  <header class="post-header">
+    <h1 class="post-title">Code Tuning for Unity</h1>
+    <h2 class="post-subtitle">Variable tuning and dynamic code branching tool for Unity</h2>
+  </header>
+
+  <div class="post-top">
+    <div class="top-left">
+      <div class="embedded-video">
+          <img class="banner" src="/assets/pictures/portfolio/Code-Tuning/code-tuning-video-fallback-image.png" alt="Code Tuning for Unity Image">
+        
+      </div>
+      <ul class="social-media-list">
+<li>
+  <a rel="me" href="https://github.com/hsandt/hyper-unity-commons/tree/develop/Runtime/Debug" target="_blank" title="Source code on GitHub">
+    
+    
+    <svg class="svg-icon icon-github">
+      
+      <use xlink:href="/assets/minima-social-icons.svg#github" ></use>
+    </svg>
+  </a>
+</li>
+</ul>
+    </div>
+    <div class="top-right">
+      <table class="metadata">
+        <tbody>
+          
+          <tr><th>Type</td>
+            <td>Debug tool</td>
+          </tr>
+          
+          <tr><th>Engine</td>
+            <td>Unity</td>
+          </tr>
+          
+          <tr><th>Working period</td>
+            <td>July 2016 - Apr 2017</td>
+          </tr>
+          
+          </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="post-content">
+
+    <h1 id="code-tuning">Code Tuning</h1>
+
+<p><em>Code Tuning</em> is a live debugging method that allows the developer to dynamically modify hardcoded behaviors and values, without having to recompile the project (nor use a hot-compile tool). This may be done by inserting temporary code snippets that turn hardcoded values into tunable parameters. The developer can tune the parameters using some interface (IDE debugger, editor window or runtime GUI). Once the developer has found a good value, they can remove the snippet and just keep the final hardcoded value.</p>
+
+<p>I found that this method is used in many studios, under different names (<em>Code Tweaking</em>, <em>Variable Tweaker Panel</em>, etc.) and implementations (C++ static variable, C++ macro that generates a variable slider in a GUI panel, etc.).</p>
+
+<h2 id="rationale">Rationale</h2>
+
+<p>In development in general, we avoid magic numbers and in game development specifically, we try to parameterize gameplay values as much as possible to allow game designers to tune them. Nevertheless, Code Tuning is useful in several cases:</p>
+<ul>
+  <li>You are prototyping a very rough feature, maybe something cosmetic that doesn’t deserve its own parameter yet (ex: a sinusoidal animation with an <code class="language-plaintext highlighter-rouge">amplitude</code> and <code class="language-plaintext highlighter-rouge">period</code>), and you just want to test if this <em>can work</em> with certain values.</li>
+  <li>You are working on some editor or debug UI, where you need to find good widget size, spacing and color for readability. You’re probably not going to change these values later, and just need experiment to find something that works.</li>
+  <li>You are debugging and need to disable or modify some chunks of code at runtime to isolate the conditions to reproduce the bug. You know that all these changes are temporary, so you cannot afford to create a proper parameter for each change.</li>
+</ul>
+
+<p>Even if you end up defining the value as a constant to avoid magic numbers, you still need a way to find a good value for this constant.</p>
+
+<h2 id="features">Features</h2>
+
+<p>I’ll show a simple implementation of Code Tuning for Unity that features:</p>
+<ul>
+  <li>a fixed number of parameters to tune for different types (branch index, boolean, integer, float)</li>
+  <li>an Editor window to tune values visually</li>
+</ul>
+
+<h2 id="architecture">Architecture</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">CodeTuning</code> is a singleton class that provides a fixed number of parameters of various types.</li>
+  <li><code class="language-plaintext highlighter-rouge">CodeTuningEditorWindow</code> is an <code class="language-plaintext highlighter-rouge">EditorWindow</code> that has one editable field per parameter, plus a few meta parameters to define code tuning behavior.</li>
+  <li><code class="language-plaintext highlighter-rouge">CodeTuningGUI</code> is a runtime <code class="language-plaintext highlighter-rouge">MonoBehaviour</code> that displays a tuning panel on game screen, including in builds.</li>
+</ul>
+
+<p>Below are excerpts of <a href="https://github.com/hsandt/hyper-unity-commons/blob/develop/Runtime/Debug/CodeTuning.cs">CodeTuning.cs</a> and <a href="https://github.com/hsandt/hyper-unity-commons/blob/develop/Runtime/Debug/Editor/CodeTuningEditorWindow.cs">CodeTuningEditorWindow.cs</a> (skipping the many parameters). You can find the full code by clicking on the previous filename hyperlinks.</p>
+
+<p><a href="https://github.com/hsandt/hyper-unity-commons/blob/develop/Runtime/Debug/CodeTuningGUI.cs">CodeTuningGUI.cs</a> is quite experimental and ugly, but it was useful for me to tune variables on Android build, when I didn’t always have a remote editor connection. In the future, I’d like to remake it with UITK.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+</pre></td><td class="rouge-code"><pre><span class="c1">// CodeTuning.cs</span>
+<span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">HyperUnityCommons</span>
+<span class="p">{</span>
+    <span class="c1">/// Code tuning runtime class</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">CodeTuning</span>
+    <span class="p">{</span>
+        <span class="c1">/// Is code tuning active? If not, use default values.</span>
+        <span class="k">public</span> <span class="kt">bool</span> <span class="n">active</span><span class="p">;</span>
+
+        <span class="k">public</span> <span class="kt">int</span> <span class="n">branchIndex</span><span class="p">;</span>
+        <span class="k">public</span> <span class="k">static</span> <span class="kt">int</span> <span class="nf">GetBranchIndex</span><span class="p">(</span><span class="kt">int</span> <span class="n">defaultValue</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">TryGetValue</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="p">(</span><span class="n">Instance</span><span class="p">.</span><span class="n">branchIndex</span><span class="p">,</span> <span class="n">defaultValue</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="kt">bool</span> <span class="n">bool1</span><span class="p">;</span>
+        <span class="k">public</span> <span class="k">static</span> <span class="kt">bool</span> <span class="nf">GetBool1</span><span class="p">(</span><span class="kt">bool</span> <span class="n">defaultValue</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">TryGetValue</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;</span> <span class="p">(</span><span class="n">Instance</span><span class="p">.</span><span class="n">bool1</span><span class="p">,</span> <span class="n">defaultValue</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// bool2, int1, int2, int3, float1, float2, float3...</span>
+
+        <span class="c1">// singleton instance</span>
+        <span class="k">static</span> <span class="n">CodeTuning</span> <span class="n">_instance</span><span class="p">;</span>
+        <span class="k">public</span> <span class="k">static</span> <span class="n">CodeTuning</span> <span class="n">Instance</span> <span class="p">{</span>
+            <span class="k">get</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">_instance</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span> <span class="k">return</span> <span class="n">_instance</span><span class="p">;</span>
+                <span class="n">Debug</span><span class="p">.</span><span class="nf">Log</span> <span class="p">(</span><span class="s">"[DEBUG] Creating CodeTuning instance singleton"</span><span class="p">);</span>
+                <span class="n">_instance</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">CodeTuning</span><span class="p">();</span>
+                <span class="k">return</span> <span class="n">_instance</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="nf">CodeTuning</span><span class="p">()</span> <span class="p">{}</span>
+
+        <span class="k">static</span> <span class="n">T</span> <span class="n">TryGetValue</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">T</span> <span class="n">tuningValue</span><span class="p">,</span> <span class="n">T</span> <span class="n">defaultValue</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">Instance</span><span class="p">.</span><span class="n">active</span> <span class="p">?</span> <span class="n">tuningValue</span> <span class="p">:</span> <span class="n">defaultValue</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+</pre></td><td class="rouge-code"><pre><span class="c1">// CodeTuningEditorWindow.cs</span>
+<span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">UnityEditor</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">HyperUnityCommons.Editor</span>
+<span class="p">{</span>
+    <span class="c1">/// Code tuning editor window</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">CodeTuningEditorWindow</span> <span class="p">:</span> <span class="n">EditorWindow</span>
+    <span class="p">{</span>
+        <span class="c1">/// Singleton instance</span>
+        <span class="k">static</span> <span class="n">CodeTuningEditorWindow</span> <span class="n">window</span><span class="p">;</span>
+
+        <span class="c1">/// Should the scene be repainted when the user changes a value?</span>
+        <span class="kt">bool</span> <span class="n">repaintScene</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+
+        <span class="p">[</span><span class="nf">MenuItem</span><span class="p">(</span><span class="s">"Debug/Code Tuning"</span><span class="p">)]</span>
+        <span class="k">static</span> <span class="k">void</span> <span class="nf">Init</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">window</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+                <span class="n">window</span> <span class="p">=</span> <span class="p">(</span><span class="n">CodeTuningEditorWindow</span><span class="p">)</span> <span class="n">GetWindow</span><span class="p">&lt;</span><span class="n">CodeTuningEditorWindow</span><span class="p">&gt;(</span><span class="k">false</span><span class="p">,</span> <span class="s">"Code Tuning"</span><span class="p">);</span>
+
+            <span class="n">window</span><span class="p">.</span><span class="nf">Show</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">void</span> <span class="nf">OnEnable</span><span class="p">()</span> <span class="p">{</span>
+            <span class="c1">// IMPORTANT to reload values on Play, since we are not using a ScriptableObject asset</span>
+            <span class="c1">// nor a MonoBehaviour to hold CodeTuning data, so they get reset on Play</span>
+            <span class="nf">Load</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">void</span> <span class="nf">OnGUI</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="c1">// use CodeTuning.Instance instance of keeping reference of CodeTuning to be sure</span>
+            <span class="c1">// it has been defined (reference would be reset on Play)</span>
+            <span class="n">EditorGUI</span><span class="p">.</span><span class="nf">BeginChangeCheck</span><span class="p">();</span>
+
+            <span class="n">CodeTuning</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">active</span> <span class="p">=</span> <span class="n">EditorGUILayout</span><span class="p">.</span><span class="nf">ToggleLeft</span><span class="p">(</span><span class="s">"Activate"</span><span class="p">,</span> <span class="n">CodeTuning</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">active</span><span class="p">);</span>
+
+            <span class="n">EditorGUILayout</span><span class="p">.</span><span class="nf">Space</span><span class="p">();</span>
+
+            <span class="n">CodeTuning</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">branchIndex</span> <span class="p">=</span> <span class="n">EditorGUILayout</span><span class="p">.</span><span class="nf">IntSlider</span><span class="p">(</span><span class="s">"Branch Index"</span><span class="p">,</span> <span class="n">CodeTuning</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">branchIndex</span><span class="p">,</span>
+                <span class="m">0</span><span class="p">,</span> <span class="m">10</span><span class="p">);</span>
+            <span class="n">CodeTuning</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">bool1</span> <span class="p">=</span> <span class="n">EditorGUILayout</span><span class="p">.</span><span class="nf">Toggle</span><span class="p">(</span><span class="s">"Bool 1"</span><span class="p">,</span> <span class="n">CodeTuning</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">bool1</span><span class="p">);</span>
+            <span class="c1">// bool2, int1, int2, int3, float1, float2, float3...</span>
+            <span class="n">repaintScene</span> <span class="p">=</span> <span class="n">EditorGUILayout</span><span class="p">.</span><span class="nf">Toggle</span><span class="p">(</span><span class="k">new</span> <span class="nf">GUIContent</span> <span class="p">(</span><span class="s">"Repaint Scene on Change"</span><span class="p">,</span>
+                <span class="s">"Check if the values are used in OnDrawGizmos / OneSceneGUI"</span><span class="p">),</span> <span class="n">repaintScene</span><span class="p">);</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">EditorGUI</span><span class="p">.</span><span class="nf">EndChangeCheck</span><span class="p">())</span> <span class="p">{</span>
+                <span class="nf">Save</span><span class="p">();</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">repaintScene</span><span class="p">)</span>
+                    <span class="n">SceneView</span><span class="p">.</span><span class="nf">RepaintAll</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">void</span> <span class="nf">Load</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">EditorPrefs</span><span class="p">.</span><span class="nf">HasKey</span><span class="p">(</span><span class="s">"CodeTuning.active"</span><span class="p">))</span> <span class="p">{</span>
+                <span class="n">CodeTuning</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">active</span> <span class="p">=</span> <span class="n">EditorPrefs</span><span class="p">.</span><span class="nf">GetBool</span> <span class="p">(</span><span class="s">"CodeTuning.active"</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">EditorPrefs</span><span class="p">.</span><span class="nf">HasKey</span><span class="p">(</span><span class="s">"CodeTuning.branchIndex"</span><span class="p">))</span>
+                <span class="n">CodeTuning</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">branchIndex</span> <span class="p">=</span> <span class="n">EditorPrefs</span><span class="p">.</span><span class="nf">GetInt</span><span class="p">(</span><span class="s">"CodeTuning.branchIndex"</span><span class="p">);</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">EditorPrefs</span><span class="p">.</span><span class="nf">HasKey</span><span class="p">(</span><span class="s">"CodeTuning.bool1"</span><span class="p">))</span>
+                <span class="n">CodeTuning</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">active</span> <span class="p">=</span> <span class="n">EditorPrefs</span><span class="p">.</span><span class="nf">GetBool</span><span class="p">(</span><span class="s">"CodeTuning.bool1"</span><span class="p">);</span>
+
+            <span class="c1">// bool2, int1, int2, int3, float1, float2, float3...</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">EditorPrefs</span><span class="p">.</span><span class="nf">HasKey</span><span class="p">(</span><span class="s">"CodeTuning.repaintScene"</span><span class="p">))</span>
+                <span class="n">repaintScene</span> <span class="p">=</span> <span class="n">EditorPrefs</span><span class="p">.</span><span class="nf">GetBool</span><span class="p">(</span><span class="s">"CodeTuning.repaintScene"</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">void</span> <span class="nf">Save</span><span class="p">()</span> <span class="p">{</span>
+            <span class="n">EditorPrefs</span><span class="p">.</span><span class="nf">SetBool</span><span class="p">(</span><span class="s">"CodeTuning.active"</span><span class="p">,</span> <span class="n">CodeTuning</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">active</span><span class="p">);</span>
+            <span class="n">EditorPrefs</span><span class="p">.</span><span class="nf">SetInt</span><span class="p">(</span><span class="s">"CodeTuning.branchIndex"</span><span class="p">,</span> <span class="n">CodeTuning</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">branchIndex</span><span class="p">);</span>
+            <span class="n">EditorPrefs</span><span class="p">.</span><span class="nf">SetBool</span><span class="p">(</span><span class="s">"CodeTuning.bool1"</span><span class="p">,</span> <span class="n">CodeTuning</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">bool1</span><span class="p">);</span>
+            <span class="c1">// bool2, int1, int2, int3, float1, float2, float3...</span>
+            <span class="n">EditorPrefs</span><span class="p">.</span><span class="nf">SetBool</span><span class="p">(</span><span class="s">"CodeTuning.repaintScene"</span><span class="p">,</span> <span class="n">repaintScene</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="screenshots">Screenshots</h2>
+
+<div class="grid">
+  
+    <img src="/assets/pictures/portfolio/Code-Tuning/Unity-Editor-Code-Tuning-Active.png" alt="Code Tuning editor window: active" />
+  
+    <img src="/assets/pictures/portfolio/Code-Tuning/Unity-Editor-Code-Tuning-Inactive.png" alt="Code Tuning editor window: inactive" />
+  
+</div>
+
+<p><em>Note that fewer fields are defined on these screenshots</em></p>
+
+<h2 id="editor-window-parameters">Editor window parameters</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Activate</td>
+      <td>If true, enable code tuning. Else, default values are used.</td>
+    </tr>
+    <tr>
+      <td>Branch Index</td>
+      <td>An integer dedicated to tunable branching (it has nothing special).</td>
+    </tr>
+    <tr>
+      <td>Bool X</td>
+      <td>A tunable bool value.</td>
+    </tr>
+    <tr>
+      <td>Int X</td>
+      <td>A tunable bool value.</td>
+    </tr>
+    <tr>
+      <td>Float X</td>
+      <td>A tunable float value.</td>
+    </tr>
+    <tr>
+      <td>Repaint Scene on Change</td>
+      <td>If true, repaint the editor Scene View on value changed. Check this for editor drawing method (Editor.OnSceneGUI, MonoBehaviour.OnDrawGizmos)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="usage">Usage</h2>
+
+<ul>
+  <li>Import <a href="https://github.com/hsandt/hyper-unity-commons/blob/develop/Runtime/Debug/CodeTuning.cs">CodeTuning.cs</a> and <a href="https://github.com/hsandt/hyper-unity-commons/blob/develop/Runtime/Debug/Editor/CodeTuningEditorWindow.cs">CodeTuningEditorWindow.cs</a> in your Unity project (make sure to put CodeTuningEditorWindow.cs under an <code class="language-plaintext highlighter-rouge">Editor</code> folder)</li>
+  <li>Open the Code Tuning editor window with top menu bar &gt; Debug &gt; Code Tuning</li>
+  <li>Check <em>Activate</em></li>
+  <li>Replace hardcoded values with in code with <code class="language-plaintext highlighter-rouge">CodeTuning.Instance.GetBranchIndex|GetBoolX|GetIntX|GetFloatX(defaultValue)</code>. I recommend to always use meaningful default values to 1. get a good starting value and 2. avoid terrible results if the code is used at runtime, and you forgot to remove some CodeTuning <code class="language-plaintext highlighter-rouge">Get</code> calls before building the game</li>
+  <li>If tuning runtime values: play the scene you wanted to tune. If tuning editor values: open the editor window or select the Game Object with a gizmo that needs tuning.</li>
+  <li>Tune the values in the Code Tuning editor window to see live changes</li>
+  <li>When you have found a better value but want to continue tuning, replace <code class="language-plaintext highlighter-rouge">defaultValue</code> with the new value, and repeat the process</li>
+  <li>When you have found satisfying values, replace <code class="language-plaintext highlighter-rouge">CodeTuning.Instance.Get...(defaultValue)</code> with the new value (it’s cleaner to remove them all before building the game)</li>
+  <li>If you don’t like magic numbers, you can now turn them into constants</li>
+</ul>
+
+<p>Note: values are stored in the Editor preferences and may be lost on Play/Stop and recompile, so it’s better to regularly write down the better values.</p>
+
+<h2 id="example">Example</h2>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+</pre></td><td class="rouge-code"><pre><span class="c1">// Case 1: you want to test a new method only when you check some toggle</span>
+<span class="c1">// =&gt; use an optional branch</span>
+
+<span class="nf">NewExperimentalMethod</span><span class="p">();</span>
+
+<span class="c1">// becomes...</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">CodeTuning</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="nf">GetBool1</span><span class="p">(</span><span class="k">false</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">// only executed when CodeTuning is active and Bool 1 toggle is checked</span>
+    <span class="nf">NewExperimentalMethod</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// Case 2: you want to test 3 different lines or blocks of code without commenting them</span>
+<span class="c1">// in and out and recompiling every time</span>
+<span class="c1">// =&gt; use tunable branching</span>
+
+<span class="n">Color</span> <span class="n">c</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">red</span><span class="p">;</span>
+<span class="c1">// Color c = Color.blue;</span>
+<span class="c1">// Color c = Color.yellow;</span>
+
+<span class="c1">// becomes...</span>
+
+<span class="n">Color</span> <span class="n">c</span><span class="p">;</span>
+<span class="k">switch</span> <span class="p">(</span><span class="n">CodeTuning</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="nf">GetBranchIndex</span><span class="p">(</span><span class="m">0</span><span class="p">))</span> <span class="p">{</span>
+<span class="k">case</span> <span class="m">0</span><span class="p">:</span>
+    <span class="n">c</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">red</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+<span class="k">case</span> <span class="m">1</span><span class="p">:</span>
+    <span class="n">c</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">blue</span>
+    <span class="k">break</span><span class="p">;</span>
+<span class="k">default</span><span class="p">:</span>
+    <span class="n">c</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">yellow</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Case 3: you want to tune a hardcoded value, but you don't want to promote it to</span>
+<span class="c1">// a MonoBehaviour serialized attribute right now</span>
+<span class="c1">// =&gt; use a tunable float</span>
+
+<span class="kt">float</span> <span class="n">motionDelta</span> <span class="p">=</span> <span class="m">2.5f</span> <span class="p">*</span> <span class="n">Time</span><span class="p">.</span><span class="n">deltaTime</span><span class="p">;</span>
+
+<span class="c1">// becomes...</span>
+
+<span class="kt">float</span> <span class="n">motionDelta</span> <span class="p">=</span> <span class="n">CodeTuning</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="nf">GetFloat1</span><span class="p">(</span><span class="n">speed</span><span class="p">)</span> <span class="p">*</span> <span class="n">Time</span><span class="p">.</span><span class="n">deltaTime</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="demonstration">Demonstration</h2>
+
+<p>I have yet to capture a video of CodeTuning for Unity, so here is a video of the very similar Code Tuner I wrote for PICO-8:</p>
+
+<video controls="" class="center">
+  <source src="/assets/pictures/portfolio/Code-Tuning/sonic-pico8_v2.2_debug code tuner 2018-12-20.mp4" type="video/mp4" />
+</video>
+
+<h2 id="limitations--going-further">Limitations &amp; Going further</h2>
+
+<ul>
+  <li>CodeTuning won’t affect variables that are <strong>only initialized on game start or scene load</strong>. More exactly, it will only affect such variables if you activated CodeTuning before the variable was set, and even then, they won’t change later even if the CodeTuning parameters are changed, because they are not regularly reassigned. CodeTuning works the best when the <code class="language-plaintext highlighter-rouge">Get</code> methods are used in loops.</li>
+  <li>Currently, the code is <strong>not flexible enough to allow an indefinite number of parameters and types</strong>. There is a limited number of parameters of each type, so you must manually add extra parameters to the class by duplicating existing attributes. You must also add additional definitions for new types like <code class="language-plaintext highlighter-rouge">Color</code>. In C++, it’s a bit faster to do thanks to macro definitions (I’m doing this in Unreal Engine).
+    <ul>
+      <li>This could be improved by using a dictionary, allowing us to map arbitrary variable names to values of various types. In C#, this would require using <code class="language-plaintext highlighter-rouge">object</code> + cast or a custom variant type.</li>
+      <li>In Lua, it’s easier because the language is not statically typed. I wrote <a href="https://github.com/hsandt/pico-boots/blob/develop/src/engine/debug/codetuner.lua">codetuner.lua</a> for my PICO-8 framework <a href="https://github.com/hsandt/pico-boots/tree/develop">pico-boots</a>, where you can create an arbitrary tunable variable with <code class="language-plaintext highlighter-rouge">tuned("my var", default_value)</code>.</li>
+    </ul>
+  </li>
+</ul>
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+<footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        
+        
+        <ul class="contact-list">
+          <li class="p-name">Long Nguyen Huu</li>
+          <li><a class="u-email" href="mailto:n.huu.long@gmail.com">n.huu.long@gmail.com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>This website was made with Jekyll and is hosted on GitHub Pages. It uses Google Analytics.</p>
+        
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list">
+<li>
+  <a rel="me" href="https://komehara.itch.io/" target="_blank" title="My games on itch.io">
+    
+    
+    <svg class="svg-icon icon-itchio">
+      <use xlink:href="/assets/minima-social-icons.svg#itchio"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://github.com/hsandt" target="_blank" title="My GitHub repositories">
+    
+    
+    <svg class="svg-icon icon-github">
+      <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://bitbucket.org/hsandt/" target="_blank" title="My BitBucket repositories">
+    
+    
+    <svg class="svg-icon icon-bitbucket">
+      <use xlink:href="/assets/minima-social-icons.svg#bitbucket"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://stackoverflow.com/users/3256073/hsandt" target="_blank" title="My profile on Stack Overflow">
+    
+    
+    <svg class="svg-icon icon-stackoverflow">
+      <use xlink:href="/assets/minima-social-icons.svg#stackoverflow"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://twitter.com/n_huulong" target="_blank" title="My posts on Twitter">
+    
+    
+    <svg class="svg-icon icon-twitter">
+      <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://mastodon.gamedev.place/@leyn" target="_blank" title="My posts on Mastodon">
+    
+    
+    <svg class="svg-icon icon-mastodon">
+      <use xlink:href="/assets/minima-social-icons.svg#mastodon"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://www.youtube.com/channel/UCscc8AXbgMQCjzxsXLVvCsg" target="_blank" title="My videos on YouTube">
+    
+    
+    <svg class="svg-icon icon-youtube">
+      <use xlink:href="/assets/minima-social-icons.svg#youtube"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://www.linkedin.com/in/huulong/" target="_blank" title="My profile on LinkedIn">
+    
+    
+    <svg class="svg-icon icon-linkedin">
+      <use xlink:href="/assets/minima-social-icons.svg#linkedin"></use>
+    </svg>
+  </a>
+</li>
+
+<li>
+  <a rel="me" href="https://ko-fi.com/komehara" target="_blank" title="Donations on Ko-fi">
+    
+    
+    <svg class="svg-icon icon-kofi">
+      <use xlink:href="/assets/minima-social-icons.svg#kofi"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer></body>
+
+</html>
