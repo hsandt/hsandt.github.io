@@ -743,11 +743,12 @@ table td {
     width: calc(50% - 30px / 2);
   }
 }
-.site-header, .portfolio-item {
+.site-header {
   border-top: 0;
   border-bottom: 0;
   line-height: 36px;
 }
+
 .site-header .social-media-list, .site-header .pagination, .portfolio-item .social-media-list, .portfolio-item .pagination {
   line-height: 1.5;
   margin: 0;
@@ -842,7 +843,7 @@ table td {
 }
 
 .post-title {
-  font-size: 2.2rem;
+  font-size: 2.3rem;
 }
 
 .post-content .banner {
@@ -852,7 +853,7 @@ table td {
 }
 .post-content h1 {
   margin-bottom: 15px;
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 500;
 }
 .post-content h2 {
@@ -867,19 +868,21 @@ table td {
   font-size: 1.3rem;
   font-weight: 500;
 }
-.post-content img {
+.post-content img:not(.left, .right) {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+.post-content img.right {
+  display: block;
+  margin-left: auto;
 }
 .post-content video {
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
-}
-.post-content video.full-width {
-  width: 100%;
+  max-width: 100%;
 }
 
 table.invisible-table {

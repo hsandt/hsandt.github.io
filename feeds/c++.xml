@@ -5,7 +5,7 @@
 <subtitle>The personal website of Long Nguyen Huu aka komehara</subtitle>
 <link href="/atom.xml" rel="self"/>
 <link href="https://hsandt.github.io/"/>
-<updated>2025-03-17T14:15:34+00:00</updated>
+<updated>2025-03-17T20:21:51+00:00</updated>
 <id>https://hsandt.github.io</id>
 <author>
 <name>Long Nguyen Huu</name>
@@ -23,6 +23,70 @@
 
     
 
+    
+
+    
+    <entry>
+        <title>C++ 2D Game Engine – Postmortem</title>
+        <link href="https://hsandt.github.io/devlog/2019/05/24/c++-2d-game-engine-postmortem.html"/>
+        <updated>2019-05-24T00:00:00+00:00</updated>
+        <id>https://hsandt.github.io/devlog/2019/05/24/c++-2d-game-engine-postmortem</id>
+        <category term="devlog" />
+        <content type="html"><![CDATA[<p>4 years ago, I started working on a custom 2D game engine in C++. At the beginning, I needed a simple game to experiment AI techniques with, but I ended up working on a small engine (I still wanted to train AI to I moved that project to Unity).</p>
+
+<p>The main features I am aiming at are:</p>
+
+<ul>
+  <li>Entity-component system</li>
+  <li>Fixed update and input/render update loops</li>
+  <li>Game window with OpenGL with <a href="http://glew.sourceforge.net/" target="_blank">GLEW</a> + <a href="http://www.glfw.org/" target="_blank">GLFW</a></li>
+  <li>Keyboard/mouse input</li>
+  <li>Primitive 2D shapes rendering</li>
+  <li>Basic shaders</li>
+  <li>2D physics (<a href="http://box2d.org/" target="_blank">Box2D</a>)</li>
+  <li>Scene-Entity system</li>
+  <li>Scene editor and basic scene serialization</li>
+  <li>AI helpers</li>
+  <li>Unit tests (<a href="https://github.com/catchorg/Catch2" target="_blank">Catch2</a>)</li>
+  <li>Sample game</li>
+</ul>
+
+<p>At first I used <a href="https://www.libsdl.org/index.php" target="_blank">SDL2</a> for window management and rendering, before switching to OpenGL with GLFW for more flexibility (e.g. zooming in and out with the camera). Now, I know that SDL2 supports OpenGL rendering too, so looking back at it, SDL2 wasn’t a bad choice at all (plus I’m still only rendering simple shapes like squares right now).</p>
+
+<p>That said, I like GLFW’s window API better and I need some OpenGL training anyway, so why not start with simple shapes. Next time, I’ll also have a look at <a href="http://www.sfml-dev.org/" target="_blank">SFML</a>, but for now I want to focus on the engine systems (modules).</p>
+
+<h2 id="progress">Progress</h2>
+
+<p>I have implemented the <strong>game application window</strong>, basic <strong>keyboard input</strong> and basic <strong>rendering</strong> systems, as well as a simple <strong>entity-component</strong> system with a base Actor class for game objects, a base Component class for components and their respective <strong>factories</strong>. Input and rendering is done via Components, but the developer can also add custom behavior by subclassing the Actor class for all game, as in Unreal Engine (and Godot with <em>Nodes</em>).</p>
+
+<p><strong>Advantage</strong>: you can implement behavior specific to one entity directly inside the Actor subclass, without using components</p>
+
+<p><strong>Disadvantage</strong>: all game objects don’t have the same exact type and have different sizes, so you cannot put them in an array/vector of GameObjects (Unity-style) combined with <a href="http://gamesfromwithin.com/managing-data-relationships">handles</a> for maximum cache efficiency (see <a href="http://gameprogrammingpatterns.com/data-locality.html">Data Locality</a>). If you still want data contiguity, you’ll need a custom container that supports variable object size.</p>
+
+<p>For now, I have something like this:</p>
+
+<p><img src="/assets/pictures/blog/devlog/2019-05-24-c++-2d-game-engine-postmortem/Red-squares.png" alt="Three red squares drawn on a dark blue background" /></p>
+
+<figcaption>Primitive rendering with Stealth Engine</figcaption>
+
+<p><img src="/assets/pictures/blog/devlog/2019-05-24-c++-2d-game-engine-postmortem/Box2D-box-collision-demo.gif" alt="A red square controlled by the player is pushing another one" /></p>
+
+<figcaption>Demonstration of Box2D collision in Stealth Engine (player controls right square)</figcaption>
+
+<p>The last thing I have done is refactoring the engine structure with a lot of interfaces to allow unit testing.</p>
+
+<p>You can check the code on my GitHub repos:</p>
+
+<ul>
+  <li><a href="https://github.com/hsandt/Stealth-Engine/tree/develop">Engine</a></li>
+  <li><a href="https://github.com/hsandt/Stealth-Engine-sample-game/tree/develop">Sample “game”</a> (it uses the engine as submodule)</li>
+</ul>
+
+<h2 id="next-step">Next step</h2>
+
+<p>I’m not working on this project right now, but I’ll have to go back to it at some point, especially if I want to make an engine in a different language (e.g. Rust). This would be an opportunity to learn from my past mistakes and clean things up before I step onto a cleaner architecture.</p>
+]]></content>
+    </entry>
     
 
     

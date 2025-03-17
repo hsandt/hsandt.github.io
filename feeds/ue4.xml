@@ -5,13 +5,15 @@
 <subtitle>The personal website of Long Nguyen Huu aka komehara</subtitle>
 <link href="/atom.xml" rel="self"/>
 <link href="https://hsandt.github.io/"/>
-<updated>2025-03-17T14:15:34+00:00</updated>
+<updated>2025-03-17T20:21:51+00:00</updated>
 <id>https://hsandt.github.io</id>
 <author>
 <name>Long Nguyen Huu</name>
 <email>n.huu.long@gmail.com</email>
 </author>
 
+
+    
 
     
 
@@ -490,9 +492,9 @@
 
 <p>A demo of the scales in video:</p>
 
-<video controls="" loop="loop" class="full-width">
-    <source src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Demo.mp4" />
-    Your browser does not support the video tag.
+<video controls="">
+  <source src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Demo.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
 </video>
 
 <h1 id="issues-and-future-improvements">Issues and future improvements</h1>
