@@ -37,6 +37,7 @@ I have also implemented some basic ballistic from Chapter 3.5?: Physics Predicti
 
 Video Player
 
-<video controls class="full-width">
+<video controls>
   <source src="/assets/pictures/blog/devlog/2021-06-23-ai-sandbox-in-unity/AI4G Physics Prediction Firing Cannon 1 720p.mp4" type="video/mp4">
+  Your browser does not support the video tag.
 </video>

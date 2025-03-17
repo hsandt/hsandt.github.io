@@ -14,6 +14,7 @@ My latest addition is moving enemies. They currently move at half the speed of t
 
 <video controls width="640" height="360">
   <source src="/assets/pictures/blog/devlog/2023-10-11/Snake Evolved - 2023-10-10 - Adding moving enemies - Eat and lose 720p.webm" type="video/webm">
+  Your browser does not support the video tag.
 </video>
 
 One problem is inherent to snake: you cannot control the tail, so it is very vulnerable, even more as your snake gets longer. I may mitigate this by reducing penalty when a body part other than the head hits an enemy.

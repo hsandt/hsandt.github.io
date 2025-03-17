@@ -50,9 +50,9 @@ Note that in Unreal Blueprints, timelines can only appear on the top-level event
 
 A demo of the scales in video:
 
-<video controls loop="loop" class="full-width">
-    <source src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Demo.mp4">
-    Your browser does not support the video tag.
+<video controls>
+  <source src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
 </video>
 
 # Issues and future improvements

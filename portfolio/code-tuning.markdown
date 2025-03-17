@@ -265,8 +265,9 @@ float motionDelta = CodeTuning.Instance.GetFloat1(speed) * Time.deltaTime;
 
 I have yet to capture a video of CodeTuning for Unity, so here is a video of the very similar Code Tuner I wrote for PICO-8:
 
-<video controls class="center">
+<video controls>
   <source src="/assets/pictures/portfolio/Code-Tuning/sonic-pico8_v2.2_debug code tuner 2018-12-20.mp4" type="video/mp4">
+  Your browser does not support the video tag.
 </video>
 
 ## Limitations & Going further
