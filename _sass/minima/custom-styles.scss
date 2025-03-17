@@ -1,15 +1,16 @@
-// Style Social Media / deliverable list the same way for both to site header and portfolio item, but not footer
-
 // _layout.scss override
-.site-header, .portfolio-item {
+.site-header {
   // remove top border (not aesthetic)
   border-top: 0;
   // remove bottom border (redundant with new top border on standard page
   // and portfolio item header)
   border-bottom: 0;
-  // reduce line height to avoid gap between title and subtitle
+  // reduce line height to avoid gap between website title and subtitle and the full top-left of the page
   line-height: $base-line-height * $base-font-size * 1.5;
+}
 
+.site-header, .portfolio-item {
+  // Style Social Media / deliverable list the same way for both to site header and portfolio item, but not footer
   .social-media-list {
     // reduce line height to standard, so the surrounding space is closer to
     // a square than a vertical rectangle, and looks more like the social icons
