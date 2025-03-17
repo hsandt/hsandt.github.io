@@ -191,9 +191,8 @@
 
         margin-bottom: 10px;
 
-        &.full-width {
-            width: 100%;
-        }
+        // never stretch beyond content horizontal limits
+        max-width: 100%;
     }
 }
 
