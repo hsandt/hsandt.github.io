@@ -150,7 +150,7 @@
 
 // _layout.scss override
 .post-title {
-  @include relative-font-size(2.2);
+  @include relative-font-size(2.3);
 }
 
 // _layout.scss override
@@ -161,9 +161,10 @@
     margin-left: auto;
     margin-right: auto;
   }
+
   h1 {
     margin-bottom: 15px;
-    @include relative-font-size(2.2);
+    @include relative-font-size(2.0);
     font-weight: 500;
   }
   h2 {
