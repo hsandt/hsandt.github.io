@@ -2,10 +2,10 @@
 layout: portfolio_item
 title: "pico sonic"
 subtitle: "1-stage demake of Sonic 3 made with PICO-8"
+categories: video-game indie fan-game
 asset-dir: "pico-sonic"
 thumbnail: "picosonic_itch_banner_cropped_420x420_animated.gif"
 banner: "picosonic_itch_banner_cropped_420x420_animated.gif"
-categories: video-game
 youtube:
   id: aW1FSE64CBQ
   title: "pico sonic SAGE 2021 Trailer with text (v5.4 footage)"
@@ -20,7 +20,7 @@ screenshots:
     description: "Try again with Eggman juggling with the emeralds"
 meta:
   release: "Jan 2021"
-  platform: "Windows, macOSX, Linux, Web, PICO-8"
+  platform: "Windows, macOS, Linux, Web, PICO-8"
   genre: "Platformer"
   mode: "1 player"
   working-period: "May 2018 - Feb 2023"

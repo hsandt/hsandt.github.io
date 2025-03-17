@@ -2,10 +2,10 @@
 layout: portfolio_item
 title: "Guns, Gore & Cannoli 2"
 subtitle: "Over-the-top run ‘n gun"
+categories: video-game company
 asset-dir: "GGC2"
 thumbnail: "GGC2-Thumbnail-420x420.png"
 banner: "GGC2-Banner-1024x576.png"
-categories: video-game
 youtube:
   id: aoXyO38tR5A
   title: "Guns, Gore & Cannoli 2 announcement Trailer"
@@ -21,7 +21,7 @@ screenshots:
 meta:
   developer: "Crazy Monkey Studios (now Rogueside)"
   release: "Mar 2018"
-  platform: "Windows, OSX, PS4, Xbox One"
+  platform: "Windows, macOS, PS4, Xbox One"
   genre: "Run and gun"
   mode: "1-4 players co-op and PvP"
   play-time: "3h30 - 5h30"

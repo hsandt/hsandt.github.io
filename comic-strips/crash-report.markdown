@@ -1,6 +1,7 @@
 ---
 layout: comic_strip
 title: "Crash report"
+categories: game-dev humor
 image: "/assets/pictures/comic-strips/Crash report thumbnail.webp"
 thumbnail: "/assets/pictures/comic-strips/Crash report thumbnail.webp"
 comic_image: "/assets/pictures/comic-strips/Crash report.webp"
@@ -19,6 +20,5 @@ alt_text: >
     close and restart
 
     2023-04-16 komehara
-categories: game-dev humor
 ---
 Basically Unity on Linux during a game jam

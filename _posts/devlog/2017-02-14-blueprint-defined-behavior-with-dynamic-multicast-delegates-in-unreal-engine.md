@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Blueprint-defined behavior with dynamic multicast delegates in Unreal Engine"
-tags: ue4
+title: "Blueprint-defined behavior with dynamic multicast delegates in Unreal Engine"
+tags: ue4 blueprints
 image: "/assets/pictures/blog/devlog/2017-02-14/thumbnail.png"
 thumbnail: "2017-02-14/thumbnail.png"
 ---
@@ -16,7 +16,7 @@ While it is possible to implement C++ Actor methods via Blueprints using either 
 
 Delegates allow you to handle functions as objects, pass them around and execute them later with the appropriate context. There are various ways to implement them in C++ (see [this discussion on stack overflow](http://stackoverflow.com/questions/9568150/what-is-a-c-delegate) and [this proposition of Generic C++ delegates](https://nikitablack.github.io/post/generic_c++_delegates/)), and Unreal provides its own implementation (see [Delegates](https://docs.unrealengine.com/5.2/en-US/delegates-and-lamba-functions-in-unreal-engine/) in UE documentation). I won’t try to explain how they work in UE (getting myself lost among all the macros in the source code) but I’ll show you how to use them in a very specific case.
 
-Imagine we have several Actors that share the same behaviors via **Actor Components**. Both Actors and Actor Components are initially defined in C++, but only Actors are extended via Blueprints (to reduce the number of Blueprints).  Behaviors are defined as C++ methods in the Actor Components’ classes, but since those are not derived into Blueprints, we cannot use `BlueprintImplementableEvent` nor `BlueprintNativeEvent` `UFUNCTION`s to move the implementation to a Blueprint event graph.
+Imagine we have several Actors that share the same behaviors via **Actor Components**. Both Actors and Actor Components are initially defined in C++, but only Actors are extended via Blueprints (to reduce the number of Blueprints). Behaviors are defined as C++ methods in the Actor Components’ classes, but since those are not derived into Blueprints, we cannot use `BlueprintImplementableEvent` nor `BlueprintNativeEvent` `UFUNCTION`s to move the implementation to a Blueprint event graph.
 
 Instead, we declare a **dynamic multicast delegate member** in the Actor Component (called `SwitchableComponent`) and bind a function (actually a Blueprint graph) to that delegate in the **Actor’s Blueprint**.
 
