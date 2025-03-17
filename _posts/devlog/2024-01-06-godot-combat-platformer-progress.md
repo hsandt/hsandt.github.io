@@ -18,8 +18,9 @@ I decided to switch from a combat platformer where you fight many minions to **a
 - Character sprite: Sorcerer 2-frame Idle, 2-frame Hurt, 2-frame Die, 4-frame SpellForward (not used yet)
 - Projectile sprite: Fireball 4-frame Move
 
-<video autoplay="autoplay" loop="loop">
+<video controls>
   <source src="/assets/pictures/blog/devlog/2024-01-16/2024-01-16 Godot 4 Platformer Combat progress - Boss - Fireball, Hurt and Die 640x360.webm" type="video/webm">
+  Your browser does not support the video tag.
 </video>
 
 Assets used:

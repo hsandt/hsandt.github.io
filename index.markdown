@@ -15,4 +15,4 @@ For personal projects, have a look at my [itch.io](https://komehara.itch.io/).
 
 For my works in progress, check out my [blog](/blog/).
 
-To receive updates on my game projects, subscribe to my [newsletter](http://eepurl.com/iHGCvc).
+To receive updates on my game projects, subscribe to my [newsletter](/newsletter/).

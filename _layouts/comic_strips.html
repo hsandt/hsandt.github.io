@@ -14,7 +14,7 @@ layout: page
     {%- if comic_strip_page.title -%}
     <div class="item-thumbnail">
       <a class="page-link" href="{{ comic_strip_page.url | relative_url }}">
-        <!-- If no custom thumbnail is defined, use the shrinked comic strip image instead -->
+        {% comment %} If no custom thumbnail is defined, use the shrinked comic strip image instead {% endcomment %}
         {%- assign thumbnail = comic_strip_page.thumbnail | default: comic_strip_page.comic_image -%}
         <img src="{{ thumbnail }}" alt="Thumbnail for {{ comic_strip_page.title }}">
         <div class="item-thumbnail-overlay">{{ comic_strip_page.title | escape }}</div>

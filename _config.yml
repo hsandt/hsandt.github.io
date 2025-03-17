@@ -109,6 +109,7 @@ header_pages:
   - writing.markdown
   - comic-strips.markdown
   - resume.markdown
+  - resources.markdown
   - newsletter.markdown
 
 # TODO: use collections and put items under _portfolio, _comic_strips (or custom collections_dir)
