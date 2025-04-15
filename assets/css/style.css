@@ -975,13 +975,9 @@ table.th-width-20-percent th {
 .portfolio-item .post-header .post-subtitle {
   line-height: 1;
 }
-.portfolio-item .post-top .embedded-video iframe {
+.portfolio-item .post-top .embedded-video iframe, .portfolio-item .post-top .embedded-video img, .portfolio-item .post-top .embedded-video video {
   width: 256px;
-  height: 144px;
-}
-.portfolio-item .post-top .embedded-video img {
-  width: 256px;
-  height: 144px;
+  height: auto;
 }
 @media screen and (min-width: 800px) {
   .portfolio-item .post-top {
@@ -991,13 +987,9 @@ table.th-width-20-percent th {
   .portfolio-item .post-top .embedded-video {
     padding: 0 20px 0 0;
   }
-  .portfolio-item .post-top .embedded-video iframe {
+  .portfolio-item .post-top .embedded-video iframe, .portfolio-item .post-top .embedded-video video, .portfolio-item .post-top .embedded-video img {
     width: 470px;
-    height: 264px;
-  }
-  .portfolio-item .post-top .embedded-video img {
-    width: 470px;
-    height: 264px;
+    height: auto;
   }
 }
 .portfolio-item table.metadata {
