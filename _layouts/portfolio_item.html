@@ -17,7 +17,7 @@ layout: default
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen>
           </iframe>
-        {% else if page.video-fallback-image %}
+        {% elsif page.video-fallback-image %}
           <img class="banner" src="/assets/pictures/portfolio/{{ page.asset-dir }}/{{ page.video-fallback-image }}" alt="{{ page.title }} Image">
         {% endif %}
       </div>
