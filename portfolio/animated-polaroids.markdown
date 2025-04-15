@@ -52,7 +52,9 @@ Every time the user adds or removes a photograph from the polaroid panel, a shor
 
 Animated polaroids is my 4th project at Gobelins, and part of the postgraduate programme on video games and transmedia. Each year, the objective of the project is to create an Internet of Things device for a client.
 
-In 2016, the client was photographic agency [Big Shot – Polanimation](http://www.polaroid-animation.com/), and the requirement was to design a device that makes use of polaroids for special event photography. We decided to create a device that would allow people to interact through their own pictures and encourage them to speak to other attendees in real life.
+In 2016, the client was photographic agency Big Shot – Polanimation represented by Emmanuel Perret (since 2020, Big Shot Paris was reborn as [Sajin Photo](https://sajin.fr/)), and the requirement was to design a device that makes use of polaroids for special event photography. We decided to create a device that would allow people to interact through their own pictures and encourage them to speak to other attendees in real life.
+
+We themed the device according to the French Open / Roland-Garros tennis tournament, featuring tennis rackets in the videos and covering the space between photo slots with synthetic grass.
 
 ## Team
 
