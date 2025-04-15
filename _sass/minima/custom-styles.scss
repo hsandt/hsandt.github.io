@@ -352,15 +352,11 @@ table.th-width-20-percent {
   .post-top {
     .embedded-video {
       // small display
-      iframe {
-        width: $youtube-width-small-display;
-        height: $youtube-height-small-display;
-      }
 
-      // fallback image
-      img {
+      // YouTube video, local video or fallback image
+      iframe, img, video {
         width: $youtube-width-small-display;
-        height: $youtube-height-small-display;
+        height: auto;
       }
     }
 
@@ -375,15 +371,10 @@ table.th-width-20-percent {
         // in which case padding to the right makes it more readable
         padding: 0 20px 0 0;
 
-        iframe {
+        // YouTube video, local video or fallback image
+        iframe, video, img {
           width: $youtube-width-large-display;
-          height: $youtube-height-large-display;
-        }
-
-        // fallback image
-        img {
-          width: $youtube-width-large-display;
-          height: $youtube-height-large-display;
+          height: auto;
         }
       }
     }
