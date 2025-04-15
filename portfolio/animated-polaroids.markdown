@@ -5,7 +5,7 @@ subtitle: "Social IoT video jukebox"
 categories: app entertainment mixed-media
 asset-dir: "Animated-Polaroids"
 thumbnail: "Animated-polaroids-Thumbnail-420.jpeg"
-video-local: "Polaroid-Movie-768x1024-no-audio-1.mp4"
+video-local: "Polaroid-Movie-768x1024-no-audio.webm"
 screenshots:
   - path: "Animated-polaroids-Full-view.jpg"
     description: "Animated polaroids - Full view"
