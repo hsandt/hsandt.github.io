@@ -38,8 +38,9 @@ The biggest issue was [Reaper + Vital plugin crashing on Linux](https://forum.vi
 
 Since I was busy working on new graphics and plugging the HUD behavior, there is no new gameplay features in this update. I will work on improved boss patterns and main character moves next time.
 
-<video controls loop="loop">
+<video controls>
   <source src="/assets/pictures/blog/devlog/2024-04-12/2024-04-11 Godot Boss - 5 platforms, MC attack vs Fireballs and Ice spikes.webm" type="video/webm">
+  Your browser does not support the video tag.
 </video>
 
 # Changelog

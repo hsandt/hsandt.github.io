@@ -109,6 +109,7 @@ header_pages:
   - writing.markdown
   - comic-strips.markdown
   - resume.markdown
+  - resources.markdown
   - newsletter.markdown
 
 # TODO: use collections and put items under _portfolio, _comic_strips (or custom collections_dir)
@@ -123,6 +124,7 @@ portfolio_pages:
   - mars-21.markdown
   - code-tuning.markdown
   - unity-2d-collider-debug-view.markdown
+  - animated-polaroids.markdown
   - 2d-packing-application.markdown
 
 # Collection of comic strip pages, path relative to comic-strips/

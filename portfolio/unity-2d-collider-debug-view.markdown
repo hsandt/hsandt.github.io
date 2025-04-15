@@ -27,7 +27,7 @@ deliverable_links:
 
 ## Description
 
-A collection of components and editor scripts that allow the  level designer to see the 2D collider of any object at any time, a  feature not natively available in Unity
+A collection of components and editor scripts that allow the level designer to see the 2D collider of any object at any time, a feature not natively available in Unity
 
 ## Features
 

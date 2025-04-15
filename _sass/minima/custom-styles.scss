@@ -1,147 +1,148 @@
-// Style Social Media / deliverable list the same way for both to site header and portfolio item, but not footer
-
 // _layout.scss override
+.site-header {
+  // remove top border (not aesthetic)
+  border-top: 0;
+  // remove bottom border (redundant with new top border on standard page
+  // and portfolio item header)
+  border-bottom: 0;
+  // reduce line height to avoid gap between website title and subtitle and the full top-left of the page
+  line-height: $base-line-height * $base-font-size * 1.5;
+}
+
 .site-header, .portfolio-item {
-    // remove top border (not aesthetic)
-    border-top: 0;
-    // remove bottom border (redundant with new top border on standard page
-    // and portfolio item header)
-    border-bottom: 0;
-    // reduce line height to avoid gap between title and subtitle
-    line-height: $base-line-height * $base-font-size * 1.5;
+  // Style Social Media / deliverable list the same way for both to site header and portfolio item, but not footer
+  .social-media-list {
+    // reduce line height to standard, so the surrounding space is closer to
+    // a square than a vertical rectangle, and looks more like the social icons
+    // in the footer (comment out `border: none;` to see the square easily)
+    line-height: $base-line-height;
+    // move back to left instead of center
+    margin: 0;
 
-    .social-media-list {
-        // reduce line height to standard, so the surrounding space is closer to
-        // a square than a vertical rectangle, and looks more like the social icons
-        // in the footer (comment out `border: none;` to see the square easily)
-        line-height: $base-line-height;
-        // move back to left instead of center
-        margin: 0;
+    a {
+      // remove border and padding for a more compact presentation in the header than in the
+      // footer
+      border: none;
+      padding: 0;
 
-        a {
-            // remove border and padding for a more compact presentation in the header than in the
-            // footer
-            border: none;
-            padding: 0;
+      .icon-itchio {
+        color: #fa5c5c;
 
-            .icon-itchio {
-                color: #fa5c5c;
-
-                &:hover {
-                    color: #c90019;
-                }
-            }
-
-            .icon-github {
-                color: #1d1b1c;
-
-                &:hover {
-                    color: #6316ac;
-                }
-            }
-
-            .icon-bitbucket {
-                color: #2684ff;
-
-                &:hover {
-                    color: #1856a7;
-                }
-            }
-
-            .icon-gitlab {
-                color: #fc6d26;
-
-                &:hover {
-                    color: #af4c1b;
-                }
-            }
-
-            .icon-stackoverflow {
-                color: #ef8236;
-
-                &:hover {
-                    color: #b46329;
-                }
-            }
-
-            .icon-twitter {
-                color: #1da1f2;
-
-                &:hover {
-                    color: #177bb9;
-                }
-            }
-
-            .icon-youtube {
-                color: #ff0000;
-
-                &:hover {
-                    color: #c90019;
-                }
-            }
-
-            .icon-linkedin {
-                color: #0077b5;
-
-                &:hover {
-                    color: #203766;
-                }
-            }
-
-            .icon-kofi {
-                color: #f14255;
-
-                &:hover {
-                    color: #972936;
-                }
-            }
+        &:hover {
+          color: #c90019;
         }
+      }
+
+      .icon-github {
+        color: #1d1b1c;
+
+        &:hover {
+          color: #6316ac;
+        }
+      }
+
+      .icon-bitbucket {
+        color: #2684ff;
+
+        &:hover {
+          color: #1856a7;
+        }
+      }
+
+      .icon-gitlab {
+        color: #fc6d26;
+
+        &:hover {
+          color: #af4c1b;
+        }
+      }
+
+      .icon-stackoverflow {
+        color: #ef8236;
+
+        &:hover {
+          color: #b46329;
+        }
+      }
+
+      .icon-twitter {
+        color: #1da1f2;
+
+        &:hover {
+          color: #177bb9;
+        }
+      }
+
+      .icon-youtube {
+        color: #ff0000;
+
+        &:hover {
+          color: #c90019;
+        }
+      }
+
+      .icon-linkedin {
+        color: #0077b5;
+
+        &:hover {
+          color: #203766;
+        }
+      }
+
+      .icon-kofi {
+        color: #f14255;
+
+        &:hover {
+          color: #972936;
+        }
+      }
     }
+  }
 }
 
 .portfolio-item .social-media-list {
-    // show icons bigger for portfolio deliverables than header & footer social media
-    .svg-icon {
-        width: 2em;
-        height: 2em;
-    }
+  // show icons bigger for portfolio deliverables than header & footer social media
+  .svg-icon {
+    width: 2em;
+    height: 2em;
+  }
 }
 
 // _layout.scss override
 .site-title {
-    // bigger title
-    @include relative-font-size(2);
-    // bolder title
-    font-weight: 500;
-    // since we removed top border in .site-header, add more padding on top
-    padding-top: 20px;
+  // bigger title
+  @include relative-font-size(2);
+  // bolder title
+  font-weight: 500;
+  // since we removed top border in .site-header, add more padding on top
+  padding-top: 20px;
 }
 
 .site-subtitle {
-    // make sure subtitle appears below title (we can also set float: none on .site-title)
-    clear: left;
-    @include relative-font-size(1.2);
+  // make sure subtitle appears below title (we can also set float: none on .site-title)
+  clear: left;
+  @include relative-font-size(1.2);
 }
 
 .home {
-    // home page has no full header with dual separator lines,
-    // just draw top separator instead, with some padding below
-    border-top: 4px solid $lm-brand-color-dark;
-    padding-top: 25px;
+  // home page has no full header with dual separator lines,
+  // just draw top separator instead, with some padding below
+  border-top: 4px solid $lm-brand-color-dark;
+  padding-top: 25px;
 }
 
 .standard-page {
-    // standard pages have no full header with dual separator lines,
-    // just draw top separator instead, with some padding below
-    border-top: 4px solid $lm-brand-color-dark;
-    padding-top: 15px;
+  // standard pages have no full header with dual separator lines,
+  // just draw top separator instead, with some padding below
+  border-top: 4px solid $lm-brand-color-dark;
+  padding-top: 15px;
 }
 
 
 // Blog top custom styling
 
 .blog-thumbnail {
-    height: 200px;
+  height: 200px;
 }
 
 
@@ -149,347 +150,350 @@
 
 // _layout.scss override
 .post-title {
-    @include relative-font-size(2.2);
+  @include relative-font-size(2.3);
 }
 
 // _layout.scss override
 .post-content {
-    .banner {
-        // center horizontally
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    h1 {
-        margin-bottom: 15px;
-        @include relative-font-size(2.2);
-        font-weight: 500;
-    }
-    h2 {
-        margin-top: 15px;
-        margin-bottom: 5px;
-        @include relative-font-size(1.6);
-        font-weight: 500;
-    }
-    h3 {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        @include relative-font-size(1.3);
-        font-weight: 500;
-    }
-    img {
-        // center horizontally
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    video {
-        // center horizontally
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+  .banner {
+    // center horizontally
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-        margin-bottom: 10px;
+  h1 {
+    margin-bottom: 15px;
+    @include relative-font-size(2.0);
+    font-weight: 500;
+  }
+  h2 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    @include relative-font-size(1.6);
+    font-weight: 500;
+  }
+  h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    @include relative-font-size(1.3);
+    font-weight: 500;
+  }
 
-        &.full-width {
-            width: 100%;
-        }
+  img {
+    // align left by default
+
+    &:not(.left, .right) {
+      // center horizontally
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
+
+    &.right {
+      // align right
+      display: block;
+      margin-left: auto;
+    }
+  }
+
+  video {
+    // center horizontally
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-bottom: 10px;
+
+    // never stretch beyond content horizontal limits
+    max-width: 100%;
+  }
 }
 
 
 // Resume custom styling
 
 table {
-    &.invisible-table {
-        table-layout: fixed;
+  &.invisible-table {
+    table-layout: fixed;
+    border: none;
+    // Use standard <p> spacing
+    margin-bottom: $spacing-unit * 0.5;
+    // Use standard text color
+    color: $text-color;
+
+    tr {
+      background: none;
+
+      th, td {
         border: none;
-        // Use standard <p> spacing
-        margin-bottom: $spacing-unit * 0.5;
-        // Use standard text color
-        color: $text-color;
+        background: none;
 
-        tr {
-            background: none;
-
-            th, td {
-                border: none;
-                background: none;
-
-                // Also remove left padding which hints at a table
-                padding-left: 0px;
-            }
-        }
+        // Also remove left padding which hints at a table
+        padding-left: 0px;
+      }
     }
+  }
 
-    &.narrow-rows {
-        th, td {
-            padding-top: 5px;
-            padding-bottom: 5px;
-        }
+  &.narrow-rows {
+    th, td {
+      padding-top: 5px;
+      padding-bottom: 5px;
     }
+  }
 }
 
 .width-400 {
-    width: 400px;
+  width: 400px;
 }
 
 .width-500 {
-    width: 500px;
+  width: 500px;
 }
 
 .width-600 {
-    width: 600px;
+  width: 600px;
 }
 
 .width-700 {
-    width: 700px;
+  width: 700px;
 }
 
 .width-800 {
-    width: 800px;
+  width: 800px;
 }
 
 table.th-width-20-percent {
-    th {
-        width: 20%;
-    }
+  th {
+    width: 20%;
+  }
 }
 
 .work-info-header {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 // Hack: should be @media print but Chromium
 @media all {
-    .avoid-break-page {
-        break-inside: avoid-page;
-    }
+  .avoid-break-page {
+    break-inside: avoid-page;
+  }
 }
 
 
 // Item grid & thumbnail custom styling
 
 .item-grid {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 
-    .item-thumbnail {
-        // thumbnail must be non-static so position:absolute works on
-        // .portfolio-thumbnail-overlay below to place it relatively to thumbnail
-        position: relative;
+  .item-thumbnail {
+    // thumbnail must be non-static so position:absolute works on
+    // .portfolio-thumbnail-overlay below to place it relatively to thumbnail
+    position: relative;
 
-        // include padding in the width so we can really fit
-        // 3 entries at 33% (actually a little more since we add a counter-margin)
-        box-sizing: border-box;
-        width: 33.8%;
+    // include padding in the width so we can really fit
+    // 3 entries at 33% (actually a little more since we add a counter-margin)
+    box-sizing: border-box;
+    width: 33.8%;
 
-        // padding between thumbnails with counter-margin on the left to still align left
-        padding: 5px;
-        margin-left: -5px;
+    // padding between thumbnails with counter-margin on the left to still align left
+    padding: 5px;
+    margin-left: -5px;
 
-        // make image brighter on hover
-        img:hover {
-            filter:brightness(1.2);
-        }
-
-        // top-left overlay text
-        .item-thumbnail-overlay {
-            position: absolute;
-            // set top and left to match padding so text is really placed at the top-left corner
-            // of the thumbnail
-            top: 5px;
-            left: 5px;
-            // do not let the background overlap the padding on the right when document width
-            // is very small and thumbnails are very small too as a result
-            margin-right: 5px;
-            // padding with semi-transparent background and contrasting color for readability
-            padding: 5px;
-            background: rgba(0, 0, 0, 0.5);
-            color: #ffffff;
-            // do not let overlay capture pointer events so hover filter is also applied
-            // when hovering the overlay area
-            pointer-events: none;
-        }
+    // make image brighter on hover
+    img:hover {
+      filter:brightness(1.2);
     }
+
+    // top-left overlay text
+    .item-thumbnail-overlay {
+      position: absolute;
+      // set top and left to match padding so text is really placed at the top-left corner
+      // of the thumbnail
+      top: 5px;
+      left: 5px;
+      // do not let the background overlap the padding on the right when document width
+      // is very small and thumbnails are very small too as a result
+      margin-right: 5px;
+      // padding with semi-transparent background and contrasting color for readability
+      padding: 5px;
+      background: rgba(0, 0, 0, 0.5);
+      color: #ffffff;
+      // do not let overlay capture pointer events so hover filter is also applied
+      // when hovering the overlay area
+      pointer-events: none;
+    }
+  }
 }
 
 // center header text between two thick horizontal lines with padding
 .portfolio-item {
 
+  // _layout.scss override
+  .post-header {
+    border-top: 4px solid $lm-brand-color-dark;
+    padding-top: 15px;
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: 4px solid $lm-brand-color-dark;
+
     // _layout.scss override
-    .post-header {
-        border-top: 4px solid $lm-brand-color-dark;
-        padding-top: 15px;
-        text-align: center;
-        padding-bottom: 5px;
-        border-bottom: 4px solid $lm-brand-color-dark;
-
-        // _layout.scss override
-        .post-title {
-            @include relative-font-size(2.4);
-        }
-
-        .post-subtitle {
-            line-height: 1;
-        }
+    .post-title {
+      @include relative-font-size(2.4);
     }
 
-    // video and metadata at the top of a portfolio item
-    .post-top {
-        .embedded-video {
-            // small display
-            iframe {
-                width: $youtube-width-small-display;
-                height: $youtube-height-small-display;
-            }
+    .post-subtitle {
+      line-height: 1;
+    }
+  }
 
-            // fallback image
-            img {
-                width: $youtube-width-small-display;
-                height: $youtube-height-small-display;
-            }
-        }
+  // video and metadata at the top of a portfolio item
+  .post-top {
+    .embedded-video {
+      // small display
 
-        // large display
-        @media screen and (min-width: $on-large) {
-            // only worth wrapping on large display
-            display: flex;
-            flex-wrap: wrap;
-
-            .embedded-video {
-                // in large display, metatable may appear on the right of the video,
-                // in which case padding to the right makes it more readable
-                padding: 0 20px 0 0;
-
-                iframe {
-                    width: $youtube-width-large-display;
-                    height: $youtube-height-large-display;
-                }
-
-                // fallback image
-                img {
-                    width: $youtube-width-large-display;
-                    height: $youtube-height-large-display;
-                }
-            }
-        }
+      // YouTube video, local video or fallback image
+      iframe, img, video {
+        width: $youtube-width-small-display;
+        height: auto;
+      }
     }
 
-    // metadata table
-    table.metadata {
-        // set max width to make sure that wrapping doesn't occur until content width
-        // is small enough
-        // take minima .wrapper max-width formula (in large case, since this is when we must
-        // decide whether to wrap or not; mobile format should always wrap)
-        max-width: calc(#{$content-width} - (#{$spacing-unit} * 2) - (#{$youtube-width-large-display}) - 50px);
+    // large display
+    @media screen and (min-width: $on-large) {
+      // only worth wrapping on large display
+      display: flex;
+      flex-wrap: wrap;
 
-        // no outside borders
-        border: none;
+      .embedded-video {
+        // in large display, metatable may appear on the right of the video,
+        // in which case padding to the right makes it more readable
+        padding: 0 20px 0 0;
 
-        @include relative-font-size(0.9);
-
-        tr {
-            // remove zebra on header cells
-            th {
-                background-color: $lm-background-color;
-            }
-
-            // remove zebra on even cells
-            &:nth-child(even) {
-                background-color: $lm-background-color;
-            }
-
-            th, td {
-                // only keep horizontal borders, darker than default
-                border-width: 0 0 1px 0;
-                border-bottom-color: $lm-brand-color;
-            }
-
-            &:last-child {
-                th, td {
-                    // remove the last bottom border so we only see lines
-                    // separating rows
-                    border-bottom-width: 0;
-                }
-            }
+        // YouTube video, local video or fallback image
+        iframe, video, img {
+          width: $youtube-width-large-display;
+          height: auto;
         }
+      }
     }
+  }
 
-    // wrapped grid
-    .grid {
-        margin-top: 10px;
-        margin-bottom: $spacing-unit * .5;
-        display: flex;
-        flex-wrap: wrap;
+  // metadata table
+  table.metadata {
+    // set max width to make sure that wrapping doesn't occur until content width
+    // is small enough
+    // take minima .wrapper max-width formula (in large case, since this is when we must
+    // decide whether to wrap or not; mobile format should always wrap)
+    max-width: calc(#{$content-width} - (#{$spacing-unit} * 2) - (#{$youtube-width-large-display}) - 50px);
 
-        img {
-            // include padding in the width so we can really fit
-            // 2 entries at 50% in the large display case more below
-            box-sizing: border-box;
-            padding: 5px 5px;
+    // no outside borders
+    border: none;
 
-            // small display
-            max-width: 100%;
-            // preserve aspect ratio
-            height: fit-content;
+    @include relative-font-size(0.9);
 
-            // large display
-            @media screen and (min-width: $on-large) {
-                max-width: 50%;
-            }
+    tr {
+      // remove zebra on header cells
+      th {
+        background-color: $lm-background-color;
+      }
+
+      // remove zebra on even cells
+      &:nth-child(even) {
+        background-color: $lm-background-color;
+      }
+
+      th, td {
+        // only keep horizontal borders, darker than default
+        border-width: 0 0 1px 0;
+        border-bottom-color: $lm-brand-color;
+      }
+
+      &:last-child {
+        th, td {
+          // remove the last bottom border so we only see lines
+          // separating rows
+          border-bottom-width: 0;
         }
+      }
     }
+  }
+
+  // wrapped grid
+  .grid {
+    margin-top: 10px;
+    margin-bottom: $spacing-unit * .5;
+    display: flex;
+    flex-wrap: wrap;
+
+    img {
+      // include padding in the width so we can really fit
+      // 2 entries at 50% in the large display case more below
+      box-sizing: border-box;
+      padding: 5px 5px;
+
+      // small display
+      max-width: 100%;
+      // preserve aspect ratio
+      height: fit-content;
+
+      // large display
+      @media screen and (min-width: $on-large) {
+        max-width: 50%;
+      }
+    }
+  }
 }
 
 // Code styling
 // Remove borders, adjust padding and show a green gutter
 // in the style of https://wordpress.org/plugins/syntaxhighlighter/
 .highlight {
-    > pre {
-        border: none;
-        padding: 0;
+  > pre {
+    border: none;
+    padding: 0;
+  }
+
+  .rouge-table {
+    // this ensures that the gutter is not too wide when code lines are short
+    width: auto;
+
+    border: none;
+    margin-bottom: 0;
+
+    td {
+      border: none;
+      padding: 5px 0 0 5px;
     }
 
-    .rouge-table {
-        // this ensures that the gutter is not too wide when code lines are short
-        width: auto;
+    pre {
+      border: none;
+      padding: 5px 8px;
 
-        border: none;
-        margin-bottom: 0;
-
-        td {
-            border: none;
-            padding: 5px 0 0 5px;
-        }
-
-        pre {
-            border: none;
-            padding: 5px 8px;
-
-            &.lineno {
-                text-align: right;
-                border-right: 3px solid #6ce26c;
-            }
-        }
+      &.lineno {
+        text-align: right;
+        border-right: 3px solid #6ce26c;
+      }
     }
+  }
 }
 
 // Image & Caption styling
 figcaption {
-    text-align: center;
-    font-size: 1rem;
-    margin-bottom: 25px;
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 25px;
 }
 
 // Footer custom styling
 
 // _layout.scss override
 .site-footer {
-    .social-media-list {
-        .svg-icon {
-            // restore .grey class which was removed from social-item.html override
-            @extend .grey;
-        }
+  .social-media-list {
+    .svg-icon {
+      // restore .grey class which was removed from social-item.html override
+      @extend .grey;
     }
+  }
 }

@@ -12,7 +12,7 @@ layout: default
     {{ content }}
   </div>
 
-  <!-- Note that `page.image` is used for social media preview only -->
+  {% comment %} Note that `page.image` is used for social media preview only {% endcomment %}
   <img src="{{ page.comic_image }}" alt="{{ page.alt_text | escape }}" height="{{ page.comic_image_height }}">
 
 </article>

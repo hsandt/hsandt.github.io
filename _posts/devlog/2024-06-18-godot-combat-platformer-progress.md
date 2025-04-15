@@ -20,8 +20,9 @@ Player character can now Air dodge, and existing moves all got a dedicated anima
 
 Here is a video to recap new animations, all while trying to dodge the new Fireball Rain.
 
-<video controls loop="loop">
-  <source src="/assets/pictures/blog/devlog/2024-06-18/2024-06-18 Godot Boss - Fireball Rain, new PC animations and Air Slide.mp4" type="video/webm">
+<video controls>
+  <source src="/assets/pictures/blog/devlog/2024-06-18/2024-06-18 Godot Boss - Fireball Rain, new PC animations and Air Slide.mp4" type="video/mp4">
+  Your browser does not support the video tag.
 </video>
 
 And the player character death animation:
