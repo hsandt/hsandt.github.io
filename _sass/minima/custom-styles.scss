@@ -243,6 +243,11 @@ table {
   }
 }
 
+// Obfuscate phone number (https://stackoverflow.com/a/4439391/3256073)
+span.protectedInfo:before {
+  content: attr(title);
+}
+
 .width-400 {
   width: 400px;
 }
@@ -353,8 +358,14 @@ table.th-width-20-percent {
     .embedded-video {
       // small display
 
-      // YouTube video, local video or fallback image
-      iframe, img, video {
+      // YouTube video needs to know all dimensions because it doesn't know them in advance
+      iframe {
+        width: $youtube-width-small-display;
+        height: $youtube-height-small-display;
+      }
+
+      // Local video and fallback image can use height: auto to support aspect ratios other than 16:9
+      video, img {
         width: $youtube-width-small-display;
         height: auto;
       }
@@ -371,8 +382,14 @@ table.th-width-20-percent {
         // in which case padding to the right makes it more readable
         padding: 0 20px 0 0;
 
-        // YouTube video, local video or fallback image
-        iframe, video, img {
+        // YouTube video needs to know all dimensions because it doesn't know them in advance
+        iframe {
+          width: $youtube-width-large-display;
+          height: $youtube-height-large-display;
+        }
+
+        // Local video and fallback image can use height: auto to support aspect ratios other than 16:9
+        video, img {
           width: $youtube-width-large-display;
           height: auto;
         }
