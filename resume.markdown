@@ -20,7 +20,7 @@ You can read my resume below or [download the PDF](/assets/documents/Resume Long
         <tr>
             <td><a href="https://komehara.itch.io" target="_blank">https://komehara.itch.io</a></td>
             <td>n.huu.long@gmail.com</td>
-            <td><span class="protectedNumber" title="+33 6 98 06 82 74"></span></td>
+            <td><span class="protectedInfo" title="+33 6 98 06 82 74"></span></td>
         </tr>
         <tr>
             <td><a href="https://github.com/hsandt" target="_blank">https://github.com/hsandt</a></td>

@@ -244,8 +244,8 @@ table {
 }
 
 // Obfuscate phone number (https://stackoverflow.com/a/4439391/3256073)
-span.protectedNumber:before {
-  content: "Phone number: " attr(title);
+span.protectedInfo:before {
+  content: attr(title);
 }
 
 .width-400 {
