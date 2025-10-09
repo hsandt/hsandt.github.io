@@ -2,6 +2,7 @@
 layout: page
 title: Resume
 permalink: /resume/
+show_indie: false
 ---
 
 You can read my resume below or [download the PDF](/assets/documents/Resume Long Nguyen Huu.pdf){:target="_blank"}.
@@ -113,6 +114,8 @@ I have 3 years of experience working in studios on shipped games for PC & consol
 
 </div>
 
+{% if page.show_indie %}
+
 <div class="avoid-break-page">
 
     <h2>Personal projects</h2>
@@ -129,6 +132,8 @@ I have 3 years of experience working in studios on shipped games for PC & consol
     </ul>
 
 </div>
+
+{% endif %}
 
 <div class="avoid-break-page">
 
