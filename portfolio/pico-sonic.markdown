@@ -19,6 +19,7 @@ screenshots:
   - path: "picosonic v7.0 - try again.gif"
     description: "Try again with Eggman juggling with the emeralds"
 meta:
+  status: "Finished"
   release: "Jan 2021"
   platform: "Windows, macOS, Linux, Web, PICO-8"
   genre: "Platformer"
