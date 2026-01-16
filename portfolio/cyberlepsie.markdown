@@ -4,7 +4,7 @@ title: "Cyberlepsie"
 subtitle: "Dystopian computer desktop simulation"
 categories: video-game school
 asset-dir: "Cyberlepsie"
-thumbnail: "Cyberlepsie-Thumbnail.jpeg"
+thumbnail: "Cyberlepsie Thumbnail.webp"
 banner: "Cyberlepsie banner 720p.webp"
 youtube:
   id: IZM2Mxt0d_g
