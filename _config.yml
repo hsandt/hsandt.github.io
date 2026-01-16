@@ -25,6 +25,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   The personal website of Long Nguyen Huu aka komehara
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://hsandt.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+permalink: pretty # use pretty permalinks (no .html in URL). Applies to Blog but also custom pages like Portfolio items
 
 # Build settings
 theme: minima
