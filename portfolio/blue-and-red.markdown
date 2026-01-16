@@ -1,4 +1,5 @@
 ---
+published: false
 layout: portfolio_item
 title: "Blue and Red"
 subtitle: "4-player action-puzzle game"
