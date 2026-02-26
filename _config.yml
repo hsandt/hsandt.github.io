@@ -35,7 +35,7 @@ plugins:
 
 # set up remote_theme for specific commit, so we don't use old stable release
 # (commit from 2023-01-09)
-remote_theme: jekyll/minima@401a0a9fd77f99937cfba582abac8f9a75cc420e
+remote_theme: jekyll/minima@acb05198ce290ee12e48fa1be245e5e093058cd5
 
 sass:
   # reduce @import deprecations due to Minima Jekyll v3 compatibility to the minimum (5)
@@ -55,32 +55,32 @@ author:
   email: n.huu.long@gmail.com
 minima:
   social_links:
-    - platform: itchio
-      user_url: "https://komehara.itch.io/"
+    - icon: itch-io
+      url: "https://komehara.itch.io/"
       title: My games on itch.io
-    - platform: github
-      user_url: "https://github.com/hsandt"
+    - icon: github
+      url: "https://github.com/hsandt"
       title: My GitHub repositories
-    - platform: bitbucket
-      user_url: "https://bitbucket.org/hsandt/"
+    - icon: bitbucket
+      url: "https://bitbucket.org/hsandt/"
       title: My BitBucket repositories
-    - platform: stackoverflow
-      user_url: "https://stackoverflow.com/users/3256073/hsandt"
+    - icon: stack-overflow
+      url: "https://stackoverflow.com/users/3256073/hsandt"
       title: My profile on Stack Overflow
-    - platform: twitter
-      user_url: "https://twitter.com/n_huulong"
+    - icon: twitter
+      url: "https://twitter.com/n_huulong"
       title: My posts on Twitter
-    - platform: mastodon
-      user_url: "https://mastodon.gamedev.place/@leyn"
+    - icon: mastodon
+      url: "https://mastodon.gamedev.place/@leyn"
       title: My posts on Mastodon
-    - platform: youtube
-      user_url: "https://www.youtube.com/channel/UCscc8AXbgMQCjzxsXLVvCsg"
+    - icon: youtube
+      url: "https://www.youtube.com/channel/UCscc8AXbgMQCjzxsXLVvCsg"
       title: My videos on YouTube
-    - platform: linkedin
-      user_url: "https://www.linkedin.com/in/huulong/"
+    - icon: linkedin
+      url: "https://www.linkedin.com/in/huulong/"
       title: My profile on LinkedIn
-    - platform: kofi
-      user_url: "https://ko-fi.com/komehara"
+    - icon: ko-fi
+      url: "https://ko-fi.com/komehara"
       title: Donations on Ko-fi
 
 footer: >- # this means to ignore newlines until "defaults:"

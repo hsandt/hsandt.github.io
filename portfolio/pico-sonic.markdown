@@ -29,7 +29,7 @@ meta:
   role: "Programming, Sprite/SFX/jingle adaptation, BGM adjustments"
   technology: "PICO-8"
 deliverable_links:
-  - platform: itchio
+  - platform: itch-io
     url: "https://komehara.itch.io/pico-sonic"
     title: Play on itch.io
   - platform: github
