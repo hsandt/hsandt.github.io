@@ -35,7 +35,7 @@ plugins:
 
 # set up remote_theme for specific commit, so we don't use old stable release
 # (commit from 2023-01-09)
-remote_theme: jekyll/minima@32468f51758b0b37c2b1f423265d4f29db461b27
+remote_theme: jekyll/minima@401a0a9fd77f99937cfba582abac8f9a75cc420e
 
 sass:
   # reduce @import deprecations due to Minima Jekyll v3 compatibility to the minimum (5)
