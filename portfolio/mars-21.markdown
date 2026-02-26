@@ -20,6 +20,7 @@ screenshots:
     description: "Mars 21 screenshot - Astronaut is climbing down"
 meta:
   school: "Gobelins & Cnam-Enjmin"
+  status: "Finished"
   release: "2015"
   platform: "Windows, macOS, Linux, Web"
   genre: "Platformer"

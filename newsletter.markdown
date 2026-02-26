@@ -4,7 +4,7 @@ title: Newsletter
 permalink: /newsletter/
 ---
 
-Make sure to enable Javascript to use the sign up form below.
+Make sure to enable Javascript (at least sibforms.com and cloudflare.com, optionally brevo.com and es.io) to use the sign up form below.
 
 {% comment %} Brevo sign up form iframe: make sure to update URL ID on each update {% endcomment %}
 

@@ -1,4 +1,14 @@
 // _layout.scss override
+.social-media-list {
+  li {
+    // cancel min-width/height: 45px which was added since switching to Font Awesome icons,
+    // since we want to keep compact icon listing
+    min-width: auto;
+    min-height: auto;
+  }
+}
+
+// _layout.scss override
 .site-header {
   // remove top border (not aesthetic)
   border-top: 0;
@@ -25,7 +35,7 @@
       border: none;
       padding: 0;
 
-      .icon-itchio {
+      .fa-itch-io {
         color: #fa5c5c;
 
         &:hover {
@@ -33,7 +43,7 @@
         }
       }
 
-      .icon-github {
+      .fa-github {
         color: #1d1b1c;
 
         &:hover {
@@ -41,7 +51,7 @@
         }
       }
 
-      .icon-bitbucket {
+      .fa-bitbucket {
         color: #2684ff;
 
         &:hover {
@@ -49,7 +59,7 @@
         }
       }
 
-      .icon-gitlab {
+      .fa-gitlab {
         color: #fc6d26;
 
         &:hover {
@@ -57,7 +67,7 @@
         }
       }
 
-      .icon-stackoverflow {
+      .fa-stack-overflow {
         color: #ef8236;
 
         &:hover {
@@ -65,7 +75,7 @@
         }
       }
 
-      .icon-twitter {
+      .fa-twitter {
         color: #1da1f2;
 
         &:hover {
@@ -73,7 +83,15 @@
         }
       }
 
-      .icon-youtube {
+      .fa-mastodon {
+        color: #2b90d9;
+
+        &:hover {
+          color: #1a5986;
+        }
+      }
+
+      .fa-youtube {
         color: #ff0000;
 
         &:hover {
@@ -81,7 +99,7 @@
         }
       }
 
-      .icon-linkedin {
+      .fa-linkedin {
         color: #0077b5;
 
         &:hover {
@@ -89,7 +107,7 @@
         }
       }
 
-      .icon-kofi {
+      .fa-ko-fi {
         color: #f14255;
 
         &:hover {
@@ -97,14 +115,6 @@
         }
       }
     }
-  }
-}
-
-.portfolio-item .social-media-list {
-  // show icons bigger for portfolio deliverables than header & footer social media
-  .svg-icon {
-    width: 2em;
-    height: 2em;
   }
 }
 
@@ -501,16 +511,4 @@ figcaption {
   text-align: center;
   font-size: 1rem;
   margin-bottom: 25px;
-}
-
-// Footer custom styling
-
-// _layout.scss override
-.site-footer {
-  .social-media-list {
-    .svg-icon {
-      // restore .grey class which was removed from social-item.html override
-      @extend .grey;
-    }
-  }
 }

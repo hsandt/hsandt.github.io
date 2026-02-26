@@ -19,6 +19,7 @@ screenshots:
   - path: "picosonic v7.0 - try again.gif"
     description: "Try again with Eggman juggling with the emeralds"
 meta:
+  status: "Finished"
   release: "Jan 2021"
   platform: "Windows, macOS, Linux, Web, PICO-8"
   genre: "Platformer"
@@ -28,7 +29,7 @@ meta:
   role: "Programming, Sprite/SFX/jingle adaptation, BGM adjustments"
   technology: "PICO-8"
 deliverable_links:
-  - platform: itchio
+  - platform: itch-io
     url: "https://komehara.itch.io/pico-sonic"
     title: Play on itch.io
   - platform: github
