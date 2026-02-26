@@ -390,7 +390,7 @@ pre > code {
   color: #f66a0a;
 }
 
-.grey, .site-footer .social-media-list .svg-icon, .site-footer .pagination .svg-icon {
+.grey {
   color: #828282;
 }
 
@@ -400,6 +400,7 @@ pre > code {
   display: inline-block;
   fill: currentColor;
   vertical-align: text-bottom;
+  overflow: visible;
 }
 
 /**
@@ -700,6 +701,9 @@ table td {
 }
 .social-media-list li, .pagination li {
   float: left;
+  min-width: 45px;
+  min-height: 45px;
+  text-align: center;
   margin: 5px 10px 5px 0;
 }
 .social-media-list li:last-of-type, .pagination li:last-of-type {
@@ -743,6 +747,11 @@ table td {
     width: calc(50% - 30px / 2);
   }
 }
+.social-media-list li, .pagination li {
+  min-width: auto;
+  min-height: auto;
+}
+
 .site-header {
   border-top: 0;
   border-bottom: 0;
@@ -757,64 +766,65 @@ table td {
   border: none;
   padding: 0;
 }
-.site-header .social-media-list a .icon-itchio, .site-header .pagination a .icon-itchio, .portfolio-item .social-media-list a .icon-itchio, .portfolio-item .pagination a .icon-itchio {
+.site-header .social-media-list a .fa-itch-io, .site-header .pagination a .fa-itch-io, .portfolio-item .social-media-list a .fa-itch-io, .portfolio-item .pagination a .fa-itch-io {
   color: #fa5c5c;
 }
-.site-header .social-media-list a .icon-itchio:hover, .site-header .pagination a .icon-itchio:hover, .portfolio-item .social-media-list a .icon-itchio:hover, .portfolio-item .pagination a .icon-itchio:hover {
+.site-header .social-media-list a .fa-itch-io:hover, .site-header .pagination a .fa-itch-io:hover, .portfolio-item .social-media-list a .fa-itch-io:hover, .portfolio-item .pagination a .fa-itch-io:hover {
   color: #c90019;
 }
-.site-header .social-media-list a .icon-github, .site-header .pagination a .icon-github, .portfolio-item .social-media-list a .icon-github, .portfolio-item .pagination a .icon-github {
+.site-header .social-media-list a .fa-github, .site-header .pagination a .fa-github, .portfolio-item .social-media-list a .fa-github, .portfolio-item .pagination a .fa-github {
   color: #1d1b1c;
 }
-.site-header .social-media-list a .icon-github:hover, .site-header .pagination a .icon-github:hover, .portfolio-item .social-media-list a .icon-github:hover, .portfolio-item .pagination a .icon-github:hover {
+.site-header .social-media-list a .fa-github:hover, .site-header .pagination a .fa-github:hover, .portfolio-item .social-media-list a .fa-github:hover, .portfolio-item .pagination a .fa-github:hover {
   color: #6316ac;
 }
-.site-header .social-media-list a .icon-bitbucket, .site-header .pagination a .icon-bitbucket, .portfolio-item .social-media-list a .icon-bitbucket, .portfolio-item .pagination a .icon-bitbucket {
+.site-header .social-media-list a .fa-bitbucket, .site-header .pagination a .fa-bitbucket, .portfolio-item .social-media-list a .fa-bitbucket, .portfolio-item .pagination a .fa-bitbucket {
   color: #2684ff;
 }
-.site-header .social-media-list a .icon-bitbucket:hover, .site-header .pagination a .icon-bitbucket:hover, .portfolio-item .social-media-list a .icon-bitbucket:hover, .portfolio-item .pagination a .icon-bitbucket:hover {
+.site-header .social-media-list a .fa-bitbucket:hover, .site-header .pagination a .fa-bitbucket:hover, .portfolio-item .social-media-list a .fa-bitbucket:hover, .portfolio-item .pagination a .fa-bitbucket:hover {
   color: #1856a7;
 }
-.site-header .social-media-list a .icon-gitlab, .site-header .pagination a .icon-gitlab, .portfolio-item .social-media-list a .icon-gitlab, .portfolio-item .pagination a .icon-gitlab {
+.site-header .social-media-list a .fa-gitlab, .site-header .pagination a .fa-gitlab, .portfolio-item .social-media-list a .fa-gitlab, .portfolio-item .pagination a .fa-gitlab {
   color: #fc6d26;
 }
-.site-header .social-media-list a .icon-gitlab:hover, .site-header .pagination a .icon-gitlab:hover, .portfolio-item .social-media-list a .icon-gitlab:hover, .portfolio-item .pagination a .icon-gitlab:hover {
+.site-header .social-media-list a .fa-gitlab:hover, .site-header .pagination a .fa-gitlab:hover, .portfolio-item .social-media-list a .fa-gitlab:hover, .portfolio-item .pagination a .fa-gitlab:hover {
   color: #af4c1b;
 }
-.site-header .social-media-list a .icon-stackoverflow, .site-header .pagination a .icon-stackoverflow, .portfolio-item .social-media-list a .icon-stackoverflow, .portfolio-item .pagination a .icon-stackoverflow {
+.site-header .social-media-list a .fa-stack-overflow, .site-header .pagination a .fa-stack-overflow, .portfolio-item .social-media-list a .fa-stack-overflow, .portfolio-item .pagination a .fa-stack-overflow {
   color: #ef8236;
 }
-.site-header .social-media-list a .icon-stackoverflow:hover, .site-header .pagination a .icon-stackoverflow:hover, .portfolio-item .social-media-list a .icon-stackoverflow:hover, .portfolio-item .pagination a .icon-stackoverflow:hover {
+.site-header .social-media-list a .fa-stack-overflow:hover, .site-header .pagination a .fa-stack-overflow:hover, .portfolio-item .social-media-list a .fa-stack-overflow:hover, .portfolio-item .pagination a .fa-stack-overflow:hover {
   color: #b46329;
 }
-.site-header .social-media-list a .icon-twitter, .site-header .pagination a .icon-twitter, .portfolio-item .social-media-list a .icon-twitter, .portfolio-item .pagination a .icon-twitter {
+.site-header .social-media-list a .fa-twitter, .site-header .pagination a .fa-twitter, .portfolio-item .social-media-list a .fa-twitter, .portfolio-item .pagination a .fa-twitter {
   color: #1da1f2;
 }
-.site-header .social-media-list a .icon-twitter:hover, .site-header .pagination a .icon-twitter:hover, .portfolio-item .social-media-list a .icon-twitter:hover, .portfolio-item .pagination a .icon-twitter:hover {
+.site-header .social-media-list a .fa-twitter:hover, .site-header .pagination a .fa-twitter:hover, .portfolio-item .social-media-list a .fa-twitter:hover, .portfolio-item .pagination a .fa-twitter:hover {
   color: #177bb9;
 }
-.site-header .social-media-list a .icon-youtube, .site-header .pagination a .icon-youtube, .portfolio-item .social-media-list a .icon-youtube, .portfolio-item .pagination a .icon-youtube {
+.site-header .social-media-list a .fa-mastodon, .site-header .pagination a .fa-mastodon, .portfolio-item .social-media-list a .fa-mastodon, .portfolio-item .pagination a .fa-mastodon {
+  color: #2b90d9;
+}
+.site-header .social-media-list a .fa-mastodon:hover, .site-header .pagination a .fa-mastodon:hover, .portfolio-item .social-media-list a .fa-mastodon:hover, .portfolio-item .pagination a .fa-mastodon:hover {
+  color: #1a5986;
+}
+.site-header .social-media-list a .fa-youtube, .site-header .pagination a .fa-youtube, .portfolio-item .social-media-list a .fa-youtube, .portfolio-item .pagination a .fa-youtube {
   color: #ff0000;
 }
-.site-header .social-media-list a .icon-youtube:hover, .site-header .pagination a .icon-youtube:hover, .portfolio-item .social-media-list a .icon-youtube:hover, .portfolio-item .pagination a .icon-youtube:hover {
+.site-header .social-media-list a .fa-youtube:hover, .site-header .pagination a .fa-youtube:hover, .portfolio-item .social-media-list a .fa-youtube:hover, .portfolio-item .pagination a .fa-youtube:hover {
   color: #c90019;
 }
-.site-header .social-media-list a .icon-linkedin, .site-header .pagination a .icon-linkedin, .portfolio-item .social-media-list a .icon-linkedin, .portfolio-item .pagination a .icon-linkedin {
+.site-header .social-media-list a .fa-linkedin, .site-header .pagination a .fa-linkedin, .portfolio-item .social-media-list a .fa-linkedin, .portfolio-item .pagination a .fa-linkedin {
   color: #0077b5;
 }
-.site-header .social-media-list a .icon-linkedin:hover, .site-header .pagination a .icon-linkedin:hover, .portfolio-item .social-media-list a .icon-linkedin:hover, .portfolio-item .pagination a .icon-linkedin:hover {
+.site-header .social-media-list a .fa-linkedin:hover, .site-header .pagination a .fa-linkedin:hover, .portfolio-item .social-media-list a .fa-linkedin:hover, .portfolio-item .pagination a .fa-linkedin:hover {
   color: #203766;
 }
-.site-header .social-media-list a .icon-kofi, .site-header .pagination a .icon-kofi, .portfolio-item .social-media-list a .icon-kofi, .portfolio-item .pagination a .icon-kofi {
+.site-header .social-media-list a .fa-ko-fi, .site-header .pagination a .fa-ko-fi, .portfolio-item .social-media-list a .fa-ko-fi, .portfolio-item .pagination a .fa-ko-fi {
   color: #f14255;
 }
-.site-header .social-media-list a .icon-kofi:hover, .site-header .pagination a .icon-kofi:hover, .portfolio-item .social-media-list a .icon-kofi:hover, .portfolio-item .pagination a .icon-kofi:hover {
+.site-header .social-media-list a .fa-ko-fi:hover, .site-header .pagination a .fa-ko-fi:hover, .portfolio-item .social-media-list a .fa-ko-fi:hover, .portfolio-item .pagination a .fa-ko-fi:hover {
   color: #972936;
-}
-
-.portfolio-item .social-media-list .svg-icon, .portfolio-item .pagination .svg-icon {
-  width: 2em;
-  height: 2em;
 }
 
 .site-title {

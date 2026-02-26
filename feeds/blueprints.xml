@@ -5,7 +5,7 @@
 <subtitle>The personal website of Long Nguyen Huu aka komehara</subtitle>
 <link href="/atom.xml" rel="self"/>
 <link href="https://hsandt.github.io/"/>
-<updated>2025-04-23T12:02:32+00:00</updated>
+<updated>2026-02-26T13:23:54+00:00</updated>
 <id>https://hsandt.github.io</id>
 <author>
 <name>Long Nguyen Huu</name>
@@ -30,7 +30,7 @@
     
     <entry>
         <title>Blueprint-defined behavior with dynamic multicast delegates in Unreal Engine</title>
-        <link href="https://hsandt.github.io/devlog/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine.html"/>
+        <link href="https://hsandt.github.io/devlog/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/"/>
         <updated>2017-02-14T00:00:00+00:00</updated>
         <id>https://hsandt.github.io/devlog/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine</id>
         <category term="devlog" />
@@ -326,7 +326,7 @@
     
     <entry>
         <title>Scales prototype in Unreal Engine</title>
-        <link href="https://hsandt.github.io/devlog/2016/07/26/scales-prototype-in-unreal-engine.html"/>
+        <link href="https://hsandt.github.io/devlog/2016/07/26/scales-prototype-in-unreal-engine/"/>
         <updated>2016-07-26T00:00:00+00:00</updated>
         <id>https://hsandt.github.io/devlog/2016/07/26/scales-prototype-in-unreal-engine</id>
         <category term="devlog" />

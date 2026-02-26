@@ -5,7 +5,7 @@
 <subtitle>The personal website of Long Nguyen Huu aka komehara</subtitle>
 <link href="/atom.xml" rel="self"/>
 <link href="https://hsandt.github.io/"/>
-<updated>2025-04-23T12:02:32+00:00</updated>
+<updated>2026-02-26T13:23:54+00:00</updated>
 <id>https://hsandt.github.io</id>
 <author>
 <name>Long Nguyen Huu</name>
@@ -34,7 +34,7 @@
     
     <entry>
         <title>Crawling side-view character in Unity</title>
-        <link href="https://hsandt.github.io/devlog/2016/12/18/crawling-side-view-character-in-unity.html"/>
+        <link href="https://hsandt.github.io/devlog/2016/12/18/crawling-side-view-character-in-unity/"/>
         <updated>2016-12-18T00:00:00+00:00</updated>
         <id>https://hsandt.github.io/devlog/2016/12/18/crawling-side-view-character-in-unity</id>
         <category term="devlog" />

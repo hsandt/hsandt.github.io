@@ -5,7 +5,7 @@
 <subtitle>The personal website of Long Nguyen Huu aka komehara</subtitle>
 <link href="/atom.xml" rel="self"/>
 <link href="https://hsandt.github.io/"/>
-<updated>2025-04-23T12:02:32+00:00</updated>
+<updated>2026-02-26T13:23:54+00:00</updated>
 <id>https://hsandt.github.io</id>
 <author>
 <name>Long Nguyen Huu</name>
@@ -28,7 +28,7 @@
     
     <entry>
         <title>C++ 2D Game Engine – Postmortem</title>
-        <link href="https://hsandt.github.io/devlog/2019/05/24/c++-2d-game-engine-postmortem.html"/>
+        <link href="https://hsandt.github.io/devlog/2019/05/24/c++-2d-game-engine-postmortem/"/>
         <updated>2019-05-24T00:00:00+00:00</updated>
         <id>https://hsandt.github.io/devlog/2019/05/24/c++-2d-game-engine-postmortem</id>
         <category term="devlog" />
@@ -94,7 +94,7 @@
     
     <entry>
         <title>Screen Debug Message macros for Unreal Engine</title>
-        <link href="https://hsandt.github.io/devlog/2017/01/23/screen-debug-message-macros-for-unreal-engine.html"/>
+        <link href="https://hsandt.github.io/devlog/2017/01/23/screen-debug-message-macros-for-unreal-engine/"/>
         <updated>2017-01-23T00:00:00+00:00</updated>
         <id>https://hsandt.github.io/devlog/2017/01/23/screen-debug-message-macros-for-unreal-engine</id>
         <category term="devlog" />
