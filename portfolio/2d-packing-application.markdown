@@ -50,4 +50,4 @@ You can download the associated [Master Thesis here](/assets/documents/2D-Packin
 
 ## Acknowledgements
 
-- [NestingXML data set](https://www.euro-online.org/websites/esicup/data-sets/#1535972088237-bbcb74e3-b507) on the ESICUP website for various set of pieces in XML to use in benchmarks
+- [ESICUP Cutting & Packing Datasets](https://github.com/ESICUP/datasets){:target="_blank"} for various set of pieces in XML to use in benchmarks
