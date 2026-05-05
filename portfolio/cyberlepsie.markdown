@@ -31,7 +31,7 @@ meta:
   role: "Story, Game design, Programming"
   technology: "HTML5, Javascript/CoffeeScript, CSS/SASS (without canvas)"
 deliverable_links:
-  - platform: github # todo: replace with web/html icon with new Font Awesome support
+  - platform: html5
     url: "https://hsandt.github.io/hacker/"
     title: Play in your browser
   - platform: github

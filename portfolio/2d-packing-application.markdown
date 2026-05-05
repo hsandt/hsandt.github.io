@@ -24,6 +24,10 @@ deliverable_links:
   - platform: bitbucket
     url: "https://bitbucket.org/hsandt/ippy/src/master/"
     title: Source code on BitBucket
+  - platform: file-pdf
+    fa_namespace: solid
+    url: "/assets/documents/2D-Packing-Application/Nguyen Huu Long - Master Thesis PDF v1.1.pdf"
+    title: Master Thesis PDF
 ---
 
 ## Description
@@ -42,7 +46,7 @@ This packing application places a set of 2D polygonal shapes into a rectangular 
 
 This program was developed as part of my research on Irregular Packing for my Master of Science in Artificial Intelligence at Keio University, Hagiwara Laboratory.
 
-You can download the associated [Master Thesis here](/assets/documents/2D-Packing-Application/Nguyen Huu Long - Master Thesis PDF v1.1.pdf).
+You can download the associated [Master Thesis here](/assets/documents/2D-Packing-Application/Nguyen Huu Long - Master Thesis PDF v1.1.pdf){:target="_blank"}.
 
 ## Acknowledgements
 
