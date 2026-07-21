@@ -33,7 +33,7 @@ I have implemented pseudo-code from the book until Chapter 3.4.2. I have impleme
 
 [add videos]
 
-I have also implemented some basic ballistic from Chapter 3.5?: Physics Prediction.
+I have also implemented some basic ballistic from Chapter 3.5: Predicting Physics.
 
 Video Player
 
