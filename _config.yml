@@ -98,6 +98,11 @@ defaults:
     values:
       category: devlog
   - scope:
+      path: "_posts/how-to"
+      type: "posts"
+    values:
+      category: how-to
+  - scope:
       path: "_posts/review"
       type: "posts"
     values:
