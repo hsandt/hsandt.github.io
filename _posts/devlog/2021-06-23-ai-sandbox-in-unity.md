@@ -4,7 +4,7 @@ title: "AI Sandbox in Unity"
 tags: ai
 image: "/assets/pictures/blog/devlog/2021-06-23-ai-sandbox-in-unity/thumbnail.png"
 thumbnail: "2021-06-23-ai-sandbox-in-unity/thumbnail.png"
-published: false
+published: true
 ---
 
 *This post is a draft and may undergo changes over time.*
