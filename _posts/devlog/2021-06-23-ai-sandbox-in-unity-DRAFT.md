@@ -23,7 +23,7 @@ Source: AI Game Engine Programming
 
 Unity implemented Finite-State Machines (FSM) for its Animator, but I recreated my own system for training purpose. It heavily uses generic and is entirely code-based. Currently, it doesn’t support data-driven state programming. For an FSM system that supports transition injection, check out libraries like [solid-state](https://code.google.com/archive/p/solid-state/) (made by another developer).
 
-[add video guard changing state]
+[add video of guard changing state]
 
 ## Movement
 
@@ -31,11 +31,9 @@ Source: Artificial Intelligence for Games
 
 I have implemented pseudo-code from the book until Chapter 3.4.2. I have implemented a variety of Steering Movements, which you can see in action below.
 
-[add videos]
+[add videos of various guard movements]
 
 I have also implemented some basic ballistic from Chapter 3.5: Predicting Physics.
-
-Video Player
 
 <video controls>
   <source src="/assets/pictures/blog/devlog/2021-06-23-ai-sandbox-in-unity/AI4G Physics Prediction Firing Cannon 1 720p.mp4" type="video/mp4">
