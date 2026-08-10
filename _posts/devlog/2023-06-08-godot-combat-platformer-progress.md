@@ -2,8 +2,8 @@
 layout: post
 title: "Combat Platformer in Godot 4: June 2023 progress"
 tags: godot
-image: "/assets/pictures/blog/devlog/2023-06-08/thumbnail.png"
-thumbnail: "2023-06-08/thumbnail.png"
+image: "/assets/pictures/blog/devlog/2023-06-08-godot-combat-platformer-progress/thumbnail.png"
+thumbnail: "2023-06-08-godot-combat-platformer-progress/thumbnail.png"
 ---
 
 I have added a few features to my prototype of combat platformer made in Godot since February, as well as less visible QoL/debug improvements:
@@ -19,7 +19,7 @@ I have added a few features to my prototype of combat platformer made in Godot s
 - More robust animation system with base (continuous) animations like Run + override (one-time) animations like Attack
 
 <video controls>
-  <source src="/assets/pictures/blog/devlog/2023-06-08/2023-06-08 Godot 4 Platformer Combat progress.webm" type="video/webm">
+  <source src="/assets/pictures/blog/devlog/2023-06-08-godot-combat-platformer-progress/2023-06-08 Godot 4 Platformer Combat progress.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
@@ -28,7 +28,7 @@ I have added a few features to my prototype of combat platformer made in Godot s
 - Debug overlay: FPS, current frame, currently pressed input
 
 <video controls>
-  <source src="/assets/pictures/blog/devlog/2023-06-08/2023-06-08 Godot 4 Platformer Combat - Debug overlay demo.webm" type="video/webm">
+  <source src="/assets/pictures/blog/devlog/2023-06-08-godot-combat-platformer-progress/2023-06-08 Godot 4 Platformer Combat - Debug overlay demo.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 

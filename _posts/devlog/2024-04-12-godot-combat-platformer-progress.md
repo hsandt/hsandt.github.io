@@ -2,17 +2,17 @@
 layout: post
 title: "Combat Platformer in Godot 4: April 2024 progress"
 tags: godot
-image: "/assets/pictures/blog/devlog/2024-04-12/thumbnail.png"
-thumbnail: "2024-04-12/thumbnail.png"
+image: "/assets/pictures/blog/devlog/2024-04-12-godot-combat-platformer-progress/thumbnail.png"
+thumbnail: "2024-04-12-godot-combat-platformer-progress/thumbnail.png"
 ---
 
 # Summary
 
 ## Visual revamp
 
-Big revamp! I finally switched the whole game to **full custom graphics**. I first worked with a resolution similar to the proto character asset (see [previous post]({% post_url /devlog/2024-01-06-godot-combat-platformer-progress %}) 3 months ago), then tried smaller sizes to draw faster. Below, some character scale research:
+Big revamp! I finally switched the whole game to **full custom graphics**. I first worked with a resolution similar to the proto character asset (see [previous post]({% post_url /devlog/2024-01-16-godot-combat-platformer-progress %}) 3 months ago), then tried smaller sizes to draw faster. Below, some character scale research:
 
-![Main character sprite scale research](/assets/pictures/blog/devlog/2024-04-12/paladin_Idle_sword_demo_all_sizes_2024-03-19_@4x.png)
+![Main character sprite scale research](/assets/pictures/blog/devlog/2024-04-12-godot-combat-platformer-progress/paladin_Idle_sword_demo_all_sizes_2024-03-19_@4x.png)
 
 From left to right:
 
@@ -39,7 +39,7 @@ The biggest issue was [Reaper + Vital plugin crashing on Linux](https://forum.vi
 Since I was busy working on new graphics and plugging the HUD behavior, there is no new gameplay features in this update. I will work on improved boss patterns and main character moves next time.
 
 <video controls>
-  <source src="/assets/pictures/blog/devlog/2024-04-12/2024-04-11 Godot Boss - 5 platforms, MC attack vs Fireballs and Ice spikes.webm" type="video/webm">
+  <source src="/assets/pictures/blog/devlog/2024-04-12-godot-combat-platformer-progress/2024-04-11 Godot Boss - 5 platforms, MC attack vs Fireballs and Ice spikes.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
