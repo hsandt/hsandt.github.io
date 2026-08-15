@@ -12,7 +12,7 @@ I rarely have time to make a nice options screen during game jams, not to mentio
 
 # Preferences
 
-![Player Character uses Switch to move Wall](/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/2020-05-19-v3_005.png)
+![Custom preferences panel with added sections: Resolution, Default Menu, Security](/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/2020-05-19 v3.5.3+ Preferences.webp)
 
 <figcaption>Preferences panel in <i>Sidetracked!</i></figcaption>
 
@@ -57,7 +57,7 @@ Source: [screens.rpy](https://github.com/hsandt/nanoreno2020-sidetracked/blob/v3
 
 **Result**
 
-![Player Character uses Switch to move Wall](/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/2020-05-19-v3_007.png)
+![Default Menu section has two options: Preferences or Save](/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/2020-05-19 v3.5.3+ Preferences - Default Menu.webp)
 
 ## Safe Mode
 
@@ -67,7 +67,7 @@ Safe Mode is a joke particular to this game, so I won’t tackle it here. If you
 
 I noticed that the built-in Accessibility panel (toggled with the A key) had convenient reset buttons for the Text Size Scaling and Line Spacing Scaling settings.
 
-![Player Character uses Switch to move Wall](/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/Accessibility-built-in-panel-720p-1024x576.png)
+![Renpy's built-in Accessibility panel has sections: Font Override, Self-Voicing, Text Size Scaling, Line Spacing Scaling](/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/Accessibility built-in panel 720p.webp)
 
 <figcaption>Ren’Py built-in Accessibility Panel</figcaption>
 
@@ -102,7 +102,7 @@ Source: [screens.rpy](https://github.com/hsandt/nanoreno2020-sidetracked/blob/v3
 
 **Result**
 
-![Player Character uses Switch to move Wall](/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/2020-05-19-v3.png)
+![Two sliders with reset button: Text Speed and Auto-Forward Time](/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/2020-05-19 v3.5.3+ Preferences - Sliders with Reset.webp)
 
 If you don’t like hard-coded values, define some `config.default_text_cps` and `config.default_afm_time` values in options.rpy, then replace 0 and 15 with those respective values in both screens.rpy above, and in options.rpy:
 
@@ -132,7 +132,7 @@ Source: [screens.rpy](https://github.com/hsandt/nanoreno2020-sidetracked/blob/v3
 
 # Accessibility
 
-![Player Character uses Switch to move Wall](/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/2020-05-19-v3_002.png)
+![Custom accessibility panel with sections: Font override, Font color, Self-voicing, Audio, HUD, Window alpha, Text size scaling, Line spacing scaling](/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/2020-05-19 v3.5.3+ Accessibility.webp)
 
 <figcaption>Accessibility panel in <i>Sidetracked!</i></figcaption>
 
@@ -142,11 +142,11 @@ To reuse options from the built-in Accessibility Panel, I had a look at [00acces
 
 The Accessibility menu is available directly from the main menu and in-game menu. In this game, the Preferences button is always present in the bottom-right corner so it’s not visible in the side bar, but otherwise I would have placed Accessibility just below Preferences. Alternatively, Accessibility may be a sub-menu of Preferences/Options, as in [TOMATO CLINIC](https://npckc.itch.io/tomato-clinic) by npckc.
 
-![Player Character uses Switch to move Wall](/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/screenshot0034-1024x576.png)
+![Options panel with custom section Text with link to Language and Accessibility](/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/TOMATO CLINIC Options base.webp)
 
 <figcaption>Options panel in TOMATO CLINIC</figcaption>
 
-![Player Character uses Switch to move Wall](/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/screenshot0032-1024x576.png)
+![Custom accessibility panel with Sound Captions, Image Captions, Text-Based Games, Self-Voicing, Textbox Transparency](/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/TOMATO CLINIC Options accessibility.webp)
 
 <figcaption>Accessibility sub-panel under Options in TOMATO CLINIC</figcaption>
 
@@ -165,13 +165,13 @@ Because Font Override is applied to all the fonts used in the game, when using i
 
 In Sidetracked!, you can apply the font override directly the from Accessibility menu, and it will apply to all kinds of text.
 
-![Player Character uses Switch to move Wall](/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/2020-05-19-v3_006.png)
+![Custom Accessibility panel with Open Dyslexic font](/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/2020-05-19 v3.5.3+ Accessibility with OpenDyslexic.webp)
 
-![Player Character uses Switch to move Wall](/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/2020-05-19-v3_003.png)
+![In-game dialogue with default font](/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/2020-05-19 v3.5.3+ Dialogue and item with normal font.webp)
 
 <figcaption>Before font override</figcaption>
 
-![Player Character uses Switch to move Wall](/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/2020-05-19-v3_008.png)
+![In-game dialogue with Open Dyslexic font](/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/2020-05-19 v3.5.3+ Dialogue and item with OpenDyslexic.webp)
 
 <figcaption>After font override</figcaption>
 
@@ -359,7 +359,7 @@ Source: [screens.rpy](https://github.com/hsandt/nanoreno2020-sidetracked/blob/v3
 
 I created this option just for this game, which shows the key shortcuts that can be used to open the Preferences and Task Tree menus (P and T resp.).
 
-![Player Character uses Switch to move Wall](/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/2020-05-19-v3_004.png)
+![In-game HUD with Quick Menu Keys](/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/2020-05-19 v3.5.3+ Quick menu with shortcut hints.webp)
 
 <figcaption>When Quick Menu Keys are ON, Todo list and Preferences buttons show letters T and P</figcaption>
 
