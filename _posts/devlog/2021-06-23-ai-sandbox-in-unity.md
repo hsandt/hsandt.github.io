@@ -2,8 +2,8 @@
 layout: post
 title: "AI Sandbox in Unity"
 tags: ai
-image: "/assets/pictures/blog/devlog/2021-06-23-ai-sandbox-in-unity/thumbnail.png"
-thumbnail: "2021-06-23-ai-sandbox-in-unity/thumbnail.png"
+image: "/assets/pictures/blog/devlog/2021-06-23-ai-sandbox-in-unity/thumbnail.webp"
+thumbnail: "2021-06-23-ai-sandbox-in-unity/thumbnail.webp"
 published: true
 ---
 
