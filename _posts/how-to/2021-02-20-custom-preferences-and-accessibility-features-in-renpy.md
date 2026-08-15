@@ -136,6 +136,10 @@ Source: [screens.rpy](https://github.com/hsandt/nanoreno2020-sidetracked/blob/v3
 
 <figcaption>Accessibility panel in <i>Sidetracked!</i></figcaption>
 
+Most of the accessibility features in Sidetracked! are based on the Renpy built-in Accessibility Panel (toggled by pressing A) and the [Ren’Py Accessibility Add-On](https://minute.itch.io/renpy-accessibility).
+
+To reuse options from the built-in Accessibility Panel, I had a look at [00accessibility.rpy](https://github.com/renpy/renpy/blob/master/renpy/common/00accessibility.rpy) and copied them, adapting the format to my own menu.
+
 The Accessibility menu is available directly from the main menu and in-game menu. In this game, the Preferences button is always present in the bottom-right corner so it’s not visible in the side bar, but otherwise I would have placed Accessibility just below Preferences. Alternatively, Accessibility may be a sub-menu of Preferences/Options, as in [TOMATO CLINIC](https://npckc.itch.io/tomato-clinic) by npckc.
 
 ![Player Character uses Switch to move Wall](/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/screenshot0034-1024x576.png)
@@ -146,9 +150,12 @@ The Accessibility menu is available directly from the main menu and in-game menu
 
 <figcaption>Accessibility sub-panel under Options in TOMATO CLINIC</figcaption>
 
-Most of the accessibility features are based on the Renpy built-in Accessibility Panel (toggled by pressing A) and the [Ren’Py Accessibility Add-On](https://minute.itch.io/renpy-accessibility).
+**UPDATE 2026-08 about the accessibily options listed in the last screenshot**
 
-To reuse options from the built-in Accessibility Panel, I had a look at [00accessibility.rpy](https://github.com/renpy/renpy/blob/master/renpy/common/00accessibility.rpy) and copied them, adapting the format to my own menu.
+TOMATO CLINIC's developer has created another plugin, [Caption Tool for Ren'Py](https://npckc.itch.io/caption-tool-for-renpy), which supports Image Captions (extra lines to describe what's happening visually on the scene). I used it for another game, [Points Against Authority](https://komehara.itch.io/points-against-authority). For the other accessibility options you see in the above panel:
+- Sound Captions can be used with both the Ren’Py Accessibility Add-On (as "Audio cues") and Caption Tool.
+- Textbox Transparency can be tuned with the Ren’Py Accessibility Add-On.
+- Text-based mini-games must be implemented on a per-game basis. I haven't done it in Sidetracked! but it may be worth it to make the Captcha mini-game accessible for blind, keyboard play.
 
 ## Font Override (font family)
 
