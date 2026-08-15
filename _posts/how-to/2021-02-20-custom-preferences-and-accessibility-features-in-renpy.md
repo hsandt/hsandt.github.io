@@ -2,8 +2,8 @@
 layout: post
 title:  "Custom Preferences and Accessibility features in Ren’Py"
 tags: accessibility renpy ui
-image: "/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/thumbnail.png"
-thumbnail: "2021-02-20-custom-preferences-and-accessibility-features-in-renpy/thumbnail.png"
+image: "/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/thumbnail.webp"
+thumbnail: "2021-02-20-custom-preferences-and-accessibility-features-in-renpy/thumbnail.webp"
 ---
 
 *Note: this post has been moved from my old website. The example game was developed with Renpy v7.3.5. However, I upgraded the game to Renpy v8.4.1 and verified that the additional features were still working with minimal changes (changed some xanchor -> xalign in screens.rpy to fix conflicting properties, which you won't even have to do on a brand new project).*
