@@ -4,6 +4,8 @@
 <li>
   <a rel="me" href="{{ entry.url }}" target="_blank" title="{{ entry.title | default: entry.platform }}">
     {% comment %} fa-2x: show icons bigger than header & footer social media {% endcomment %}
-    <span class="fa-brands fa-{{ entry.platform }} fa-2x"></span>
+    {% comment %} fa_namespace trick to support non-brands icons from Social platform icons now restricted to Font Awesome library fa-brands
+#843 (https://github.com/jekyll/minima/issues/843#issuecomment-2654608464) {% endcomment %}
+    <span class="fa-{{ entry.fa_namespace | default: "brands" }} fa-{{ entry.platform }} fa-2x"></span>
   </a>
 </li>

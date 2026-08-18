@@ -12,11 +12,11 @@ The main features I am aiming at are:
 
 - Entity-component system
 - Fixed update and input/render update loops
-- Game window with OpenGL with [GLEW](http://glew.sourceforge.net/){:target="_blank"} + [GLFW](http://www.glfw.org/){:target="_blank"}
+- Game window with OpenGL with [GLEW](https://glew.sourceforge.net/){:target="_blank"} + [GLFW](https://www.glfw.org/){:target="_blank"}
 - Keyboard/mouse input
 - Primitive 2D shapes rendering
 - Basic shaders
-- 2D physics ([Box2D](http://box2d.org/){:target="_blank"})
+- 2D physics ([Box2D](https://box2d.org/){:target="_blank"})
 - Scene-Entity system
 - Scene editor and basic scene serialization
 - AI helpers
@@ -25,7 +25,7 @@ The main features I am aiming at are:
 
 At first I used [SDL2](https://www.libsdl.org/index.php){:target="_blank"} for window management and rendering, before switching to OpenGL with GLFW for more flexibility (e.g. zooming in and out with the camera). Now, I know that SDL2 supports OpenGL rendering too, so looking back at it, SDL2 wasn’t a bad choice at all (plus I’m still only rendering simple shapes like squares right now).
 
-That said, I like GLFW’s window API better and I need some OpenGL training anyway, so why not start with simple shapes. Next time, I’ll also have a look at [SFML](http://www.sfml-dev.org/){:target="_blank"}, but for now I want to focus on the engine systems (modules).
+That said, I like GLFW’s window API better and I need some OpenGL training anyway, so why not start with simple shapes. Next time, I’ll also have a look at [SFML](https://www.sfml-dev.org/){:target="_blank"}, but for now I want to focus on the engine systems (modules).
 
 ## Progress
 
@@ -33,7 +33,7 @@ I have implemented the **game application window**, basic **keyboard input** and
 
 **Advantage**: you can implement behavior specific to one entity directly inside the Actor subclass, without using components
 
-**Disadvantage**: all game objects don’t have the same exact type and have different sizes, so you cannot put them in an array/vector of GameObjects (Unity-style) combined with [handles](http://gamesfromwithin.com/managing-data-relationships) for maximum cache efficiency (see [Data Locality](http://gameprogrammingpatterns.com/data-locality.html)). If you still want data contiguity, you’ll need a custom container that supports variable object size.
+**Disadvantage**: all game objects don’t have the same exact type and have different sizes, so you cannot put them in an array/vector of GameObjects (Unity-style) combined with [handles](https://gamesfromwithin.com/managing-data-relationships){:target="_blank"} for maximum cache efficiency (see [Data Locality](https://gameprogrammingpatterns.com/data-locality.html){:target="_blank"}). If you still want data contiguity, you’ll need a custom container that supports variable object size.
 
 For now, I have something like this:
 

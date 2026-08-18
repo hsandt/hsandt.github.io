@@ -2,8 +2,8 @@
 layout: post
 title: "Combat Platformer in Godot 4: June 2024 progress"
 tags: godot
-image: "/assets/pictures/blog/devlog/2024-06-18/thumbnail.png"
-thumbnail: "2024-06-18/thumbnail.png"
+image: "/assets/pictures/blog/devlog/2024-06-18-godot-combat-platformer-progress/thumbnail.png"
+thumbnail: "2024-06-18-godot-combat-platformer-progress/thumbnail.png"
 ---
 
 # Summary
@@ -21,13 +21,13 @@ Player character can now Air dodge, and existing moves all got a dedicated anima
 Here is a video to recap new animations, all while trying to dodge the new Fireball Rain.
 
 <video controls>
-  <source src="/assets/pictures/blog/devlog/2024-06-18/2024-06-18 Godot Boss - Fireball Rain, new PC animations and Air Slide.mp4" type="video/mp4">
+  <source src="/assets/pictures/blog/devlog/2024-06-18-godot-combat-platformer-progress/2024-06-18 Godot Boss - Fireball Rain, new PC animations and Air Slide.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
 And the player character death animation:
 
-![Player character death animation](/assets/pictures/blog/devlog/2024-06-18/paladin_tiny_Death_demo@8x.gif)
+![Player character death animation](/assets/pictures/blog/devlog/2024-06-18-godot-combat-platformer-progress/paladin_tiny_Death_demo@8x.gif)
 
 ## Simpler level
 

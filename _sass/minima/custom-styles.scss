@@ -92,7 +92,7 @@
       }
 
       .fa-youtube {
-        color: #ff0000;
+        color: #ff0033;
 
         &:hover {
           color: #c90019;
@@ -112,6 +112,22 @@
 
         &:hover {
           color: #972936;
+        }
+      }
+
+      .fa-html5 {
+        color: #e34c26;
+
+        &:hover {
+          color: #a73b20;
+        }
+      }
+
+      .fa-file-pdf {
+        color: #EB0C00;
+
+        &:hover {
+          color: #9b1b14;
         }
       }
     }

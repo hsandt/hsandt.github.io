@@ -2,8 +2,8 @@
 layout: post
 title:  "Screen Debug Message macros for Unreal Engine"
 tags: ue4 c++
-image: "/assets/pictures/blog/devlog/2017-01-23/thumbnail.png"
-thumbnail: "2017-01-23/thumbnail.png"
+image: "/assets/pictures/blog/how-to/2017-01-23-screen-debug-message-macros-for-unreal-engine/thumbnail.png"
+thumbnail: "2017-01-23-screen-debug-message-macros-for-unreal-engine/thumbnail.png"
 ---
 
 *Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however UE5 documentation shows that AddOnScreenDebugMessage's signature has not changed. Content has been adjusted to fix dead links and update links to their redirection, such as UE4 doc -> UE5 doc.*
@@ -56,15 +56,15 @@ I also pass `false` as the 5th parameter of AddOnScreenDebugMessage, bNewerOnTop
 
 # Demo
 
-![UE4 Screen Debug - Actor location](/assets/pictures/blog/devlog/2017-01-23/UE4-Screen-Debug-Actor-location.jpg)
+![UE4 Screen Debug - Actor location](/assets/pictures/blog/how-to/2017-01-23-screen-debug-message-macros-for-unreal-engine/UE4-Screen-Debug-Actor-location.jpg)
 
 <figcaption>Actor location debug message is continuously updated</figcaption>
 
-![UE4 Screen Debug - Switched view to first person](/assets/pictures/blog/devlog/2017-01-23/UE4-Screen-Debug-Switched-view-to-first-person.jpg)
+![UE4 Screen Debug - Switched view to first person](/assets/pictures/blog/how-to/2017-01-23-screen-debug-message-macros-for-unreal-engine/UE4-Screen-Debug-Switched-view-to-first-person.jpg)
 
 <figcaption>Debug messages after switching view to first person</figcaption>
 
-![UE4 Screen Debug - Switched view to third person](/assets/pictures/blog/devlog/2017-01-23/UE4-Screen-Debug-Switched-view-to-third-person.jpg)
+![UE4 Screen Debug - Switched view to third person](/assets/pictures/blog/how-to/2017-01-23-screen-debug-message-macros-for-unreal-engine/UE4-Screen-Debug-Switched-view-to-third-person.jpg)
 
 <figcaption>Debug messages after switching view to third person</figcaption>
 
