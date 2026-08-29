@@ -2,25 +2,26 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.9.0 -->
 <title>Scales prototype in Unreal Engine | Long Nguyen Huu</title>
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Scales prototype in Unreal Engine" />
 <meta name="author" content="Long Nguyen Huu" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however most functions should be compatible." />
-<meta property="og:description" content="Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however most functions should be compatible." />
+<meta name="twitter:description" property="og:description" content="Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however most functions should be compatible." />
 <link rel="canonical" href="https://hsandt.github.io/devlog/2016/07/26/scales-prototype-in-unreal-engine/" />
 <meta property="og:url" content="https://hsandt.github.io/devlog/2016/07/26/scales-prototype-in-unreal-engine/" />
 <meta property="og:site_name" content="Long Nguyen Huu" />
-<meta property="og:image" content="https://hsandt.github.io/assets/pictures/blog/devlog/2016-07-26/thumbnail.png" />
+<meta property="og:image" content="https://hsandt.github.io/assets/pictures/blog/devlog/2016-07-26-scales-prototype-in-unreal-engine/thumbnail.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2016-07-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-07-26T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://hsandt.github.io/assets/pictures/blog/devlog/2016-07-26/thumbnail.png" />
-<meta property="twitter:title" content="Scales prototype in Unreal Engine" />
+<meta name="twitter:image" content="https://hsandt.github.io/assets/pictures/blog/devlog/2016-07-26-scales-prototype-in-unreal-engine/thumbnail.png" />
+<meta name="twitter:title" content="Scales prototype in Unreal Engine" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Long Nguyen Huu"},"dateModified":"2016-07-26T00:00:00+00:00","datePublished":"2016-07-26T00:00:00+00:00","description":"Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however most functions should be compatible.","headline":"Scales prototype in Unreal Engine","image":"https://hsandt.github.io/assets/pictures/blog/devlog/2016-07-26/thumbnail.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://hsandt.github.io/devlog/2016/07/26/scales-prototype-in-unreal-engine/"},"url":"https://hsandt.github.io/devlog/2016/07/26/scales-prototype-in-unreal-engine/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Long Nguyen Huu"},"dateModified":"2016-07-26T00:00:00+00:00","datePublished":"2016-07-26T00:00:00+00:00","description":"Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however most functions should be compatible.","headline":"Scales prototype in Unreal Engine","image":"https://hsandt.github.io/assets/pictures/blog/devlog/2016-07-26-scales-prototype-in-unreal-engine/thumbnail.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://hsandt.github.io/devlog/2016/07/26/scales-prototype-in-unreal-engine/"},"url":"https://hsandt.github.io/devlog/2016/07/26/scales-prototype-in-unreal-engine/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://hsandt.github.io/feed.xml" title="Long Nguyen Huu" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-TKEELY26NL"></script>
@@ -115,7 +116,7 @@
 
 <p>I made a prototype of <strong>giant scales</strong> for a third-person puzzle platformer I am developing with Unreal Engine. They are similar to the scales found in The Legend of Zelda: The Wind Waker in the Tower of the Gods, i.e. the side with the higher total weight goes down and the character has its own height. I worked with Blueprints but I intend to convert them to C++ for the final game.</p>
 
-<p><img src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Character-and-all-blocks.png" alt="TP Unreal - Scale prototype Character and all blocks" /></p>
+<p><img src="/assets/pictures/blog/devlog/2016-07-26-scales-prototype-in-unreal-engine/TP-Unreal-Scale-prototype-Character-and-all-blocks.png" alt="TP Unreal - Scale prototype Character and all blocks" /></p>
 
 <h1 id="blueprints">Blueprints</h1>
 
@@ -123,7 +124,7 @@
 
 <p>Each scale acts as a platform on which the player character can stand. The scales move vertically depending on the difference of weights between the two scales.</p>
 
-<p><img src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Blueprint-viewport.png" alt="TP Unreal - Scale prototype Blueprint viewport" /></p>
+<p><img src="/assets/pictures/blog/devlog/2016-07-26-scales-prototype-in-unreal-engine/TP-Unreal-Scale-prototype-Blueprint-viewport.png" alt="TP Unreal - Scale prototype Blueprint viewport" /></p>
 
 <h2 id="weight">Weight</h2>
 
@@ -131,11 +132,11 @@
 
 <p>I wanted to detect weight located on top of a scale, but unfortunately Unreal does not send a specific event when a collider stops touching another (only <code class="language-plaintext highlighter-rouge">OnHit</code> when a contact starts). I didn’t want to rely on physics either, so I ended up using <code class="language-plaintext highlighter-rouge">OnBeginOverlap</code> and <code class="language-plaintext highlighter-rouge">OnEndOverlap</code> with very thin triggers I added on the surface of the platforms. Weights that enter the trigger are considered to be on top of the platform until they exit it. Not very elegant, but does the job.</p>
 
-<p><img src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Blueprint-platform-trigger.png" alt="TP Unreal - Scale prototype Blueprint platform trigger" /></p>
+<p><img src="/assets/pictures/blog/devlog/2016-07-26-scales-prototype-in-unreal-engine/TP-Unreal-Scale-prototype-Blueprint-platform-trigger.png" alt="TP Unreal - Scale prototype Blueprint platform trigger" /></p>
 
 <p>I needed to detect the Player character’s weight too, but character blueprints already have their own base class, so instead of using <code class="language-plaintext highlighter-rouge">BP_Weight</code> I added a manual check for the character (class <code class="language-plaintext highlighter-rouge">ThirdPersonCharacter</code>). So the blueprint tests for both <code class="language-plaintext highlighter-rouge">BP_Weight</code> and <code class="language-plaintext highlighter-rouge">ThirdPersonCharacter</code> in Overlap events.</p>
 
-<p>[<img src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Blueprint-scale-overlap.png" alt="TP Unreal - Scale prototype Blueprint scale overlap" /></p>
+<p>[<img src="/assets/pictures/blog/devlog/2016-07-26-scales-prototype-in-unreal-engine/TP-Unreal-Scale-prototype-Blueprint-scale-overlap.png" alt="TP Unreal - Scale prototype Blueprint scale overlap" /></p>
 
 <p><em>UPDATE 2025</em></p>
 
@@ -147,7 +148,7 @@
 
 <p>For a smooth motion, I update the height of each scale gradually by playing a <strong>Timeline</strong> that returns a value between 0 and 1. I use the returned value in a linear interpolation (LERP) between the initial and the target height.</p>
 
-<p><img src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Lift-Motion-Timeline.png" alt="TP Unreal - Scale prototype Lift Motion Timeline" /></p>
+<p><img src="/assets/pictures/blog/devlog/2016-07-26-scales-prototype-in-unreal-engine/TP-Unreal-Scale-prototype-Lift-Motion-Timeline.png" alt="TP Unreal - Scale prototype Lift Motion Timeline" /></p>
 
 <p>Note that in Unreal Blueprints, timelines can only appear on the top-level event flow (probably because they rely on the   tick). If you want to play the timeline from inside a method as I did, you have to trigger an event in the method and bind that event to the Timeline node in the event flow.</p>
 
@@ -156,7 +157,7 @@
 <p>A demo of the scales in video:</p>
 
 <video controls="">
-  <source src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Demo.mp4" type="video/mp4" />
+  <source src="/assets/pictures/blog/devlog/2016-07-26-scales-prototype-in-unreal-engine/TP-Unreal-Scale-prototype-Demo.mp4" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
 
@@ -164,7 +165,7 @@
 
 <p>An important issue with the Overlap method is that objects standing on top of another object on the platform are not detected. This is also true for the character. Have a look:</p>
 
-<p><img src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Character-on-block-bug.png" alt="TP Unreal - Scale prototype Character on block bug" /></p>
+<p><img src="/assets/pictures/blog/devlog/2016-07-26-scales-prototype-in-unreal-engine/TP-Unreal-Scale-prototype-Character-on-block-bug.png" alt="TP Unreal - Scale prototype Character on block bug" /></p>
 
 <p>The character seems to have no weight since it is not detected by the platform box trigger.</p>
 

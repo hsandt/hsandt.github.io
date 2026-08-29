@@ -5,13 +5,17 @@
 <subtitle>The personal website of Long Nguyen Huu aka komehara</subtitle>
 <link href="/atom.xml" rel="self"/>
 <link href="https://hsandt.github.io/"/>
-<updated>2026-02-26T13:23:54+00:00</updated>
+<updated>2026-08-29T15:03:21+00:00</updated>
 <id>https://hsandt.github.io</id>
 <author>
 <name>Long Nguyen Huu</name>
 <email>n.huu.long@gmail.com</email>
 </author>
 
+
+    
+
+    
 
     
 
@@ -39,11 +43,11 @@
 <ul>
   <li>Entity-component system</li>
   <li>Fixed update and input/render update loops</li>
-  <li>Game window with OpenGL with <a href="http://glew.sourceforge.net/" target="_blank">GLEW</a> + <a href="http://www.glfw.org/" target="_blank">GLFW</a></li>
+  <li>Game window with OpenGL with <a href="https://glew.sourceforge.net/" target="_blank">GLEW</a> + <a href="https://www.glfw.org/" target="_blank">GLFW</a></li>
   <li>Keyboard/mouse input</li>
   <li>Primitive 2D shapes rendering</li>
   <li>Basic shaders</li>
-  <li>2D physics (<a href="http://box2d.org/" target="_blank">Box2D</a>)</li>
+  <li>2D physics (<a href="https://box2d.org/" target="_blank">Box2D</a>)</li>
   <li>Scene-Entity system</li>
   <li>Scene editor and basic scene serialization</li>
   <li>AI helpers</li>
@@ -53,7 +57,7 @@
 
 <p>At first I used <a href="https://www.libsdl.org/index.php" target="_blank">SDL2</a> for window management and rendering, before switching to OpenGL with GLFW for more flexibility (e.g. zooming in and out with the camera). Now, I know that SDL2 supports OpenGL rendering too, so looking back at it, SDL2 wasn’t a bad choice at all (plus I’m still only rendering simple shapes like squares right now).</p>
 
-<p>That said, I like GLFW’s window API better and I need some OpenGL training anyway, so why not start with simple shapes. Next time, I’ll also have a look at <a href="http://www.sfml-dev.org/" target="_blank">SFML</a>, but for now I want to focus on the engine systems (modules).</p>
+<p>That said, I like GLFW’s window API better and I need some OpenGL training anyway, so why not start with simple shapes. Next time, I’ll also have a look at <a href="https://www.sfml-dev.org/" target="_blank">SFML</a>, but for now I want to focus on the engine systems (modules).</p>
 
 <h2 id="progress">Progress</h2>
 
@@ -61,7 +65,7 @@
 
 <p><strong>Advantage</strong>: you can implement behavior specific to one entity directly inside the Actor subclass, without using components</p>
 
-<p><strong>Disadvantage</strong>: all game objects don’t have the same exact type and have different sizes, so you cannot put them in an array/vector of GameObjects (Unity-style) combined with <a href="http://gamesfromwithin.com/managing-data-relationships">handles</a> for maximum cache efficiency (see <a href="http://gameprogrammingpatterns.com/data-locality.html">Data Locality</a>). If you still want data contiguity, you’ll need a custom container that supports variable object size.</p>
+<p><strong>Disadvantage</strong>: all game objects don’t have the same exact type and have different sizes, so you cannot put them in an array/vector of GameObjects (Unity-style) combined with <a href="https://gamesfromwithin.com/managing-data-relationships" target="_blank">handles</a> for maximum cache efficiency (see <a href="https://gameprogrammingpatterns.com/data-locality.html" target="_blank">Data Locality</a>). If you still want data contiguity, you’ll need a custom container that supports variable object size.</p>
 
 <p>For now, I have something like this:</p>
 
@@ -87,6 +91,8 @@
 <p>I’m not working on this project right now, but I’ll have to go back to it at some point, especially if I want to make an engine in a different language (e.g. Rust). This would be an opportunity to learn from my past mistakes and clean things up before I step onto a cleaner architecture.</p>
 ]]></content>
     </entry>
+    
+
     
 
     

@@ -5,7 +5,7 @@
 <subtitle>The personal website of Long Nguyen Huu aka komehara</subtitle>
 <link href="/atom.xml" rel="self"/>
 <link href="https://hsandt.github.io/"/>
-<updated>2026-02-26T13:23:54+00:00</updated>
+<updated>2026-08-29T15:03:21+00:00</updated>
 <id>https://hsandt.github.io</id>
 <author>
 <name>Long Nguyen Huu</name>
@@ -28,12 +28,16 @@
     
 
     
+
+    
+
+    
     <entry>
         <title>Blueprint-defined behavior with dynamic multicast delegates in Unreal Engine</title>
-        <link href="https://hsandt.github.io/devlog/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/"/>
+        <link href="https://hsandt.github.io/how-to/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/"/>
         <updated>2017-02-14T00:00:00+00:00</updated>
-        <id>https://hsandt.github.io/devlog/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine</id>
-        <category term="devlog" />
+        <id>https://hsandt.github.io/how-to/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine</id>
+        <category term="how-to" />
         <content type="html"><![CDATA[<p><em>Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however UE5 documentation shows that delegate macro names have not changed. Content has been adjusted to fix dead links and update links to their redirection, such as UE4 doc -&gt; UE5 doc.</em></p>
 
 <p>Quite often, gameplay programmers need to hand over the task of creating scripted events to level designers. In Unreal, a common workflow is to define shared features in C++ and level-specific behaviors with Blueprints.</p>
@@ -280,29 +284,29 @@
 
 <p>We create an Actor Blueprint <code class="language-plaintext highlighter-rouge">BP_WallSwitch</code> derived from <code class="language-plaintext highlighter-rouge">WallSwitch</code>. The Components panel shows:</p>
 
-<p><img src="/assets/pictures/blog/devlog/2017-02-14/UE4-delegate-blueprint-BP_WallSwitch-components.png" alt="WallSwitch Actor blueprint with SwitchableComponent" /></p>
+<p><img src="/assets/pictures/blog/how-to/2017-02-14-blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/UE4-delegate-blueprint-BP_WallSwitch-components.png" alt="WallSwitch Actor blueprint with SwitchableComponent" /></p>
 
 <p>When we select the Switchable Component, the Details panel shows:</p>
 
-<p><img src="/assets/pictures/blog/devlog/2017-02-14/UE4-delegate-blueprint-BP_WallSwitch-details.png" alt="Switchable Component details panel with OnSwitch event View button" /></p>
+<p><img src="/assets/pictures/blog/how-to/2017-02-14-blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/UE4-delegate-blueprint-BP_WallSwitch-details.png" alt="Switchable Component details panel with OnSwitch event View button" /></p>
 
 <h2 id="binding">Binding</h2>
 
 <p>At first, the buttons in the Events section should all show a “+”. We click on the button next to <em>On Switch</em> to create the event node below (from then on, the button will show “View” as on the screenshot above):</p>
 
-<p><img src="/assets/pictures/blog/devlog/2017-02-14/UE4-delegate-blueprint-BP_WallSwitch-Event-Graph-no-binding.png" alt="On Switch event, no binding" /></p>
+<p><img src="/assets/pictures/blog/how-to/2017-02-14-blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/UE4-delegate-blueprint-BP_WallSwitch-Event-Graph-no-binding.png" alt="On Switch event, no binding" /></p>
 
 <p>Alternatively, you may right-click in the Event Graph area and type “Add On Switch” in the search field (ensuring SwitchableComponent is still selected and Context Sensitive is checked).</p>
 
 <p>From here, we can bind a Blueprint graph to the OnSwitch delegate (represented by an event node) defined earlier in C++. In this example, we play a Sequence from a Sequence Actor reference we added directly as a Variable in the Actor Blueprint.</p>
 
-<p><img src="/assets/pictures/blog/devlog/2017-02-14/UE4-delegate-blueprint-BP_WallSwitch-Event-Graph.png" alt="Binding for Switchable Component OnSwitch event on Wall Switch actor" /></p>
+<p><img src="/assets/pictures/blog/how-to/2017-02-14-blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/UE4-delegate-blueprint-BP_WallSwitch-Event-Graph.png" alt="Binding for Switchable Component OnSwitch event on Wall Switch actor" /></p>
 
 <h1 id="result">Result</h1>
 
 <p>When the player character tries to interact with the Wall Switch, the level sequence plays:</p>
 
-<p><img src="/assets/pictures/blog/devlog/2017-02-14/UE4-Blueprint-delegates-On-Switch-action.gif" alt="Player Character uses Switch to move Wall" /></p>
+<p><img src="/assets/pictures/blog/how-to/2017-02-14-blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/UE4-Blueprint-delegates-On-Switch-action.gif" alt="Player Character uses Switch to move Wall" /></p>
 
 <p>The red/green box you see is a Box Trace with visual debug that the Player Character uses to detect interactables. It’s quite easy to do with Blueprints but may be tricky in C++, I’ll explain how this works in another post.</p>
 
@@ -312,7 +316,7 @@
 
 <p>For instance, I selected a Wall Switch instance in the Viewport, then in the Level Blueprint editor I right-clicked &gt; Assign to OnSwitch. This allowed me to add an extra logging event when the Wall Switch was pressed (the multi-cast delegates will trigger <strong>all</strong> bounds functions/events on Broadcast).</p>
 
-<p><img src="/assets/pictures/blog/devlog/2017-02-14/UE4-delegate-blueprint-Switch-level-event.png" alt="Level Blueprint binding action to On Switch delegate" /></p>
+<p><img src="/assets/pictures/blog/how-to/2017-02-14-blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/UE4-delegate-blueprint-Switch-level-event.png" alt="Level Blueprint binding action to On Switch delegate" /></p>
 
 <p>For examples on how to bind functions from raw C++, check out <a href="https://unrealcommunity.wiki/delegates-in-ue4-raw-cpp-and-bp-exposed-xifmcmq5">Rama’s article on Delegates</a>.</p>
 ]]></content>
@@ -320,12 +324,14 @@
     
 
     
+
+    
     <entry>
         <title>Screen Debug Message macros for Unreal Engine</title>
-        <link href="https://hsandt.github.io/devlog/2017/01/23/screen-debug-message-macros-for-unreal-engine/"/>
+        <link href="https://hsandt.github.io/how-to/2017/01/23/screen-debug-message-macros-for-unreal-engine/"/>
         <updated>2017-01-23T00:00:00+00:00</updated>
-        <id>https://hsandt.github.io/devlog/2017/01/23/screen-debug-message-macros-for-unreal-engine</id>
-        <category term="devlog" />
+        <id>https://hsandt.github.io/how-to/2017/01/23/screen-debug-message-macros-for-unreal-engine</id>
+        <category term="how-to" />
         <content type="html"><![CDATA[<p><em>Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however UE5 documentation shows that AddOnScreenDebugMessage’s signature has not changed. Content has been adjusted to fix dead links and update links to their redirection, such as UE4 doc -&gt; UE5 doc.</em></p>
 
 <p>For all my Unreal projects, I insert a small header containing debugging utility, especially for printing on screen.</p>
@@ -400,15 +406,15 @@
 
 <h1 id="demo">Demo</h1>
 
-<p><img src="/assets/pictures/blog/devlog/2017-01-23/UE4-Screen-Debug-Actor-location.jpg" alt="UE4 Screen Debug - Actor location" /></p>
+<p><img src="/assets/pictures/blog/how-to/2017-01-23-screen-debug-message-macros-for-unreal-engine/UE4-Screen-Debug-Actor-location.jpg" alt="UE4 Screen Debug - Actor location" /></p>
 
 <figcaption>Actor location debug message is continuously updated</figcaption>
 
-<p><img src="/assets/pictures/blog/devlog/2017-01-23/UE4-Screen-Debug-Switched-view-to-first-person.jpg" alt="UE4 Screen Debug - Switched view to first person" /></p>
+<p><img src="/assets/pictures/blog/how-to/2017-01-23-screen-debug-message-macros-for-unreal-engine/UE4-Screen-Debug-Switched-view-to-first-person.jpg" alt="UE4 Screen Debug - Switched view to first person" /></p>
 
 <figcaption>Debug messages after switching view to first person</figcaption>
 
-<p><img src="/assets/pictures/blog/devlog/2017-01-23/UE4-Screen-Debug-Switched-view-to-third-person.jpg" alt="UE4 Screen Debug - Switched view to third person" /></p>
+<p><img src="/assets/pictures/blog/how-to/2017-01-23-screen-debug-message-macros-for-unreal-engine/UE4-Screen-Debug-Switched-view-to-third-person.jpg" alt="UE4 Screen Debug - Switched view to third person" /></p>
 
 <figcaption>Debug messages after switching view to third person</figcaption>
 
@@ -452,7 +458,7 @@
 
 <p>I made a prototype of <strong>giant scales</strong> for a third-person puzzle platformer I am developing with Unreal Engine. They are similar to the scales found in The Legend of Zelda: The Wind Waker in the Tower of the Gods, i.e. the side with the higher total weight goes down and the character has its own height. I worked with Blueprints but I intend to convert them to C++ for the final game.</p>
 
-<p><img src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Character-and-all-blocks.png" alt="TP Unreal - Scale prototype Character and all blocks" /></p>
+<p><img src="/assets/pictures/blog/devlog/2016-07-26-scales-prototype-in-unreal-engine/TP-Unreal-Scale-prototype-Character-and-all-blocks.png" alt="TP Unreal - Scale prototype Character and all blocks" /></p>
 
 <h1 id="blueprints">Blueprints</h1>
 
@@ -460,7 +466,7 @@
 
 <p>Each scale acts as a platform on which the player character can stand. The scales move vertically depending on the difference of weights between the two scales.</p>
 
-<p><img src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Blueprint-viewport.png" alt="TP Unreal - Scale prototype Blueprint viewport" /></p>
+<p><img src="/assets/pictures/blog/devlog/2016-07-26-scales-prototype-in-unreal-engine/TP-Unreal-Scale-prototype-Blueprint-viewport.png" alt="TP Unreal - Scale prototype Blueprint viewport" /></p>
 
 <h2 id="weight">Weight</h2>
 
@@ -468,11 +474,11 @@
 
 <p>I wanted to detect weight located on top of a scale, but unfortunately Unreal does not send a specific event when a collider stops touching another (only <code class="language-plaintext highlighter-rouge">OnHit</code> when a contact starts). I didn’t want to rely on physics either, so I ended up using <code class="language-plaintext highlighter-rouge">OnBeginOverlap</code> and <code class="language-plaintext highlighter-rouge">OnEndOverlap</code> with very thin triggers I added on the surface of the platforms. Weights that enter the trigger are considered to be on top of the platform until they exit it. Not very elegant, but does the job.</p>
 
-<p><img src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Blueprint-platform-trigger.png" alt="TP Unreal - Scale prototype Blueprint platform trigger" /></p>
+<p><img src="/assets/pictures/blog/devlog/2016-07-26-scales-prototype-in-unreal-engine/TP-Unreal-Scale-prototype-Blueprint-platform-trigger.png" alt="TP Unreal - Scale prototype Blueprint platform trigger" /></p>
 
 <p>I needed to detect the Player character’s weight too, but character blueprints already have their own base class, so instead of using <code class="language-plaintext highlighter-rouge">BP_Weight</code> I added a manual check for the character (class <code class="language-plaintext highlighter-rouge">ThirdPersonCharacter</code>). So the blueprint tests for both <code class="language-plaintext highlighter-rouge">BP_Weight</code> and <code class="language-plaintext highlighter-rouge">ThirdPersonCharacter</code> in Overlap events.</p>
 
-<p>[<img src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Blueprint-scale-overlap.png" alt="TP Unreal - Scale prototype Blueprint scale overlap" /></p>
+<p>[<img src="/assets/pictures/blog/devlog/2016-07-26-scales-prototype-in-unreal-engine/TP-Unreal-Scale-prototype-Blueprint-scale-overlap.png" alt="TP Unreal - Scale prototype Blueprint scale overlap" /></p>
 
 <p><em>UPDATE 2025</em></p>
 
@@ -484,7 +490,7 @@
 
 <p>For a smooth motion, I update the height of each scale gradually by playing a <strong>Timeline</strong> that returns a value between 0 and 1. I use the returned value in a linear interpolation (LERP) between the initial and the target height.</p>
 
-<p><img src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Lift-Motion-Timeline.png" alt="TP Unreal - Scale prototype Lift Motion Timeline" /></p>
+<p><img src="/assets/pictures/blog/devlog/2016-07-26-scales-prototype-in-unreal-engine/TP-Unreal-Scale-prototype-Lift-Motion-Timeline.png" alt="TP Unreal - Scale prototype Lift Motion Timeline" /></p>
 
 <p>Note that in Unreal Blueprints, timelines can only appear on the top-level event flow (probably because they rely on the   tick). If you want to play the timeline from inside a method as I did, you have to trigger an event in the method and bind that event to the Timeline node in the event flow.</p>
 
@@ -493,7 +499,7 @@
 <p>A demo of the scales in video:</p>
 
 <video controls="">
-  <source src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Demo.mp4" type="video/mp4" />
+  <source src="/assets/pictures/blog/devlog/2016-07-26-scales-prototype-in-unreal-engine/TP-Unreal-Scale-prototype-Demo.mp4" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
 
@@ -501,7 +507,7 @@
 
 <p>An important issue with the Overlap method is that objects standing on top of another object on the platform are not detected. This is also true for the character. Have a look:</p>
 
-<p><img src="/assets/pictures/blog/devlog/2016-07-26/TP-Unreal-Scale-prototype-Character-on-block-bug.png" alt="TP Unreal - Scale prototype Character on block bug" /></p>
+<p><img src="/assets/pictures/blog/devlog/2016-07-26-scales-prototype-in-unreal-engine/TP-Unreal-Scale-prototype-Character-on-block-bug.png" alt="TP Unreal - Scale prototype Character on block bug" /></p>
 
 <p>The character seems to have no weight since it is not detected by the platform box trigger.</p>
 

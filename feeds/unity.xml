@@ -5,13 +5,19 @@
 <subtitle>The personal website of Long Nguyen Huu aka komehara</subtitle>
 <link href="/atom.xml" rel="self"/>
 <link href="https://hsandt.github.io/"/>
-<updated>2026-02-26T13:23:54+00:00</updated>
+<updated>2026-08-29T15:03:21+00:00</updated>
 <id>https://hsandt.github.io</id>
 <author>
 <name>Long Nguyen Huu</name>
 <email>n.huu.long@gmail.com</email>
 </author>
 
+
+    
+
+    
+
+    
 
     
 
@@ -42,7 +48,7 @@
 
 <p>I implemented crawling for my human character controller in a cooperative platformer made with Unity, Mars 21.</p>
 
-<p><img src="/assets/pictures/blog/devlog/2016-12-18/Mars-21-v2-crawling.gif" alt="Astronaut crawling" /></p>
+<p><img src="/assets/pictures/blog/devlog/2016-12-18-crawling-side-view-character-in-unity/Mars-21-v2-crawling.gif" alt="Astronaut crawling" /></p>
 
 <figcaption>Astronaut crawling</figcaption>
 
@@ -54,7 +60,7 @@
 
 <p>The Motion Layer represents the character’s finite-state machine (FSM). A StateBehaviour containing the actual motion logic is added to each state, and all the transitions are immediate (transition time = 0). Below, you can see graph of the sub-state machine “Grounded”, with the grounded sub-states: Idle, Walk (hidden on the right), Turn 180 (for animated 180° turns), Crouched, Crawl and Idle-Crouch transition states.</p>
 
-<p><img src="/assets/pictures/blog/devlog/2016-12-18/Mars-21-v2-character-animator-motion-layer.png" alt="Astronaut Animator Motion Layer Crawl" /></p>
+<p><img src="/assets/pictures/blog/devlog/2016-12-18-crawling-side-view-character-in-unity/Mars-21-v2-character-animator-motion-layer.png" alt="Astronaut Animator Motion Layer Crawl" /></p>
 
 <figcaption>Motion Layer</figcaption>
 
@@ -98,7 +104,7 @@
 
 <p>The Animation Layer animates the character model. An animation is attached to each state, and the transitions have short durations (0.1s).</p>
 
-<p><img src="/assets/pictures/blog/devlog/2016-12-18/Mars-21-v2-character-animator-animation-layer.png" alt="Astronaut Animator Animation Layer Crawl" /></p>
+<p><img src="/assets/pictures/blog/devlog/2016-12-18-crawling-side-view-character-in-unity/Mars-21-v2-character-animator-animation-layer.png" alt="Astronaut Animator Animation Layer Crawl" /></p>
 
 <figcaption>Animation Layer</figcaption>
 

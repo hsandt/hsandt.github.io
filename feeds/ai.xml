@@ -5,7 +5,7 @@
 <subtitle>The personal website of Long Nguyen Huu aka komehara</subtitle>
 <link href="/atom.xml" rel="self"/>
 <link href="https://hsandt.github.io/"/>
-<updated>2026-02-26T13:23:54+00:00</updated>
+<updated>2026-08-29T15:03:21+00:00</updated>
 <id>https://hsandt.github.io</id>
 <author>
 <name>Long Nguyen Huu</name>
@@ -26,7 +26,120 @@
     
 
     
+    <entry>
+        <title>AI Sandbox in Unity</title>
+        <link href="https://hsandt.github.io/devlog/2021/06/23/ai-sandbox-in-unity/"/>
+        <updated>2021-06-23T00:00:00+00:00</updated>
+        <id>https://hsandt.github.io/devlog/2021/06/23/ai-sandbox-in-unity</id>
+        <category term="devlog" />
+        <content type="html"><![CDATA[<p><em>This post is a draft and may undergo changes over time.</em></p>
 
+<p>I am sometimes working on an AI sandbox game with Unity. I implement various AI techniques I found in books, using Unity as a basic game framework and without using its advanced features.</p>
+
+<p>I implement AI features in C# from <a href="https://www.amazon.com/Game-Engine-Programming-Brian-Schwab/dp/1584505729">AI Game Engine Programming</a> (code samples in C++) and <a href="https://www.amazon.com/Artificial-Intelligence-Games-Ian-Millington/dp/0123747317/ref=dp_ob_title_bk">Artificial Intelligence for Games</a> (pseudocode). Because of the specific features of C# and Unity, I adapt the code as needed while trying to keep the same behavior as described in the books. Sometimes, I am not satisfied with a specific behavior so I have to change the code further.</p>
+
+<p>My project is uses a Git submodule to gather AI scripts that are reusable between games. The submodule repository is available publicly on Bitbucket as <a href="https://bitbucket.org/hsandt/unity-commons-ai/commits/branch/feature/movement">Unity Commons – AI</a> (branch feature/movement). Note that it is a work in progress, but you can read the code to compare your implementation of the AI techniques with mine.</p>
+
+<h1 id="features">Features</h1>
+
+<h2 id="finite-state-machine">Finite-State Machine</h2>
+
+<p>Source: AI Game Engine Programming</p>
+
+<p>Unity implemented Finite-State Machines (FSM) for its Animator, but I recreated my own system for training purpose. It heavily uses generic and is entirely code-based. Currently, it doesn’t support data-driven state programming. For an FSM system that supports transition injection, check out libraries like <a href="https://code.google.com/archive/p/solid-state/">solid-state</a> (made by another developer).</p>
+
+<p>[add video of guard changing state]</p>
+
+<h2 id="movement">Movement</h2>
+
+<p>Source: Artificial Intelligence for Games</p>
+
+<p>I have implemented pseudo-code from the book until Chapter 3.4.2. I have implemented a variety of Steering Movements, which you can see in action below.</p>
+
+<p>[add videos of various guard movements]</p>
+
+<p>I have also implemented some basic ballistic from Chapter 3.5: Predicting Physics.</p>
+
+<video controls="">
+  <source src="/assets/pictures/blog/devlog/2021-06-23-ai-sandbox-in-unity/AI4G Physics Prediction Firing Cannon 1 720p.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+]]></content>
+    </entry>
+    
+
+    
+
+    
+
+    
+
+    
+    <entry>
+        <title>EDX UC Berkeley AI course projects</title>
+        <link href="https://hsandt.github.io/devlog/2017/02/10/edx-uc-berkeley-ai-course-projects/"/>
+        <updated>2017-02-10T00:00:00+00:00</updated>
+        <id>https://hsandt.github.io/devlog/2017/02/10/edx-uc-berkeley-ai-course-projects</id>
+        <category term="devlog" />
+        <content type="html"><![CDATA[<p><em>Note: this post has been moved from my old website. Since then, the course has been archived, but I kept working until Project 4 so I may post videos of it later.</em></p>
+
+<p>This is my homework for <a href="https://inst.eecs.berkeley.edu/~cs188/archive/sp25/">UC Berkeley CS188 (course archives)</a>, a course on Artificial Intelligence delivered by the University of California, Berkeley, and provided online by the EDX. I will complete this page as I continue following the courses’ archives.</p>
+
+<p>For each project, a framework in Python was provided by the professor as a context to implement some AI. Students must implement key methods to fulfill specific requirements for the project (e.g. find the solution in fewer than 1000 iterations), and can fulfill optional objectives for a better grade (e.g. use fewer than 300 iterations). I don’t provide the source code of my implementation since it is supposed to be homework, but if you are personally interested in a specific algorithm, you can ask me for it (although there is nothing fancy in my answers, they do the job with a little optimization).</p>
+
+<h1 id="project-1-pacman-search">Project 1: Pacman search</h1>
+
+<p>In this project, we work with a Pacman clone where Pacman must eat all the pellets (there are no ghosts). We code an AI agent to control Pacman and solve the search problem of collecting all pellets following a certain heuristic.</p>
+
+<h2 id="one-goal-problem--big-level-a-search">One-Goal Problem – Big Level A* Search</h2>
+
+<p>Finding one pellet in a big maze</p>
+
+<video controls="">
+  <source src="/assets/pictures/blog/devlog/2017-02-10-edx-uc-berkeley-ai-course-projects/EDX Pacman A-star One Goal Problem Big Search.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+<h2 id="corners-problem--medium-level-a-search">Corners Problem – Medium Level A* Search</h2>
+
+<p>Finding 4 pellets, each in one corner of a medium maze</p>
+
+<video controls="">
+  <source src="/assets/pictures/blog/devlog/2017-02-10-edx-uc-berkeley-ai-course-projects/EDX Pacman A-star Corners Problem Medium Search.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+<h2 id="food-problem-multi-pellet-problem--tiny-level-a-search">Food Problem (Multi-Pellet Problem) – Tiny Level A* Search</h2>
+
+<p>Finding many pellets in a small level</p>
+
+<video controls="">
+  <source src="/assets/pictures/blog/devlog/2017-02-10-edx-uc-berkeley-ai-course-projects/EDX Pacman A-star Food Problem Tiny Search.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+<h2 id="food-problem--tricky-level-a-search">Food Problem – Tricky Level A* Search</h2>
+
+<p>Finding many pellets in a level where they are placed in a tricky way</p>
+
+<video controls="">
+  <source src="/assets/pictures/blog/devlog/2017-02-10-edx-uc-berkeley-ai-course-projects/EDX Pacman A-star Food Problem Tricky Search.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+<h1 id="project-2-multi-agent-search">Project 2: Multi-Agent Search</h1>
+
+<p><em>Done, I will post videos later</em></p>
+
+<h1 id="project-3-reinforcement-learning">Project 3: Reinforcement Learning</h1>
+
+<p><em>Done, I will post videos later</em></p>
+
+<h1 id="project-4-ghostbusters">Project 4: Ghostbusters</h1>
+
+<p><em>Almost completed, I will post videos later</em></p>
+]]></content>
+    </entry>
     
 
     

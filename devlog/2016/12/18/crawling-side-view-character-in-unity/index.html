@@ -2,25 +2,26 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.9.0 -->
 <title>Crawling side-view character in Unity | Long Nguyen Huu</title>
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Crawling side-view character in Unity" />
 <meta name="author" content="Long Nguyen Huu" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Note: this post has been moved from my old website. It was written for Unity 5 but Animation Controller has not changed much since." />
-<meta property="og:description" content="Note: this post has been moved from my old website. It was written for Unity 5 but Animation Controller has not changed much since." />
+<meta name="twitter:description" property="og:description" content="Note: this post has been moved from my old website. It was written for Unity 5 but Animation Controller has not changed much since." />
 <link rel="canonical" href="https://hsandt.github.io/devlog/2016/12/18/crawling-side-view-character-in-unity/" />
 <meta property="og:url" content="https://hsandt.github.io/devlog/2016/12/18/crawling-side-view-character-in-unity/" />
 <meta property="og:site_name" content="Long Nguyen Huu" />
-<meta property="og:image" content="https://hsandt.github.io/assets/pictures/blog/devlog/2016-12-18/thumbnail.png" />
+<meta property="og:image" content="https://hsandt.github.io/assets/pictures/blog/devlog/2016-12-18-crawling-side-view-character-in-unity/thumbnail.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2016-12-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-12-18T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://hsandt.github.io/assets/pictures/blog/devlog/2016-12-18/thumbnail.png" />
-<meta property="twitter:title" content="Crawling side-view character in Unity" />
+<meta name="twitter:image" content="https://hsandt.github.io/assets/pictures/blog/devlog/2016-12-18-crawling-side-view-character-in-unity/thumbnail.png" />
+<meta name="twitter:title" content="Crawling side-view character in Unity" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Long Nguyen Huu"},"dateModified":"2016-12-18T00:00:00+00:00","datePublished":"2016-12-18T00:00:00+00:00","description":"Note: this post has been moved from my old website. It was written for Unity 5 but Animation Controller has not changed much since.","headline":"Crawling side-view character in Unity","image":"https://hsandt.github.io/assets/pictures/blog/devlog/2016-12-18/thumbnail.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://hsandt.github.io/devlog/2016/12/18/crawling-side-view-character-in-unity/"},"url":"https://hsandt.github.io/devlog/2016/12/18/crawling-side-view-character-in-unity/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Long Nguyen Huu"},"dateModified":"2016-12-18T00:00:00+00:00","datePublished":"2016-12-18T00:00:00+00:00","description":"Note: this post has been moved from my old website. It was written for Unity 5 but Animation Controller has not changed much since.","headline":"Crawling side-view character in Unity","image":"https://hsandt.github.io/assets/pictures/blog/devlog/2016-12-18-crawling-side-view-character-in-unity/thumbnail.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://hsandt.github.io/devlog/2016/12/18/crawling-side-view-character-in-unity/"},"url":"https://hsandt.github.io/devlog/2016/12/18/crawling-side-view-character-in-unity/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://hsandt.github.io/feed.xml" title="Long Nguyen Huu" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-TKEELY26NL"></script>
@@ -115,7 +116,7 @@
 
 <p>I implemented crawling for my human character controller in a cooperative platformer made with Unity, Mars 21.</p>
 
-<p><img src="/assets/pictures/blog/devlog/2016-12-18/Mars-21-v2-crawling.gif" alt="Astronaut crawling" /></p>
+<p><img src="/assets/pictures/blog/devlog/2016-12-18-crawling-side-view-character-in-unity/Mars-21-v2-crawling.gif" alt="Astronaut crawling" /></p>
 
 <figcaption>Astronaut crawling</figcaption>
 
@@ -127,7 +128,7 @@
 
 <p>The Motion Layer represents the character’s finite-state machine (FSM). A StateBehaviour containing the actual motion logic is added to each state, and all the transitions are immediate (transition time = 0). Below, you can see graph of the sub-state machine “Grounded”, with the grounded sub-states: Idle, Walk (hidden on the right), Turn 180 (for animated 180° turns), Crouched, Crawl and Idle-Crouch transition states.</p>
 
-<p><img src="/assets/pictures/blog/devlog/2016-12-18/Mars-21-v2-character-animator-motion-layer.png" alt="Astronaut Animator Motion Layer Crawl" /></p>
+<p><img src="/assets/pictures/blog/devlog/2016-12-18-crawling-side-view-character-in-unity/Mars-21-v2-character-animator-motion-layer.png" alt="Astronaut Animator Motion Layer Crawl" /></p>
 
 <figcaption>Motion Layer</figcaption>
 
@@ -171,7 +172,7 @@
 
 <p>The Animation Layer animates the character model. An animation is attached to each state, and the transitions have short durations (0.1s).</p>
 
-<p><img src="/assets/pictures/blog/devlog/2016-12-18/Mars-21-v2-character-animator-animation-layer.png" alt="Astronaut Animator Animation Layer Crawl" /></p>
+<p><img src="/assets/pictures/blog/devlog/2016-12-18-crawling-side-view-character-in-unity/Mars-21-v2-character-animator-animation-layer.png" alt="Astronaut Animator Animation Layer Crawl" /></p>
 
 <figcaption>Animation Layer</figcaption>
 

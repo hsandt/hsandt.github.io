@@ -809,7 +809,7 @@ table td {
   color: #1a5986;
 }
 .site-header .social-media-list a .fa-youtube, .site-header .pagination a .fa-youtube, .portfolio-item .social-media-list a .fa-youtube, .portfolio-item .pagination a .fa-youtube {
-  color: #ff0000;
+  color: #ff0033;
 }
 .site-header .social-media-list a .fa-youtube:hover, .site-header .pagination a .fa-youtube:hover, .portfolio-item .social-media-list a .fa-youtube:hover, .portfolio-item .pagination a .fa-youtube:hover {
   color: #c90019;
@@ -825,6 +825,18 @@ table td {
 }
 .site-header .social-media-list a .fa-ko-fi:hover, .site-header .pagination a .fa-ko-fi:hover, .portfolio-item .social-media-list a .fa-ko-fi:hover, .portfolio-item .pagination a .fa-ko-fi:hover {
   color: #972936;
+}
+.site-header .social-media-list a .fa-html5, .site-header .pagination a .fa-html5, .portfolio-item .social-media-list a .fa-html5, .portfolio-item .pagination a .fa-html5 {
+  color: #e34c26;
+}
+.site-header .social-media-list a .fa-html5:hover, .site-header .pagination a .fa-html5:hover, .portfolio-item .social-media-list a .fa-html5:hover, .portfolio-item .pagination a .fa-html5:hover {
+  color: #a73b20;
+}
+.site-header .social-media-list a .fa-file-pdf, .site-header .pagination a .fa-file-pdf, .portfolio-item .social-media-list a .fa-file-pdf, .portfolio-item .pagination a .fa-file-pdf {
+  color: #EB0C00;
+}
+.site-header .social-media-list a .fa-file-pdf:hover, .site-header .pagination a .fa-file-pdf:hover, .portfolio-item .social-media-list a .fa-file-pdf:hover, .portfolio-item .pagination a .fa-file-pdf:hover {
+  color: #9b1b14;
 }
 
 .site-title {

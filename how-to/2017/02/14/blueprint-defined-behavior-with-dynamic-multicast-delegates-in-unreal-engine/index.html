@@ -2,25 +2,26 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.9.0 -->
 <title>Blueprint-defined behavior with dynamic multicast delegates in Unreal Engine | Long Nguyen Huu</title>
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Blueprint-defined behavior with dynamic multicast delegates in Unreal Engine" />
 <meta name="author" content="Long Nguyen Huu" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however UE5 documentation shows that delegate macro names have not changed. Content has been adjusted to fix dead links and update links to their redirection, such as UE4 doc -&gt; UE5 doc." />
-<meta property="og:description" content="Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however UE5 documentation shows that delegate macro names have not changed. Content has been adjusted to fix dead links and update links to their redirection, such as UE4 doc -&gt; UE5 doc." />
-<link rel="canonical" href="https://hsandt.github.io/devlog/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/" />
-<meta property="og:url" content="https://hsandt.github.io/devlog/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/" />
+<meta name="twitter:description" property="og:description" content="Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however UE5 documentation shows that delegate macro names have not changed. Content has been adjusted to fix dead links and update links to their redirection, such as UE4 doc -&gt; UE5 doc." />
+<link rel="canonical" href="https://hsandt.github.io/how-to/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/" />
+<meta property="og:url" content="https://hsandt.github.io/how-to/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/" />
 <meta property="og:site_name" content="Long Nguyen Huu" />
-<meta property="og:image" content="https://hsandt.github.io/assets/pictures/blog/devlog/2017-02-14/thumbnail.png" />
+<meta property="og:image" content="https://hsandt.github.io/assets/pictures/blog/how-to/2017-02-14-blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/thumbnail.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2017-02-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-02-14T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://hsandt.github.io/assets/pictures/blog/devlog/2017-02-14/thumbnail.png" />
-<meta property="twitter:title" content="Blueprint-defined behavior with dynamic multicast delegates in Unreal Engine" />
+<meta name="twitter:image" content="https://hsandt.github.io/assets/pictures/blog/how-to/2017-02-14-blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/thumbnail.png" />
+<meta name="twitter:title" content="Blueprint-defined behavior with dynamic multicast delegates in Unreal Engine" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Long Nguyen Huu"},"dateModified":"2017-02-14T00:00:00+00:00","datePublished":"2017-02-14T00:00:00+00:00","description":"Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however UE5 documentation shows that delegate macro names have not changed. Content has been adjusted to fix dead links and update links to their redirection, such as UE4 doc -&gt; UE5 doc.","headline":"Blueprint-defined behavior with dynamic multicast delegates in Unreal Engine","image":"https://hsandt.github.io/assets/pictures/blog/devlog/2017-02-14/thumbnail.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://hsandt.github.io/devlog/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/"},"url":"https://hsandt.github.io/devlog/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Long Nguyen Huu"},"dateModified":"2017-02-14T00:00:00+00:00","datePublished":"2017-02-14T00:00:00+00:00","description":"Note: this post has been moved from my old website. It is about UE4 and has not been tested for UE5, however UE5 documentation shows that delegate macro names have not changed. Content has been adjusted to fix dead links and update links to their redirection, such as UE4 doc -&gt; UE5 doc.","headline":"Blueprint-defined behavior with dynamic multicast delegates in Unreal Engine","image":"https://hsandt.github.io/assets/pictures/blog/how-to/2017-02-14-blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/thumbnail.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://hsandt.github.io/how-to/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/"},"url":"https://hsandt.github.io/how-to/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://hsandt.github.io/feed.xml" title="Long Nguyen Huu" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-TKEELY26NL"></script>
@@ -357,29 +358,29 @@
 
 <p>We create an Actor Blueprint <code class="language-plaintext highlighter-rouge">BP_WallSwitch</code> derived from <code class="language-plaintext highlighter-rouge">WallSwitch</code>. The Components panel shows:</p>
 
-<p><img src="/assets/pictures/blog/devlog/2017-02-14/UE4-delegate-blueprint-BP_WallSwitch-components.png" alt="WallSwitch Actor blueprint with SwitchableComponent" /></p>
+<p><img src="/assets/pictures/blog/how-to/2017-02-14-blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/UE4-delegate-blueprint-BP_WallSwitch-components.png" alt="WallSwitch Actor blueprint with SwitchableComponent" /></p>
 
 <p>When we select the Switchable Component, the Details panel shows:</p>
 
-<p><img src="/assets/pictures/blog/devlog/2017-02-14/UE4-delegate-blueprint-BP_WallSwitch-details.png" alt="Switchable Component details panel with OnSwitch event View button" /></p>
+<p><img src="/assets/pictures/blog/how-to/2017-02-14-blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/UE4-delegate-blueprint-BP_WallSwitch-details.png" alt="Switchable Component details panel with OnSwitch event View button" /></p>
 
 <h2 id="binding">Binding</h2>
 
 <p>At first, the buttons in the Events section should all show a “+”. We click on the button next to <em>On Switch</em> to create the event node below (from then on, the button will show “View” as on the screenshot above):</p>
 
-<p><img src="/assets/pictures/blog/devlog/2017-02-14/UE4-delegate-blueprint-BP_WallSwitch-Event-Graph-no-binding.png" alt="On Switch event, no binding" /></p>
+<p><img src="/assets/pictures/blog/how-to/2017-02-14-blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/UE4-delegate-blueprint-BP_WallSwitch-Event-Graph-no-binding.png" alt="On Switch event, no binding" /></p>
 
 <p>Alternatively, you may right-click in the Event Graph area and type “Add On Switch” in the search field (ensuring SwitchableComponent is still selected and Context Sensitive is checked).</p>
 
 <p>From here, we can bind a Blueprint graph to the OnSwitch delegate (represented by an event node) defined earlier in C++. In this example, we play a Sequence from a Sequence Actor reference we added directly as a Variable in the Actor Blueprint.</p>
 
-<p><img src="/assets/pictures/blog/devlog/2017-02-14/UE4-delegate-blueprint-BP_WallSwitch-Event-Graph.png" alt="Binding for Switchable Component OnSwitch event on Wall Switch actor" /></p>
+<p><img src="/assets/pictures/blog/how-to/2017-02-14-blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/UE4-delegate-blueprint-BP_WallSwitch-Event-Graph.png" alt="Binding for Switchable Component OnSwitch event on Wall Switch actor" /></p>
 
 <h1 id="result">Result</h1>
 
 <p>When the player character tries to interact with the Wall Switch, the level sequence plays:</p>
 
-<p><img src="/assets/pictures/blog/devlog/2017-02-14/UE4-Blueprint-delegates-On-Switch-action.gif" alt="Player Character uses Switch to move Wall" /></p>
+<p><img src="/assets/pictures/blog/how-to/2017-02-14-blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/UE4-Blueprint-delegates-On-Switch-action.gif" alt="Player Character uses Switch to move Wall" /></p>
 
 <p>The red/green box you see is a Box Trace with visual debug that the Player Character uses to detect interactables. It’s quite easy to do with Blueprints but may be tricky in C++, I’ll explain how this works in another post.</p>
 
@@ -389,11 +390,11 @@
 
 <p>For instance, I selected a Wall Switch instance in the Viewport, then in the Level Blueprint editor I right-clicked &gt; Assign to OnSwitch. This allowed me to add an extra logging event when the Wall Switch was pressed (the multi-cast delegates will trigger <strong>all</strong> bounds functions/events on Broadcast).</p>
 
-<p><img src="/assets/pictures/blog/devlog/2017-02-14/UE4-delegate-blueprint-Switch-level-event.png" alt="Level Blueprint binding action to On Switch delegate" /></p>
+<p><img src="/assets/pictures/blog/how-to/2017-02-14-blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/UE4-delegate-blueprint-Switch-level-event.png" alt="Level Blueprint binding action to On Switch delegate" /></p>
 
 <p>For examples on how to bind functions from raw C++, check out <a href="https://unrealcommunity.wiki/delegates-in-ue4-raw-cpp-and-bp-exposed-xifmcmq5">Rama’s article on Delegates</a>.</p>
 
-  </div><a class="u-url" href="/devlog/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/" hidden></a>
+  </div><a class="u-url" href="/how-to/2017/02/14/blueprint-defined-behavior-with-dynamic-multicast-delegates-in-unreal-engine/" hidden></a>
 </article>
 
       </div>

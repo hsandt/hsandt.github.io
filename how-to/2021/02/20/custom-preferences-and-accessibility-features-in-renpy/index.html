@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>Custom Preferences and Accessibility features in Ren’Py | Long Nguyen Huu</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Custom Preferences and Accessibility features in Ren’Py" />
+<meta name="author" content="Long Nguyen Huu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Note: this post has been moved from my old website. The example game was developed with Renpy v7.3.5. However, I upgraded the game to Renpy v8.4.1 and verified that the additional features were still working with minimal changes (changed some xanchor -&gt; xalign in screens.rpy to fix conflicting properties, which you won’t even have to do on a brand new project)." />
+<meta name="twitter:description" property="og:description" content="Note: this post has been moved from my old website. The example game was developed with Renpy v7.3.5. However, I upgraded the game to Renpy v8.4.1 and verified that the additional features were still working with minimal changes (changed some xanchor -&gt; xalign in screens.rpy to fix conflicting properties, which you won’t even have to do on a brand new project)." />
+<link rel="canonical" href="https://hsandt.github.io/how-to/2021/02/20/custom-preferences-and-accessibility-features-in-renpy/" />
+<meta property="og:url" content="https://hsandt.github.io/how-to/2021/02/20/custom-preferences-and-accessibility-features-in-renpy/" />
+<meta property="og:site_name" content="Long Nguyen Huu" />
+<meta property="og:image" content="https://hsandt.github.io/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/thumbnail.webp" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-02-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-02-20T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://hsandt.github.io/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/thumbnail.webp" />
+<meta name="twitter:title" content="Custom Preferences and Accessibility features in Ren’Py" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Long Nguyen Huu"},"dateModified":"2021-02-20T00:00:00+00:00","datePublished":"2021-02-20T00:00:00+00:00","description":"Note: this post has been moved from my old website. The example game was developed with Renpy v7.3.5. However, I upgraded the game to Renpy v8.4.1 and verified that the additional features were still working with minimal changes (changed some xanchor -&gt; xalign in screens.rpy to fix conflicting properties, which you won’t even have to do on a brand new project).","headline":"Custom Preferences and Accessibility features in Ren’Py","image":"https://hsandt.github.io/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/thumbnail.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://hsandt.github.io/how-to/2021/02/20/custom-preferences-and-accessibility-features-in-renpy/"},"url":"https://hsandt.github.io/how-to/2021/02/20/custom-preferences-and-accessibility-features-in-renpy/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://hsandt.github.io/feed.xml" title="Long Nguyen Huu" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-TKEELY26NL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TKEELY26NL');
+</script>
+
+</head>
+<body>
+<header class="site-header">
+
+  <div class="wrapper"><div class="site-brand">
+      <a class="site-title" rel="author" href="/">Long Nguyen Huu</a>
+      <div class="site-subtitle">aka komehara – Game developer</div>
+      <div class="social-links"><ul class="social-media-list"><li>
+    <a rel="me" href="https://komehara.itch.io/" target="_blank" title="My games on itch.io">
+      <span class="grey fa-brands fa-itch-io fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://github.com/hsandt" target="_blank" title="My GitHub repositories">
+      <span class="grey fa-brands fa-github fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://bitbucket.org/hsandt/" target="_blank" title="My BitBucket repositories">
+      <span class="grey fa-brands fa-bitbucket fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://stackoverflow.com/users/3256073/hsandt" target="_blank" title="My profile on Stack Overflow">
+      <span class="grey fa-brands fa-stack-overflow fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://twitter.com/n_huulong" target="_blank" title="My posts on Twitter">
+      <span class="grey fa-brands fa-twitter fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://mastodon.gamedev.place/@leyn" target="_blank" title="My posts on Mastodon">
+      <span class="grey fa-brands fa-mastodon fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://www.youtube.com/channel/UCscc8AXbgMQCjzxsXLVvCsg" target="_blank" title="My videos on YouTube">
+      <span class="grey fa-brands fa-youtube fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://www.linkedin.com/in/huulong/" target="_blank" title="My profile on LinkedIn">
+      <span class="grey fa-brands fa-linkedin fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://ko-fi.com/komehara" target="_blank" title="Donations on Ko-fi">
+      <span class="grey fa-brands fa-ko-fi fa-lg"></span>
+    </a>
+  </li></ul>
+</div>
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/portfolio/">Portfolio</a><a class="page-link" href="/blog/">Blog</a><a class="page-link" href="/writing/">Writing</a><a class="page-link" href="/comic-strips/">Comic strips</a><a class="page-link" href="/resume/">Resume</a><a class="page-link" href="/Resources/">Resources</a><a class="page-link" href="/newsletter/">Newsletter</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Custom Preferences and Accessibility features in Ren’Py</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2021-02-20T00:00:00+00:00" itemprop="datePublished">
+        Feb 20, 2021
+      </time>
+      
+      <a href="/tags/accessibility">
+        #accessibility
+      </a><a href="/tags/renpy">
+        #renpy
+      </a><a href="/tags/ui">
+        #ui
+      </a>
+    </p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><em>Note: this post has been moved from my old website. The example game was developed with Renpy v7.3.5. However, I upgraded the game to Renpy v8.4.1 and verified that the additional features were still working with minimal changes (changed some xanchor -&gt; xalign in screens.rpy to fix conflicting properties, which you won’t even have to do on a brand new project).</em></p>
+
+<p>I rarely have time to make a nice options screen during game jams, not to mention accessibility features. But for <a href="https://itch.io/jam/nanoreno-2020">NaNoRenO 2020</a>, I worked on them more than usual. In this post, I’ll explain how I customized the Preferences and Accessibility panel of <a href="https://komehara.itch.io/sidetracked">Sidetracked!</a> in <a href="https://www.renpy.org/">Ren’Py</a>.</p>
+
+<h1 id="preferences">Preferences</h1>
+
+<p><img src="/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/2020-05-19 v3.5.3+ Preferences.webp" alt="Custom preferences panel with added sections: Resolution, Default Menu, Security" /></p>
+
+<figcaption>Preferences panel in <i>Sidetracked!</i></figcaption>
+
+<p>In this game, the Preferences button is always present in the bottom-right corner (gear icon), so it’s not visible in the left side bar to avoid redundancy. I’m not sure if it was the right idea as the Preferences and Accessibility buttons are now far apart from each other, but at least the Preferences button stays at the same place.</p>
+
+<h2 id="default-menu">Default Menu</h2>
+
+<p>When opening the menu in-game (by pressing Escape or right-clicking), Ren’Py shows the <strong>Save screen</strong> by default. Some players prefer accessing the <strong>Preferences</strong> screen first, then click on Save/Load when needed. Considering that the Save and Load screen are very similar, requiring the player to click on Save or Load to access the respective menus may remove some ambiguity.</p>
+
+<p>I still wanted to preserve the original behavior, so I added a Default Menu option that can be set to either <em>Preferences</em> or <em>Save</em>. Unfortunately, it’s not easy to change the way Ren’Py opens the game menu natively, so I had to rebind the game menu key to a custom Action.</p>
+
+<p><strong>Initialization code</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="c1"># options.rpy, or any script where you initialize variables and set preferences
+# default screen shown when opening in-game menu
+</span><span class="n">default</span> <span class="n">preferences</span><span class="p">.</span><span class="n">game_menu_screen</span> <span class="o">=</span> <span class="sh">"</span><span class="s">preferences_screen</span><span class="sh">"</span>
+<span class="n">init</span> <span class="o">-</span><span class="mi">110</span> <span class="n">python</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">show_pref_game_menu</span><span class="p">():</span>
+        <span class="nc">ShowMenu</span><span class="p">(</span><span class="n">preferences</span><span class="p">.</span><span class="n">game_menu_screen</span><span class="p">)()</span>
+<span class="n">define</span> <span class="n">config</span><span class="p">.</span><span class="n">game_menu_action</span> <span class="o">=</span> <span class="n">show_pref_game_menu</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Source: <a href="https://github.com/hsandt/nanoreno2020-sidetracked/blob/v3.5.3/game/options.rpy#L280">options.rpy</a></p>
+
+<p><strong>Setting</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="c1"># screens.rpy (add the vbox where it seems fit)
+</span><span class="n">screen</span> <span class="nf">preferences</span><span class="p">():</span>
+    <span class="n">use</span> <span class="nf">game_menu</span><span class="p">(</span><span class="nf">_</span><span class="p">(</span><span class="sh">"</span><span class="s">Preferences</span><span class="sh">"</span><span class="p">),</span> <span class="n">scroll</span><span class="o">=</span><span class="sh">"</span><span class="s">viewport</span><span class="sh">"</span><span class="p">):</span>
+        <span class="c1"># ...
+</span>        <span class="n">vbox</span><span class="p">:</span>
+            <span class="n">style_prefix</span> <span class="sh">"</span><span class="s">radio</span><span class="sh">"</span>
+            <span class="n">label</span> <span class="nf">_</span><span class="p">(</span><span class="sh">"</span><span class="s">Default menu</span><span class="sh">"</span><span class="p">)</span>
+            <span class="n">null</span> <span class="n">height</span> <span class="mi">5</span>
+            <span class="n">textbutton</span> <span class="nf">_</span><span class="p">(</span><span class="sh">"</span><span class="s">Preferences</span><span class="sh">"</span><span class="p">)</span> <span class="n">action</span> <span class="nc">SetField</span><span class="p">(</span><span class="n">preferences</span><span class="p">,</span> <span class="sh">"</span><span class="s">game_menu_screen</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">preferences_screen</span><span class="sh">"</span><span class="p">)</span>
+            <span class="n">textbutton</span> <span class="nf">_</span><span class="p">(</span><span class="sh">"</span><span class="s">Save</span><span class="sh">"</span><span class="p">)</span> <span class="n">action</span> <span class="nc">SetField</span><span class="p">(</span><span class="n">preferences</span><span class="p">,</span> <span class="sh">"</span><span class="s">game_menu_screen</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">save_screen</span><span class="sh">"</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Source: <a href="https://github.com/hsandt/nanoreno2020-sidetracked/blob/v3.5.3/game/screens.rpy#L856">screens.rpy</a></p>
+
+<p><strong>Result</strong></p>
+
+<p><img src="/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/2020-05-19 v3.5.3+ Preferences - Default Menu.webp" alt="Default Menu section has two options: Preferences or Save" /></p>
+
+<h2 id="safe-mode">Safe Mode</h2>
+
+<p>Safe Mode is a joke particular to this game, so I won’t tackle it here. If you’re interested in how it’s done, check the <a href="https://github.com/hsandt/nanoreno2020-sidetracked/blob/v3.5.3/game/screens.rpy#L863">menu item</a> and <a href="https://github.com/hsandt/nanoreno2020-sidetracked/blob/v3.5.3/game/screens.rpy#L1833">Captcha screen</a>, but you should play the game first to understand what it’s about.</p>
+
+<h2 id="slider-reset-button">Slider Reset button</h2>
+
+<p>I noticed that the built-in Accessibility panel (toggled with the A key) had convenient reset buttons for the Text Size Scaling and Line Spacing Scaling settings.</p>
+
+<p><img src="/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/Accessibility built-in panel 720p.webp" alt="Renpy's built-in Accessibility panel has sections: Font Override, Self-Voicing, Text Size Scaling, Line Spacing Scaling" /></p>
+
+<figcaption>Ren’Py built-in Accessibility Panel</figcaption>
+
+<p>I decided to put the same buttons for the Text Speed and Auto-Forward Time sliders:</p>
+
+<p><strong>Setting</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="rouge-code"><pre><span class="c1"># screens.rpy
+</span><span class="n">screen</span> <span class="nf">preferences</span><span class="p">():</span>
+    <span class="c1"># ...
+</span>    <span class="n">hbox</span><span class="p">:</span>
+        <span class="n">style_prefix</span> <span class="sh">"</span><span class="s">slider</span><span class="sh">"</span>
+        <span class="n">box_wrap</span> <span class="bp">True</span>
+        <span class="n">vbox</span><span class="p">:</span>
+            <span class="n">label</span> <span class="nf">_</span><span class="p">(</span><span class="sh">"</span><span class="s">Text Speed</span><span class="sh">"</span><span class="p">)</span>
+            <span class="n">hbox</span><span class="p">:</span>
+                <span class="n">bar</span> <span class="n">value</span> <span class="nc">Preference</span><span class="p">(</span><span class="sh">"</span><span class="s">text speed</span><span class="sh">"</span><span class="p">)</span>
+                <span class="c1"># reset to default value of preferences.text_cps in options.rpy
+</span>                <span class="n">textbutton</span> <span class="nf">_</span><span class="p">(</span><span class="sh">"</span><span class="s">Reset</span><span class="sh">"</span><span class="p">):</span>
+                    <span class="n">action</span> <span class="nc">Preference</span><span class="p">(</span><span class="sh">"</span><span class="s">text speed</span><span class="sh">"</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">null</span> <span class="n">height</span> <span class="n">gui</span><span class="p">.</span><span class="n">pref_spacing</span>
+            <span class="n">label</span> <span class="nf">_</span><span class="p">(</span><span class="sh">"</span><span class="s">Auto-Forward Time</span><span class="sh">"</span><span class="p">)</span>
+            <span class="n">hbox</span><span class="p">:</span>
+                <span class="n">bar</span> <span class="n">value</span> <span class="nc">Preference</span><span class="p">(</span><span class="sh">"</span><span class="s">auto-forward time</span><span class="sh">"</span><span class="p">)</span>
+                <span class="c1"># reset to default value of preferences.afm_time in options.rpy
+</span>                <span class="n">textbutton</span> <span class="nf">_</span><span class="p">(</span><span class="sh">"</span><span class="s">Reset</span><span class="sh">"</span><span class="p">):</span>
+                    <span class="n">action</span> <span class="nc">Preference</span><span class="p">(</span><span class="sh">"</span><span class="s">auto-forward time</span><span class="sh">"</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Source: <a href="https://github.com/hsandt/nanoreno2020-sidetracked/blob/v3.5.3/game/screens.rpy#L883">screens.rpy</a></p>
+
+<p><strong>Result</strong></p>
+
+<p><img src="/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/2020-05-19 v3.5.3+ Preferences - Sliders with Reset.webp" alt="Two sliders with reset button: Text Speed and Auto-Forward Time" /></p>
+
+<p>If you don’t like hard-coded values, define some <code class="language-plaintext highlighter-rouge">config.default_text_cps</code> and <code class="language-plaintext highlighter-rouge">config.default_afm_time</code> values in options.rpy, then replace 0 and 15 with those respective values in both screens.rpy above, and in options.rpy:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="c1"># options.rpy
+</span><span class="n">default</span> <span class="n">preferences</span><span class="p">.</span><span class="n">text_cps</span> <span class="o">=</span> <span class="n">config</span><span class="p">.</span><span class="n">default_text_cps</span>
+<span class="n">default</span> <span class="n">preferences</span><span class="p">.</span><span class="n">afm_time</span> <span class="o">=</span> <span class="n">config</span><span class="p">.</span><span class="n">default_afm_time</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Note that the <code class="language-plaintext highlighter-rouge">Preference</code> action, like <code class="language-plaintext highlighter-rouge">SetField</code>, detects if the current value is the target value (see <a href="https://github.com/renpy/renpy/blob/7.3.5.606/renpy/common/00action_data.rpy#L78"><code class="language-plaintext highlighter-rouge">SetField.get_selected source</code></a>). This means that the Reset button is stylized differently when the current value is not default. To tweak this, check your <code class="language-plaintext highlighter-rouge">style_prefix</code> and define the properties you want for default, selected, and hover states.</p>
+
+<p>Ex:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="c1"># screens.rpy
+</span><span class="n">style</span> <span class="n">slider_button_text</span><span class="p">:</span>
+    <span class="n">properties</span> <span class="n">gui</span><span class="p">.</span><span class="nf">button_text_properties</span><span class="p">(</span><span class="sh">"</span><span class="s">slider_button</span><span class="sh">"</span><span class="p">)</span>
+    <span class="n">outlines</span> <span class="p">[</span> <span class="p">(</span><span class="nf">absolute</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="sh">"</span><span class="s">#ffffff00</span><span class="sh">"</span><span class="p">,</span> <span class="nf">absolute</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="nf">absolute</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="p">]</span>
+    <span class="n">selected_outlines</span> <span class="p">[</span> <span class="p">(</span><span class="nf">absolute</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="sh">"</span><span class="s">#744675</span><span class="sh">"</span><span class="p">,</span> <span class="nf">absolute</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="nf">absolute</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="p">]</span>
+    <span class="n">selected_hover_outlines</span> <span class="p">[</span> <span class="p">(</span><span class="nf">absolute</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="sh">"</span><span class="s">#f4cfe5</span><span class="sh">"</span><span class="p">,</span> <span class="nf">absolute</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="nf">absolute</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="p">]</span>
+    <span class="n">selected_hover_color</span> <span class="sh">"</span><span class="s">#ffffff</span><span class="sh">"</span>
+    <span class="n">hover_color</span> <span class="sh">"</span><span class="s">#f4cfe5</span><span class="sh">"</span>
+    <span class="n">hover_outlines</span> <span class="p">[</span> <span class="p">(</span><span class="nf">absolute</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="sh">"</span><span class="s">#744675</span><span class="sh">"</span><span class="p">,</span> <span class="nf">absolute</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="nf">absolute</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="p">]</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Source: <a href="https://github.com/hsandt/nanoreno2020-sidetracked/blob/v3.5.3/game/screens.rpy#L1024">screens.rpy</a></p>
+
+<h1 id="accessibility">Accessibility</h1>
+
+<p><img src="/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/2020-05-19 v3.5.3+ Accessibility.webp" alt="Custom accessibility panel with sections: Font override, Font color, Self-voicing, Audio, HUD, Window alpha, Text size scaling, Line spacing scaling" /></p>
+
+<figcaption>Accessibility panel in <i>Sidetracked!</i></figcaption>
+
+<p>Most of the accessibility features in Sidetracked! are based on the Renpy built-in Accessibility Panel (toggled by pressing A) and the <a href="https://minute.itch.io/renpy-accessibility">Ren’Py Accessibility Add-On</a>.</p>
+
+<p>To reuse options from the built-in Accessibility Panel, I had a look at <a href="https://github.com/renpy/renpy/blob/master/renpy/common/00accessibility.rpy">00accessibility.rpy</a> and copied them, adapting the format to my own menu.</p>
+
+<p>The Accessibility menu is available directly from the main menu and in-game menu. In this game, the Preferences button is always present in the bottom-right corner so it’s not visible in the side bar, but otherwise I would have placed Accessibility just below Preferences. Alternatively, Accessibility may be a sub-menu of Preferences/Options, as in <a href="https://npckc.itch.io/tomato-clinic">TOMATO CLINIC</a> by npckc.</p>
+
+<p><img src="/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/TOMATO CLINIC Options base.webp" alt="Options panel with custom section Text with link to Language and Accessibility" /></p>
+
+<figcaption>Options panel in TOMATO CLINIC</figcaption>
+
+<p><img src="/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/TOMATO CLINIC Options accessibility.webp" alt="Custom accessibility panel with Sound Captions, Image Captions, Text-Based Games, Self-Voicing, Textbox Transparency" /></p>
+
+<figcaption>Accessibility sub-panel under Options in TOMATO CLINIC</figcaption>
+
+<p><strong>UPDATE 2026-08 about the accessibily options listed in the last screenshot</strong></p>
+
+<p>TOMATO CLINIC’s developer has created another plugin, <a href="https://npckc.itch.io/caption-tool-for-renpy">Caption Tool for Ren’Py</a>, which supports Image Captions (extra lines to describe what’s happening visually on the scene). I used it for another game, <a href="https://komehara.itch.io/points-against-authority">Points Against Authority</a>. For the other accessibility options you see in the above panel:</p>
+<ul>
+  <li>Sound Captions can be used with both the Ren’Py Accessibility Add-On (as “Audio cues”) and Caption Tool.</li>
+  <li>Textbox Transparency can be tuned with the Ren’Py Accessibility Add-On.</li>
+  <li>Text-based mini-games must be implemented on a per-game basis. I haven’t done it in Sidetracked! but it may be worth it to make the Captcha mini-game accessible for blind, keyboard play.</li>
+</ul>
+
+<h2 id="font-override-font-family">Font Override (font family)</h2>
+
+<p>Font Override replaces <em>all</em> font families with the target font. It comes from the built-in Accessibility Panel and is based on <a href="https://www.renpy.org/doc/html/text.html?highlight=fontgroup#FontGroup">FontGroups</a>. FontGroup has a nice fallback system: if some characters are missing from your override font (e.g. Japanese characters), it will fallback to the default font just for those characters.</p>
+
+<p>Because Font Override is applied to all the fonts used in the game, when using it, you cannot differentiate font styles (text, name, button, etc.) when using it. This shows in Sidetracked!, where the menu font is The Bold Font (uppercase bold font), while the font for normal text is DejaVu Sans.</p>
+
+<p>In Sidetracked!, you can apply the font override directly the from Accessibility menu, and it will apply to all kinds of text.</p>
+
+<p><img src="/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/2020-05-19 v3.5.3+ Accessibility with OpenDyslexic.webp" alt="Custom Accessibility panel with Open Dyslexic font" /></p>
+
+<p><img src="/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/2020-05-19 v3.5.3+ Dialogue and item with normal font.webp" alt="In-game dialogue with default font" /></p>
+
+<figcaption>Before font override</figcaption>
+
+<p><img src="/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/2020-05-19 v3.5.3+ Dialogue and item with OpenDyslexic.webp" alt="In-game dialogue with Open Dyslexic font" /></p>
+
+<figcaption>After font override</figcaption>
+
+<p>If you want to allow the user to still distinguish font families between different styles (e.g. menu, character name, dialogue text), I have found 3 (!) methods to let you customize each font individually on a per-usage basis (I only tested the first one).</p>
+
+<h3 id="text-font-attribute">Text font attribute</h3>
+
+<p>Similar to Ren’Py Accessibility Add-On’s approach. Define your own variable for a certain type of text, e.g. <code class="language-plaintext highlighter-rouge">preferences.pref_font_dialogue</code>. In screens.rpy, add the font attribute in front of every text instance that should use this font, e.g. in <code class="language-plaintext highlighter-rouge">screen say</code>, use <code class="language-plaintext highlighter-rouge">text what ... font preferences.pref_font_dialogue</code>. Repeat for every instance of text that should use this font family (e.g. <code class="language-plaintext highlighter-rouge">text who</code> for the character name).</p>
+
+<p>Repeat the process for every type of text that needs a different font family: define <code class="language-plaintext highlighter-rouge">preferences.pref_font_menu</code>, <code class="language-plaintext highlighter-rouge">preferences.pref_font_character_name</code>, etc.</p>
+
+<p>Limitation: it doesn’t scale well with many text instances. It’s fine for character name (<code class="language-plaintext highlighter-rouge">text who</code>) and dialogue (<code class="language-plaintext highlighter-rouge">text what</code>), but as soon as you deal with menus, there will be many more text statements to change.</p>
+
+<h3 id="style-preference-setting">Style preference setting</h3>
+
+<p>From <a href="https://lemmasoft.renai.us/forums/viewtopic.php?t=38235">this thread</a> (not tested myself)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="c1"># Style definition
+</span><span class="n">renpy</span><span class="p">.</span><span class="nf">register_style_preference</span><span class="p">(</span><span class="sh">"</span><span class="s">text</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Open Dyslexic</span><span class="sh">"</span><span class="p">,</span> <span class="n">style</span><span class="p">.</span><span class="n">say_dialogue</span><span class="p">,</span> <span class="sh">"</span><span class="s">font</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">gui/OpenDyslexic-Regular.otf</span><span class="sh">"</span><span class="p">)</span>
+<span class="c1"># Setting
+</span><span class="n">textbutton</span> <span class="sh">"</span><span class="s">Open Dyslexic</span><span class="sh">"</span> <span class="n">action</span> <span class="nc">StylePreference</span><span class="p">(</span><span class="sh">"</span><span class="s">text</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Open Dyslexic</span><span class="sh">"</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>However this uses default styles, so you may end up defining your own styles and putting them in various <code class="language-plaintext highlighter-rouge">text</code>options as in the first method, if you don’t just differentiate interface, character name and dialogue text.</p>
+
+<h3 id="gui-preference-access">GUI preference access</h3>
+
+<p>From <a href="https://lemmasoft.renai.us/forums/viewtopic.php?f=51&amp;t=57895">this thread</a> (not tested myself)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="c1"># Definition
+</span><span class="n">define</span> <span class="n">gui</span><span class="p">.</span><span class="n">text_font</span> <span class="o">=</span> <span class="n">gui</span><span class="p">.</span><span class="nf">preference</span><span class="p">(</span><span class="sh">"</span><span class="s">font_1</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">DejaVuSans.ttf</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">define</span> <span class="n">gui</span><span class="p">.</span><span class="n">name_text_font</span> <span class="o">=</span> <span class="n">gui</span><span class="p">.</span><span class="nf">preference</span><span class="p">(</span><span class="sh">"</span><span class="s">font_2</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">DejaVuSans.ttf</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">define</span> <span class="n">gui</span><span class="p">.</span><span class="n">interface_text_font</span> <span class="o">=</span> <span class="n">gui</span><span class="p">.</span><span class="nf">preference</span><span class="p">(</span><span class="sh">"</span><span class="s">font_3</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">DejaVuSans.ttf</span><span class="sh">"</span><span class="p">)</span>
+<span class="c1"># Setting
+</span><span class="n">textbutton</span> <span class="nf">_</span><span class="p">(</span><span class="sh">"</span><span class="s">Custom</span><span class="sh">"</span><span class="p">)</span> <span class="n">action</span> <span class="p">[</span> <span class="n">gui</span><span class="p">.</span><span class="nc">SetPreference</span><span class="p">(</span><span class="sh">"</span><span class="s">font_1</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Custom1.otf</span><span class="sh">"</span><span class="p">),</span> <span class="n">gui</span><span class="p">.</span><span class="nc">SetPreference</span><span class="p">(</span><span class="sh">"</span><span class="s">font_2</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Custom2.otf</span><span class="sh">"</span><span class="p">),</span> <span class="n">gui</span><span class="p">.</span><span class="nc">SetPreference</span><span class="p">(</span><span class="sh">"</span><span class="s">font_3</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Custom3.otf</span><span class="sh">"</span><span class="p">)]</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>It also uses default styles, so same remark as above.</p>
+
+<h2 id="font-color">Font color</h2>
+
+<p>It is very similar to Font family, although not an override option. Again, there are different ways to set it. I was only interested in changing the font color in dialogue boxes, so I set the <code class="language-plaintext highlighter-rouge">color</code> property on <code class="language-plaintext highlighter-rouge">text what</code> directly. This technique comes directly from the Ren’Py Accessibility Add-On.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="rouge-code"><pre><span class="c1"># accessibility_setup.rpy
+</span><span class="n">init</span> <span class="n">python</span><span class="p">:</span>
+    <span class="n">preferences</span><span class="p">.</span><span class="n">pref_text_color</span> <span class="o">=</span> <span class="n">gui</span><span class="p">.</span><span class="n">text_color</span>
+<span class="c1"># screens.rpy
+</span><span class="n">screen</span> <span class="nf">accessibility</span><span class="p">():</span>
+    <span class="c1"># ...
+</span>    <span class="n">vbox</span><span class="p">:</span>
+        <span class="n">style_prefix</span> <span class="sh">"</span><span class="s">check</span><span class="sh">"</span>
+        <span class="n">label</span> <span class="nf">_</span><span class="p">(</span><span class="sh">"</span><span class="s">Font Color</span><span class="sh">"</span><span class="p">)</span>
+        <span class="n">null</span> <span class="n">height</span> <span class="mi">5</span>
+        <span class="n">textbutton</span> <span class="nf">_</span><span class="p">(</span><span class="sh">"</span><span class="s">Default (Purple)</span><span class="sh">"</span><span class="p">):</span>
+            <span class="n">action</span> <span class="nf">changeColor</span><span class="p">(</span><span class="n">gui</span><span class="p">.</span><span class="n">text_color</span><span class="p">)</span>
+            <span class="n">style_suffix</span> <span class="sh">"</span><span class="s">radio_button</span><span class="sh">"</span>
+        <span class="c1"># I wanted to make that text black, but when selected, it adds a purple
+</span>        <span class="c1"># outline and it's ugly. Better use a style to mimic default radio text becoming
+</span>        <span class="c1"># white instead when selected, but didn't manage to inject specific style here
+</span>        <span class="n">textbutton</span> <span class="nf">_</span><span class="p">(</span><span class="sh">"</span><span class="s">Black</span><span class="sh">"</span><span class="p">):</span>
+            <span class="n">action</span> <span class="nf">changeColor</span><span class="p">(</span><span class="sh">"</span><span class="s">#000000</span><span class="sh">"</span><span class="p">)</span>
+            <span class="n">style_suffix</span> <span class="sh">"</span><span class="s">radio_button</span><span class="sh">"</span>
+<span class="n">screen</span> <span class="nf">say</span><span class="p">(</span><span class="n">who</span><span class="p">,</span> <span class="n">what</span><span class="p">):</span>
+   <span class="c1"># ...
+</span>        <span class="n">text</span> <span class="n">what</span> <span class="nb">id</span> <span class="sh">"</span><span class="s">what</span><span class="sh">"</span> <span class="n">color</span> <span class="n">preferences</span><span class="p">.</span><span class="n">pref_text_color</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Source: <a href="https://github.com/hsandt/nanoreno2020-sidetracked/blob/v3.5.3/game/screens.rpy#L1076">screens.rpy</a></p>
+
+<h2 id="self-voicing">Self-voicing</h2>
+
+<p>This comes directly from the built-in Accessibility panel. I dropped the Clipboard and Debug options so there are only Off and Text-to-speech. This can also be toggled at any time with the V key.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre><span class="c1"># screens.rpy
+</span><span class="n">screen</span> <span class="nf">accessibility</span><span class="p">():</span>
+    <span class="c1"># ...
+</span>    <span class="n">vbox</span><span class="p">:</span>
+        <span class="n">style_prefix</span> <span class="sh">"</span><span class="s">check</span><span class="sh">"</span>
+        <span class="c1"># Copied from renpy SDK: 00accessibility.rpy
+</span>        <span class="n">label</span> <span class="nf">_</span><span class="p">(</span><span class="sh">"</span><span class="s">Self-Voicing</span><span class="sh">"</span><span class="p">)</span>
+        <span class="n">null</span> <span class="n">height</span> <span class="mi">5</span>
+        <span class="n">textbutton</span> <span class="nf">_</span><span class="p">(</span><span class="sh">"</span><span class="s">Off</span><span class="sh">"</span><span class="p">):</span>
+            <span class="n">action</span> <span class="nc">Preference</span><span class="p">(</span><span class="sh">"</span><span class="s">self voicing</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">disable</span><span class="sh">"</span><span class="p">)</span>
+            <span class="n">style_suffix</span> <span class="sh">"</span><span class="s">radio_button</span><span class="sh">"</span>
+        <span class="n">textbutton</span> <span class="nf">_</span><span class="p">(</span><span class="sh">"</span><span class="s">Text-to-speech</span><span class="sh">"</span><span class="p">):</span>
+            <span class="n">action</span> <span class="nc">Preference</span><span class="p">(</span><span class="sh">"</span><span class="s">self voicing</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">enable</span><span class="sh">"</span><span class="p">)</span>
+            <span class="n">style_suffix</span> <span class="sh">"</span><span class="s">radio_button</span><span class="sh">"</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Unfortunately, the game is not fully playable with self-voicing only, due to other issues. In particular, some options are not voiced correctly (Window Alpha is voiced “Baa-baa”), and the Preferences/Task-Tree button at the bottom-right is not intuitive to reach with the keyboard. This means that it’s very hard to find the Safe Mode option, and furthermore, the captcha at the beginning is simply impossible to solve for blind players as pictures are not commented. There are certainly ways to make it work in my game (e.g. audio captcha). But if your game has a more straightforward UI, it may just work out of the box for you.</p>
+
+<h2 id="audio-cues">Audio cues</h2>
+
+<p>This technique comes directly from the Ren’Py Accessibility Add-On, I just adapted it to my needs. It allows to add notifications when an SFX is played.</p>
+
+<p>First, we define resources with paths to our assets.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre><span class="c1"># resources.rpy
+# Audio
+# -1 so it's done just before music_dictionary definition in accessibility_setup.rpy
+</span><span class="n">init</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+    <span class="c1">## BGM assets
+</span>    <span class="n">define</span> <span class="n">audio</span><span class="p">.</span><span class="n">title_theme</span> <span class="o">=</span> <span class="sh">"</span><span class="s">&lt;to 19.2&gt;audio/bgm/title_theme.ogg</span><span class="sh">"</span>
+    <span class="c1">## BGM mapping (so accessibility feature can get BGM notification text from core name
+</span>    <span class="c1">## instead of filepath, which contains the &lt;loop&gt; pattern and is not very convenient)
+</span>    <span class="n">define</span> <span class="n">music_to_assets</span> <span class="o">=</span> <span class="nf">dict</span><span class="p">(</span>
+        <span class="n">title_theme</span> <span class="o">=</span> <span class="n">audio</span><span class="p">.</span><span class="n">title_theme</span><span class="p">,</span> <span class="p">...)</span>
+    <span class="c1">## SFX assets
+</span>    <span class="n">define</span> <span class="n">audio</span><span class="p">.</span><span class="n">coins_drop</span> <span class="o">=</span> <span class="sh">"</span><span class="s">audio/sfx/coins_drop.ogg</span><span class="sh">"</span>
+    <span class="c1">## SFX mapping (to allow to reuse audio assets for actions with different meanings,
+</span>    <span class="c1">## and also so accessibility feature can use short name as dict key rather than filepath)
+</span>    <span class="n">define</span> <span class="n">sfx_to_assets</span> <span class="o">=</span> <span class="nf">dict</span><span class="p">(</span>
+        <span class="n">coins_drop</span> <span class="o">=</span> <span class="n">audio</span><span class="p">.</span><span class="n">coins_drop</span><span class="p">,</span> <span class="p">...)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Source: <a href="https://github.com/hsandt/nanoreno2020-sidetracked/blob/v3.5.3/game/resources.rpy#L46">resources.rpy</a></p>
+
+<p>Second, we define a preference to enable audio cues, as well as the textual descriptions of sounds.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="c1"># accessibility_setup.rpy
+# Audio cues
+</span><span class="n">default</span> <span class="n">preferences</span><span class="p">.</span><span class="n">audio_cues</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="c1"># alias : "Song Title",
+</span>    <span class="n">music_dictionary</span> <span class="o">=</span> <span class="nf">dict</span><span class="p">(</span>
+        <span class="n">title_theme</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Title Theme - Upbeat Music</span><span class="sh">"</span><span class="p">,</span> <span class="p">...)</span>
+    <span class="c1"># alias : "Sound description."
+</span>    <span class="n">sfx_dictionary</span> <span class="o">=</span> <span class="nf">dict</span><span class="p">(</span>
+        <span class="n">coins_drop</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Coins dropped</span><span class="sh">"</span><span class="p">,</span> <span class="p">...)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Source: <a href="https://github.com/hsandt/nanoreno2020-sidetracked/blob/v3.5.3/game/accessibility_setup.rpy#L16">accessibility_setup.rpy</a></p>
+
+<p>Third, we define functions to play sounds together with the description, if audio cues are enabled.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre><span class="c1"># accessibility_functions.rpy
+</span>    <span class="k">def</span> <span class="nf">play_sfx</span><span class="p">(</span><span class="n">sound_name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># slightly modified to allow passing a string, so you can reuse the same SFX
+</span>        <span class="c1"># with different meanings, hence different notification texts (currently not used,
+</span>        <span class="c1"># since only queued sounds with custom notification reuse sounds; but more flexible anyway)
+</span>        <span class="c1"># also removed "{i}{/i}" which for some reason shows at "[i][/i]"
+</span>        <span class="n">renpy</span><span class="p">.</span><span class="n">sound</span><span class="p">.</span><span class="nf">play</span><span class="p">(</span><span class="n">sfx_to_assets</span><span class="p">[</span><span class="n">sound_name</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="nf">notify_sfx</span><span class="p">(</span><span class="n">sound_name</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">notify_sfx</span><span class="p">(</span><span class="n">sound_name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">preferences</span><span class="p">.</span><span class="n">audio_cues</span><span class="p">:</span>
+            <span class="n">renpy</span><span class="p">.</span><span class="nf">notify</span><span class="p">(</span><span class="sh">"</span><span class="s">SFX: </span><span class="sh">"</span> <span class="o">+</span> <span class="n">sfx_dictionary</span><span class="p">[</span><span class="n">sound_name</span><span class="p">])</span>
+    <span class="k">def</span> <span class="nf">play_music</span><span class="p">(</span><span class="n">music_name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># same modification as in SFX
+</span>        <span class="n">renpy</span><span class="p">.</span><span class="n">music</span><span class="p">.</span><span class="nf">play</span><span class="p">(</span><span class="n">music_to_assets</span><span class="p">[</span><span class="n">music_name</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">preferences</span><span class="p">.</span><span class="n">audio_cues</span><span class="p">:</span>
+            <span class="n">renpy</span><span class="p">.</span><span class="nf">notify</span><span class="p">(</span><span class="sh">"</span><span class="s">Now Playing: </span><span class="sh">"</span> <span class="o">+</span> <span class="n">music_dictionary</span><span class="p">[</span><span class="n">music_name</span><span class="p">])</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Source: <a href="https://github.com/hsandt/nanoreno2020-sidetracked/blob/v3.5.3/game/accessibility_functions.rpy#L16">accessibility_functions.rpy</a></p>
+
+<p>I modified the code slightly above:</p>
+
+<ul>
+  <li>for some reason, “{i}{/i}” shows at “[i][/i]” in the notification message in recent versions of Ren’Py, so I removed them</li>
+  <li>I prefer using an audio asset representative name than a full path as dict key. One reason is that filepaths, esp. with music info, can be very long and harder to debug, the other is that it allows me to reuse the same sound with different audio cues, by mapping different sound aliases to different descriptions but to the same audio asset.</li>
+</ul>
+
+<p>Finally, we add a checkbox in the Accessibility panel to toggle Audio Cues.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="c1"># screens.rpy
+</span><span class="n">screen</span> <span class="nf">accessibility</span><span class="p">():</span>
+    <span class="c1"># ...
+</span>    <span class="n">vbox</span><span class="p">:</span>
+        <span class="n">style_prefix</span> <span class="sh">"</span><span class="s">check</span><span class="sh">"</span>
+        <span class="c1"># Copied from Ren'Py Accessibility Add-On: screens replacements.rpy
+</span>        <span class="n">label</span> <span class="nf">_</span><span class="p">(</span><span class="sh">"</span><span class="s">Audio</span><span class="sh">"</span><span class="p">)</span>
+        <span class="n">null</span> <span class="n">height</span> <span class="mi">5</span>
+        <span class="c1"># Toggle Audio Cues
+</span>        <span class="n">textbutton</span> <span class="nf">_</span><span class="p">(</span><span class="sh">"</span><span class="s">Audio Cues</span><span class="sh">"</span><span class="p">)</span> <span class="n">action</span> <span class="nc">ToggleField</span><span class="p">(</span><span class="n">preferences</span><span class="p">,</span> <span class="sh">"</span><span class="s">audio_cues</span><span class="sh">"</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Source: <a href="https://github.com/hsandt/nanoreno2020-sidetracked/blob/v3.5.3/game/screens.rpy#L1110">screens.rpy</a></p>
+
+<h2 id="quick-menu-keys">Quick menu keys</h2>
+
+<p>I created this option just for this game, which shows the key shortcuts that can be used to open the Preferences and Task Tree menus (P and T resp.).</p>
+
+<p><img src="/assets/pictures/blog/how-to/2021-02-20-custom-preferences-and-accessibility-features-in-renpy/2020-05-19 v3.5.3+ Quick menu with shortcut hints.webp" alt="In-game HUD with Quick Menu Keys" /></p>
+
+<figcaption>When Quick Menu Keys are ON, Todo list and Preferences buttons show letters T and P</figcaption>
+
+<p>I noticed that Self-Voicing ALWAYS pronounced “T” and “P” at the end of <em>every</em> dialogue line. This was very annoying so I added an option to hide those hints. I wish Ren’Py allowed to customize how buttons and labels are read (e.g. “Task Tree” instead of T), including disabling self-voicing completely.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="c1"># screens.rpy
+</span><span class="n">screen</span> <span class="nf">accessibility</span><span class="p">():</span>
+    <span class="c1"># ...
+</span>    <span class="n">vbox</span><span class="p">:</span>
+        <span class="n">style_prefix</span> <span class="sh">"</span><span class="s">check</span><span class="sh">"</span>
+        <span class="n">xsize</span> <span class="mi">950</span>
+        <span class="c1"># Copied from Ren'Py Accessibility Add-On: screens replacements.rpy
+</span>        <span class="n">label</span> <span class="nf">_</span><span class="p">(</span><span class="sh">"</span><span class="s">HUD</span><span class="sh">"</span><span class="p">)</span>
+        <span class="n">null</span> <span class="n">height</span> <span class="mi">5</span>
+        <span class="c1"># Toggle Quick Menu Key Hints
+</span>        <span class="n">textbutton</span> <span class="nf">_</span><span class="p">(</span><span class="sh">"</span><span class="s">Quick Menu Keys (unselect when using self-voicing)</span><span class="sh">"</span><span class="p">)</span> <span class="n">action</span> <span class="nc">ToggleField</span><span class="p">(</span><span class="n">preferences</span><span class="p">,</span> <span class="sh">"</span><span class="s">show_quick_menu_keyboard_hints</span><span class="sh">"</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Source: <a href="https://github.com/hsandt/nanoreno2020-sidetracked/blob/v3.5.3/game/screens.rpy#L1121">screens.rpy</a></p>
+
+<h2 id="window-alpha">Window Alpha</h2>
+
+<p>This technique comes directly from the Ren’Py Accessibility Add-On.
+It allows the user to change the text box transparency.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="rouge-code"><pre><span class="c1"># screens.rpy
+</span><span class="n">screen</span> <span class="nf">accessibility</span><span class="p">():</span>
+    <span class="c1"># ...
+</span>    <span class="n">vbox</span><span class="p">:</span>
+        <span class="n">style_prefix</span> <span class="sh">"</span><span class="s">slider</span><span class="sh">"</span>
+        <span class="c1"># Set Textbox Opacity
+</span>        <span class="n">label</span> <span class="nf">_</span><span class="p">(</span><span class="sh">"</span><span class="s">Window Alpha</span><span class="sh">"</span><span class="p">)</span>
+        <span class="n">null</span> <span class="n">height</span> <span class="mi">5</span>
+        <span class="n">hbox</span><span class="p">:</span>
+            <span class="n">bar</span> <span class="n">value</span> <span class="nc">FieldValue</span><span class="p">(</span><span class="n">preferences</span><span class="p">,</span> <span class="sh">'</span><span class="s">say_window_alpha</span><span class="sh">'</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">max_is_zero</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="p">.</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">textbutton</span> <span class="nf">_</span><span class="p">(</span><span class="sh">"</span><span class="s">Reset</span><span class="sh">"</span><span class="p">):</span>
+                <span class="n">action</span> <span class="nc">SetField</span><span class="p">(</span><span class="n">preferences</span><span class="p">,</span> <span class="sh">"</span><span class="s">say_window_alpha</span><span class="sh">"</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="c1"># ...
+</span><span class="n">screen</span> <span class="nf">say</span><span class="p">(</span><span class="n">who</span><span class="p">,</span> <span class="n">what</span><span class="p">):</span>
+    <span class="n">style_prefix</span> <span class="sh">"</span><span class="s">say</span><span class="sh">"</span>
+    <span class="n">window</span><span class="p">:</span>
+        <span class="nb">id</span> <span class="sh">"</span><span class="s">window</span><span class="sh">"</span>
+        <span class="n">background</span> <span class="nc">Transform</span><span class="p">(</span><span class="n">style</span><span class="p">.</span><span class="n">window</span><span class="p">.</span><span class="n">background</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">preferences</span><span class="p">.</span><span class="n">say_window_alpha</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Source: <a href="https://github.com/hsandt/nanoreno2020-sidetracked/blob/v3.5.3/game/screens.rpy#L1133">screens.rpy</a></p>
+
+<h2 id="windows-fullscreen-mode-and-resolution">Windows fullscreen mode and resolution</h2>
+
+<p>I added the resolution setting much later than the rest (v3.5.3). It’s working fine on 1080p and allows the user to toggle fullscreen while preserving the last resolution, or force resolution to 720p. However, on 4K screens it will capture at 3200×1800. I considered fixing that bug and making a separate post for this feature, but as I won’t have time to, I prefer dropping the code for the setting right now:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="rouge-code"><pre><span class="c1"># screens.rpy
+</span><span class="n">screen</span> <span class="nf">preferences</span><span class="p">():</span>
+    <span class="c1"># ...
+</span>    <span class="n">vbox</span><span class="p">:</span>
+        <span class="n">style_prefix</span> <span class="sh">"</span><span class="s">radio</span><span class="sh">"</span>
+        <span class="n">label</span> <span class="nf">_</span><span class="p">(</span><span class="sh">"</span><span class="s">Display</span><span class="sh">"</span><span class="p">)</span>
+        <span class="n">null</span> <span class="n">height</span> <span class="mi">5</span>
+        <span class="n">textbutton</span> <span class="nf">_</span><span class="p">(</span><span class="sh">"</span><span class="s">Fullscreen</span><span class="sh">"</span><span class="p">)</span> <span class="n">action</span> <span class="nc">Preference</span><span class="p">(</span><span class="sh">"</span><span class="s">display</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">toggle</span><span class="sh">"</span><span class="p">)</span>
+    <span class="n">vbox</span><span class="p">:</span>
+        <span class="n">style_prefix</span> <span class="sh">"</span><span class="s">radio</span><span class="sh">"</span>
+        <span class="n">label</span> <span class="nf">_</span><span class="p">(</span><span class="sh">"</span><span class="s">Resolution</span><span class="sh">"</span><span class="p">)</span>
+        <span class="n">null</span> <span class="n">height</span> <span class="mi">5</span>
+        <span class="c1"># pass ratio of native resolution, which is 1080p
+</span>        <span class="n">python</span><span class="p">:</span>
+            <span class="c1"># for monitors of 1080p and less (actually checking width of 1920),
+</span>            <span class="c1"># the default size is clamped to max_window_size, so we label "Default" slightly differently
+</span>            <span class="k">if</span> <span class="n">renpy</span><span class="p">.</span><span class="nf">get_renderer_info</span><span class="p">().</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">max_window_size</span><span class="sh">"</span><span class="p">,</span> <span class="p">(</span><span class="mi">9999</span><span class="p">,</span> <span class="mi">9999</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1920</span><span class="p">:</span>
+                <span class="c1"># e.g. on hi-dpi
+</span>                <span class="n">default_res_text</span> <span class="o">=</span> <span class="nf">_</span><span class="p">(</span><span class="sh">"</span><span class="s">Default (1080p)</span><span class="sh">"</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># e.g. on 1080p
+</span>                <span class="n">default_res_text</span> <span class="o">=</span> <span class="nf">_</span><span class="p">(</span><span class="sh">"</span><span class="s">Default</span><span class="sh">"</span><span class="p">)</span>
+        <span class="n">textbutton</span> <span class="n">default_res_text</span> <span class="n">action</span> <span class="nc">Preference</span><span class="p">(</span><span class="sh">"</span><span class="s">display</span><span class="sh">"</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span> <span class="c1"># or "window", it also uses __DisplayAction(1.0)
+</span>        <span class="n">textbutton</span> <span class="nf">_</span><span class="p">(</span><span class="sh">"</span><span class="s">720p</span><span class="sh">"</span><span class="p">)</span> <span class="n">action</span> <span class="nc">Preference</span><span class="p">(</span><span class="sh">"</span><span class="s">display</span><span class="sh">"</span><span class="p">,</span> <span class="mf">2.</span> <span class="o">/</span> <span class="mf">3.</span><span class="p">)</span>    <span class="c1"># 0.666... because 2/3*1080 = 720
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Source: <a href="https://github.com/hsandt/nanoreno2020-sidetracked/blob/v3.5.3/game/screens.rpy#L814">screens.rpy</a></p>
+
+  </div><a class="u-url" href="/how-to/2021/02/20/custom-preferences-and-accessibility-features-in-renpy/" hidden></a>
+</article>
+
+      </div>
+    </main>
+<footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        
+        
+        <ul class="contact-list">
+          <li class="p-name">Long Nguyen Huu</li>
+          <li><a class="u-email" href="mailto:n.huu.long@gmail.com">n.huu.long@gmail.com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>This website was made with Jekyll and is hosted on GitHub Pages. It uses Google Analytics.</p>
+        
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+    <a rel="me" href="https://komehara.itch.io/" target="_blank" title="My games on itch.io">
+      <span class="grey fa-brands fa-itch-io fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://github.com/hsandt" target="_blank" title="My GitHub repositories">
+      <span class="grey fa-brands fa-github fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://bitbucket.org/hsandt/" target="_blank" title="My BitBucket repositories">
+      <span class="grey fa-brands fa-bitbucket fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://stackoverflow.com/users/3256073/hsandt" target="_blank" title="My profile on Stack Overflow">
+      <span class="grey fa-brands fa-stack-overflow fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://twitter.com/n_huulong" target="_blank" title="My posts on Twitter">
+      <span class="grey fa-brands fa-twitter fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://mastodon.gamedev.place/@leyn" target="_blank" title="My posts on Mastodon">
+      <span class="grey fa-brands fa-mastodon fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://www.youtube.com/channel/UCscc8AXbgMQCjzxsXLVvCsg" target="_blank" title="My videos on YouTube">
+      <span class="grey fa-brands fa-youtube fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://www.linkedin.com/in/huulong/" target="_blank" title="My profile on LinkedIn">
+      <span class="grey fa-brands fa-linkedin fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://ko-fi.com/komehara" target="_blank" title="Donations on Ko-fi">
+      <span class="grey fa-brands fa-ko-fi fa-lg"></span>
+    </a>
+  </li></ul>
+</div>
+
+  </div>
+
+</footer></body>
+
+</html>

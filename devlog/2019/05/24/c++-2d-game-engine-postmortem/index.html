@@ -2,23 +2,24 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.9.0 -->
 <title>C++ 2D Game Engine – Postmortem | Long Nguyen Huu</title>
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="C++ 2D Game Engine – Postmortem" />
 <meta name="author" content="Long Nguyen Huu" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="4 years ago, I started working on a custom 2D game engine in C++. At the beginning, I needed a simple game to experiment AI techniques with, but I ended up working on a small engine (I still wanted to train AI to I moved that project to Unity)." />
-<meta property="og:description" content="4 years ago, I started working on a custom 2D game engine in C++. At the beginning, I needed a simple game to experiment AI techniques with, but I ended up working on a small engine (I still wanted to train AI to I moved that project to Unity)." />
+<meta name="twitter:description" property="og:description" content="4 years ago, I started working on a custom 2D game engine in C++. At the beginning, I needed a simple game to experiment AI techniques with, but I ended up working on a small engine (I still wanted to train AI to I moved that project to Unity)." />
 <link rel="canonical" href="https://hsandt.github.io/devlog/2019/05/24/c++-2d-game-engine-postmortem/" />
 <meta property="og:url" content="https://hsandt.github.io/devlog/2019/05/24/c++-2d-game-engine-postmortem/" />
 <meta property="og:site_name" content="Long Nguyen Huu" />
 <meta property="og:image" content="https://hsandt.github.io/assets/pictures/blog/devlog/2019-05-24-c++-2d-game-engine-postmortem/thumbnail.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-05-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-05-24T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://hsandt.github.io/assets/pictures/blog/devlog/2019-05-24-c++-2d-game-engine-postmortem/thumbnail.png" />
-<meta property="twitter:title" content="C++ 2D Game Engine – Postmortem" />
+<meta name="twitter:image" content="https://hsandt.github.io/assets/pictures/blog/devlog/2019-05-24-c++-2d-game-engine-postmortem/thumbnail.png" />
+<meta name="twitter:title" content="C++ 2D Game Engine – Postmortem" />
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Long Nguyen Huu"},"dateModified":"2019-05-24T00:00:00+00:00","datePublished":"2019-05-24T00:00:00+00:00","description":"4 years ago, I started working on a custom 2D game engine in C++. At the beginning, I needed a simple game to experiment AI techniques with, but I ended up working on a small engine (I still wanted to train AI to I moved that project to Unity).","headline":"C++ 2D Game Engine – Postmortem","image":"https://hsandt.github.io/assets/pictures/blog/devlog/2019-05-24-c++-2d-game-engine-postmortem/thumbnail.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://hsandt.github.io/devlog/2019/05/24/c++-2d-game-engine-postmortem/"},"url":"https://hsandt.github.io/devlog/2019/05/24/c++-2d-game-engine-postmortem/"}</script>
 <!-- End Jekyll SEO tag -->
@@ -118,11 +119,11 @@
 <ul>
   <li>Entity-component system</li>
   <li>Fixed update and input/render update loops</li>
-  <li>Game window with OpenGL with <a href="http://glew.sourceforge.net/" target="_blank">GLEW</a> + <a href="http://www.glfw.org/" target="_blank">GLFW</a></li>
+  <li>Game window with OpenGL with <a href="https://glew.sourceforge.net/" target="_blank">GLEW</a> + <a href="https://www.glfw.org/" target="_blank">GLFW</a></li>
   <li>Keyboard/mouse input</li>
   <li>Primitive 2D shapes rendering</li>
   <li>Basic shaders</li>
-  <li>2D physics (<a href="http://box2d.org/" target="_blank">Box2D</a>)</li>
+  <li>2D physics (<a href="https://box2d.org/" target="_blank">Box2D</a>)</li>
   <li>Scene-Entity system</li>
   <li>Scene editor and basic scene serialization</li>
   <li>AI helpers</li>
@@ -132,7 +133,7 @@
 
 <p>At first I used <a href="https://www.libsdl.org/index.php" target="_blank">SDL2</a> for window management and rendering, before switching to OpenGL with GLFW for more flexibility (e.g. zooming in and out with the camera). Now, I know that SDL2 supports OpenGL rendering too, so looking back at it, SDL2 wasn’t a bad choice at all (plus I’m still only rendering simple shapes like squares right now).</p>
 
-<p>That said, I like GLFW’s window API better and I need some OpenGL training anyway, so why not start with simple shapes. Next time, I’ll also have a look at <a href="http://www.sfml-dev.org/" target="_blank">SFML</a>, but for now I want to focus on the engine systems (modules).</p>
+<p>That said, I like GLFW’s window API better and I need some OpenGL training anyway, so why not start with simple shapes. Next time, I’ll also have a look at <a href="https://www.sfml-dev.org/" target="_blank">SFML</a>, but for now I want to focus on the engine systems (modules).</p>
 
 <h2 id="progress">Progress</h2>
 
@@ -140,7 +141,7 @@
 
 <p><strong>Advantage</strong>: you can implement behavior specific to one entity directly inside the Actor subclass, without using components</p>
 
-<p><strong>Disadvantage</strong>: all game objects don’t have the same exact type and have different sizes, so you cannot put them in an array/vector of GameObjects (Unity-style) combined with <a href="http://gamesfromwithin.com/managing-data-relationships">handles</a> for maximum cache efficiency (see <a href="http://gameprogrammingpatterns.com/data-locality.html">Data Locality</a>). If you still want data contiguity, you’ll need a custom container that supports variable object size.</p>
+<p><strong>Disadvantage</strong>: all game objects don’t have the same exact type and have different sizes, so you cannot put them in an array/vector of GameObjects (Unity-style) combined with <a href="https://gamesfromwithin.com/managing-data-relationships" target="_blank">handles</a> for maximum cache efficiency (see <a href="https://gameprogrammingpatterns.com/data-locality.html" target="_blank">Data Locality</a>). If you still want data contiguity, you’ll need a custom container that supports variable object size.</p>
 
 <p>For now, I have something like this:</p>
 

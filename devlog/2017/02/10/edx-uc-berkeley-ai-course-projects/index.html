@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>EDX UC Berkeley AI course projects | Long Nguyen Huu</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="EDX UC Berkeley AI course projects" />
+<meta name="author" content="Long Nguyen Huu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Note: this post has been moved from my old website. Since then, the course has been archived, but I kept working until Project 4 so I may post videos of it later. This is my homework for UC Berkeley CS188 (course archives), a course on Artificial Intelligence delivered by the University of California, Berkeley, and provided online by the EDX. I will complete this page as I continue following the courses’ archives. For each project, a framework in Python was provided by the professor as a context to implement some AI. Students must implement key methods to fulfill specific requirements…" />
+<meta name="twitter:description" property="og:description" content="Note: this post has been moved from my old website. Since then, the course has been archived, but I kept working until Project 4 so I may post videos of it later. This is my homework for UC Berkeley CS188 (course archives), a course on Artificial Intelligence delivered by the University of California, Berkeley, and provided online by the EDX. I will complete this page as I continue following the courses’ archives. For each project, a framework in Python was provided by the professor as a context to implement some AI. Students must implement key methods to fulfill specific requirements…" />
+<link rel="canonical" href="https://hsandt.github.io/devlog/2017/02/10/edx-uc-berkeley-ai-course-projects/" />
+<meta property="og:url" content="https://hsandt.github.io/devlog/2017/02/10/edx-uc-berkeley-ai-course-projects/" />
+<meta property="og:site_name" content="Long Nguyen Huu" />
+<meta property="og:image" content="https://hsandt.github.io/assets/pictures/blog/devlog/2017-02-10-edx-uc-berkeley-ai-course-projects/thumbnail.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-02-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-02-10T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://hsandt.github.io/assets/pictures/blog/devlog/2017-02-10-edx-uc-berkeley-ai-course-projects/thumbnail.png" />
+<meta name="twitter:title" content="EDX UC Berkeley AI course projects" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Long Nguyen Huu"},"dateModified":"2017-02-10T00:00:00+00:00","datePublished":"2017-02-10T00:00:00+00:00","description":"Note: this post has been moved from my old website. Since then, the course has been archived, but I kept working until Project 4 so I may post videos of it later. This is my homework for UC Berkeley CS188 (course archives), a course on Artificial Intelligence delivered by the University of California, Berkeley, and provided online by the EDX. I will complete this page as I continue following the courses’ archives. For each project, a framework in Python was provided by the professor as a context to implement some AI. Students must implement key methods to fulfill specific requirements…","headline":"EDX UC Berkeley AI course projects","image":"https://hsandt.github.io/assets/pictures/blog/devlog/2017-02-10-edx-uc-berkeley-ai-course-projects/thumbnail.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://hsandt.github.io/devlog/2017/02/10/edx-uc-berkeley-ai-course-projects/"},"url":"https://hsandt.github.io/devlog/2017/02/10/edx-uc-berkeley-ai-course-projects/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://hsandt.github.io/feed.xml" title="Long Nguyen Huu" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-TKEELY26NL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TKEELY26NL');
+</script>
+
+</head>
+<body>
+<header class="site-header">
+
+  <div class="wrapper"><div class="site-brand">
+      <a class="site-title" rel="author" href="/">Long Nguyen Huu</a>
+      <div class="site-subtitle">aka komehara – Game developer</div>
+      <div class="social-links"><ul class="social-media-list"><li>
+    <a rel="me" href="https://komehara.itch.io/" target="_blank" title="My games on itch.io">
+      <span class="grey fa-brands fa-itch-io fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://github.com/hsandt" target="_blank" title="My GitHub repositories">
+      <span class="grey fa-brands fa-github fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://bitbucket.org/hsandt/" target="_blank" title="My BitBucket repositories">
+      <span class="grey fa-brands fa-bitbucket fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://stackoverflow.com/users/3256073/hsandt" target="_blank" title="My profile on Stack Overflow">
+      <span class="grey fa-brands fa-stack-overflow fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://twitter.com/n_huulong" target="_blank" title="My posts on Twitter">
+      <span class="grey fa-brands fa-twitter fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://mastodon.gamedev.place/@leyn" target="_blank" title="My posts on Mastodon">
+      <span class="grey fa-brands fa-mastodon fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://www.youtube.com/channel/UCscc8AXbgMQCjzxsXLVvCsg" target="_blank" title="My videos on YouTube">
+      <span class="grey fa-brands fa-youtube fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://www.linkedin.com/in/huulong/" target="_blank" title="My profile on LinkedIn">
+      <span class="grey fa-brands fa-linkedin fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://ko-fi.com/komehara" target="_blank" title="Donations on Ko-fi">
+      <span class="grey fa-brands fa-ko-fi fa-lg"></span>
+    </a>
+  </li></ul>
+</div>
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/portfolio/">Portfolio</a><a class="page-link" href="/blog/">Blog</a><a class="page-link" href="/writing/">Writing</a><a class="page-link" href="/comic-strips/">Comic strips</a><a class="page-link" href="/resume/">Resume</a><a class="page-link" href="/Resources/">Resources</a><a class="page-link" href="/newsletter/">Newsletter</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">EDX UC Berkeley AI course projects</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2017-02-10T00:00:00+00:00" itemprop="datePublished">
+        Feb 10, 2017
+      </time>
+      
+      <a href="/tags/ai">
+        #ai
+      </a>
+    </p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><em>Note: this post has been moved from my old website. Since then, the course has been archived, but I kept working until Project 4 so I may post videos of it later.</em></p>
+
+<p>This is my homework for <a href="https://inst.eecs.berkeley.edu/~cs188/archive/sp25/">UC Berkeley CS188 (course archives)</a>, a course on Artificial Intelligence delivered by the University of California, Berkeley, and provided online by the EDX. I will complete this page as I continue following the courses’ archives.</p>
+
+<p>For each project, a framework in Python was provided by the professor as a context to implement some AI. Students must implement key methods to fulfill specific requirements for the project (e.g. find the solution in fewer than 1000 iterations), and can fulfill optional objectives for a better grade (e.g. use fewer than 300 iterations). I don’t provide the source code of my implementation since it is supposed to be homework, but if you are personally interested in a specific algorithm, you can ask me for it (although there is nothing fancy in my answers, they do the job with a little optimization).</p>
+
+<h1 id="project-1-pacman-search">Project 1: Pacman search</h1>
+
+<p>In this project, we work with a Pacman clone where Pacman must eat all the pellets (there are no ghosts). We code an AI agent to control Pacman and solve the search problem of collecting all pellets following a certain heuristic.</p>
+
+<h2 id="one-goal-problem--big-level-a-search">One-Goal Problem – Big Level A* Search</h2>
+
+<p>Finding one pellet in a big maze</p>
+
+<video controls="">
+  <source src="/assets/pictures/blog/devlog/2017-02-10-edx-uc-berkeley-ai-course-projects/EDX Pacman A-star One Goal Problem Big Search.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+<h2 id="corners-problem--medium-level-a-search">Corners Problem – Medium Level A* Search</h2>
+
+<p>Finding 4 pellets, each in one corner of a medium maze</p>
+
+<video controls="">
+  <source src="/assets/pictures/blog/devlog/2017-02-10-edx-uc-berkeley-ai-course-projects/EDX Pacman A-star Corners Problem Medium Search.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+<h2 id="food-problem-multi-pellet-problem--tiny-level-a-search">Food Problem (Multi-Pellet Problem) – Tiny Level A* Search</h2>
+
+<p>Finding many pellets in a small level</p>
+
+<video controls="">
+  <source src="/assets/pictures/blog/devlog/2017-02-10-edx-uc-berkeley-ai-course-projects/EDX Pacman A-star Food Problem Tiny Search.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+<h2 id="food-problem--tricky-level-a-search">Food Problem – Tricky Level A* Search</h2>
+
+<p>Finding many pellets in a level where they are placed in a tricky way</p>
+
+<video controls="">
+  <source src="/assets/pictures/blog/devlog/2017-02-10-edx-uc-berkeley-ai-course-projects/EDX Pacman A-star Food Problem Tricky Search.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+<h1 id="project-2-multi-agent-search">Project 2: Multi-Agent Search</h1>
+
+<p><em>Done, I will post videos later</em></p>
+
+<h1 id="project-3-reinforcement-learning">Project 3: Reinforcement Learning</h1>
+
+<p><em>Done, I will post videos later</em></p>
+
+<h1 id="project-4-ghostbusters">Project 4: Ghostbusters</h1>
+
+<p><em>Almost completed, I will post videos later</em></p>
+
+  </div><a class="u-url" href="/devlog/2017/02/10/edx-uc-berkeley-ai-course-projects/" hidden></a>
+</article>
+
+      </div>
+    </main>
+<footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        
+        
+        <ul class="contact-list">
+          <li class="p-name">Long Nguyen Huu</li>
+          <li><a class="u-email" href="mailto:n.huu.long@gmail.com">n.huu.long@gmail.com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>This website was made with Jekyll and is hosted on GitHub Pages. It uses Google Analytics.</p>
+        
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+    <a rel="me" href="https://komehara.itch.io/" target="_blank" title="My games on itch.io">
+      <span class="grey fa-brands fa-itch-io fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://github.com/hsandt" target="_blank" title="My GitHub repositories">
+      <span class="grey fa-brands fa-github fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://bitbucket.org/hsandt/" target="_blank" title="My BitBucket repositories">
+      <span class="grey fa-brands fa-bitbucket fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://stackoverflow.com/users/3256073/hsandt" target="_blank" title="My profile on Stack Overflow">
+      <span class="grey fa-brands fa-stack-overflow fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://twitter.com/n_huulong" target="_blank" title="My posts on Twitter">
+      <span class="grey fa-brands fa-twitter fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://mastodon.gamedev.place/@leyn" target="_blank" title="My posts on Mastodon">
+      <span class="grey fa-brands fa-mastodon fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://www.youtube.com/channel/UCscc8AXbgMQCjzxsXLVvCsg" target="_blank" title="My videos on YouTube">
+      <span class="grey fa-brands fa-youtube fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://www.linkedin.com/in/huulong/" target="_blank" title="My profile on LinkedIn">
+      <span class="grey fa-brands fa-linkedin fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="https://ko-fi.com/komehara" target="_blank" title="Donations on Ko-fi">
+      <span class="grey fa-brands fa-ko-fi fa-lg"></span>
+    </a>
+  </li></ul>
+</div>
+
+  </div>
+
+</footer></body>
+
+</html>
