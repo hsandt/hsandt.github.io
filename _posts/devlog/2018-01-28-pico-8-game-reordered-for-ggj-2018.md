@@ -47,7 +47,7 @@ If I had to redo it, I would:
 
 ## Play
 
-You can find the latest version of the game on the [itch.io page](https://komehara.itch.io/reordered). Compared to v0.1, it added 4 levels, sfx and music. You can also change level with LEFT and RIGHT.
+You can find the latest version of the game on the [itch.io page](https://komehara.itch.io/reordered). Compared to v0.1, it added 3 new levels, sfx and music. You can also change level with LEFT and RIGHT.
 
 ### Older versions
 

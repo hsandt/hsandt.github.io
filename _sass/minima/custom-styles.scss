@@ -221,6 +221,10 @@
       display: block;
       margin-left: auto;
     }
+
+    &.crisp {
+      image-rendering: crisp-edges;
+    }
   }
 
   video {
