@@ -31,6 +31,10 @@ meta:
   team: "4 people"
   role: "Game design, Gameplay programming"
   technology: "Unity 5"
+deliverable_links:
+  - platform: itch-io
+    url: "https://komehara.itch.io/mars-21"
+    title: Play on itch.io
 ---
 
 ## Description
