@@ -83,7 +83,7 @@ I got my chances<br>
 <br>
 Quarter to two<br>
 Almost time to go back to class<br>
-Once more, he didn't come<br>
+Once again, he didn't come<br>
 And will probably never again<br>
 <br>
 Why am I still here?<br>
@@ -94,6 +94,7 @@ I'll stay here until the close<br>
 *Initial draft written on 2020-03-07 on the theme "Personal experience" for Creating Writing Taster Day @ Nottingham with Maggi Fazzini*
 
 *Website version written on 2024-01-31*
+*Minor improvement added on 2026-10-01*
 
 ### Iron first
 
