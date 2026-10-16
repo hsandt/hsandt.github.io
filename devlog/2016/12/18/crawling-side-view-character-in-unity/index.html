@@ -8,8 +8,8 @@
 <meta property="og:title" content="Crawling side-view character in Unity" />
 <meta name="author" content="Long Nguyen Huu" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Note: this post has been moved from my old website. It was written for Unity 5 but Animation Controller has not changed much since." />
-<meta name="twitter:description" property="og:description" content="Note: this post has been moved from my old website. It was written for Unity 5 but Animation Controller has not changed much since." />
+<meta name="description" content="Note: this post has been moved from my old website. It was written for Unity 5." />
+<meta name="twitter:description" property="og:description" content="Note: this post has been moved from my old website. It was written for Unity 5." />
 <link rel="canonical" href="https://hsandt.github.io/devlog/2016/12/18/crawling-side-view-character-in-unity/" />
 <meta property="og:url" content="https://hsandt.github.io/devlog/2016/12/18/crawling-side-view-character-in-unity/" />
 <meta property="og:site_name" content="Long Nguyen Huu" />
@@ -21,7 +21,7 @@
 <meta name="twitter:image" content="https://hsandt.github.io/assets/pictures/blog/devlog/2016-12-18-crawling-side-view-character-in-unity/thumbnail.png" />
 <meta name="twitter:title" content="Crawling side-view character in Unity" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Long Nguyen Huu"},"dateModified":"2016-12-18T00:00:00+00:00","datePublished":"2016-12-18T00:00:00+00:00","description":"Note: this post has been moved from my old website. It was written for Unity 5 but Animation Controller has not changed much since.","headline":"Crawling side-view character in Unity","image":"https://hsandt.github.io/assets/pictures/blog/devlog/2016-12-18-crawling-side-view-character-in-unity/thumbnail.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://hsandt.github.io/devlog/2016/12/18/crawling-side-view-character-in-unity/"},"url":"https://hsandt.github.io/devlog/2016/12/18/crawling-side-view-character-in-unity/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Long Nguyen Huu"},"dateModified":"2016-12-18T00:00:00+00:00","datePublished":"2016-12-18T00:00:00+00:00","description":"Note: this post has been moved from my old website. It was written for Unity 5.","headline":"Crawling side-view character in Unity","image":"https://hsandt.github.io/assets/pictures/blog/devlog/2016-12-18-crawling-side-view-character-in-unity/thumbnail.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://hsandt.github.io/devlog/2016/12/18/crawling-side-view-character-in-unity/"},"url":"https://hsandt.github.io/devlog/2016/12/18/crawling-side-view-character-in-unity/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://hsandt.github.io/feed.xml" title="Long Nguyen Huu" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-TKEELY26NL"></script>
@@ -65,7 +65,7 @@
       <span class="grey fa-brands fa-mastodon fa-lg"></span>
     </a>
   </li><li>
-    <a rel="me" href="https://www.youtube.com/channel/UCscc8AXbgMQCjzxsXLVvCsg" target="_blank" title="My videos on YouTube">
+    <a rel="me" href="https://www.youtube.com/@komehara_game" target="_blank" title="My videos on YouTube">
       <span class="grey fa-brands fa-youtube fa-lg"></span>
     </a>
   </li><li>
@@ -88,7 +88,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/portfolio/">Portfolio</a><a class="page-link" href="/blog/">Blog</a><a class="page-link" href="/writing/">Writing</a><a class="page-link" href="/comic-strips/">Comic strips</a><a class="page-link" href="/resume/">Resume</a><a class="page-link" href="/Resources/">Resources</a><a class="page-link" href="/newsletter/">Newsletter</a></div>
+        <div class="trigger"><a class="page-link" href="/portfolio/">Portfolio</a><a class="page-link" href="/blog/">Blog</a><a class="page-link" href="/resume/">Resume</a><a class="page-link" href="/toolset/">Toolset</a><a class="page-link" href="/Resources/">Resources</a><a class="page-link" href="/writing/">Writing</a><a class="page-link" href="/comic-strips/">Comic strips</a><a class="page-link" href="/newsletter/">Newsletter</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -112,7 +112,7 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><em>Note: this post has been moved from my old website. It was written for Unity 5 but Animation Controller has not changed much since.</em></p>
+    <p><em>Note: this post has been moved from my old website. It was written for Unity 5.</em></p>
 
 <p>I implemented crawling for my human character controller in a cooperative platformer made with Unity, Mars 21.</p>
 
@@ -198,7 +198,13 @@
         
         <ul class="contact-list">
           <li class="p-name">Long Nguyen Huu</li>
-          <li><a class="u-email" href="mailto:n.huu.long@gmail.com">n.huu.long@gmail.com</a></li>
+          <a class="u-email cryptedmail"
+              data-name="n.huu.long"
+              data-domain="gmail"
+              data-tld="com"
+              target="_blank"
+              onclick="window.open('mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld, '_blank'); return false;">
+            </a>
         </ul>
       </div>
       <div class="footer-col">
@@ -232,7 +238,7 @@
       <span class="grey fa-brands fa-mastodon fa-lg"></span>
     </a>
   </li><li>
-    <a rel="me" href="https://www.youtube.com/channel/UCscc8AXbgMQCjzxsXLVvCsg" target="_blank" title="My videos on YouTube">
+    <a rel="me" href="https://www.youtube.com/@komehara_game" target="_blank" title="My videos on YouTube">
       <span class="grey fa-brands fa-youtube fa-lg"></span>
     </a>
   </li><li>

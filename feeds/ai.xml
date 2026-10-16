@@ -5,7 +5,7 @@
 <subtitle>The personal website of Long Nguyen Huu aka komehara</subtitle>
 <link href="/atom.xml" rel="self"/>
 <link href="https://hsandt.github.io/"/>
-<updated>2026-08-29T15:03:21+00:00</updated>
+<updated>2026-10-16T15:28:04+00:00</updated>
 <id>https://hsandt.github.io</id>
 <author>
 <name>Long Nguyen Huu</name>
@@ -32,7 +32,7 @@
         <updated>2021-06-23T00:00:00+00:00</updated>
         <id>https://hsandt.github.io/devlog/2021/06/23/ai-sandbox-in-unity</id>
         <category term="devlog" />
-        <content type="html"><![CDATA[<p><em>This post is a draft and may undergo changes over time.</em></p>
+        <content type="html"><![CDATA[<p><em>Note: this post has been moved from my old website. It is still a draft and may undergo changes over time.</em></p>
 
 <p>I am sometimes working on an AI sandbox game with Unity. I implement various AI techniques I found in books, using Unity as a basic game framework and without using its advanced features.</p>
 
@@ -66,6 +66,8 @@
 </video>
 ]]></content>
     </entry>
+    
+
     
 
     
@@ -140,6 +142,8 @@
 <p><em>Almost completed, I will post videos later</em></p>
 ]]></content>
     </entry>
+    
+
     
 
     

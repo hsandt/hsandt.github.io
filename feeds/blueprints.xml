@@ -5,13 +5,15 @@
 <subtitle>The personal website of Long Nguyen Huu aka komehara</subtitle>
 <link href="/atom.xml" rel="self"/>
 <link href="https://hsandt.github.io/"/>
-<updated>2026-08-29T15:03:21+00:00</updated>
+<updated>2026-10-16T15:28:04+00:00</updated>
 <id>https://hsandt.github.io</id>
 <author>
 <name>Long Nguyen Huu</name>
 <email>n.huu.long@gmail.com</email>
 </author>
 
+
+    
 
     
 
@@ -407,6 +409,8 @@
 <p>I haven’t talked about the Zelda-like contextual actions Grab and Drop here. I need to improve them, maybe they will be the topic of another post.</p>
 ]]></content>
     </entry>
+    
+
     
 
 

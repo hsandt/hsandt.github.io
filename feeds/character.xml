@@ -5,7 +5,7 @@
 <subtitle>The personal website of Long Nguyen Huu aka komehara</subtitle>
 <link href="/atom.xml" rel="self"/>
 <link href="https://hsandt.github.io/"/>
-<updated>2026-08-29T15:03:21+00:00</updated>
+<updated>2026-10-16T15:28:04+00:00</updated>
 <id>https://hsandt.github.io</id>
 <author>
 <name>Long Nguyen Huu</name>
@@ -38,13 +38,15 @@
     
 
     
+
+    
     <entry>
         <title>Crawling side-view character in Unity</title>
         <link href="https://hsandt.github.io/devlog/2016/12/18/crawling-side-view-character-in-unity/"/>
         <updated>2016-12-18T00:00:00+00:00</updated>
         <id>https://hsandt.github.io/devlog/2016/12/18/crawling-side-view-character-in-unity</id>
         <category term="devlog" />
-        <content type="html"><![CDATA[<p><em>Note: this post has been moved from my old website. It was written for Unity 5 but Animation Controller has not changed much since.</em></p>
+        <content type="html"><![CDATA[<p><em>Note: this post has been moved from my old website. It was written for Unity 5.</em></p>
 
 <p>I implemented crawling for my human character controller in a cooperative platformer made with Unity, Mars 21.</p>
 
@@ -115,6 +117,8 @@
 <p>This approach has an important drawback: you have to duplicate the structure of the FSM between the two layers. Unity has a feature called <em>Animation layer syncing</em> which allows you to reuse an existing structure on multiple layers, but unfortunately it doesn’t support using different transition times on different layers (0 for the Motion layer and 0.1s for the Animation layer). For my next project, I will probably switch to an FSM completely in code (with my own StateMachine class), only using the Animator for actual animations.</p>
 ]]></content>
     </entry>
+    
+
     
 
     

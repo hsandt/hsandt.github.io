@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+<title>Long Nguyen Huu</title>
+<subtitle>The personal website of Long Nguyen Huu aka komehara</subtitle>
+<link href="/atom.xml" rel="self"/>
+<link href="https://hsandt.github.io/"/>
+<updated>2026-10-16T15:28:04+00:00</updated>
+<id>https://hsandt.github.io</id>
+<author>
+<name>Long Nguyen Huu</name>
+<email>n.huu.long@gmail.com</email>
+</author>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <entry>
+        <title>PICO-8 game “REORDERED” for GGJ 2018</title>
+        <link href="https://hsandt.github.io/devlog/2018/01/28/pico-8-game-reordered-for-ggj-2018/"/>
+        <updated>2018-01-28T00:00:00+00:00</updated>
+        <id>https://hsandt.github.io/devlog/2018/01/28/pico-8-game-reordered-for-ggj-2018</id>
+        <category term="devlog" />
+        <content type="html"><![CDATA[<p><em>Note: this post has been moved from my old website and adapted.</em></p>
+
+<p><img src="/assets/pictures/blog/devlog/2018-01-28-pico-8-game-reordered-for-ggj-2018/reordered_v0.1_walkthrough_big.gif" alt="Gameplay video of REORDERED where player clicks on arrow in level to make G letter take a longer path and arrive after I to form word BIG" /></p>
+
+<p>When I tried to subscribe to Global Game Jam 2018, all the locations in Paris were already full. I still wanted to participate so I decided to make some game on my own.</p>
+
+<p>This year, the theme was <em>Transmission</em>. First, I thought about illustrating gene transmission with a character sprite generator that would support inheritance. But I didn’t have any gameplay idea and the project seemed quite complex. I also considered making a game about sending waves in the right direction, but <em>Wave</em> was last year’s theme already.</p>
+
+<p>In the end, I thought about using <a href="https://en.wikipedia.org/wiki/Out-of-order_delivery">out-of-order delivery</a> as a main mechanic, and came up with the concept of modifying a message by reordering its letters.</p>
+
+<p>On the technical side, I went with <a href="https://www.lexaloffle.com/pico-8.php">PICO-8</a> for the first time.</p>
+
+<h2 id="progress">Progress</h2>
+
+<p>Unfortunately, I didn’t have the time to implement many game bits and levels I designed the first day. This is not something surprising for a jam (especially done alone), but getting used to PICO-8 and its differences with actual Lua made it more difficult than usual.</p>
+
+<p>All in all, I’m quite satisfied with the game, and was even surprised to find alternative ways to solve the most simple puzzle. But it’s clearly too short (only two words to transmit!). I’ll definitely add more levels in a future version.</p>
+
+<h2 id="accessibility">Accessibility</h2>
+
+<p>A lot to improve on UX and Accessibility. I’m using the mouse devkit feature for PICO-8, but the author himself recommends to always provide button controls. What I fear the most is that players are not able to play the game at all. I’ve already downloaded many jam games I was not able to play for technical reasons or lack of clarity.</p>
+
+<p>At some point I tried a color-blind filter (Deuteranopia), which showed I really couldn’t rely on colors (at least with those I had chosen).</p>
+
+<p><img src="/assets/pictures/blog/devlog/2018-01-28-pico-8-game-reordered-for-ggj-2018/transmission_006_deuteranopia.png" alt="Screenshot of REORDERED with Deuteranopia filter. Colors range between desaturated blue and yellow" /></p>
+
+<p>This year, the organizers suggested a great deal of <a href="https://web.archive.org/web/20230923212256/https://globalgamejam.org/news/ggj18-diversifiers">diversifiers</a>, including for accessibility and narration. With PICO-8, many diversifiers were impossible to get (Well-Rounded, most Audio challenges), others much easier (of course <strong>.COM-pact</strong> – <em>limit your game file size to 64k or less</em>, but we could also imagine <strong>Upside down</strong> – <em>One or more game systems programmed by an artist, major art assets produced by programmers/coders</em>).</p>
+
+<p>Amusingly, <strong>Lost in translation</strong> – <em>Make a game which plays differently depending on language selection</em>, would probably be feasible, provided I offer different words to play with depending on the language.</p>
+
+<h2 id="takeaway">Takeaway</h2>
+
+<p>If I had to redo it, I would:</p>
+
+<ul>
+  <li>learn more about the engine beforehand</li>
+  <li>focus on fewer elements and levels to be sure to implement them</li>
+  <li>work on the game flow early, to allow the integration of menu and level loading more easily</li>
+  <li>use pseudo-classes with methods rather than normal tables a ton of free functions (PICO-8 supports Lua metatables)</li>
+</ul>
+
+<h2 id="play">Play</h2>
+
+<p>You can find the latest version of the game on the <a href="https://komehara.itch.io/reordered">itch.io page</a>. Compared to v0.1, it added 3 new levels, sfx and music. You can also change level with LEFT and RIGHT.</p>
+
+<h3 id="older-versions">Older versions</h3>
+
+<p><strong>v0.1</strong></p>
+
+<ul>
+  <li><a href="/assets/games/reordered/reordered_v0.1.bin.zip">reordered_v0.1.bin</a></li>
+  <li><a href="/assets/games/reordered/reordered_v0.1_web.zip">reordered_v0.1_web</a></li>
+</ul>
+
+<h3 id="other-links">Other links</h3>
+
+<p>I will probably post it to PICO-8’s BBS when I deem it’s worth it.</p>
+
+<p>You can also check out the <a href="https://github.com/hsandt/ggj2018-Transmission">Git repository</a>. The code tends to have the usual jam quality, but I’ve made some efforts to organize the code, factorize and even added a few unit tests.</p>
+]]></content>
+    </entry>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</feed>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+<title>Long Nguyen Huu</title>
+<subtitle>The personal website of Long Nguyen Huu aka komehara</subtitle>
+<link href="/atom.xml" rel="self"/>
+<link href="https://hsandt.github.io/"/>
+<updated>2026-10-16T15:28:04+00:00</updated>
+<id>https://hsandt.github.io</id>
+<author>
+<name>Long Nguyen Huu</name>
+<email>n.huu.long@gmail.com</email>
+</author>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <entry>
+        <title>Elevator prototype for a 2D platformer in Unity</title>
+        <link href="https://hsandt.github.io/devlog/2016/07/22/elevator-prototype-for-a-2d-platformer-in-unity/"/>
+        <updated>2016-07-22T00:00:00+00:00</updated>
+        <id>https://hsandt.github.io/devlog/2016/07/22/elevator-prototype-for-a-2d-platformer-in-unity</id>
+        <category term="devlog" />
+        <content type="html"><![CDATA[<p><em>Note: this post has been moved from my old website. It was written for Unity 5.</em></p>
+
+<p>I implemented crawling for my human character controller in a cooperative platformer made with Unity, Mars 21.</p>
+
+<p>I prototyped an elevator for <a href="/portfolio/mars-21/">a cooperative platform game I am working on</a> with Unity (actually for the v2). I made two prefabs: one for the elevator and one for the switch that controls it.</p>
+
+<h2 id="elevator">Elevator</h2>
+
+<p>The Elevator prefab has the following hierarchy:</p>
+
+<ul>
+  <li>Elevator (root)
+    <ul>
+      <li>Cage
+        <ul>
+          <li>Doors</li>
+          <li>Box</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>The Elevator root represents the global position of the elevator in  the level, and does not move. Only the Cage can move: vertically from  one level to another.</p>
+
+<p>The Box is the static part of the Cage and the Doors are the moving parts. Watch the video below to see how the elevator works:</p>
+
+<video controls="">
+  <source src="/assets/pictures/blog/devlog/2016-07-22-elevator-prototype-for-a-2d-platformer-in-unity/Mars-21-Elevator-proto.webm" type="video/webm" />
+  Your browser does not support the video tag.
+</video>
+
+<p>The Elevator is a finite-state machine with 4 states: Idle, Before  Moving, Moving and After Moving. Before and After Moving states are  transitional states that allow the Doors to close and open. For more  flexibility, I decided to code the motion of the Cage rather than create a predefined animation. This way, I will be able to create elevators  with more than 2 floor levels and even different trajectories in the  future.</p>
+
+<p>The elevator moves from one level to the other following the <code class="language-plaintext highlighter-rouge">SmoothStep</code> function:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">Vector3</span> <span class="n">position</span> <span class="p">=</span> <span class="n">Vector3</span><span class="p">.</span><span class="nf">Lerp</span><span class="p">(</span><span class="n">elevator</span><span class="p">.</span><span class="n">lastPosition</span><span class="p">,</span> <span class="n">elevator</span><span class="p">.</span><span class="n">targetPosition</span><span class="p">,</span> <span class="n">Mathf</span><span class="p">.</span><span class="nf">SmoothStep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">t</span><span class="p">));</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The Cage is also an FSM with 4 states: Opened, Close Doors, Closed  and Open Doors. It is based on Unity Animator and this time, door  animations are predefined Unity animations.</p>
+
+<h2 id="switch">Switch</h2>
+
+<p>The Switch detects nearby characters and allow them to interact under specific conditions. When triggered, the elevator cage will move to the next level.</p>
+
+<p>There were already a few interactive elements in the level, so I  refactored their scripts to get a very generic interactable base class.  All interactable scripts now inherit from this base class and must  override 2 abstract methods:</p>
+
+<ul>
+  <li>a predicate method that determines the conditions of interaction (e.g. elevator cage is not already moving)</li>
+  <li>a method that determines the effect triggered by the interaction (e.g. move the elevator cage)</li>
+</ul>
+
+<p>Finally, I use C# event handlers to trigger the said effect when the  player presses the contextual action button, provided the conditions are met.</p>
+]]></content>
+    </entry>
+    
+
+
+</feed>

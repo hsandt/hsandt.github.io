@@ -5,7 +5,7 @@
 <subtitle>The personal website of Long Nguyen Huu aka komehara</subtitle>
 <link href="/atom.xml" rel="self"/>
 <link href="https://hsandt.github.io/"/>
-<updated>2026-08-29T15:03:21+00:00</updated>
+<updated>2026-10-16T15:28:04+00:00</updated>
 <id>https://hsandt.github.io</id>
 <author>
 <name>Long Nguyen Huu</name>
@@ -36,7 +36,9 @@
         <updated>2019-05-24T00:00:00+00:00</updated>
         <id>https://hsandt.github.io/devlog/2019/05/24/c++-2d-game-engine-postmortem</id>
         <category term="devlog" />
-        <content type="html"><![CDATA[<p>4 years ago, I started working on a custom 2D game engine in C++. At the beginning, I needed a simple game to experiment AI techniques with, but I ended up working on a small engine (I still wanted to train AI to I moved that project to Unity).</p>
+        <content type="html"><![CDATA[<p><em>Note: this post has been moved from my old website.</em></p>
+
+<p>4 years ago, I started working on a custom 2D game engine in C++. At the beginning, I needed a simple game to experiment AI techniques with, but I ended up working on a small engine (I still wanted to train AI to I moved that project to Unity).</p>
 
 <p>The main features I am aiming at are:</p>
 
@@ -91,6 +93,10 @@
 <p>I’m not working on this project right now, but I’ll have to go back to it at some point, especially if I want to make an engine in a different language (e.g. Rust). This would be an opportunity to learn from my past mistakes and clean things up before I step onto a cleaner architecture.</p>
 ]]></content>
     </entry>
+    
+
+    
+
     
 
     

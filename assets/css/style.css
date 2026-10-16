@@ -899,6 +899,9 @@ table td {
   display: block;
   margin-left: auto;
 }
+.post-content img.crisp {
+  image-rendering: crisp-edges;
+}
 .post-content video {
   display: block;
   margin-left: auto;
@@ -926,8 +929,9 @@ table.narrow-rows th, table.narrow-rows td {
   padding-bottom: 5px;
 }
 
-span.protectedInfo:before {
-  content: attr(title);
+.cryptedmail:after {
+  content: attr(data-name) "@" attr(data-domain) "." attr(data-tld);
+  cursor: pointer;
 }
 
 .width-400 {
