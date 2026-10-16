@@ -6,7 +6,7 @@ image: "/assets/pictures/blog/devlog/2016-12-18-crawling-side-view-character-in-
 thumbnail: "2016-12-18-crawling-side-view-character-in-unity/thumbnail.png"
 ---
 
-*Note: this post has been moved from my old website. It was written for Unity 5 but Animation Controller has not changed much since.*
+*Note: this post has been moved from my old website. It was written for Unity 5.*
 
 I implemented crawling for my human character controller in a cooperative platformer made with Unity, Mars 21.
 

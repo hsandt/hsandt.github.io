@@ -7,7 +7,7 @@ thumbnail: "2021-06-23-ai-sandbox-in-unity/thumbnail.webp"
 published: true
 ---
 
-*This post is a draft and may undergo changes over time.*
+*Note: this post has been moved from my old website. It is still a draft and may undergo changes over time.*
 
 I am sometimes working on an AI sandbox game with Unity. I implement various AI techniques I found in books, using Unity as a basic game framework and without using its advanced features.
 

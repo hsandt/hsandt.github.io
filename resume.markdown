@@ -14,13 +14,11 @@ You can read my resume below or [download the PDF](/assets/documents/Resume Long
     <tbody>
         <tr>
             <td><a href="https://hsandt.github.io">https://hsandt.github.io</a></td>
-            <td>Skype: n_huulong</td>
             <td>Paris, France</td>
         </tr>
         <tr>
             <td><a href="https://komehara.itch.io" target="_blank">https://komehara.itch.io</a></td>
-            <td>n.huu.long@gmail.com</td>
-            <td><span class="protectedInfo" title="+33 6 98 06 82 74"></span></td>
+            <td><a class="cryptedmail" data-name="n.huu.long" data-domain="gmail" data-tld="com" target="_blank" onclick="window.open('mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld, '_blank'); return false;"></a></td>
         </tr>
         <tr>
             <td><a href="https://github.com/hsandt" target="_blank">https://github.com/hsandt</a></td>

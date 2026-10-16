@@ -221,6 +221,10 @@
       display: block;
       margin-left: auto;
     }
+
+    &.crisp {
+      image-rendering: crisp-edges;
+    }
   }
 
   video {
@@ -269,9 +273,11 @@ table {
   }
 }
 
-// Obfuscate phone number (https://stackoverflow.com/a/4439391/3256073)
-span.protectedInfo:before {
-  content: attr(title);
+// Obfuscate email (https://stackoverflow.com/questions/163628/making-email-addresses-safe-from-bots-on-a-webpage)
+// Known issue: user cannot copy email to paste in their notes or preferred email client
+.cryptedmail:after {
+  content: attr(data-name) "@" attr(data-domain) "." attr(data-tld);
+  cursor: pointer;
 }
 
 .width-400 {

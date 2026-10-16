@@ -8,7 +8,7 @@ Here is a collection of various works of writing I made over time.
 
 ### Good old days
 
-I still remember how would gently make me slide into the slot<br>
+I still remember how you would gently make me slide into the slot<br>
 Until I click, ready to be challenged.<br>
 <br>
 When I was ill, you would blow into my fragile circuits,<br>
@@ -18,15 +18,17 @@ On sunny days, you would put me in your bag and bring me<br>
 To your friend's house for entire Sundays.<br>
 <br>
 The first time you pulled me out of the shiny cardboard box,<br>
-Brand new plastic I was smelling, and you hands were still shaking,<br>
-As you pressed the Power On button.<br>
+Brand new plastic I was smelling, and your hands were still shaking,<br>
+As you turned the power switch on.<br>
 <br>
 Now wipe the dust out of my body<br>
 And feel the thrill of the old days,<br>
 Until you say:<br>
 ‘Crap, it looked much better when I was a kid.’<br>
 
-*Written on 2020-03-07 on the theme "Senses" for Creating Writing Taster Day @ Nottingham with Maggi Fazzini*
+*Initially written on 2020-03-07 on the theme "Senses" for Creating Writing Taster Day @ Nottingham with Maggi Fazzini*
+
+*Minor improvements added on 2026-10-01*
 
 ### The Site That Sends You Mad
 
@@ -81,7 +83,7 @@ I got my chances<br>
 <br>
 Quarter to two<br>
 Almost time to go back to class<br>
-Once more, he didn't come<br>
+Once again, he didn't come<br>
 And will probably never again<br>
 <br>
 Why am I still here?<br>
@@ -92,6 +94,7 @@ I'll stay here until the close<br>
 *Initial draft written on 2020-03-07 on the theme "Personal experience" for Creating Writing Taster Day @ Nottingham with Maggi Fazzini*
 
 *Website version written on 2024-01-31*
+*Minor improvement added on 2026-10-01*
 
 ### Iron first
 

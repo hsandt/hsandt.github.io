@@ -6,6 +6,8 @@ image: "/assets/pictures/blog/devlog/2019-05-24-c++-2d-game-engine-postmortem/th
 thumbnail: "2019-05-24-c++-2d-game-engine-postmortem/thumbnail.png"
 ---
 
+*Note: this post has been moved from my old website.*
+
 4 years ago, I started working on a custom 2D game engine in C++. At the beginning, I needed a simple game to experiment AI techniques with, but I ended up working on a small engine (I still wanted to train AI to I moved that project to Unity).
 
 The main features I am aiming at are:

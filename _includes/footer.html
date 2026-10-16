@@ -22,8 +22,14 @@
           {% if site.author.name -%}
             <li class="p-name">{{ site.author.name | escape }}</li>
           {% endif -%}
-          {% if site.author.email -%}
-            <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
+          {% if site.author.email_name and site.author.email_domain and site.author.email_tld -%}
+            <a class="u-email cryptedmail"
+              data-name="{{ site.author.email_name }}"
+              data-domain="{{ site.author.email_domain }}"
+              data-tld="{{ site.author.email_tld }}"
+              target="_blank"
+              onclick="window.open('mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld, '_blank'); return false;">
+            </a>
           {%- endif %}
         </ul>
       {%- endif %}
