@@ -52,7 +52,12 @@ kramdown:
 # Theme config
 author:
   name: Long Nguyen Huu
+  # We keep the full email for feed.xml
   email: n.huu.long@gmail.com
+  # Split email for cryptedmail style obfuscation
+  email_name: n.huu.long
+  email_domain: gmail
+  email_tld: com
 minima:
   social_links:
     - icon: itch-io
